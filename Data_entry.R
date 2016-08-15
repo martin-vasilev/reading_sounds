@@ -15,6 +15,7 @@ source("Functions/Add_data.R")
 data<- data.frame(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
 colnames(data)<- c("ID", "N", "cit", "year", "sound", "db", "task", "measure", "mean_C", 
                   "var_C", "mean_E", "var_E", "var_type", "reference")
+# !!! code design: within or between
 
 ########################
 # Start coding studies #
