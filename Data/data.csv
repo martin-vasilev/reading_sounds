@@ -1,0 +1,3 @@
+"","ID","N","cit","year","sound","db","task","measure","mean_C","var_C","mean_E","var_E","var_type","reference"
+"1",1,40,"Sörqvist et al. (2010)",2010,"speech",72.5,"reading comprehension","corr_answers",11.55,2.24,10.58,2.93,"SD","Sörqvist, P., Halin, N., & Hygge, S. (2010). Individual differences in susceptibility to the effects of speech on reading comprehension. Applied Cognitive Psychology, 24(1), 67-76. doi:10.1002/acp.1543"
+"2",1,40,"Sörqvist et al. (2010)",2010,"speech",72.5,"reading comprehension","reading_speed",14.22,3,14.41,2.56,"SD","Sörqvist, P., Halin, N., & Hygge, S. (2010). Individual differences in susceptibility to the effects of speech on reading comprehension. Applied Cognitive Psychology, 24(1), 67-76. doi:10.1002/acp.1543"
