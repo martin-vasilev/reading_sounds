@@ -26,7 +26,7 @@ colnames(data)<- c("ID", "N_C", "N_E", "sample", "cit", "year", "design", "sound
 data<- Add_data(data, ID= 1, N_C=40, sample="adults", cit= "Sörqvist et al. (2010)", year=2010, design="within", 
                 sound="speech",
                 sound_type= "native", db= c(70+75)/2, task= "reading comprehension/ select word", 
-                measure= "corr_answers", mean_C= 11.55, var_C= 2.24, mean_E= 10.58, var_E= 2.93, var_type= "SD",
+                measure= "num_correct", mean_C= 11.55, var_C= 2.24, mean_E= 10.58, var_E= 2.93, var_type= "SD",
                 reference= "Sörqvist, P., Halin, N., & Hygge, S. (2010). Individual differences in susceptibility to the effects of speech on reading comprehension. Applied Cognitive Psychology, 24(1), 67-76. doi:10.1002/acp.1543"
                 )
 # data from Table 1
