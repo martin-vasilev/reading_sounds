@@ -100,7 +100,6 @@ data<- Add_data(data, ID= 2, N_C=70, N_E=66, sample="children", cit= "Ljung et a
 #----------------
 
 
-
 #############
 # Save data #
 #############
