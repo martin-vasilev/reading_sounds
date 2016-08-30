@@ -99,6 +99,13 @@ data<- Add_data(data, ID= 2, N_C=70, N_E=66, sample="children", cit= "Ljung et a
 #--- Study 3 ---#
 #----------------
 
+data<- Add_data(data, ID= 3, N_C=14, N_E=14, sample="children", cit= "Fogelson (1973)", year=1973, design="between", 
+                sound="music",
+                sound_type= "popular", db= NA, task= "reading comprehension", 
+                measure= "num_correct", mean_C= 43.9, var_C= 18.8, mean_E= 35.9, var_E= 18.3, var_type= "SD",
+                reference= "Fogelson, S. (1973). Music as a distractor on reading-test performance of eighth grade students. Perceptual and Motor Skills, 36(3c), 1265-1266. doi:10.2466/pms.1973.36.3c.1265"
+)
+# data from text
 
 #############
 # Save data #
