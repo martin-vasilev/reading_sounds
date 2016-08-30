@@ -107,6 +107,19 @@ data<- Add_data(data, ID= 3, N_C=14, N_E=14, sample="children", cit= "Fogelson (
 )
 # data from text
 
+
+#----------------
+#--- Study 4 ---#
+#----------------
+
+data<- Add_data(data, ID= 4, N_C=75, N_E=76, sample="adults", cit= "Tucker & Bushman (1991)", year=1991, design="between", 
+                sound="music",
+                sound_type= "rock and roll", db= 80, task= "reading comprehension", 
+                measure= "num_correct", mean_C= 4.69, var_C= 2.18, mean_E= 4.68, var_E= 2.43, var_type= "SD",
+                reference= "Tucker, A., & Bushman, B. J. (1991). Effects of rock and roll music on mathematical, verbal, and reading comprehension performance. Perceptual and Motor Skills, 72(3), 942-942. doi:10.2466/pms.1991.72.3.942"
+)
+# data from Table 1
+
 #############
 # Save data #
 #############
