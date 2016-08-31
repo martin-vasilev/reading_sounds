@@ -234,7 +234,47 @@ data<- Add_data(data, ID= 10, N_C=56, sample="adults", cit= "Doyle & Furnham (20
                 mean_E= (6.29+4.18)/2, var_E= (2.76+2.93)/2, var_type= "SD",
                 reference= "Doyle, M., & Furnham, A. (2012). The distracting effects of music on the cognitive test performance of creative and non-creative individuals. Thinking Skills and Creativity, 7(1), 1-7. doi:10.1016/j.tsc.2011.09.002"
 )
-# data from text
+# data from Table 1
+
+
+#-----------------
+#--- Study 11 ---#
+#-----------------
+
+data<- Add_data(data, ID= 11, N_C=334, sample="children", cit= "Anderson & Fuller (2010)", year=2010, 
+                design="within", sound="music",
+                sound_type= "lyrical", db= 75, task= "reading comprehension", 
+                measure= "num_correct", mean_C= 30.56, var_C= 10.21, 
+                mean_E= 26.49, var_E= 10.70, var_type= "SD",
+                reference= "Anderson, S. A., & Fuller, G. B. (2010). Effect of music on reading comprehension of junior high school students. School Psychology Quarterly, 25(3), 178-187. doi:10.1037/a0021213"
+)
+# data from Table 2
+
+
+#-----------------
+#--- Study 12 ---#
+#-----------------
+
+# noise:
+data<- Add_data(data, ID= 12, N_C=76, sample="children", cit= "Furnham & Strbac (2002)", year=2002, 
+                design="within", sound="noise",
+                sound_type= "office", db= NA, task= "reading comprehension", 
+                measure= "num_correct", mean_C= (24.33+23.53)/2, var_C= (3.37+2.87)/2, 
+                mean_E= (21.58+16.08)/2, var_E= (5.28+4.48)/2, var_type= "SD",
+                reference= "Furnham, A., & Strbac, L. (2002). Music is as distracting as noise: The differential distraction of background music and noise on the cognitive test performance of introverts and extraverts. Ergonomics, 45(3), 203-217. doi:10.1080/00140130210121932"
+)
+# data from Table 1
+
+
+# music:
+data<- Add_data(data, ID= 12, N_C=76, sample="children", cit= "Furnham & Strbac (2002)", year=2002, 
+                design="within", sound="music",
+                sound_type= "vocal/unfamiliar", db= NA, task= "reading comprehension", 
+                measure= "num_correct", mean_C= (24.33+23.53)/2, var_C= (3.37+2.87)/2, 
+                mean_E= (23.00+17.36)/2, var_E= (3.97+2.54)/2, var_type= "SD",
+                reference= "Furnham, A., & Strbac, L. (2002). Music is as distracting as noise: The differential distraction of background music and noise on the cognitive test performance of introverts and extraverts. Ergonomics, 45(3), 203-217. doi:10.1080/00140130210121932"
+)
+# data from Table 1
 
 
 
