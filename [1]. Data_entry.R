@@ -120,6 +120,73 @@ data<- Add_data(data, ID= 4, N_C=75, N_E=76, sample="adults", cit= "Tucker & Bus
 )
 # data from Table 1
 
+
+#----------------
+#--- Study 5 ---#
+#----------------
+
+data<- Add_data(data, ID= 5, N_C=24, N_E=24, sample="adults", cit= "Daoussis & McKelvie (1986)", year=1986, 
+                design="between", sound="music",
+                sound_type= "rock", db= 50, task= "reading comprehension", 
+                measure= "num_correct", mean_C= (8.08+10.20)/2, var_C= (3.40+3.70)/2, 
+                mean_E= (8.40+6.80)/2, var_E= (2.80+1.52)/2, var_type= "SD",
+                reference= "Daoussis, L., & McKelvie, S. J. (1986). Musical preferences and effects of music on a reading comprehension test for extraverts and introverts. Perceptual and Motor Skills, 62(1), 283-289. doi:10.2466/pms.1986.62.1.283"
+)
+# data from Table 3
+
+
+#----------------
+#--- Study 6 ---#
+#----------------
+
+data<- Add_data(data, ID= 6, N_C=32, sample="adults", cit= "Etaugh & Michals (1975)", year=1975, 
+                design="within", sound="music",
+                sound_type= "preferred", db= NA, task= "reading comprehension", 
+                measure= "num_correct", mean_C= (6.6+8.6)/2, var_C= NA, 
+                mean_E= (6.9+6.6)/2, var_E= NA, var_type= "SD",
+                reference= "Etaugh, C., & Michals, D. (1975). Effects on reading comprehension of preferred music and frequency of studying to music. Perceptual and Motor Skills, 41(2), 553-554. doi:10.2466/pms.1975.41.2.553"
+)
+# data from text
+
+
+#----------------
+#--- Study 7 ---#
+#----------------
+
+data<- Add_data(data, ID= 7, N_C=20, N_E=20, sample="adults", cit= "Etaugh & Ptasnik (1982)", year=1982, 
+                design="between", sound="music",
+                sound_type= "preferred", db= NA, task= "reading comprehension", 
+                measure= "num_correct", mean_C= 6.20, var_C= NA, 
+                mean_E= 4.80, var_E= NA, var_type= "SD",
+                reference= "Etaugh, C., & Ptasnik, P. (1982). Effects of studying to music and post-study relaxation on reading comprehension. Perceptual and Motor Skills, 55(1), 141-142. doi: 10.2466/pms.1982.55.1.141"
+)
+# data from text
+
+
+#----------------
+#--- Study 8 ---#
+#----------------
+
+data<- Add_data(data, ID= 8, N_C=18, N_E=18, sample="children", cit= "Kiger (1989)", year=1989, 
+                design="between", sound="music",
+                sound_type= "low information load", db= NA, task= "reading comprehension", 
+                measure= "num_correct", mean_C= 12.0, var_C= 0.4, 
+                mean_E= 13.4, var_E= 0.4, var_type= "SD",
+                reference= "Kiger, D. M. (1989). Effects of music information load on a reading comprehension task. Perceptual and Motor Skills, 69(2), 531-534. doi:10.2466/pms.1989.69.2.531"
+)
+# data from text
+
+data<- Add_data(data, ID= 8, N_C=18, N_E=18, sample="children", cit= "Kiger (1989)", year=1989, 
+                design="between", sound="music",
+                sound_type= "high information load", db= NA, task= "reading comprehension", 
+                measure= "num_correct", mean_C= 12.0, var_C= 0.4, 
+                mean_E= 11.6, var_E= 0.7, var_type= "SD",
+                reference= "Kiger, D. M. (1989). Effects of music information load on a reading comprehension task. Perceptual and Motor Skills, 69(2), 531-534. doi:10.2466/pms.1989.69.2.531"
+)
+# data from text
+
+
+
 #############
 # Save data #
 #############
