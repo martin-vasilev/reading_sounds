@@ -186,6 +186,57 @@ data<- Add_data(data, ID= 8, N_C=18, N_E=18, sample="children", cit= "Kiger (198
 # data from text
 
 
+#----------------
+#--- Study 9 ---#
+#----------------
+
+# classical music:
+data<- Add_data(data, ID= 9, N_C=49, N_E=49, sample="adults", cit= "Miller & Schyb (1989)", year=1989, 
+                design="between", sound="music",
+                sound_type= "classical", db= 47.5, task= "reading comprehension", 
+                measure= "num_correct", mean_C= (6.8+9.8)/2, var_C= (0.5+0.6)/2, 
+                mean_E= (8.8+8.8)/2, var_E= (0.6+0.8)/2, var_type= "SE",
+                reference= "Miller, L. K., & Schyb, M. (1989). Facilitation and interference by background music. Journal of Music Therapy, 26(1), 42-54. doi:10.1093/jmt/26.1.42"
+)
+# data from Table 4
+
+
+# pop music:
+data<- Add_data(data, ID= 9, N_C=49, N_E=49, sample="adults", cit= "Miller & Schyb (1989)", year=1989, 
+                design="between", sound="music",
+                sound_type= "pop", db= 47.5, task= "reading comprehension", 
+                measure= "num_correct", mean_C= (6.8+9.8)/2, var_C= (0.5+0.6)/2, 
+                mean_E= (9.9+8.5)/2, var_E= (0.7+0.4)/2, var_type= "SE",
+                reference= "Miller, L. K., & Schyb, M. (1989). Facilitation and interference by background music. Journal of Music Therapy, 26(1), 42-54. doi:10.1093/jmt/26.1.42"
+)
+# data from Table 4
+
+
+# vocal music:
+data<- Add_data(data, ID= 9, N_C=49, N_E=49, sample="adults", cit= "Miller & Schyb (1989)", year=1989, 
+                design="between", sound="music",
+                sound_type= "vocal", db= 47.5, task= "reading comprehension", 
+                measure= "num_correct", mean_C= (6.8+9.8)/2, var_C= (0.5+0.6)/2, 
+                mean_E= (7.2+6.0)/2, var_E= (0.4+0.6)/2, var_type= "SE",
+                reference= "Miller, L. K., & Schyb, M. (1989). Facilitation and interference by background music. Journal of Music Therapy, 26(1), 42-54. doi:10.1093/jmt/26.1.42"
+)
+# data from Table 4
+
+
+#-----------------
+#--- Study 10 ---#
+#-----------------
+
+data<- Add_data(data, ID= 10, N_C=56, sample="adults", cit= "Doyle & Furnham (2012)", year=2012, 
+                design="within", sound="music",
+                sound_type= "vocal", db= NA, task= "reading comprehension", 
+                measure= "num_correct", mean_C= (4.79+4.86)/2, var_C= (2.63+2.85)/2, 
+                mean_E= (6.29+4.18)/2, var_E= (2.76+2.93)/2, var_type= "SD",
+                reference= "Doyle, M., & Furnham, A. (2012). The distracting effects of music on the cognitive test performance of creative and non-creative individuals. Thinking Skills and Creativity, 7(1), 1-7. doi:10.1016/j.tsc.2011.09.002"
+)
+# data from text
+
+
 
 #############
 # Save data #
