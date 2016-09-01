@@ -1,21 +1,42 @@
-,ID,cit,year,design,sound,sound_type,db,task,measure,d,var_d,g,var_d
-1,1,Sörqvist et al. (2010),2010,within,speech,native,72.5,reading comprehension/ select word,num_correct,NA,NA,NA,NA
-2,1,Sörqvist et al. (2010),2010,within,speech,native,72.5,reading comprehension/ select word,reading_speed,NA,NA,NA,NA
-3,2,Ljung et al. (2009),2009,between,noise,traffic,62,select word,prop_correct,-0.161365997,0.03439421,-0.160338188,0.033957463
-4,2,Ljung et al. (2009),2009,between,noise,traffic,62,select word,reading_speed,-0.713360153,0.036406059,-0.708816458,0.035943764
-5,2,Ljung et al. (2009),2009,between,speech,babble,62,select word,prop_correct,0.174657916,0.029549382,0.173678526,0.029218916
-6,2,Ljung et al. (2009),2009,between,speech,babble,62,select word,reading_speed,-0.214031235,0.029605646,-0.21283106,0.029274551
-7,3,Fogelson (1973),1973,between,music,popular,NA,reading comprehension,num_correct,-0.431227686,0.146177809,-0.418667656,0.137786605
-8,4,Tucker & Bushman (1991),1991,between,music,rock and roll,80,reading comprehension,num_correct,-0.004330458,0.02649129,-0.004308624,0.026224825
-9,5,Daoussis & McKelvie (1986),1986,between,music,rock,50,reading comprehension,num_correct,-0.524099133,0.086194582,-0.515507344,0.083391695
-10,6,Etaugh & Michals (1975),1975,within,music,preferred,NA,reading comprehension,num_correct,NA,NA,NA,NA
-11,7,Etaugh & Ptasnik (1982),1982,between,music,preferred,NA,reading comprehension,num_correct,NA,NA,NA,NA
-12,8,Kiger (1989),1989,between,music,low information load,NA,reading comprehension,num_correct,3.5,0.28125,3.422222222,0.268888889
-13,8,Kiger (1989),1989,between,music,high information load,NA,reading comprehension,num_correct,-0.701646415,0.117948718,-0.686054273,0.112764799
-14,9,Miller & Schyb (1989),1989,between,music,classical,47.5,reading comprehension,num_correct,0.794301471,0.04403528,0.788079788,0.043348134
-15,9,Miller & Schyb (1989),1989,between,music,pop,47.5,reading comprehension,num_correct,1.636363636,0.05447799,1.623546167,0.053627891
-16,9,Miller & Schyb (1989),1989,between,music,vocal,47.5,reading comprehension,num_correct,-3.23443016,0.094191523,-3.209095198,0.092721717
-17,10,Doyle & Furnham (2012),2012,within,music,vocal,NA,reading comprehension,num_correct,NA,NA,NA,NA
-18,11,Anderson & Fuller (2010),2010,within,music,lyrical,75,reading comprehension,num_correct,NA,NA,NA,NA
-19,12,Furnham & Strbac (2002),2002,within,noise,office,NA,reading comprehension,num_correct,NA,NA,NA,NA
-20,12,Furnham & Strbac (2002),2002,within,music,vocal/unfamiliar,NA,reading comprehension,num_correct,NA,NA,NA,NA
+"","ID","cit","year","design","sound","sound_type","db","task","measure","d","var_d","g","var_d"
+"1",1,"Sörqvist et al. (2010)",2010,"within","speech","native",72.5,"reading comprehension/ select word","num_correct",NA,NA,NA,NA
+"2",1,"Sörqvist et al. (2010)",2010,"within","speech","native",72.5,"reading comprehension/ select word","reading_speed",NA,NA,NA,NA
+"3",2,"Ljung et al. (2009)",2009,"between","noise","traffic",62,"select word","prop_correct",-0.161365996792777,0.0343942100562181,-0.160338187896008,0.0339574626122003
+"4",2,"Ljung et al. (2009)",2009,"between","noise","traffic",62,"select word","reading_speed",-0.713360153476211,0.036406058904746,-0.70881645823114,0.0359437644328735
+"5",2,"Ljung et al. (2009)",2009,"between","speech","babble",62,"select word","prop_correct",0.174657916418041,0.0295493815981393,0.173678526232519,0.0292189158090027
+"6",2,"Ljung et al. (2009)",2009,"between","speech","babble",62,"select word","reading_speed",-0.214031235255069,0.0296056462374677,-0.212831060104106,0.0292745512122039
+"7",3,"Fogelson (1973)",1973,"between","music","popular",NA,"reading comprehension","num_correct",-0.431227685781637,0.146177809231868,-0.418667656098676,0.137786604988093
+"8",4,"Tucker & Bushman (1991)",1991,"between","music","rock and roll",80,"reading comprehension","num_correct",-0.00433045826442038,0.0264912901657674,-0.00430862402107036,0.0262248245650887
+"9",5,"Daoussis & McKelvie (1986)",1986,"between","music","rock",50,"reading comprehension","num_correct",-0.524099132883553,0.0861945823030135,-0.515507343819888,0.0833916947838883
+"10",6,"Etaugh & Michals (1975)",1975,"within","music","preferred",NA,"reading comprehension","num_correct",NA,NA,NA,NA
+"11",7,"Etaugh & Ptasnik (1982)",1982,"between","music","preferred",NA,"reading comprehension","num_correct",NA,NA,NA,NA
+"12",8,"Kiger (1989)",1989,"between","music","low information load",NA,"reading comprehension","num_correct",3.5,0.28125,3.42222222222222,0.268888888888889
+"13",8,"Kiger (1989)",1989,"between","music","high information load",NA,"reading comprehension","num_correct",-0.701646415445624,0.117948717948718,-0.686054272880166,0.112764798987021
+"14",9,"Miller & Schyb (1989)",1989,"between","music","classical",47.5,"reading comprehension","num_correct",0.11347163868422,0.0408820194529882,0.112582826892959,0.0402440783495115
+"15",9,"Miller & Schyb (1989)",1989,"between","music","pop",47.5,"reading comprehension","num_correct",0.233766233766233,0.0410951359798431,0.231935166661015,0.040453869311873
+"16",9,"Miller & Schyb (1989)",1989,"between","music","vocal",47.5,"reading comprehension","num_correct",-0.462061451464366,0.0419056162496396,-0.458442171165689,0.0412517024892661
+"17",10,"Doyle & Furnham (2012)",2012,"within","music","vocal",NA,"reading comprehension","num_correct",NA,NA,NA,NA
+"18",11,"Anderson & Fuller (2010)",2010,"within","music","lyrical",75,"reading comprehension","num_correct",NA,NA,NA,NA
+"19",12,"Furnham & Strbac (2002)",2002,"within","noise","office",NA,"reading comprehension","num_correct",NA,NA,NA,NA
+"20",12,"Furnham & Strbac (2002)",2002,"within","music","vocal/unfamiliar",NA,"reading comprehension","num_correct",NA,NA,NA,NA
+"21",13,"Mullikin & Henk (1985)",1985,"within","music","classical",NA,"reading comprehension","num_correct",NA,NA,NA,NA
+"22",13,"Mullikin & Henk (1985)",1985,"within","music","rock",NA,"reading comprehension","num_correct",NA,NA,NA,NA
+"23",14,"Avila et al. (2011)",2011,"between","music","vocal",NA,"reading comprehension","num_correct",-1.63933478429031,0.137085662729216,-1.60587897236601,0.131547424793051
+"24",14,"Avila et al. (2011)",2011,"between","music","instrumental",NA,"reading comprehension","num_correct",-1.96992731572722,0.15632386354274,-1.92860016924344,0.149833621469887
+"25",15,"Freeburne & Fleischer (1952)",1952,"between","music","classical",NA,"reading comprehension","num_correct",0.0223745470276917,0.0449977568621738,0.0221811071398443,0.0442230610339941
+"26",15,"Freeburne & Fleischer (1952)",1952,"between","music","classical",NA,"reading comprehension","reading speed",0.348184029903102,0.0456760237066955,0.345173793333334,0.0448896506187703
+"27",15,"Freeburne & Fleischer (1952)",1952,"between","music","pop",NA,"reading comprehension","num_correct",0.0360149633433844,0.047072967631157,0.0356885437360426,0.0462235480657387
+"28",15,"Freeburne & Fleischer (1952)",1952,"between","music","pop",NA,"reading comprehension","reading speed",0.405185186211589,0.0480310732637494,0.401512812922662,0.047164364929192
+"29",15,"Freeburne & Fleischer (1952)",1952,"between","music","semi-classical",NA,"reading comprehension","num_correct",-0.0825250593296809,0.0488510505498736,-0.0817489615930381,0.0479365425232474
+"30",15,"Freeburne & Fleischer (1952)",1952,"between","music","semi-classical",NA,"reading comprehension","reading speed",0.356519028072684,0.0495845592813402,0.35316618454849,0.0486563197256071
+"31",15,"Freeburne & Fleischer (1952)",1952,"between","music","jazz",NA,"reading comprehension","num_correct",-0.171776957843839,0.0510233060469691,-0.170098355649925,0.0500309801869165
+"32",15,"Freeburne & Fleischer (1952)",1952,"between","music","jazz",NA,"reading comprehension","reading speed",0.611673023103493,0.0532045501225797,0.605695762291407,0.0521698023759226
+"33",16,"Fendrick (1937)",1937,"between","music","semi-classical",NA,"reading comprehension","num_correct",-0.472135542422741,0.03342862110223,-0.469203023525706,0.033014648362991
+"34",17,"Henderson et al. (1945)",1945,"between","music","classical",NA,"reading comprehension","num_correct",NA,NA,NA,NA
+"35",17,"Henderson et al. (1945)",1945,"between","music","pop",NA,"reading comprehension","num_correct",NA,NA,NA,NA
+"36",18,"Miller (2014)",2014,"between","music","classical lyrical",NA,"reading comprehension","num_correct",-0.86503502402355,0.168236261399758,-0.83771812852807,0.157778583544327
+"37",18,"Miller (2014)",2014,"between","music","classical non-lyrical",NA,"reading comprehension","num_correct",0.129676551497444,0.136026873134979,0.126171779835351,0.128773431397322
+"38",18,"Miller (2014)",2014,"between","music","rock lyrical",NA,"reading comprehension","num_correct",-0.395777116002851,0.171095491281158,-0.382129629244132,0.159499245142007
+"39",18,"Miller (2014)",2014,"between","music","rock non-lyrical",NA,"reading comprehension","num_correct",-0.463824134664968,0.135948516799563,-0.451724374630229,0.128948067654724
+"40",19,"Furnham & Allass (1999)",1999,"between","music","complex",NA,"reading comprehension","num_correct",-0.0250218112798451,0.125009782672496,-0.024391009314807,0.118786218179585
+"41",19,"Furnham & Allass (1999)",1999,"between","music","simple",NA,"reading comprehension","num_correct",-0.0521287734996768,0.12504245951604,-0.0508146027391808,0.1188172682189

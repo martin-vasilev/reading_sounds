@@ -3,8 +3,13 @@ get_es<- function(data){
   
   # FUNCTIONS:
   #######################################################################################
-  CohensD<- function(m1, m2, s1, s2, n1, n2=NA, type= "between"){ # Calculates Cohen's d
+  CohensD<- function(m1, m2, s1, s2, n1, n2=NA, type= "between", var="SD"){ # Calculates Cohen's d
     md<- m2-m1
+    
+    if(var=="SE"){
+      s1<- s1*sqrt(n1)
+      s2<- s2*sqrt(n2)
+    }
 
     if(type=="between"){
       SDpooled <- sqrt(((n1-1)*(s1^2) + (n2-1)*(s2^2))/ (n1+n2-2))
@@ -43,7 +48,7 @@ get_es<- function(data){
   for(i in 1:nrow(data)){
     if(data$design[i]=="between"){
       d[i]<- CohensD(m1= data$mean_C[i], m2= data$mean_E[i], s1= data$var_C[i], s2= data$var_E[i],
-                     n1=data$N_C[i], n2= data$N_E[i])
+                     n1=data$N_C[i], n2= data$N_E[i], var= data$var_type[i])
       var_d[i]<- varCohensD(d[i], data$N_C[i], data$N_E[i])
       g[i]<- HedgesG(d[i], data$N_C[i], data$N_E[i])
       var_g[i]<- varHedgesG(var_d[i], data$N_C[i], data$N_E[i])

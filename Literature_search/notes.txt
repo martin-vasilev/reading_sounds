@@ -1,0 +1,2 @@
+- Participants were classified as adults only if they were >= 18 years
+- Miller (1947) has reported correlations between the condition means

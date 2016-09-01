@@ -277,6 +277,251 @@ data<- Add_data(data, ID= 12, N_C=76, sample="children", cit= "Furnham & Strbac 
 # data from Table 1
 
 
+#-----------------
+#--- Study 13 ---#
+#-----------------
+
+# classical music:
+data<- Add_data(data, ID= 13, N_C=45, sample="children", cit= "Mullikin & Henk (1985)", year=1985, 
+                design="within", sound="music",
+                sound_type= "classical", db= NA, task= "reading comprehension", 
+                measure= "num_correct", mean_C= (8.63+8.13+7.63+8.50+9.25)/5,
+                var_C= (1.408+ 1.356+1.768+1.604+0.886)/5, 
+                mean_E= (9.50+8.75+8.38+9.50+9.75)/5, var_E= (0.535+0.707+1.685+0.926+0.462)/5, var_type= "SD",
+                reference= "Mullikin, C. N., & Henk, W. A. (1985). Using music as a background for reading: An exploratory study. Journal of Reading, 353-358."
+)
+# data from Table on p.356 (top)
+
+# rock music:
+data<- Add_data(data, ID= 13, N_C=45, sample="children", cit= "Mullikin & Henk (1985)", year=1985, 
+                design="within", sound="music",
+                sound_type= "rock", db= NA, task= "reading comprehension", 
+                measure= "num_correct", mean_C= (8.63+8.13+7.63+8.50+9.25)/5,
+                var_C= (1.408+ 1.356+1.768+1.604+0.886)/5, 
+                mean_E= (7.13+7.50+7.13+7.63+8.75)/5, var_E= (2.167+2.204+2.295+1.598+0.886)/5, var_type= "SD",
+                reference= "Mullikin, C. N., & Henk, W. A. (1985). Using music as a background for reading: An exploratory study. Journal of Reading, 353-358."
+)
+# data from Table on p.356 (top)
+
+#-----------------
+#--- Study 14 ---#
+#-----------------
+
+# vocal music:
+data<- Add_data(data, ID= 14, N_C=19, N_E=20, sample="children", cit= "Avila et al. (2011)", year=2011, 
+                design="between", sound="music",
+                sound_type= "vocal", db= NA, task= "reading comprehension", 
+                measure= "num_correct", mean_C= 13.42, var_C= 0.50, 
+                mean_E= 9.15, var_E= 0.66, var_type= "SE",
+                reference= "Avila, C., Furnham, A., & McClelland, A. (2011). The influence of distracting familiar vocal music on cognitive performance of introverts and extraverts. Psychology of Music, 40(1), 84-93. doi:10.1177/0305735611422672"
+)
+# data from Table 2
+
+# instrumental music:
+data<- Add_data(data, ID= 14, N_C=19, N_E=19, sample="children", cit= "Avila et al. (2011)", year=2011, 
+                design="between", sound="music",
+                sound_type= "instrumental", db= NA, task= "reading comprehension", 
+                measure= "num_correct", mean_C= 13.42, var_C= 0.50, 
+                mean_E= 6.74, var_E= 0.98, var_type= "SE",
+                reference= "Avila, C., Furnham, A., & McClelland, A. (2011). The influence of distracting familiar vocal music on cognitive performance of introverts and extraverts. Psychology of Music, 40(1), 84-93. doi:10.1177/0305735611422672"
+)
+# data from Table 2
+
+
+#-----------------
+#--- Study 15 ---#
+#-----------------
+
+# classical music, comprehension:
+data<- Add_data(data, ID= 15, N_C=43, N_E=46, sample="adults", cit= "Freeburne & Fleischer (1952)", year=1952, 
+                design="between", sound="music",
+                sound_type= "classical", db= NA, task= "reading comprehension", 
+                measure= "num_correct", mean_C= 13.40, var_C= 5.81, 
+                mean_E= 13.57, var_E= 8.95, var_type= "SD",
+                reference= "Freeburne, C. M., & Fleischer, M. S. (1952). The effect of music distraction upon reading rate and comprehension. Journal of Educational Psychology, 43(2), 101-109. doi:10.1037/h0054219"
+)
+# data from Table 1
+
+# classical music, reading speed:
+data<- Add_data(data, ID= 15, N_C=43, N_E=46, sample="adults", cit= "Freeburne & Fleischer (1952)", year=1952, 
+                design="between", sound="music",
+                sound_type= "classical", db= NA, task= "reading comprehension", 
+                measure= "reading speed", mean_C= 648.23, var_C= 112.11, 
+                mean_E= 696.54, var_E= 159.65, var_type= "SD",
+                reference= "Freeburne, C. M., & Fleischer, M. S. (1952). The effect of music distraction upon reading rate and comprehension. Journal of Educational Psychology, 43(2), 101-109. doi:10.1037/h0054219"
+)
+# data from Table 1
+
+
+# pop music, comprehension:
+data<- Add_data(data, ID= 15, N_C=43, N_E=42, sample="adults", cit= "Freeburne & Fleischer (1952)", year=1952, 
+                design="between", sound="music",
+                sound_type= "pop", db= NA, task= "reading comprehension", 
+                measure= "num_correct", mean_C= 13.40, var_C= 5.81, 
+                mean_E= 13.62, var_E= 6.40, var_type= "SD",
+                reference= "Freeburne, C. M., & Fleischer, M. S. (1952). The effect of music distraction upon reading rate and comprehension. Journal of Educational Psychology, 43(2), 101-109. doi:10.1037/h0054219"
+)
+# data from Table 1
+
+# pop music, reading speed:
+data<- Add_data(data, ID= 15, N_C=43, N_E=42, sample="adults", cit= "Freeburne & Fleischer (1952)", year=1952, 
+                design="between", sound="music",
+                sound_type= "pop", db= NA, task= "reading comprehension", 
+                measure= "reading speed", mean_C= 648.23, var_C= 112.11, 
+                mean_E= 704.05, var_E= 159.83, var_type= "SD",
+                reference= "Freeburne, C. M., & Fleischer, M. S. (1952). The effect of music distraction upon reading rate and comprehension. Journal of Educational Psychology, 43(2), 101-109. doi:10.1037/h0054219"
+)
+# data from Table 1
+
+# semi-classical music, comprehension:
+data<- Add_data(data, ID= 15, N_C=40, N_E=42, sample="adults", cit= "Freeburne & Fleischer (1952)", year=1952, 
+                design="between", sound="music",
+                sound_type= "semi-classical", db= NA, task= "reading comprehension", 
+                measure= "num_correct", mean_C= 13.40, var_C= 5.81, 
+                mean_E= 12.95, var_E= 5.09, var_type= "SD",
+                reference= "Freeburne, C. M., & Fleischer, M. S. (1952). The effect of music distraction upon reading rate and comprehension. Journal of Educational Psychology, 43(2), 101-109. doi:10.1037/h0054219"
+)
+# data from Table 1
+
+# semi-classical music, reading speed:
+data<- Add_data(data, ID= 15, N_C=40, N_E=42, sample="adults", cit= "Freeburne & Fleischer (1952)", year=1952, 
+                design="between", sound="music",
+                sound_type= "semi-classical", db= NA, task= "reading comprehension", 
+                measure= "reading speed", mean_C= 648.23, var_C= 112.11, 
+                mean_E= 695.25, var_E= 148.27, var_type= "SD",
+                reference= "Freeburne, C. M., & Fleischer, M. S. (1952). The effect of music distraction upon reading rate and comprehension. Journal of Educational Psychology, 43(2), 101-109. doi:10.1037/h0054219"
+)
+# data from Table 1
+
+
+# jazz music, comprehension:
+data<- Add_data(data, ID= 15, N_C=37, N_E=42, sample="adults", cit= "Freeburne & Fleischer (1952)", year=1952, 
+                design="between", sound="music",
+                sound_type= "jazz", db= NA, task= "reading comprehension", 
+                measure= "num_correct", mean_C= 13.40, var_C= 5.81, 
+                mean_E= 12.22, var_E= 7.68, var_type= "SD",
+                reference= "Freeburne, C. M., & Fleischer, M. S. (1952). The effect of music distraction upon reading rate and comprehension. Journal of Educational Psychology, 43(2), 101-109. doi:10.1037/h0054219"
+)
+# data from Table 1
+
+# jazz music, reading speed:
+data<- Add_data(data, ID= 15, N_C=37, N_E=42, sample="adults", cit= "Freeburne & Fleischer (1952)", year=1952, 
+                design="between", sound="music",
+                sound_type= "jazz", db= NA, task= "reading comprehension", 
+                measure= "reading speed", mean_C= 648.23, var_C= 112.11, 
+                mean_E= 716.59, var_E= 111.45, var_type= "SD",
+                reference= "Freeburne, C. M., & Fleischer, M. S. (1952). The effect of music distraction upon reading rate and comprehension. Journal of Educational Psychology, 43(2), 101-109. doi:10.1037/h0054219"
+)
+# data from Table 1
+
+
+#-----------------
+#--- Study 16 ---#
+#-----------------
+
+data<- Add_data(data, ID= 16, N_C=61, N_E=62, sample="adults", cit= "Fendrick (1937)", year=1937, 
+                design="between", sound="music",
+                sound_type= "semi-classical", db= NA, task= "reading comprehension", 
+                measure= "num_correct", mean_C= 33.69, var_C= 1.11, 
+                mean_E= 29.58, var_E= 1.11, var_type= "SE",
+                reference= "Fendrick, P. (1937). The influence of music distraction upon reading efficiency. The Journal of Educational Research, 31(4), 264-271. doi:10.1080/00220671.1937.10880749"
+)
+# data from Table 2
+
+
+#-----------------
+#--- Study 17 ---#
+#-----------------
+
+# classical music:
+data<- Add_data(data, ID= 17, N_C=19, N_E=17, sample="adults", cit= "Henderson et al. (1945)", year=1945, 
+                design="between", sound="music",
+                sound_type= "classical", db= NA, task= "reading comprehension", 
+                measure= "num_correct", mean_C= 49.2, var_C= NA, 
+                mean_E= 46.1, var_E= NA, var_type= "SD",
+                reference= "Henderson, M. T., Crews, A., & Barlow, J. (1945). A study of the effect of music distraction on reading efficiency. Journal of Applied Psychology, 29(4), 313-317. doi:10.1037/h0056128"
+)
+# data from Table 1
+
+# pop music:
+data<- Add_data(data, ID= 17, N_C=19, N_E=14, sample="adults", cit= "Henderson et al. (1945)", year=1945, 
+                design="between", sound="music",
+                sound_type= "pop", db= NA, task= "reading comprehension", 
+                measure= "num_correct", mean_C= 49.2, var_C= NA, 
+                mean_E= 22.9, var_E= NA, var_type= "SD",
+                reference= "Henderson, M. T., Crews, A., & Barlow, J. (1945). A study of the effect of music distraction on reading efficiency. Journal of Applied Psychology, 29(4), 313-317. doi:10.1037/h0056128"
+)
+# data from Table 1
+
+
+#-----------------
+#--- Study 18 ---#
+#-----------------
+
+# classical lyrical music:
+data<- Add_data(data, ID= 18, N_C=13, N_E=13, sample="adults", cit= "Miller (2014)", year=2014, 
+                design="between", sound="music",
+                sound_type= "classical lyrical", db= NA, task= "reading comprehension", 
+                measure= "num_correct", mean_C= 15.077, var_C= 2.139, 
+                mean_E= 13.154, var_E= 2.304, var_type= "SD",
+                reference= "Miller, C. (2014). The differentiated effects of lyrical and non-lyrical music on reading comprehension. Master's thesis dissertation. Retrieved from http://rdw.rowan.edu/cgi/viewcontent.cgi?article=1351&context=etd"
+)
+# data from Table 1
+
+# classical non-lyrical music:
+data<- Add_data(data, ID= 18, N_C=13, N_E=17, sample="adults", cit= "Miller (2014)", year=2014, 
+                design="between", sound="music",
+                sound_type= "classical non-lyrical", db= NA, task= "reading comprehension", 
+                measure= "num_correct", mean_C= 15.077, var_C= 2.139, 
+                mean_E= 15.294, var_E= 1.212, var_type= "SD",
+                reference= "Miller, C. (2014). The differentiated effects of lyrical and non-lyrical music on reading comprehension. Master's thesis dissertation. Retrieved from http://rdw.rowan.edu/cgi/viewcontent.cgi?article=1351&context=etd"
+)
+# data from Table 1
+
+# rock lyrical music:
+data<- Add_data(data, ID= 18, N_C=13, N_E=11, sample="adults", cit= "Miller (2014)", year=2014, 
+                design="between", sound="music",
+                sound_type= "rock lyrical", db= NA, task= "reading comprehension", 
+                measure= "num_correct", mean_C= 15.077, var_C= 2.139, 
+                mean_E= 14.182, var_E= 2.400, var_type= "SD",
+                reference= "Miller, C. (2014). The differentiated effects of lyrical and non-lyrical music on reading comprehension. Master's thesis dissertation. Retrieved from http://rdw.rowan.edu/cgi/viewcontent.cgi?article=1351&context=etd"
+)
+# data from Table 1
+
+# rock non-lyrical music:
+data<- Add_data(data, ID= 18, N_C=13, N_E=18, sample="adults", cit= "Miller (2014)", year=2014, 
+                design="between", sound="music",
+                sound_type= "rock non-lyrical", db= NA, task= "reading comprehension", 
+                measure= "num_correct", mean_C= 15.077, var_C= 2.139, 
+                mean_E= 14.111, var_E= 2.042, var_type= "SD",
+                reference= "Miller, C. (2014). The differentiated effects of lyrical and non-lyrical music on reading comprehension. Master's thesis dissertation. Retrieved from http://rdw.rowan.edu/cgi/viewcontent.cgi?article=1351&context=etd"
+)
+# data from Table 1
+
+
+#-----------------
+#--- Study 19 ---#
+#-----------------
+
+# complex music:
+data<- Add_data(data, ID= 19, N_C=16, N_E=16, sample="adults", cit= "Furnham & Allass (1999)", year=1999, 
+                design="between", sound="music",
+                sound_type= "complex", db= NA, task= "reading comprehension", 
+                measure= "num_correct", mean_C= (8.00+8.00)/2, var_C= (2.83+2.88)/2, 
+                mean_E= (6.88+9.00)/2, var_E= (0.99+2.67)/2, var_type= "SD",
+                reference= "Furnham, A., & Allass, K. (1999). The influence of musical distraction of varying complexity on the cognitive performance of extroverts and introverts. European Journal of Personality, 13(1), 27-38. doi:10.1002/(SICI)1099-0984(199901/02)13:1<27::AID-PER318>3.0.CO;2-R"
+)
+# data from Table 1
+
+# simple music:
+data<- Add_data(data, ID= 19, N_C=16, N_E=16, sample="adults", cit= "Furnham & Allass (1999)", year=1999, 
+                design="between", sound="music",
+                sound_type= "simple", db= NA, task= "reading comprehension", 
+                measure= "num_correct", mean_C= (8.00+8.00)/2, var_C= (2.83+2.88)/2, 
+                mean_E= (7.50+8.25)/2, var_E= (1.41+2.25)/2, var_type= "SD",
+                reference= "Furnham, A., & Allass, K. (1999). The influence of musical distraction of varying complexity on the cognitive performance of extroverts and introverts. European Journal of Personality, 13(1), 27-38. doi:10.1002/(SICI)1099-0984(199901/02)13:1<27::AID-PER318>3.0.CO;2-R"
+)
+# data from Table 1
 
 #############
 # Save data #
