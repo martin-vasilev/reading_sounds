@@ -523,6 +523,45 @@ data<- Add_data(data, ID= 19, N_C=16, N_E=16, sample="adults", cit= "Furnham & A
 )
 # data from Table 1
 
+#-----------------
+#--- Study 20 ---#
+#-----------------
+
+# pop music:
+data<- Add_data(data, ID= 20, N_C=10, N_E=10, sample="adults", cit= "Furnham & Bradley (1997)", year=1997, 
+                design="between", sound="music",
+                sound_type= "pop", db= NA, task= "reading comprehension", 
+                measure= "num_correct", mean_C= (9.0+9.6)/2, var_C= (2.00+1.67)/2, 
+                mean_E= (6.2+9.2)/2, var_E= (1.48+1.10)/2, var_type= "SD",
+                reference= "Furnham, A., & Bradley, A. (1997). Music while you work: The differential distraction of background music on the cognitive test performance of introverts and extraverts. Applied Cognitive Psychology, 11(5), 445-455. doi:10.1002/(SICI)1099-0720(199710)11:5<445::AID-ACP472>3.0.CO;2-R"
+)
+# data from Table 1
+
+
+#-----------------
+#--- Study 21 ---#
+#-----------------
+
+# instrumental music:
+data<- Add_data(data, ID= 21, N_C=25+18, N_E=23+26, sample="children", cit= "Furnham at al. (1999)", year=1999, 
+                design="between", sound="music",
+                sound_type= "instrumental", db= NA, task= "reading comprehension", 
+                measure= "num_correct", mean_C= (8+7.56)/2, var_C= (1.91+1.89)/2, 
+                mean_E= (7.48+7.62)/2, var_E= (1.62+1.96)/2, var_type= "SD",
+                reference= "Furnham, A., Trew, S., & Sneade, I. (1999). The distracting effects of vocal and instrumental music on the cognitive test performance of introverts and extraverts. Personality and Individual Differences, 27(2), 381-392. doi:10.1016/S0191-8869(98)00249-9"
+)
+# data from Table 1
+
+# vocal music:
+data<- Add_data(data, ID= 21, N_C=25+18, N_E=19+28, sample="children", cit= "Furnham at al. (1999)", year=1999, 
+                design="between", sound="music",
+                sound_type= "vocal", db= NA, task= "reading comprehension", 
+                measure= "num_correct", mean_C= (8+7.56)/2, var_C= (1.91+1.89)/2, 
+                mean_E= (8.53+6.75)/2, var_E= (2.09+2.35)/2, var_type= "SD",
+                reference= "Furnham, A., Trew, S., & Sneade, I. (1999). The distracting effects of vocal and instrumental music on the cognitive test performance of introverts and extraverts. Personality and Individual Differences, 27(2), 381-392. doi:10.1016/S0191-8869(98)00249-9"
+)
+# data from Table 1
+
 #############
 # Save data #
 #############
