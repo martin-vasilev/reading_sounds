@@ -43,3 +43,6 @@
 "42",20,"Furnham & Bradley (1997)",1997,"between","music","pop",NA,"reading comprehension","num_correct",-1.00877380120313,0.225440614549845,-0.96614955608187,0.206791787676748
 "43",21,"Furnham at al. (1999)",1999,"between","music","instrumental",NA,"reading comprehension","num_correct",-0.124854048553515,0.0437486975092304,-0.12381069995836,0.0430205765592277
 "44",21,"Furnham at al. (1999)",1999,"between","music","vocal",NA,"reading comprehension","num_correct",-0.0675205619048964,0.0445577376219467,-0.0669434630851965,0.0437993218964801
+"45",22,"Perham & Currie (2014)",2014,"within","music","disliked lyrical",70,"reading comprehension","num_correct",NA,NA,NA,NA
+"46",22,"Perham & Currie (2014)",2014,"within","music","non-lyrical",70,"reading comprehension","num_correct",NA,NA,NA,NA
+"47",22,"Perham & Currie (2014)",2014,"within","music","liked lyrical",70,"reading comprehension","num_correct",NA,NA,NA,NA

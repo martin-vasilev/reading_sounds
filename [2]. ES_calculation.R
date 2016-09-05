@@ -23,3 +23,10 @@ colnames(es)<- c("ID", "cit", "year", "design", "sound", "sound_type", "db",
 # Save data: 
 save(es, file= "Data/es.Rda")
 write.csv(es, file= "Data/es.csv")
+
+
+#source("https://bioconductor.org/biocLite.R")
+#biocLite("EBImage")
+#library(metagear)
+
+

@@ -562,6 +562,52 @@ data<- Add_data(data, ID= 21, N_C=25+18, N_E=19+28, sample="children", cit= "Fur
 )
 # data from Table 1
 
+
+#-----------------
+#--- Study 22 ---#
+#-----------------
+
+perham<- structure(list(cond = structure(c(1L, 3L, 2L, 4L), .Label = c("disliked_lyrics", 
+         "liked_lyrics", "no_lyrics", "silence"), class = "factor"), mean = c(0.370243669922366,
+         0.547488933122073, 0.365915340038927, 0.607869289468922), CI_L = c(0.333476036843987, 
+         0.498959735542443, 0.311497636565053, 0.562275076464072), CI_R = c(0.408475705830689, 
+         0.597488712446541, 0.417382611650785, 0.651983652356594)), .Names = c("cond", 
+         "mean", "CI_L", "CI_R"), row.names = c(NA, -4L), class = "data.frame")
+# error bars show the standard error
+
+# disliked lyrical music:
+data<- Add_data(data, ID= 22, N_C=30, sample="adults", cit= "Perham & Currie (2014)", year=2014, 
+                design="within", sound="music",
+                sound_type= "disliked lyrical", db= 70, task= "reading comprehension", 
+                measure= "num_correct", mean_C= perham$mean[4], var_C= perham$mean[4]- perham$CI_L[4], 
+                mean_E= perham$mean[1], var_E=perham$mean[1]- perham$CI_L[1], var_type= "SE",
+                reference= "Perham, N., & Currie, H. (2014). Does listening to preferred music improve reading comprehension performance?. Applied Cognitive Psychology, 28(2), 279-284. doi:10.1002/acp.2994"
+)
+# data extracted with: https://github.com/ankitrohatgi/digitizeR?
+
+
+# non-lyrical music:
+data<- Add_data(data, ID= 22, N_C=30, sample="adults", cit= "Perham & Currie (2014)", year=2014, 
+                design="within", sound="music",
+                sound_type= "non-lyrical", db= 70, task= "reading comprehension", 
+                measure= "num_correct", mean_C= perham$mean[4], var_C= perham$mean[4]- perham$CI_L[4], 
+                mean_E= perham$mean[2], var_E=perham$mean[2]- perham$CI_L[2], var_type= "SE",
+                reference= "Perham, N., & Currie, H. (2014). Does listening to preferred music improve reading comprehension performance?. Applied Cognitive Psychology, 28(2), 279-284. doi:10.1002/acp.2994"
+)
+# data extracted with: https://github.com/ankitrohatgi/digitizeR?
+
+
+# liked lyrical music:
+data<- Add_data(data, ID= 22, N_C=30, sample="adults", cit= "Perham & Currie (2014)", year=2014, 
+                design="within", sound="music",
+                sound_type= "liked lyrical", db= 70, task= "reading comprehension", 
+                measure= "num_correct", mean_C= perham$mean[4], var_C= perham$mean[4]- perham$CI_L[4], 
+                mean_E= perham$mean[3], var_E=perham$mean[3]- perham$CI_L[3], var_type= "SE",
+                reference= "Perham, N., & Currie, H. (2014). Does listening to preferred music improve reading comprehension performance?. Applied Cognitive Psychology, 28(2), 279-284. doi:10.1002/acp.2994"
+)
+# data extracted with: https://github.com/ankitrohatgi/digitizeR?
+
+
 #############
 # Save data #
 #############
