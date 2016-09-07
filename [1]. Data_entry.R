@@ -608,6 +608,200 @@ data<- Add_data(data, ID= 22, N_C=30, sample="adults", cit= "Perham & Currie (20
 # data extracted with: https://github.com/ankitrohatgi/digitizeR?
 
 
+#-----------------
+#--- Study 23 ---#
+#-----------------
+
+# pop music:
+data<- Add_data(data, ID= 23, N_C=13, N_E=12, sample="adults", cit= "Kelly (1994)", year=1994, 
+                design="between", sound="music",
+                sound_type= "pop", db= 65, task= "reading comprehension", 
+                measure= "num_correct", mean_C= 54.92, var_C= 8.47, 
+                mean_E= 48.17, var_E= 9.08, var_type= "SD",
+                reference= "Kelly, S. N. (1994). A comparison of the effects of background music on the reading comprehension of university undergraduate music majors and nonmusic majors. Southeastern Journal of Music Education, 86."
+)
+# data from Table 3
+
+
+#-----------------
+#--- Study 24 ---#
+#-----------------
+
+dove<- read.csv("Literature_search/study_data/Dove (2009).txt", sep="") # raw data extracted from appendix G
+
+# sedative classical music, reading comprehension:
+data<- Add_data(data, ID= 24, N_C=nrow(subset(dove, Read_cond==0)), N_E=nrow(subset(dove, Read_cond==1)),
+                sample="adults", cit= "Dove (2009)", year=2009, 
+                design= "between", sound="music",
+                sound_type= "sedative classical", db= 62.5, task= "reading comprehension", 
+                measure= "num_correct", mean_C= mean(dove$Read_comp[dove$Read_cond==0]),
+                var_C= sd(dove$Read_comp[dove$Read_cond==0]), 
+                mean_E= mean(dove$Read_comp[dove$Read_cond==1]), var_E= sd(dove$Read_comp[dove$Read_cond==1]),
+                var_type= "SD",
+                reference= "Dove, M. K. (2009).The relationship of rhythmic and melodic perception with background music distraction in college level students (Order No. 3358711). Available from ProQuest Dissertations and Theses A&I: The Humanities and Social Sciences Collection. (304917640). Retrieved from https://kuscholarworks.ku.edu/bitstream/handle/1808/5339/Dove_ku_0099D_10312_DATA_1.pdf;sequence=1"
+)
+
+# stimulative classical music, reading comprehension:
+data<- Add_data(data, ID= 24, N_C=nrow(subset(dove, Read_cond==0)), N_E=nrow(subset(dove, Read_cond==2)),
+                sample="adults", cit= "Dove (2009)", year=2009, 
+                design= "between", sound="music",
+                sound_type= "stimulative classical", db= 62.5, task= "reading comprehension", 
+                measure= "num_correct", mean_C= mean(dove$Read_comp[dove$Read_cond==0]),
+                var_C= sd(dove$Read_comp[dove$Read_cond==0]), 
+                mean_E= mean(dove$Read_comp[dove$Read_cond==2]), var_E= sd(dove$Read_comp[dove$Read_cond==2]),
+                var_type= "SD",
+                reference= "Dove, M. K. (2009).The relationship of rhythmic and melodic perception with background music distraction in college level students (Order No. 3358711). Available from ProQuest Dissertations and Theses A&I: The Humanities and Social Sciences Collection. (304917640). Retrieved from https://kuscholarworks.ku.edu/bitstream/handle/1808/5339/Dove_ku_0099D_10312_DATA_1.pdf;sequence=1"
+)
+
+# sedative classical music, reading speed:
+data<- Add_data(data, ID= 24, N_C=nrow(subset(dove, Read_cond==0)), N_E=nrow(subset(dove, Read_cond==1)),
+                sample="adults", cit= "Dove (2009)", year=2009, 
+                design= "between", sound="music",
+                sound_type= "sedative classical", db= 62.5, task= "reading comprehension", 
+                measure= "reading_speed", mean_C= mean(dove$Read_rate[dove$Read_cond==0]),
+                var_C= sd(dove$Read_rate[dove$Read_cond==0]), 
+                mean_E= mean(dove$Read_rate[dove$Read_cond==1]), var_E= sd(dove$Read_rate[dove$Read_cond==1]),
+                var_type= "SD",
+                reference= "Dove, M. K. (2009).The relationship of rhythmic and melodic perception with background music distraction in college level students (Order No. 3358711). Available from ProQuest Dissertations and Theses A&I: The Humanities and Social Sciences Collection. (304917640). Retrieved from https://kuscholarworks.ku.edu/bitstream/handle/1808/5339/Dove_ku_0099D_10312_DATA_1.pdf;sequence=1"
+)
+
+# stimulative classical music, reading speed:
+data<- Add_data(data, ID= 24, N_C=nrow(subset(dove, Read_cond==0)), N_E=nrow(subset(dove, Read_cond==2)),
+                sample="adults", cit= "Dove (2009)", year=2009, 
+                design= "between", sound="music",
+                sound_type= "stimulative classical", db= 62.5, task= "reading comprehension", 
+                measure= "reading_speed", mean_C= mean(dove$Read_rate[dove$Read_cond==0]),
+                var_C= sd(dove$Read_rate[dove$Read_cond==0]), 
+                mean_E= mean(dove$Read_rate[dove$Read_cond==2]), var_E= sd(dove$Read_rate[dove$Read_cond==2]),
+                var_type= "SD",
+                reference= "Dove, M. K. (2009).The relationship of rhythmic and melodic perception with background music distraction in college level students (Order No. 3358711). Available from ProQuest Dissertations and Theses A&I: The Humanities and Social Sciences Collection. (304917640). Retrieved from https://kuscholarworks.ku.edu/bitstream/handle/1808/5339/Dove_ku_0099D_10312_DATA_1.pdf;sequence=1"
+)
+
+
+#-----------------
+#--- Study 25 ---#
+#-----------------
+
+data<- Add_data(data, ID= 25, N_C=20, sample="adults", cit= "Furnham et al. (1994)", year=1994, 
+                design="within", sound="speech",
+                sound_type= "TV drama", db= NA, task= "reading comprehension", 
+                measure= "num_correct", mean_C= (9.10+8.20)/2, var_C= (1.45+2.78)/2, 
+                mean_E= (6.60+7.80)/2, var_E= (1.90+2.74)/2, var_type= "SD",
+                reference= "Furnham, A., Gunter, B., & Peterson, E. (1994). Television distraction and the performance of introverts and extroverts. Applied Cognitive Psychology, 8(7), 705-711. doi:10.1002/acp.2350080708"
+)
+# data from Table 1
+
+
+#-----------------
+#--- Study 26 ---#
+#-----------------
+
+# continuous noise, reading comprehension:
+data<- Add_data(data, ID= 26, N_C=22, N_E=22, sample="children", cit= "Johansson (1983)", year=1983, 
+                design="between", sound="noise",
+                sound_type= "continuous", db= 51, task= "select word", 
+                measure= "prop_correct", mean_C= 96.55, var_C= 4.38, 
+                mean_E= 97.71, var_E= 3.64, var_type= "SD",
+                reference= "Johansson, C. R. (1983). Effects of low intensity, continuous and intermittent noise on mental performance and writing pressure of children with different intelligence and personality characteristics. Ergonomics, 26(3), 275-288. doi:10.1080/00140138308963341"
+)
+# data from Table 3
+
+
+# intermittent noise, reading comprehension:
+data<- Add_data(data, ID= 26, N_C=22, N_E=22, sample="children", cit= "Johansson (1983)", year=1983, 
+                design="between", sound="noise",
+                sound_type= "intermittent", db= 67.4, task= "select word", 
+                measure= "prop_correct", mean_C= 96.55, var_C= 4.38, 
+                mean_E= 97.37, var_E= 3.35, var_type= "SD",
+                reference= "Johansson, C. R. (1983). Effects of low intensity, continuous and intermittent noise on mental performance and writing pressure of children with different intelligence and personality characteristics. Ergonomics, 26(3), 275-288. doi:10.1080/00140138308963341"
+)
+# data from Table 3
+
+
+#-----------------
+#--- Study 27 ---#
+#-----------------
+
+# There is something fishy about the graph from which the data was extracted because the
+# standard error appears to be almost exactly the same in some conditions. Such degree of
+# similarity seems highly suspicious.
+mean<- c(0.5367002192082886, 0.3497142496524407, 0.4591825257026822, 0.4863643535025995,
+         0.4878321766584935, 0.4550663842882783, 0.4860629189040699, 0.4849046972939562)
+L_SE<- c(0.5072732233641511, 0.3268252663074447, 0.4297547874087947, 0.4569358727589618,
+         0.4584036959148558, 0.4321781433930324, 0.4566344381604322, 0.4549320008835152)
+font<- c(rep("easy", 4), rep("difficult", 4))
+cond<- c("silence", "speech", "road traffic", "aircraft", "silence", "speech", "road traffic", "aircraft")
+
+halin<- data.frame(mean, L_SE, font, cond)
+halin$SE<- halin$mean- halin$L_SE
+
+#-------------------------------------------------
+
+# speech, easy to read font:
+data<- Add_data(data, ID= 27, N_C=56/2, sample="adults", cit= "Halin (2016)", year=2016, 
+                design="within", sound="speech",
+                sound_type= "native", db= 60, task= "reading comprehension (easy font)", 
+                measure= "prop_correct", mean_C= halin$mean[1], var_C= halin$SE[1], 
+                mean_E= halin$mean[2], var_E= halin$SE[2], var_type= "SE",
+                reference= "Halin, N. (2016). Distracted While Reading? Changing to a Hard-to-Read Font Shields against the Effects of Environmental Noise and Speech on Text Memory. Frontiers in Psychology, 7."
+)
+# data from Figure 2 (digitalized) 
+
+# speech, difficult to read font:
+data<- Add_data(data, ID= 27, N_C=56/2, sample="adults", cit= "Halin (2016)", year=2016, 
+                design="within", sound="speech",
+                sound_type= "native", db= 60, task= "reading comprehension (difficult font)", 
+                measure= "prop_correct", mean_C= halin$mean[5], var_C= halin$SE[5], 
+                mean_E= halin$mean[6], var_E= halin$SE[6], var_type= "SE",
+                reference= "Halin, N. (2016). Distracted While Reading? Changing to a Hard-to-Read Font Shields against the Effects of Environmental Noise and Speech on Text Memory. Frontiers in Psychology, 7."
+)
+# data from Figure 2 (digitalized) 
+
+#-------------------------------------------------
+
+# road traffic noise, easy to read font:
+data<- Add_data(data, ID= 27, N_C=56/2, sample="adults", cit= "Halin (2016)", year=2016, 
+                design="within", sound="noise",
+                sound_type= "road traffic", db= 60, task= "reading comprehension (easy font)", 
+                measure= "prop_correct", mean_C= halin$mean[1], var_C= halin$SE[1], 
+                mean_E= halin$mean[3], var_E= halin$SE[3], var_type= "SE",
+                reference= "Halin, N. (2016). Distracted While Reading? Changing to a Hard-to-Read Font Shields against the Effects of Environmental Noise and Speech on Text Memory. Frontiers in Psychology, 7."
+)
+# data from Figure 2 (digitalized) 
+
+# road traffic noise, difficult to read font:
+data<- Add_data(data, ID= 27, N_C=56/2, sample="adults", cit= "Halin (2016)", year=2016, 
+                design="within", sound="noise",
+                sound_type= "road traffic", db= 60, task= "reading comprehension (difficult font)", 
+                measure= "prop_correct", mean_C= halin$mean[5], var_C= halin$SE[5], 
+                mean_E= halin$mean[7], var_E= halin$SE[7], var_type= "SE",
+                reference= "Halin, N. (2016). Distracted While Reading? Changing to a Hard-to-Read Font Shields against the Effects of Environmental Noise and Speech on Text Memory. Frontiers in Psychology, 7."
+)
+# data from Figure 2 (digitalized) 
+
+#-------------------------------------------------
+
+# aircraft noise, easy to read font:
+data<- Add_data(data, ID= 27, N_C=56/2, sample="adults", cit= "Halin (2016)", year=2016, 
+                design="within", sound="noise",
+                sound_type= "aircraft", db= 60, task= "reading comprehension (easy font)", 
+                measure= "prop_correct", mean_C= halin$mean[1], var_C= halin$SE[1], 
+                mean_E= halin$mean[4], var_E= halin$SE[4], var_type= "SE",
+                reference= "Halin, N. (2016). Distracted While Reading? Changing to a Hard-to-Read Font Shields against the Effects of Environmental Noise and Speech on Text Memory. Frontiers in Psychology, 7."
+)
+# data from Figure 2 (digitalized) 
+
+# aircraft noise, difficult to read font:
+data<- Add_data(data, ID= 27, N_C=56/2, sample="adults", cit= "Halin (2016)", year=2016, 
+                design="within", sound="noise",
+                sound_type= "aircraft", db= 60, task= "reading comprehension (difficult font)", 
+                measure= "prop_correct", mean_C= halin$mean[5], var_C= halin$SE[5], 
+                mean_E= halin$mean[8], var_E= halin$SE[8], var_type= "SE",
+                reference= "Halin, N. (2016). Distracted While Reading? Changing to a Hard-to-Read Font Shields against the Effects of Environmental Noise and Speech on Text Memory. Frontiers in Psychology, 7."
+)
+# data from Figure 2 (digitalized) 
+
+
 #############
 # Save data #
 #############

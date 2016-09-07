@@ -46,3 +46,17 @@
 "45",22,"Perham & Currie (2014)",2014,"within","music","disliked lyrical",70,"reading comprehension","num_correct",NA,NA,NA,NA
 "46",22,"Perham & Currie (2014)",2014,"within","music","non-lyrical",70,"reading comprehension","num_correct",NA,NA,NA,NA
 "47",22,"Perham & Currie (2014)",2014,"within","music","liked lyrical",70,"reading comprehension","num_correct",NA,NA,NA,NA
+"48",23,"Kelly (1994)",1994,"between","music","pop",65,"reading comprehension","num_correct",-0.769929533028814,0.17211223997301,-0.744547240731161,0.160951236124983
+"49",24,"Dove (2009)",2009,"between","music","sedative classical",62.5,"reading comprehension","num_correct",0.102854791917337,0.0715230277519675,0.101419608774305,0.0695409618017183
+"50",24,"Dove (2009)",2009,"between","music","stimulative classical",62.5,"reading comprehension","num_correct",0.821649134990097,0.0774563151877676,0.810184263339072,0.075309824333132
+"51",24,"Dove (2009)",2009,"between","music","sedative classical",62.5,"reading comprehension","reading_speed",0.0754463529249812,0.0714793942158007,0.0743936131167257,0.0694985374501881
+"52",24,"Dove (2009)",2009,"between","music","stimulative classical",62.5,"reading comprehension","reading_speed",0.522236265997233,0.0738636671207387,0.514949248332156,0.071816736724164
+"53",25,"Furnham et al. (1994)",1994,"within","speech","TV drama",NA,"reading comprehension","num_correct",NA,NA,NA,NA
+"54",26,"Johansson (1983)",1983,"between","noise","continuous",51,"select word","prop_correct",0.288053217695878,0.091851984729829,0.282878608994754,0.0885815547812212
+"55",26,"Johansson (1983)",1983,"between","noise","intermittent",67.4,"select word","prop_correct",0.210301697056082,0.0914116682248258,0.206523822258667,0.088156915937284
+"56",27,"Halin (2016)",2016,"within","speech","native",60,"reading comprehension (easy font)","prop_correct",NA,NA,NA,NA
+"57",27,"Halin (2016)",2016,"within","speech","native",60,"reading comprehension (difficult font)","prop_correct",NA,NA,NA,NA
+"58",27,"Halin (2016)",2016,"within","noise","road traffic",60,"reading comprehension (easy font)","prop_correct",NA,NA,NA,NA
+"59",27,"Halin (2016)",2016,"within","noise","road traffic",60,"reading comprehension (difficult font)","prop_correct",NA,NA,NA,NA
+"60",27,"Halin (2016)",2016,"within","noise","aircraft",60,"reading comprehension (easy font)","prop_correct",NA,NA,NA,NA
+"61",27,"Halin (2016)",2016,"within","noise","aircraft",60,"reading comprehension (difficult font)","prop_correct",NA,NA,NA,NA
