@@ -9,7 +9,15 @@ rm(list=ls())
 
 # Load functions:
 source("Functions/Add_data.R")
+source("functions/effect_sizes.R")
 #source("Functions/print_data.R")
+
+###############################
+# Settings #
+
+r<- 0.5 
+
+###############################
 
 
 # Create general data frame, to be populated by the script:
@@ -800,6 +808,21 @@ data<- Add_data(data, ID= 27, N_C=56/2, sample="adults", cit= "Halin (2016)", ye
                 reference= "Halin, N. (2016). Distracted While Reading? Changing to a Hard-to-Read Font Shields against the Effects of Environmental Noise and Speech on Text Memory. Frontiers in Psychology, 7."
 )
 # data from Figure 2 (digitalized) 
+
+
+#-----------------
+#--- Study 28 ---#
+#-----------------
+
+# continuous speech:
+data<- Add_data(data, ID= 28, N_C=54, sample="adults", cit= "Smith-Jackson & Klein (2009)", year=2009, 
+                design="within", sound="speech",
+                sound_type= "native", db= 65, task= "proofreading", 
+                measure= "prop_correct", mean_C= 0.53, var_C= 0.18, 
+                mean_E= 0.52, var_E= 0.21, var_type= "SD",
+                reference= "Smith-Jackson, T. L., & Klein, K. W. (2009). Open-plan offices: Task performance and mental workload. Journal of Environmental Psychol- ogy, 29, 279–289. doi:10.1016/j.jenvp.2008.09.002"
+)
+# data from Table 3
 
 
 #############
