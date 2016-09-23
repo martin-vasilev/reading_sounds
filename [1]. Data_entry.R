@@ -825,6 +825,20 @@ data<- Add_data(data, ID= 28, N_C=54, sample="adults", cit= "Smith-Jackson & Kle
 # data from Table 3
 
 
+#-----------------
+#--- Study 29 ---#
+#-----------------
+
+# continuous speech:
+data<- Add_data(data, ID= 29, N_C=54, sample="adults", cit= "Smith-Jackson & Klein (2009)", year=2009, 
+                design="within", sound="speech",
+                sound_type= "native", db= 65, task= "proofreading", 
+                measure= "prop_correct", mean_C= 0.53, var_C= 0.18, 
+                mean_E= 0.52, var_E= 0.21, var_type= "SD",
+                reference= "Smith-Jackson, T. L., & Klein, K. W. (2009). Open-plan offices: Task performance and mental workload. Journal of Environmental Psychol- ogy, 29, 279–289. doi:10.1016/j.jenvp.2008.09.002"
+)
+# data from Table 
+
 #############
 # Save data #
 #############
