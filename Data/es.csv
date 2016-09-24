@@ -61,3 +61,5 @@
 "60",27,"Halin (2016)",2016,"within","noise","aircraft",60,"reading comprehension (easy font)","prop_correct",NA,NA,NA,NA
 "61",27,"Halin (2016)",2016,"within","noise","aircraft",60,"reading comprehension (difficult font)","prop_correct",NA,NA,NA,NA
 "62",28,"Smith-Jackson & Klein (2009)",2009,"within","speech","native",65,"proofreading","prop_correct",NA,NA,NA,NA
+"63",29,"Cauchard et al. (2012)",2012,"within","music","instrumental",65,"reading comprehension","prop_correct",NA,NA,NA,NA
+"64",29,"Cauchard et al. (2012)",2012,"within","speech","native",65,"reading comprehension","prop_correct",NA,NA,NA,NA

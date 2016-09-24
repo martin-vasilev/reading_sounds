@@ -829,15 +829,26 @@ data<- Add_data(data, ID= 28, N_C=54, sample="adults", cit= "Smith-Jackson & Kle
 #--- Study 29 ---#
 #-----------------
 
-# continuous speech:
-data<- Add_data(data, ID= 29, N_C=54, sample="adults", cit= "Smith-Jackson & Klein (2009)", year=2009, 
-                design="within", sound="speech",
-                sound_type= "native", db= 65, task= "proofreading", 
-                measure= "prop_correct", mean_C= 0.53, var_C= 0.18, 
-                mean_E= 0.52, var_E= 0.21, var_type= "SD",
-                reference= "Smith-Jackson, T. L., & Klein, K. W. (2009). Open-plan offices: Task performance and mental workload. Journal of Environmental Psychol- ogy, 29, 279–289. doi:10.1016/j.jenvp.2008.09.002"
+# instrumental music:
+data<- Add_data(data, ID= 29, N_C=30, sample="adults", cit= "Cauchard et al. (2012)", year=2012, 
+                design="within", sound="music",
+                sound_type= "instrumental", db= 65, task= "reading comprehension", 
+                measure= "prop_correct", mean_C= 0.87, var_C= 0.03, 
+                mean_E= 0.91, var_E= 0.02, var_type= "SE",
+                reference= "Cauchard, F., Cane, J. E., & Weger, U. W. (2012). Influence of Background Speech and Music in Interrupted Reading: An Eye‐Tracking Study. Applied Cognitive Psychology, 26(3), 381-390."
 )
-# data from Table 
+# data from Table 2
+
+
+# speech:
+data<- Add_data(data, ID= 29, N_C=30, sample="adults", cit= "Cauchard et al. (2012)", year=2012, 
+                design="within", sound="speech",
+                sound_type= "native", db= 65, task= "reading comprehension", 
+                measure= "prop_correct", mean_C= 0.87, var_C= 0.03, 
+                mean_E= 0.82, var_E= 0.04, var_type= "SE",
+                reference= "Cauchard, F., Cane, J. E., & Weger, U. W. (2012). Influence of Background Speech and Music in Interrupted Reading: An Eye‐Tracking Study. Applied Cognitive Psychology, 26(3), 381-390."
+)
+# data from Table 2
 
 #############
 # Save data #
