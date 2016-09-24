@@ -732,7 +732,7 @@ data<- Add_data(data, ID= 26, N_C=22, N_E=22, sample="children", cit= "Johansson
 
 # There is something fishy about the graph from which the data was extracted because the
 # standard error appears to be almost exactly the same in some conditions. Such degree of
-# similarity seems highly suspicious.
+# similarity seems unlikely
 mean<- c(0.5367002192082886, 0.3497142496524407, 0.4591825257026822, 0.4863643535025995,
          0.4878321766584935, 0.4550663842882783, 0.4860629189040699, 0.4849046972939562)
 L_SE<- c(0.5072732233641511, 0.3268252663074447, 0.4297547874087947, 0.4569358727589618,
@@ -849,6 +849,44 @@ data<- Add_data(data, ID= 29, N_C=30, sample="adults", cit= "Cauchard et al. (20
                 reference= "Cauchard, F., Cane, J. E., & Weger, U. W. (2012). Influence of Background Speech and Music in Interrupted Reading: An Eye‐Tracking Study. Applied Cognitive Psychology, 26(3), 381-390."
 )
 # data from Table 2
+
+
+#-----------------
+#--- Study 30 ---#
+#-----------------
+
+# Preferred music:
+data<- Add_data(data, ID= 30, N_C=24, sample="adults", cit= "Johansson et al. (2012)", year=2012, 
+                design="within", sound="music",
+                sound_type= "preferred", db= 65, task= "reading comprehension", 
+                measure= "prop_correct", mean_C= 62.5, var_C= 24.5, 
+                mean_E= 45.8, var_E= 35.9, var_type= "SD",
+                reference= "Johansson, R., Holmqvist, K., Mossberg, F., & Lindgren, M. (2012). Eye movements and reading comprehension while listening to preferred and non-preferred study music. Psychology of music, 40(3), 339-356."
+)
+# data from Table 1
+
+
+# Non-preferred music:
+data<- Add_data(data, ID= 30, N_C=24, sample="adults", cit= "Johansson et al. (2012)", year=2012, 
+                design="within", sound="music",
+                sound_type= "non-preferred", db= 65, task= "reading comprehension", 
+                measure= "prop_correct", mean_C= 62.5, var_C= 24.5, 
+                mean_E= 40.2, var_E= 21.0, var_type= "SD",
+                reference= "Johansson, R., Holmqvist, K., Mossberg, F., & Lindgren, M. (2012). Eye movements and reading comprehension while listening to preferred and non-preferred study music. Psychology of music, 40(3), 339-356."
+)
+# data from Table 1
+
+
+# Cafe noise:
+data<- Add_data(data, ID= 30, N_C=24, sample="adults", cit= "Johansson et al. (2012)", year=2012, 
+                design="within", sound="noise",
+                sound_type= "cafe", db= 65, task= "reading comprehension", 
+                measure= "prop_correct", mean_C= 62.5, var_C= 24.5, 
+                mean_E= 50.0, var_E= 29.5, var_type= "SD",
+                reference= "Johansson, R., Holmqvist, K., Mossberg, F., & Lindgren, M. (2012). Eye movements and reading comprehension while listening to preferred and non-preferred study music. Psychology of music, 40(3), 339-356."
+)
+# data from Table 1
+
 
 #############
 # Save data #
