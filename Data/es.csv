@@ -68,5 +68,8 @@
 "67",30,"Johansson et al. (2012)",2012,"within","noise","cafe",65,"reading comprehension","prop_correct",NA,NA,NA,NA
 "68",31,"Weinstein, N. D. (1974)",1974,"between","noise","teletype",70,"proofreading (non-contextual errors)","perc_correct",-0.569312831729399,0.12713308737937,-0.555427152906731,0.121007102800114
 "69",31,"Weinstein, N. D. (1974)",1974,"between","noise","teletype",70,"proofreading (contextual errors)","perc_correct",-1.29536540414244,0.147646033286603,-1.26377112599263,0.140531620022941
-"70",32,"Weinstein (1977)",1977,"within","speech","native",68,"proofreading (non-contextual errors)","perc_correct",0.160816880225669,0.0349286563614744,NA,NA
-"71",32,"Weinstein (1977)",1977,"within","speech","native",68,"proofreading (contextual errors)","perc_correct",0.587220219514703,0.0404280618311534,NA,NA
+"70",32,"Weinstein (1977)",1977,"within","speech","native",68,"proofreading (non-contextual errors)","perc_correct",-0.160816880225669,0.0349286563614744,NA,NA
+"71",32,"Weinstein (1977)",1977,"within","speech","native",68,"proofreading (contextual errors)","perc_correct",-0.587220219514703,0.0404280618311534,NA,NA
+"72",33,"Martin et al. (1988), Exp.1",1988,"within","speech","native",82,"reading comprehension","perc_correct",-0.396666666666667,0.0299631172839506,NA,NA
+"73",33,"Martin et al. (1988), Exp.1",1988,"within","speech","random (native)",82,"reading comprehension","perc_correct",-0.35,0.0294791666666667,NA,NA
+"74",34,"Martin et al. (1988), Exp.2",1988,"within","music","instrumental",82,"reading comprehension","perc_correct",NA,NA,NA,NA

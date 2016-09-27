@@ -970,6 +970,22 @@ data<- Add_data(data, ID= 33, N_C=36, sample="adults", cit= "Martin et al. (1988
 # data from text p.387
 
 
+#-----------------
+#--- Study 34 ---#
+#-----------------
+
+# effect sizes are filled in later with the test statistics (because SDs are not reported) 
+
+# instrumental music:
+data<- Add_data(data, ID= 34, N_C=36, sample="adults", cit= "Martin et al. (1988), Exp.2", year=1988, 
+                design="within", sound="music",
+                sound_type= "instrumental", db= 82, task= "reading comprehension", 
+                measure= "perc_correct", mean_C= NA, var_C= NA, 
+                mean_E= NA, var_E= NA, var_type= "NA",
+                reference= "Martin, R. C., Wogalter, M. S., & Forlano, J. G. (1988). Reading comprehension in the presence of unattended speech and music. Journal of memory and language, 27(4), 382-398."
+)
+# data from text p.389
+
 #############
 # Save data #
 #############

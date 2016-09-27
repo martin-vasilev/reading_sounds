@@ -1,3 +1,6 @@
 - Participants were classified as adults only if they were >= 18 years
 - Miller (1947) has reported correlations between the condition means
 - I can use existing data (e.g. Hyona's experiment and mine) to approximate r
+- Pay attention to the sign of extracted ES!!! Make sure they agree with the direction
+ of coding for ES computed from descriptive statistics
+- Code ESs in a way that - values indicate disruption of reading
