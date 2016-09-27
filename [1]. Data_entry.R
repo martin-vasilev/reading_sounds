@@ -15,7 +15,7 @@ source("functions/effect_sizes.R")
 ###############################
 # Settings #
 
-r<- 0.5 
+r<- 0.5; save(r, file= "data/r.Rda")
 
 ###############################
 
@@ -886,6 +886,88 @@ data<- Add_data(data, ID= 30, N_C=24, sample="adults", cit= "Johansson et al. (2
                 reference= "Johansson, R., Holmqvist, K., Mossberg, F., & Lindgren, M. (2012). Eye movements and reading comprehension while listening to preferred and non-preferred study music. Psychology of music, 40(3), 339-356."
 )
 # data from Table 1
+
+
+#-----------------
+#--- Study 31 ---#
+#-----------------
+
+# noise, non-contextual errors:
+data<- Add_data(data, ID= 31, N_C=15, N_E=18, sample="adults", cit= "Weinstein, N. D. (1974)", year=1974, 
+                design="between", sound="noise",
+                sound_type= "teletype", db= 70, task= "proofreading (non-contextual errors)", 
+                measure= "perc_correct", mean_C= 100-(28+28)/2, var_C= sqrt((90+120)/2), 
+                mean_E= 100 -(36+35)/2, var_E= sqrt((160+300)/2), var_type= "SD",
+                reference= "Weinstein, N. D. (1974). Effect of noise on intellectual performance. Journal of Applied Psychology, 59(5), 548."
+)
+# data from Table 1
+
+
+# noise, contextual errors:
+data<- Add_data(data, ID= 31, N_C=15, N_E=18, sample="adults", cit= "Weinstein, N. D. (1974)", year=1974, 
+                design="between", sound="noise",
+                sound_type= "teletype", db= 70, task= "proofreading (contextual errors)", 
+                measure= "perc_correct", mean_C= 100-(40+44)/2, var_C= sqrt((100+90)/2), 
+                mean_E= 100 -(58+65)/2, var_E= sqrt((240+430)/2), var_type= "SD",
+                reference= "Weinstein, N. D. (1974). Effect of noise on intellectual performance. Journal of Applied Psychology, 59(5), 548."
+)
+# data from Table 1
+
+
+#-----------------
+#--- Study 32 ---#
+#-----------------
+
+# effect sizes are filled in later with the test statistics (because SDs are not reported) 
+
+# noise, non-contextual errors:
+data<- Add_data(data, ID= 32, N_C=29, sample="adults", cit= "Weinstein (1977)", year=1977, 
+                design="within", sound="speech",
+                sound_type= "native", db= 68, task= "proofreading (non-contextual errors)", 
+                measure= "perc_correct", mean_C= NA, var_C= NA, 
+                mean_E= NA, var_E= NA, var_type= "NA",
+                reference= "Weinstein, N. D. (1977). Noise and intellectual performance: A confirmation and extension. Journal of Applied Psychology, 62(1), 104-107"
+)
+# data from Table 1 and text
+
+
+# noise, contextual errors:
+data<- Add_data(data, ID= 32, N_C=29, sample="adults", cit= "Weinstein (1977)", year=1977, 
+                design="within", sound="speech",
+                sound_type= "native", db= 68, task= "proofreading (contextual errors)", 
+                measure= "perc_correct", mean_C= NA, var_C= NA, 
+                mean_E= NA, var_E= NA, var_type= "NA",
+                reference= "Weinstein, N. D. (1977). Noise and intellectual performance: A confirmation and extension. Journal of Applied Psychology, 62(1), 104-107"
+)
+# data from Table 1 and text
+
+
+#-----------------
+#--- Study 33 ---#
+#-----------------
+
+# effect sizes are filled in later with the test statistics (because SDs are not reported) 
+
+# speech (continuous):
+data<- Add_data(data, ID= 33, N_C=36, sample="adults", cit= "Martin et al. (1988), Exp.1", year=1988, 
+                design="within", sound="speech",
+                sound_type= "native", db= 82, task= "reading comprehension", 
+                measure= "perc_correct", mean_C= NA, var_C= NA, 
+                mean_E= NA, var_E= NA, var_type= "NA",
+                reference= "Martin, R. C., Wogalter, M. S., & Forlano, J. G. (1988). Reading comprehension in the presence of unattended speech and music. Journal of memory and language, 27(4), 382-398."
+)
+# data from text p.387
+
+
+# speech (random):
+data<- Add_data(data, ID= 33, N_C=36, sample="adults", cit= "Martin et al. (1988), Exp.1", year=1988, 
+                design="within", sound="speech",
+                sound_type= "random (native)", db= 82, task= "reading comprehension", 
+                measure= "perc_correct", mean_C= NA, var_C= NA, 
+                mean_E= NA, var_E= NA, var_type= "NA",
+                reference= "Martin, R. C., Wogalter, M. S., & Forlano, J. G. (1988). Reading comprehension in the presence of unattended speech and music. Journal of memory and language, 27(4), 382-398."
+)
+# data from text p.387
 
 
 #############
