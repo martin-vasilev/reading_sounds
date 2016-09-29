@@ -72,6 +72,40 @@ es$d[74]<- Ttest_to_d(t = 0.263, n= data$N_C[74], design= data$design[74], r=r)
 es$var_d[74]<- Ttest_to_d_var(d= es$d[74], n= data$N_C[74], design= data$design[74], r=r)
 
 
+#--------------------------------------
+# Study 35 Martin et al. (1988), Exp.4:
+#--------------------------------------
+
+# white noise:
+es$d[75]<- Ttest_to_d(t = -1.44, n= data$N_C[75], design= data$design[75], r=r)
+es$var_d[75]<- Ttest_to_d_var(d= es$d[75], n= data$N_C[75], design= data$design[75], r=r)
+
+# English speech:
+es$d[76]<- Ttest_to_d(t = -4.26, n= data$N_C[76], design= data$design[76], r=r)
+es$var_d[76]<- Ttest_to_d_var(d= es$d[76], n= data$N_C[76], design= data$design[76], r=r)
+
+# Russian speech:
+es$d[77]<- Ttest_to_d(t = -2.06, n= data$N_C[77], design= data$design[77], r=r)
+es$var_d[77]<- Ttest_to_d_var(d= es$d[77], n= data$N_C[77], design= data$design[77], r=r)
+
+
+#--------------------------------------
+# Study 35 Martin et al. (1988), Exp.4:
+#--------------------------------------
+
+# white noise:
+es$d[78]<- Ttest_to_d(t = -2.91, n= data$N_C[78], design= data$design[78], r=r)
+es$var_d[78]<- Ttest_to_d_var(d= es$d[78], n= data$N_C[78], design= data$design[78], r=r)
+
+# non-word speech:
+es$d[79]<- Ttest_to_d(t = -2.75, n= data$N_C[79], design= data$design[79], r=r)
+es$var_d[79]<- Ttest_to_d_var(d= es$d[79], n= data$N_C[79], design= data$design[79], r=r)
+
+# random words speech:
+es$d[80]<- Ttest_to_d(t = -4.59, n= data$N_C[80], design= data$design[80], r=r)
+es$var_d[80]<- Ttest_to_d_var(d= es$d[80], n= data$N_C[80], design= data$design[80], r=r)
+
+
 # Save data: 
 save(es, file= "Data/es.Rda")
 write.csv(es, file= "Data/es.csv")

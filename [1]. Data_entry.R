@@ -986,6 +986,85 @@ data<- Add_data(data, ID= 34, N_C=36, sample="adults", cit= "Martin et al. (1988
 )
 # data from text p.389
 
+
+#-----------------
+#--- Study 35 ---#
+#-----------------
+
+# effect sizes are filled in later with the test statistics (because SDs are not reported) 
+
+# white noise:
+data<- Add_data(data, ID= 35, N_C=48, sample="adults", cit= "Martin et al. (1988), Exp.4", year=1988, 
+                design="within", sound="noise",
+                sound_type= "white", db= 82, task= "reading comprehension", 
+                measure= "perc_correct", mean_C= NA, var_C= NA, 
+                mean_E= NA, var_E= NA, var_type= "NA",
+                reference= "Martin, R. C., Wogalter, M. S., & Forlano, J. G. (1988). Reading comprehension in the presence of unattended speech and music. Journal of memory and language, 27(4), 382-398."
+)
+# data from text p. 393
+
+
+# English speech:
+data<- Add_data(data, ID= 35, N_C=48, sample="adults", cit= "Martin et al. (1988), Exp.4", year=1988, 
+                design="within", sound="speech",
+                sound_type= "native", db= 82, task= "reading comprehension", 
+                measure= "perc_correct", mean_C= NA, var_C= NA, 
+                mean_E= NA, var_E= NA, var_type= "NA",
+                reference= "Martin, R. C., Wogalter, M. S., & Forlano, J. G. (1988). Reading comprehension in the presence of unattended speech and music. Journal of memory and language, 27(4), 382-398."
+)
+# data from text p. 393
+
+
+# Russian speech:
+data<- Add_data(data, ID= 35, N_C=48, sample="adults", cit= "Martin et al. (1988), Exp.4", year=1988, 
+                design="within", sound="speech",
+                sound_type= "foreign", db= 82, task= "reading comprehension", 
+                measure= "perc_correct", mean_C= NA, var_C= NA, 
+                mean_E= NA, var_E= NA, var_type= "NA",
+                reference= "Martin, R. C., Wogalter, M. S., & Forlano, J. G. (1988). Reading comprehension in the presence of unattended speech and music. Journal of memory and language, 27(4), 382-398."
+)
+# data from text p. 393
+
+
+#-----------------
+#--- Study 36 ---#
+#-----------------
+
+# effect sizes are filled in later with the test statistics (because SDs are not reported) 
+
+# white noise:
+data<- Add_data(data, ID= 36, N_C=48, sample="adults", cit= "Martin et al. (1988), Exp.5", year=1988, 
+                design="within", sound="noise",
+                sound_type= "white", db= 82, task= "reading comprehension", 
+                measure= "perc_correct", mean_C= NA, var_C= NA, 
+                mean_E= NA, var_E= NA, var_type= "NA",
+                reference= "Martin, R. C., Wogalter, M. S., & Forlano, J. G. (1988). Reading comprehension in the presence of unattended speech and music. Journal of memory and language, 27(4), 382-398."
+)
+# data from text p. 394
+
+
+# Non-word speech:
+data<- Add_data(data, ID= 36, N_C=48, sample="adults", cit= "Martin et al. (1988), Exp.5", year=1988, 
+                design="within", sound="speech",
+                sound_type= "non-word", db= 82, task= "reading comprehension", 
+                measure= "perc_correct", mean_C= NA, var_C= NA, 
+                mean_E= NA, var_E= NA, var_type= "NA",
+                reference= "Martin, R. C., Wogalter, M. S., & Forlano, J. G. (1988). Reading comprehension in the presence of unattended speech and music. Journal of memory and language, 27(4), 382-398."
+)
+# data from text p. 394
+
+
+# random-word speech:
+data<- Add_data(data, ID= 36, N_C=48, sample="adults", cit= "Martin et al. (1988), Exp.5", year=1988, 
+                design="within", sound="speech",
+                sound_type= "random words", db= 82, task= "reading comprehension", 
+                measure= "perc_correct", mean_C= NA, var_C= NA, 
+                mean_E= NA, var_E= NA, var_type= "NA",
+                reference= "Martin, R. C., Wogalter, M. S., & Forlano, J. G. (1988). Reading comprehension in the presence of unattended speech and music. Journal of memory and language, 27(4), 382-398."
+)
+# data from text p. 394
+
+
 #############
 # Save data #
 #############
