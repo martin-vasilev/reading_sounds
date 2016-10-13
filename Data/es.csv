@@ -79,3 +79,7 @@
 "78",36,"Martin et al. (1988), Exp.5",1988,"within","noise","white",82,"reading comprehension","perc_correct",-0.420022320835453,0.0226710286458333,NA,NA
 "79",36,"Martin et al. (1988), Exp.5",1988,"within","speech","non-word",82,"reading comprehension","perc_correct",-0.396928310067868,0.0224745008680556,NA,NA
 "80",36,"Martin et al. (1988), Exp.5",1988,"within","speech","random words",82,"reading comprehension","perc_correct",-0.662509433895096,0.0254054036458333,NA,NA
+"81",37,"Cool et al. (1994), Exp.2",1994,"within","music","radio/ generic",NA,"reading comprehension","reading_speed",NA,NA,NA,NA
+"82",37,"Cool et al. (1994), Exp.2",1994,"within","speech","movies",NA,"reading comprehension","reading_speed",NA,NA,NA,NA
+"83",37,"Cool et al. (1994), Exp.2",1994,"within","music","radio/ generic",NA,"reading comprehension","prop_correct",NA,NA,NA,NA
+"84",37,"Cool et al. (1994), Exp.2",1994,"within","speech","movies",NA,"reading comprehension","prop_correct",NA,NA,NA,NA

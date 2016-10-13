@@ -1065,6 +1065,74 @@ data<- Add_data(data, ID= 36, N_C=48, sample="adults", cit= "Martin et al. (1988
 # data from text p. 394
 
 
+#-----------------
+#--- Study 37 ---#
+#-----------------
+
+# effect sizes are filled in later with the test statistics (because descriptives are not reported) 
+# sample size is 32 since only two schedules are analysed here (2x16)
+
+# white noise:
+#data<- Add_data(data, ID= 37, N_C=32, sample="adults", cit= "Gawron (1984), Exp.1", year=1984, 
+#                design="within", sound="noise",
+#                sound_type= "white", db= 85, task= "reading comprehension", 
+#                measure= "num_correct", mean_C= NA, var_C= NA, 
+#                mean_E= NA, var_E= NA, var_type= "NA",
+#                reference= "Gawron, V. J. (1984). Noise: Effect and aftereffect. Ergonomics, 27(1), 5-18."
+#)
+# data from Table 2
+
+
+#-----------------
+#--- Study 37 ---#
+#-----------------
+
+# see Excel sheet for more comments on background sound classification
+
+# background music (i.e. radio condition in the paper):
+data<- Add_data(data, ID= 37, N_C=9, sample="children", cit= "Cool et al. (1994), Exp.2", year=1994, 
+                design="within", sound="music",
+                sound_type= "radio/ generic", db= NA, task= "reading comprehension", 
+                measure= "reading_speed", mean_C= 92.71, var_C= 36.25, 
+                mean_E= 85.23, var_E= 36.70, var_type= "SD",
+                reference= "Cool, V. A., Yarbrough, D. B., Patton, J. E., Runde, R., & Keith, T. Z. (1994). Experimental effects of radio and television distractors on children's performance on mathematics and reading assignments. The Journal of experimental education, 62(3), 181-194"
+)
+# data from Table 2
+
+
+# background speech (i.e. TV condition in the paper):
+data<- Add_data(data, ID= 37, N_C=9, sample="children", cit= "Cool et al. (1994), Exp.2", year=1994, 
+                design="within", sound="speech",
+                sound_type= "movies", db= NA, task= "reading comprehension", 
+                measure= "reading_speed", mean_C= 92.71, var_C= 36.25, 
+                mean_E= 74.62, var_E= 61.00, var_type= "SD",
+                reference= "Cool, V. A., Yarbrough, D. B., Patton, J. E., Runde, R., & Keith, T. Z. (1994). Experimental effects of radio and television distractors on children's performance on mathematics and reading assignments. The Journal of experimental education, 62(3), 181-194"
+)
+# data from Table 2
+
+
+# background music (i.e. radio condition in the paper):
+data<- Add_data(data, ID= 37, N_C=9, sample="children", cit= "Cool et al. (1994), Exp.2", year=1994, 
+                design="within", sound="music",
+                sound_type= "radio/ generic", db= NA, task= "reading comprehension", 
+                measure= "prop_correct", mean_C= 84.00, var_C= 13.80, 
+                mean_E= 81.00, var_E= 17.75, var_type= "SD",
+                reference= "Cool, V. A., Yarbrough, D. B., Patton, J. E., Runde, R., & Keith, T. Z. (1994). Experimental effects of radio and television distractors on children's performance on mathematics and reading assignments. The Journal of experimental education, 62(3), 181-194"
+)
+# data from Table 2
+
+
+# background speech (i.e. TV condition in the paper):
+data<- Add_data(data, ID= 37, N_C=9, sample="children", cit= "Cool et al. (1994), Exp.2", year=1994, 
+                design="within", sound="speech",
+                sound_type= "movies", db= NA, task= "reading comprehension", 
+                measure= "prop_correct", mean_C= 84.00, var_C= 13.80, 
+                mean_E= 79.39, var_E= 13.55, var_type= "SD",
+                reference= "Cool, V. A., Yarbrough, D. B., Patton, J. E., Runde, R., & Keith, T. Z. (1994). Experimental effects of radio and television distractors on children's performance on mathematics and reading assignments. The Journal of experimental education, 62(3), 181-194"
+)
+# data from Table 2
+
+
 #############
 # Save data #
 #############

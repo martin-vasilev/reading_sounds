@@ -90,7 +90,7 @@ es$var_d[77]<- Ttest_to_d_var(d= es$d[77], n= data$N_C[77], design= data$design[
 
 
 #--------------------------------------
-# Study 35 Martin et al. (1988), Exp.4:
+# Study 36 Martin et al. (1988), Exp.5:
 #--------------------------------------
 
 # white noise:
@@ -104,6 +104,20 @@ es$var_d[79]<- Ttest_to_d_var(d= es$d[79], n= data$N_C[79], design= data$design[
 # random words speech:
 es$d[80]<- Ttest_to_d(t = -4.59, n= data$N_C[80], design= data$design[80], r=r)
 es$var_d[80]<- Ttest_to_d_var(d= es$d[80], n= data$N_C[80], design= data$design[80], r=r)
+
+
+#-------------------------------
+# Study 37 Gawron (1984), Exp.1:
+#-------------------------------
+
+# Here we need the interaction between Time and schedule. The reason is that noise exposure happened
+# only in the second hour, thus a general noise effect can be shown if performance differed between the 2
+# schedules only in the second hour (noise vs silence) but not in the first hour (silence vs silence)
+
+# white noise:
+#es$d[81]<- ANOVA_to_d(Fvalue=0.29, n= data$N_C[81], design= data$design[81], r=r)
+#es$var_d[81]<- ANOVA_to_d_var(d= es$d[81], n= data$N_C[81], design= data$design[81], r=r)
+
 
 
 # Save data: 
