@@ -83,3 +83,14 @@
 "82",37,"Cool et al. (1994), Exp.2",1994,"within","speech","movies",NA,"reading comprehension","reading_speed",NA,NA,NA,NA
 "83",37,"Cool et al. (1994), Exp.2",1994,"within","music","radio/ generic",NA,"reading comprehension","prop_correct",NA,NA,NA,NA
 "84",37,"Cool et al. (1994), Exp.2",1994,"within","speech","movies",NA,"reading comprehension","prop_correct",NA,NA,NA,NA
+"85",38,"Mitchell (1949)",1949,"within","music","radio/ generic",NA,"reading comprehension","num_correct",-0.0113050325528834,0.0109897132074781,NA,NA
+"86",39,"Armstrong et al. (1991)",1991,"between","speech","TV ads",NA,"reading comprehension","reading_score",-0.638224098573534,0.0668691414141414,NA,NA
+"87",39,"Armstrong et al. (1991)",1991,"between","speech","TV drama",NA,"reading comprehension","reading_score",-0.49695710442287,0.0655964141414141,NA,NA
+"88",40,"Pool et al. (2000), Exp.1",2000,"between","speech","TV soap opera (native)",60,"reading comprehension","prop_correct",-0.388290137357661,0.0679230769230769,-0.383247408301068,0.0661702972352323
+"89",40,"Pool et al. (2000), Exp.1",2000,"between","music","TV music videos",60,"reading comprehension","prop_correct",-0.21613729078332,0.0670559610705596,-0.213330312980939,0.0653255576224578
+"90",40,"Pool et al. (2000), Exp.1",2000,"between","speech","TV soap opera (native)",60,"reading comprehension","reading_speed",0.116201533496621,0.0667791899698914,0.114692422671989,0.0650559287006397
+"91",40,"Pool et al. (2000), Exp.1",2000,"between","music","TV music videos",60,"reading comprehension","reading_speed",0.220170972213201,0.0670706271417109,0.217311608937705,0.0653398452303124
+"92",41,"Pool et al. (2000), Exp.2",2000,"between","speech","TV soap opera (native)",60,"reading comprehension","prop_correct",-0.389833273641789,0.042458176985616,-0.386714607452655,0.0417815634771732
+"93",41,"Pool et al. (2000), Exp.2",2000,"between","music","TV music videos",60,"reading comprehension","prop_correct",-0.0998752338877845,0.0417186201163757,-0.0990762320166823,0.0410537921862012
+"94",41,"Pool et al. (2000), Exp.2",2000,"between","speech","TV soap opera (native)",60,"reading comprehension","reading_speed",0.662222707593944,0.0439507235127763,0.656924925933193,0.0432503247828767
+"95",41,"Pool et al. (2000), Exp.2",2000,"between","music","TV music videos",60,"reading comprehension","reading_speed",-0.0770108377751043,0.0416975555684105,-0.0763947510729034,0.0410330633228723

@@ -2,5 +2,8 @@
 - Miller (1947) has reported correlations between the condition means
 - I can use existing data (e.g. Hyona's experiment and mine) to approximate r
 - Pay attention to the sign of extracted ES!!! Make sure they agree with the direction
- of coding for ES computed from descriptive statistics
-- Code ESs in a way that - values indicate disruption of reading
+  of the mean difference!
+- Code ESs in a way that negative values indicate disruption of reading
+- for # 39 ES are not completely independent as both TV conditions (different participants)
+  are compared to the silence group (same participants in both ESs). This needs to be
+  considered. 

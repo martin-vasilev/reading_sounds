@@ -1133,6 +1133,143 @@ data<- Add_data(data, ID= 37, N_C=9, sample="children", cit= "Cool et al. (1994)
 # data from Table 2
 
 
+#-----------------
+#--- Study 38 ---#
+#-----------------
+
+#  music radio program:
+data<- Add_data(data, ID= 38, N_C=91, sample="children", cit= "Mitchell (1949)", year=1949, 
+                design="within", sound="music",
+                sound_type= "radio/ generic", db= NA, task= "reading comprehension", 
+                measure= "num_correct", mean_C= 147.31, var_C= NA, 
+                mean_E= 147.20, var_E= NA, var_type= "NA",
+                reference= "Mitchell, A. H. (1949). The effect of radio programs on silent reading achievement of ninety-one sixth grade students. The Journal of Educational Research, 42(6), 460-470."
+)
+# data from Table 2
+
+
+#-----------------
+#--- Study 39 ---#
+#-----------------
+
+# TV adds: 
+data<- Add_data(data, ID= 39, N_C=33, N_E=30, sample="adults", cit= "Armstrong et al. (1991)", year=1991, 
+                design="between", sound="speech",
+                sound_type= "TV ads", db= NA, task= "reading comprehension", 
+                measure= "reading_score", mean_C= 9.23, var_C= NA, 
+                mean_E= 7.59, var_E= NA, var_type= "NA",
+                reference= "Armstrong, G. B., Boiarsky, G. A., & Mares, M. L. (1991). Background television and reading performance. Communications Monographs, 58(3), 235-253."
+)
+# data from p 243
+
+
+# TV drama: 
+data<- Add_data(data, ID= 39, N_C=33, N_E=30, sample="adults", cit= "Armstrong et al. (1991)", year=1991, 
+                design="between", sound="speech",
+                sound_type= "TV drama", db= NA, task= "reading comprehension", 
+                measure= "reading_score", mean_C= 9.23, var_C= NA, 
+                mean_E= 7.96, var_E= NA, var_type= "NA",
+                reference= "Armstrong, G. B., Boiarsky, G. A., & Mares, M. L. (1991). Background television and reading performance. Communications Monographs, 58(3), 235-253."
+)
+# data from p 243
+
+
+#-----------------
+#--- Study 40 ---#
+#-----------------
+
+# soap opera: 
+data<- Add_data(data, ID= 40, N_C=30, N_E=30, sample="children", cit= "Pool et al. (2000), Exp.1", year=2000, 
+                design="between", sound="speech",
+                sound_type= "TV soap opera (native)", db= 60, task= "reading comprehension", 
+                measure= "prop_correct", mean_C= (0.88+0.63)/2, var_C= (0.06+0.13)/2, 
+                mean_E= (0.88+0.56)/2, var_E= (0.05+0.12)/2, var_type= "SD",
+                reference= "Pool, M. M., Van der Voort, T. H., Beentjes, J. W., & Koolstra, C. M. (2000). Background television as an inhibitor of performance on easy and difficult homework assignments. Communication Research, 27(3), 293-326."
+)
+# data from Table 1
+
+
+# music videos: 
+data<- Add_data(data, ID= 40, N_C=30, N_E=30, sample="children", cit= "Pool et al. (2000), Exp.1", year=2000, 
+                design="between", sound="music",
+                sound_type= "TV music videos", db= 60, task= "reading comprehension", 
+                measure= "prop_correct", mean_C= (0.88+0.63)/2, var_C= (0.06+0.13)/2, 
+                mean_E= (0.87+0.60)/2, var_E= (0.06+0.12)/2, var_type= "SD",
+                reference= "Pool, M. M., Van der Voort, T. H., Beentjes, J. W., & Koolstra, C. M. (2000). Background television as an inhibitor of performance on easy and difficult homework assignments. Communication Research, 27(3), 293-326."
+)
+# data from Table 1
+
+
+# soap opera, reading speed: 
+data<- Add_data(data, ID= 40, N_C=30, N_E=30, sample="children", cit= "Pool et al. (2000), Exp.1", year=2000, 
+                design="between", sound="speech",
+                sound_type= "TV soap opera (native)", db= 60, task= "reading comprehension", 
+                measure= "reading_speed", mean_C= (6.06+42.50)/2, var_C= (1.61+10.93)/2, 
+                mean_E= (6.35+43.69)/2, var_E= (1.53+11.40)/2, var_type= "SD",
+                reference= "Pool, M. M., Van der Voort, T. H., Beentjes, J. W., & Koolstra, C. M. (2000). Background television as an inhibitor of performance on easy and difficult homework assignments. Communication Research, 27(3), 293-326."
+)
+# data from Table 2
+
+
+# music videos: 
+data<- Add_data(data, ID= 40, N_C=30, N_E=30, sample="children", cit= "Pool et al. (2000), Exp.1", year=2000, 
+                design="between", sound="music",
+                sound_type= "TV music videos", db= 60, task= "reading comprehension", 
+                measure= "reading_speed", mean_C= (6.06+42.50)/2, var_C= (1.61+10.93)/2, 
+                mean_E= (6.51+44.75)/2, var_E= (1.80+10.18)/2, var_type= "SD",
+                reference= "Pool, M. M., Van der Voort, T. H., Beentjes, J. W., & Koolstra, C. M. (2000). Background television as an inhibitor of performance on easy and difficult homework assignments. Communication Research, 27(3), 293-326."
+)
+# data from Table 2
+
+
+#-----------------
+#--- Study 41 ---#
+#-----------------
+
+# soap opera: 
+data<- Add_data(data, ID= 41, N_C=48, N_E=48, sample="children", cit= "Pool et al. (2000), Exp.2", year=2000, 
+                design="between", sound="speech",
+                sound_type= "TV soap opera (native)", db= 60, task= "reading comprehension", 
+                measure= "prop_correct", mean_C= (0.88+0.64)/2, var_C= (0.07+0.14)/2, 
+                mean_E= (0.86+0.57)/2, var_E= (0.11+0.14)/2, var_type= "SD",
+                reference= "Pool, M. M., Van der Voort, T. H., Beentjes, J. W., & Koolstra, C. M. (2000). Background television as an inhibitor of performance on easy and difficult homework assignments. Communication Research, 27(3), 293-326."
+)
+# data from Table 3 
+
+
+# music videos:
+data<- Add_data(data, ID= 41, N_C=48, N_E=48, sample="children", cit= "Pool et al. (2000), Exp.2", year=2000, 
+                design="between", sound="music",
+                sound_type= "TV music videos", db= 60, task= "reading comprehension", 
+                measure= "prop_correct", mean_C= (0.88+0.64)/2, var_C= (0.07+0.14)/2, 
+                mean_E= (0.87+0.63)/2, var_E= (0.06+0.13)/2, var_type= "SD",
+                reference= "Pool, M. M., Van der Voort, T. H., Beentjes, J. W., & Koolstra, C. M. (2000). Background television as an inhibitor of performance on easy and difficult homework assignments. Communication Research, 27(3), 293-326."
+)
+# data from Table 3 
+
+
+# soap opera: 
+data<- Add_data(data, ID= 41, N_C=48, N_E=48, sample="children", cit= "Pool et al. (2000), Exp.2", year=2000, 
+                design="between", sound="speech",
+                sound_type= "TV soap opera (native)", db= 60, task= "reading comprehension", 
+                measure= "reading_speed", mean_C= (7.29+41.65)/2, var_C= (1.71+10.57)/2, 
+                mean_E= (9.38+49.69)/2, var_E= (2.82+14.99)/2, var_type= "SD",
+                reference= "Pool, M. M., Van der Voort, T. H., Beentjes, J. W., & Koolstra, C. M. (2000). Background television as an inhibitor of performance on easy and difficult homework assignments. Communication Research, 27(3), 293-326."
+)
+# data from Table 5 
+
+
+# music videos:
+data<- Add_data(data, ID= 41, N_C=48, N_E=48, sample="children", cit= "Pool et al. (2000), Exp.2", year=2000, 
+                design="between", sound="music",
+                sound_type= "TV music videos", db= 60, task= "reading comprehension", 
+                measure= "reading_speed", mean_C= (7.29+41.65)/2, var_C= (1.71+10.57)/2, 
+                mean_E= (6.96+40.97)/2, var_E= (1.87+12.03)/2, var_type= "SD",
+                reference= "Pool, M. M., Van der Voort, T. H., Beentjes, J. W., & Koolstra, C. M. (2000). Background television as an inhibitor of performance on easy and difficult homework assignments. Communication Research, 27(3), 293-326."
+)
+# data from Table 5 
+
+
 #############
 # Save data #
 #############

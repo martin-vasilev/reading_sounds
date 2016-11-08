@@ -119,6 +119,27 @@ es$var_d[80]<- Ttest_to_d_var(d= es$d[80], n= data$N_C[80], design= data$design[
 #es$var_d[81]<- ANOVA_to_d_var(d= es$d[81], n= data$N_C[81], design= data$design[81], r=r)
 
 
+#--------------------------
+# Study 38 Mitchell (1949):
+#--------------------------
+
+# Critical ratio= t value
+es$d[85]<- Ttest_to_d(t = -0.11/1.02, n= data$N_C[85], design= data$design[85], r=r)
+es$var_d[85]<- Ttest_to_d_var(d= es$d[85], n= data$N_C[85], design= data$design[85], r=r)
+
+
+#----------------------------------
+# Study 39 Armstrong et al. (1991):
+#----------------------------------
+# TV Ads
+es$d[86]<- Ttest_to_d(t = -2.53, N_C= data$N_C[86], N_E= data$N_E[86], design= data$design[86])
+es$var_d[86]<- Ttest_to_d_var(d= es$d[86], N_C= data$N_C[86], N_E= data$N_E[86], design= data$design[86])
+
+# TV drama
+es$d[87]<- Ttest_to_d(t = -1.97, N_C= data$N_C[87], N_E= data$N_E[87], design= data$design[87])
+es$var_d[87]<- Ttest_to_d_var(d= es$d[87], N_C= data$N_C[87], N_E= data$N_E[87], design= data$design[87])
+
+
 
 # Save data: 
 save(es, file= "Data/es.Rda")
