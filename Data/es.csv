@@ -94,3 +94,5 @@
 "93",41,"Pool et al. (2000), Exp.2",2000,"between","music","TV music videos",60,"reading comprehension","prop_correct",-0.0998752338877845,0.0417186201163757,-0.0990762320166823,0.0410537921862012
 "94",41,"Pool et al. (2000), Exp.2",2000,"between","speech","TV soap opera (native)",60,"reading comprehension","reading_speed",0.662222707593944,0.0439507235127763,0.656924925933193,0.0432503247828767
 "95",41,"Pool et al. (2000), Exp.2",2000,"between","music","TV music videos",60,"reading comprehension","reading_speed",-0.0770108377751043,0.0416975555684105,-0.0763947510729034,0.0410330633228723
+"96",42,"Dockrell & Shield (2006)",2006,"between","noise","children babble",65,"reading comprehension","score",-0.491243962752349,0.0403986305438266,-0.487550399122632,0.0397934161679934
+"97",42,"Dockrell & Shield (2006)",2006,"between","noise","children babble + environmental",65,"reading comprehension","score",0.581413284323669,0.0408727519960198,0.577041755870108,0.040260434777469

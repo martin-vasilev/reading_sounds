@@ -4,6 +4,6 @@
 - Pay attention to the sign of extracted ES!!! Make sure they agree with the direction
   of the mean difference!
 - Code ESs in a way that negative values indicate disruption of reading
-- for # 39 ES are not completely independent as both TV conditions (different participants)
+- for # 39 ES are not completely independent as both TV conditions (different participants); # 42 is the same
   are compared to the silence group (same participants in both ESs). This needs to be
   considered. 
