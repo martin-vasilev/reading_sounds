@@ -6,4 +6,5 @@
 - Code ESs in a way that negative values indicate disruption of reading
 - for # 39 ES are not completely independent as both TV conditions (different participants); # 42 is the same
   are compared to the silence group (same participants in both ESs). This needs to be
-  considered. 
+  considered.
+- for reading speed, I may want to use opposite coding (e.g. - indicates slower reading) 

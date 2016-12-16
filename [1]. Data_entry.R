@@ -829,7 +829,7 @@ data<- Add_data(data, ID= 28, N_C=54, sample="adults", cit= "Smith-Jackson & Kle
 #--- Study 29 ---#
 #-----------------
 
-# instrumental music:
+# instrumental music, reading comprehension:
 data<- Add_data(data, ID= 29, N_C=30, sample="adults", cit= "Cauchard et al. (2012)", year=2012, 
                 design="within", sound="music",
                 sound_type= "instrumental", db= 65, task= "reading comprehension", 
@@ -840,7 +840,7 @@ data<- Add_data(data, ID= 29, N_C=30, sample="adults", cit= "Cauchard et al. (20
 # data from Table 2
 
 
-# speech:
+# speech, reading comprehension:
 data<- Add_data(data, ID= 29, N_C=30, sample="adults", cit= "Cauchard et al. (2012)", year=2012, 
                 design="within", sound="speech",
                 sound_type= "native", db= 65, task= "reading comprehension", 
@@ -851,11 +851,40 @@ data<- Add_data(data, ID= 29, N_C=30, sample="adults", cit= "Cauchard et al. (20
 # data from Table 2
 
 
+# instrumental music, reading speed:
+data<- Add_data(data, ID= 29, N_C=30, sample="adults", cit= "Cauchard et al. (2012)", year=2012, 
+                design="within", sound="music",
+                sound_type= "instrumental", db= 65, task= "reading comprehension", 
+                measure= "reading_speed",
+                mean_C= (15.81+16.33+0.60+5.75+18.22+17.05)/6,
+                var_C= (0.75+0.80+0.11+0.74+0.99+1.13)/6, 
+                mean_E= (15.93+16.14+0.75+4.65+18.25+17.82)/6,
+                var_E= (0.67+0.81+0.19+0.53+1.09+0.95)/6,
+                var_type= "SE",
+                reference= "Cauchard, F., Cane, J. E., & Weger, U. W. (2012). Influence of Background Speech and Music in Interrupted Reading: An Eye‐Tracking Study. Applied Cognitive Psychology, 26(3), 381-390."
+)
+# data from Table 1
+
+# speech, reading speed:
+data<- Add_data(data, ID= 29, N_C=30, sample="adults", cit= "Cauchard et al. (2012)", year=2012, 
+                design="within", sound="speech",
+                sound_type= "native", db= 65, task= "reading comprehension", 
+                measure= "reading_speed",
+                mean_C= (15.81+16.33+0.60+5.75+18.22+17.05)/6,
+                var_C= (0.75+0.80+0.11+0.74+0.99+1.13)/6, 
+                mean_E= (18.47+17.88+0.51+5.42+20.15+18.66)/6,
+                var_E= (0.98+0.93+0.09+0.59+1.21+1.15)/6,
+                var_type= "SE",
+                reference= "Cauchard, F., Cane, J. E., & Weger, U. W. (2012). Influence of Background Speech and Music in Interrupted Reading: An Eye‐Tracking Study. Applied Cognitive Psychology, 26(3), 381-390."
+)
+# data from Table 1
+
+
 #-----------------
 #--- Study 30 ---#
 #-----------------
 
-# Preferred music:
+# Preferred music, reading comprehension:
 data<- Add_data(data, ID= 30, N_C=24, sample="adults", cit= "Johansson et al. (2012)", year=2012, 
                 design="within", sound="music",
                 sound_type= "preferred", db= 65, task= "reading comprehension", 
@@ -866,7 +895,7 @@ data<- Add_data(data, ID= 30, N_C=24, sample="adults", cit= "Johansson et al. (2
 # data from Table 1
 
 
-# Non-preferred music:
+# Non-preferred music, reading comprehension:
 data<- Add_data(data, ID= 30, N_C=24, sample="adults", cit= "Johansson et al. (2012)", year=2012, 
                 design="within", sound="music",
                 sound_type= "non-preferred", db= 65, task= "reading comprehension", 
@@ -877,7 +906,7 @@ data<- Add_data(data, ID= 30, N_C=24, sample="adults", cit= "Johansson et al. (2
 # data from Table 1
 
 
-# Cafe noise:
+# Cafe noise, reading comprehension:
 data<- Add_data(data, ID= 30, N_C=24, sample="adults", cit= "Johansson et al. (2012)", year=2012, 
                 design="within", sound="noise",
                 sound_type= "cafe", db= 65, task= "reading comprehension", 
@@ -886,6 +915,41 @@ data<- Add_data(data, ID= 30, N_C=24, sample="adults", cit= "Johansson et al. (2
                 reference= "Johansson, R., Holmqvist, K., Mossberg, F., & Lindgren, M. (2012). Eye movements and reading comprehension while listening to preferred and non-preferred study music. Psychology of music, 40(3), 339-356."
 )
 # data from Table 1
+
+
+
+# Preferred music, reading speed:
+data<- Add_data(data, ID= 30, N_C=24, sample="adults", cit= "Johansson et al. (2012)", year=2012, 
+                design="within", sound="music",
+                sound_type= "preferred", db= 65, task= "reading comprehension", 
+                measure= "reading_speed", mean_C= (199+198)/2, var_C= (18+17)/2, 
+                mean_E= c(204+200)/2, var_E= (19+17)/2, var_type= "SD",
+                reference= "Johansson, R., Holmqvist, K., Mossberg, F., & Lindgren, M. (2012). Eye movements and reading comprehension while listening to preferred and non-preferred study music. Psychology of music, 40(3), 339-356."
+)
+# data from Table 1
+
+
+# Non-preferred music, reading speed:
+data<- Add_data(data, ID= 30, N_C=24, sample="adults", cit= "Johansson et al. (2012)", year=2012, 
+                design="within", sound="music",
+                sound_type= "non-preferred", db= 65, task= "reading comprehension", 
+                measure= "reading_speed", mean_C=(199+198)/2, var_C= (18+17)/2, 
+                mean_E= (202+200)/2, var_E= (18+17)/2, var_type= "SD",
+                reference= "Johansson, R., Holmqvist, K., Mossberg, F., & Lindgren, M. (2012). Eye movements and reading comprehension while listening to preferred and non-preferred study music. Psychology of music, 40(3), 339-356."
+)
+# data from Table 1
+
+
+# Cafe noise, reading speed:
+data<- Add_data(data, ID= 30, N_C=24, sample="adults", cit= "Johansson et al. (2012)", year=2012, 
+                design="within", sound="noise",
+                sound_type= "cafe", db= 65, task= "reading comprehension", 
+                measure= "reading_speed", mean_C=(199+198)/2, var_C= (18+17)/2, 
+                mean_E= (202+199)/2, var_E= (21+22)/2, var_type= "SD",
+                reference= "Johansson, R., Holmqvist, K., Mossberg, F., & Lindgren, M. (2012). Eye movements and reading comprehension while listening to preferred and non-preferred study music. Psychology of music, 40(3), 339-356."
+)
+# data from Table 1
+
 
 
 #-----------------
@@ -1268,6 +1332,33 @@ data<- Add_data(data, ID= 41, N_C=48, N_E=48, sample="children", cit= "Pool et a
                 reference= "Pool, M. M., Van der Voort, T. H., Beentjes, J. W., & Koolstra, C. M. (2000). Background television as an inhibitor of performance on easy and difficult homework assignments. Communication Research, 27(3), 293-326."
 )
 # data from Table 5 
+
+
+#-----------------
+#--- Study 42 ---#
+#-----------------
+
+# children babble noise:
+data<- Add_data(data, ID= 42, N_C=51, N_E=51, sample="children", cit= "Dockrell & Shield (2006)",
+                year=2006, design="between", sound="noise",
+                sound_type= "children babble", db= 65, task= "reading comprehension", 
+                measure= "score", mean_C= 33.45, var_C= 11.62, 
+                mean_E= 27.59, var_E= 12.23, var_type= "SD",
+                reference= "Dockrell, J. E., & Shield, B. M. (2006). Acoustical barriers in classrooms: The impact of noise on performance in the classroom. British Educational Research Journal, 32(3), 509-525."
+)
+# data from Table 1
+
+
+# children babble noise + environmental noise:
+data<- Add_data(data, ID= 42, N_C=51, N_E=51, sample="children", cit= "Dockrell & Shield (2006)",
+                year=2006, design="between", sound="noise",
+                sound_type= "children babble + environmental", db= 65, task= "reading comprehension", 
+                measure= "score", mean_C= 33.45, var_C= 11.62, 
+                mean_E= 39.48, var_E= 8.95, var_type= "SD",
+                reference= "Dockrell, J. E., & Shield, B. M. (2006). Acoustical barriers in classrooms: The impact of noise on performance in the classroom. British Educational Research Journal, 32(3), 509-525."
+)
+# data from Table 1
+
 
 
 #############
