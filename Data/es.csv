@@ -63,39 +63,49 @@
 "62",28,"Smith-Jackson & Klein (2009)",2009,"within","speech","native",65,"proofreading","prop_correct",NA,NA,NA,NA
 "63",29,"Cauchard et al. (2012)",2012,"within","music","instrumental",65,"reading comprehension","prop_correct",NA,NA,NA,NA
 "64",29,"Cauchard et al. (2012)",2012,"within","speech","native",65,"reading comprehension","prop_correct",NA,NA,NA,NA
-"65",30,"Johansson et al. (2012)",2012,"within","music","preferred",65,"reading comprehension","prop_correct",NA,NA,NA,NA
-"66",30,"Johansson et al. (2012)",2012,"within","music","non-preferred",65,"reading comprehension","prop_correct",NA,NA,NA,NA
-"67",30,"Johansson et al. (2012)",2012,"within","noise","cafe",65,"reading comprehension","prop_correct",NA,NA,NA,NA
-"68",30,"Johansson et al. (2012)",2012,"within","music","preferred",65,"reading comprehension","reading_speed",NA,NA,NA,NA
-"69",30,"Johansson et al. (2012)",2012,"within","music","non-preferred",65,"reading comprehension","reading_speed",NA,NA,NA,NA
-"70",30,"Johansson et al. (2012)",2012,"within","noise","cafe",65,"reading comprehension","reading_speed",-0.176776695296637,0.0423177083333333,NA,NA
-"71",31,"Weinstein, N. D. (1974)",1974,"between","noise","teletype",70,"proofreading (non-contextual errors)","perc_correct",0.569312831729399,0.12713308737937,-0.555427152906731,0.121007102800114
-"72",31,"Weinstein, N. D. (1974)",1974,"between","noise","teletype",70,"proofreading (contextual errors)","perc_correct",-1.29536540414244,0.147646033286603,-1.26377112599263,0.140531620022941
-"73",32,"Weinstein (1977)",1977,"within","speech","native",68,"proofreading (non-contextual errors)","perc_correct",-0.389960210171809,0.0371046373365042,NA,NA
-"74",32,"Weinstein (1977)",1977,"within","speech","native",68,"proofreading (contextual errors)","perc_correct",0.0488378739405646,0.0345238816884661,NA,NA
-"75",33,"Martin et al. (1988), Exp.1",1988,"within","speech","native",82,"reading comprehension","perc_correct",-0.24,0.0285777777777778,NA,NA
-"76",33,"Martin et al. (1988), Exp.1",1988,"within","speech","random (native)",82,"reading comprehension","perc_correct",-0.71,0.0347791666666667,NA,NA
-"77",34,"Martin et al. (1988), Exp.2",1988,"within","music","instrumental",82,"reading comprehension","perc_correct",-0.343333333333333,0.0294149691358025,NA,NA
-"78",35,"Martin et al. (1988), Exp.4",1988,"within","noise","white",82,"reading comprehension","perc_correct",-0.420022320835453,0.0226710286458333,NA,NA
-"79",35,"Martin et al. (1988), Exp.4",1988,"within","speech","native",82,"reading comprehension","perc_correct",-0.396928310067868,0.0224745008680556,NA,NA
-"80",35,"Martin et al. (1988), Exp.4",1988,"within","speech","foreign",82,"reading comprehension","perc_correct",-0.662509433895096,0.0254054036458333,NA,NA
-"81",36,"Martin et al. (1988), Exp.5",1988,"within","noise","white",82,"reading comprehension","perc_correct",NA,NA,NA,NA
-"82",36,"Martin et al. (1988), Exp.5",1988,"within","speech","non-word",82,"reading comprehension","perc_correct",NA,NA,NA,NA
-"83",36,"Martin et al. (1988), Exp.5",1988,"within","speech","random words",82,"reading comprehension","perc_correct",NA,NA,NA,NA
-"84",37,"Cool et al. (1994), Exp.2",1994,"within","music","radio/ generic",NA,"reading comprehension","reading_speed",NA,NA,NA,NA
-"85",37,"Cool et al. (1994), Exp.2",1994,"within","speech","movies",NA,"reading comprehension","reading_speed",-0.0359477124183007,0.111182902112673,NA,NA
-"86",37,"Cool et al. (1994), Exp.2",1994,"within","music","radio/ generic",NA,"reading comprehension","prop_correct",NA,NA,NA,NA
-"87",37,"Cool et al. (1994), Exp.2",1994,"within","speech","movies",NA,"reading comprehension","prop_correct",NA,NA,NA,NA
-"88",38,"Mitchell (1949)",1949,"within","music","radio/ generic",NA,"reading comprehension","num_correct",NA,NA,NA,NA
-"89",39,"Armstrong et al. (1991)",1991,"between","speech","TV ads",NA,"reading comprehension","reading_score",NA,NA,NA,NA
-"90",39,"Armstrong et al. (1991)",1991,"between","speech","TV drama",NA,"reading comprehension","reading_score",NA,NA,NA,NA
-"91",40,"Pool et al. (2000), Exp.1",2000,"between","speech","TV soap opera (native)",60,"reading comprehension","prop_correct",-0.388290137357661,0.0679230769230769,-0.383247408301068,0.0661702972352323
-"92",40,"Pool et al. (2000), Exp.1",2000,"between","music","TV music videos",60,"reading comprehension","prop_correct",-0.21613729078332,0.0670559610705596,-0.213330312980939,0.0653255576224578
-"93",40,"Pool et al. (2000), Exp.1",2000,"between","speech","TV soap opera (native)",60,"reading comprehension","reading_speed",0.116201533496621,0.0667791899698914,0.114692422671989,0.0650559287006397
-"94",40,"Pool et al. (2000), Exp.1",2000,"between","music","TV music videos",60,"reading comprehension","reading_speed",0.220170972213201,0.0670706271417109,0.217311608937705,0.0653398452303124
-"95",41,"Pool et al. (2000), Exp.2",2000,"between","speech","TV soap opera (native)",60,"reading comprehension","prop_correct",-0.389833273641789,0.042458176985616,-0.386714607452655,0.0417815634771732
-"96",41,"Pool et al. (2000), Exp.2",2000,"between","music","TV music videos",60,"reading comprehension","prop_correct",-0.0998752338877845,0.0417186201163757,-0.0990762320166823,0.0410537921862012
-"97",41,"Pool et al. (2000), Exp.2",2000,"between","speech","TV soap opera (native)",60,"reading comprehension","reading_speed",0.662222707593944,0.0439507235127763,0.656924925933193,0.0432503247828767
-"98",41,"Pool et al. (2000), Exp.2",2000,"between","music","TV music videos",60,"reading comprehension","reading_speed",-0.0770108377751043,0.0416975555684105,-0.0763947510729034,0.0410330633228723
-"99",42,"Dockrell & Shield (2006)",2006,"between","noise","children babble",65,"reading comprehension","score",-0.491243962752349,0.0403986305438266,-0.487550399122632,0.0397934161679934
-"100",42,"Dockrell & Shield (2006)",2006,"between","noise","children babble + environmental",65,"reading comprehension","score",0.581413284323669,0.0408727519960198,0.577041755870108,0.040260434777469
+"65",29,"Cauchard et al. (2012)",2012,"within","music","instrumental",65,"reading comprehension","reading_speed",NA,NA,NA,NA
+"66",29,"Cauchard et al. (2012)",2012,"within","speech","native",65,"reading comprehension","reading_speed",NA,NA,NA,NA
+"67",30,"Johansson et al. (2012)",2012,"within","music","preferred",65,"reading comprehension","prop_correct",NA,NA,NA,NA
+"68",30,"Johansson et al. (2012)",2012,"within","music","non-preferred",65,"reading comprehension","prop_correct",NA,NA,NA,NA
+"69",30,"Johansson et al. (2012)",2012,"within","noise","cafe",65,"reading comprehension","prop_correct",NA,NA,NA,NA
+"70",30,"Johansson et al. (2012)",2012,"within","music","preferred",65,"reading comprehension","reading_speed",NA,NA,NA,NA
+"71",30,"Johansson et al. (2012)",2012,"within","music","non-preferred",65,"reading comprehension","reading_speed",NA,NA,NA,NA
+"72",30,"Johansson et al. (2012)",2012,"within","noise","cafe",65,"reading comprehension","reading_speed",NA,NA,NA,NA
+"73",31,"Weinstein, N. D. (1974)",1974,"between","noise","teletype",70,"proofreading (non-contextual errors)","perc_correct",-0.569312831729399,0.12713308737937,-0.555427152906731,0.121007102800114
+"74",31,"Weinstein, N. D. (1974)",1974,"between","noise","teletype",70,"proofreading (contextual errors)","perc_correct",-1.29536540414244,0.147646033286603,-1.26377112599263,0.140531620022941
+"75",32,"Weinstein (1977)",1977,"within","speech","native",68,"proofreading (non-contextual errors)","perc_correct",-0.160816880225669,0.0349286563614744,NA,NA
+"76",32,"Weinstein (1977)",1977,"within","speech","native",68,"proofreading (contextual errors)","perc_correct",-0.587220219514703,0.0404280618311534,NA,NA
+"77",33,"Martin et al. (1988), Exp.1",1988,"within","speech","native",82,"reading comprehension","perc_correct",-0.396666666666667,0.0299631172839506,NA,NA
+"78",33,"Martin et al. (1988), Exp.1",1988,"within","speech","random (native)",82,"reading comprehension","perc_correct",-0.35,0.0294791666666667,NA,NA
+"79",34,"Martin et al. (1988), Exp.2",1988,"within","music","instrumental",82,"reading comprehension","perc_correct",0.0438333333333333,0.0278044633487654,NA,NA
+"80",35,"Martin et al. (1988), Exp.4",1988,"within","noise","white",82,"reading comprehension","perc_correct",-0.207846096908265,0.0212833333333333,NA,NA
+"81",35,"Martin et al. (1988), Exp.4",1988,"within","speech","native",82,"reading comprehension","perc_correct",-0.614878036686951,0.0247716145833333,NA,NA
+"82",35,"Martin et al. (1988), Exp.4",1988,"within","speech","foreign",82,"reading comprehension","perc_correct",-0.297335388632657,0.0217542534722222,NA,NA
+"83",36,"Martin et al. (1988), Exp.5",1988,"within","noise","white",82,"reading comprehension","perc_correct",-0.420022320835453,0.0226710286458333,NA,NA
+"84",36,"Martin et al. (1988), Exp.5",1988,"within","speech","non-word",82,"reading comprehension","perc_correct",-0.396928310067868,0.0224745008680556,NA,NA
+"85",36,"Martin et al. (1988), Exp.5",1988,"within","speech","random words",82,"reading comprehension","perc_correct",-0.662509433895096,0.0254054036458333,NA,NA
+"86",37,"Cool et al. (1994), Exp.2",1994,"within","music","radio/ generic",NA,"reading comprehension","reading_speed",NA,NA,NA,NA
+"87",37,"Cool et al. (1994), Exp.2",1994,"within","speech","movies",NA,"reading comprehension","reading_speed",NA,NA,NA,NA
+"88",37,"Cool et al. (1994), Exp.2",1994,"within","music","radio/ generic",NA,"reading comprehension","prop_correct",NA,NA,NA,NA
+"89",37,"Cool et al. (1994), Exp.2",1994,"within","speech","movies",NA,"reading comprehension","prop_correct",NA,NA,NA,NA
+"90",38,"Mitchell (1949)",1949,"within","music","radio/ generic",NA,"reading comprehension","num_correct",-0.0113050325528834,0.0109897132074781,NA,NA
+"91",39,"Armstrong et al. (1991)",1991,"between","speech","TV ads",NA,"reading comprehension","reading_score",-0.638224098573534,0.0668691414141414,NA,NA
+"92",39,"Armstrong et al. (1991)",1991,"between","speech","TV drama",NA,"reading comprehension","reading_score",-0.49695710442287,0.0655964141414141,NA,NA
+"93",40,"Pool et al. (2000), Exp.1",2000,"between","speech","TV soap opera (native)",60,"reading comprehension","prop_correct",-0.388290137357661,0.0679230769230769,-0.383247408301068,0.0661702972352323
+"94",40,"Pool et al. (2000), Exp.1",2000,"between","music","TV music videos",60,"reading comprehension","prop_correct",-0.21613729078332,0.0670559610705596,-0.213330312980939,0.0653255576224578
+"95",40,"Pool et al. (2000), Exp.1",2000,"between","speech","TV soap opera (native)",60,"reading comprehension","reading_speed",0.116201533496621,0.0667791899698914,0.114692422671989,0.0650559287006397
+"96",40,"Pool et al. (2000), Exp.1",2000,"between","music","TV music videos",60,"reading comprehension","reading_speed",0.220170972213201,0.0670706271417109,0.217311608937705,0.0653398452303124
+"97",41,"Pool et al. (2000), Exp.2",2000,"between","speech","TV soap opera (native)",60,"reading comprehension","prop_correct",-0.389833273641789,0.042458176985616,-0.386714607452655,0.0417815634771732
+"98",41,"Pool et al. (2000), Exp.2",2000,"between","music","TV music videos",60,"reading comprehension","prop_correct",-0.0998752338877845,0.0417186201163757,-0.0990762320166823,0.0410537921862012
+"99",41,"Pool et al. (2000), Exp.2",2000,"between","speech","TV soap opera (native)",60,"reading comprehension","reading_speed",0.662222707593944,0.0439507235127763,0.656924925933193,0.0432503247828767
+"100",41,"Pool et al. (2000), Exp.2",2000,"between","music","TV music videos",60,"reading comprehension","reading_speed",-0.0770108377751043,0.0416975555684105,-0.0763947510729034,0.0410330633228723
+"101",42,"Dockrell & Shield (2006)",2006,"between","noise","children babble",65,"reading comprehension","score",-0.491243962752349,0.0403986305438266,-0.487550399122632,0.0397934161679934
+"102",42,"Dockrell & Shield (2006)",2006,"between","noise","children babble + environmental",65,"reading comprehension","score",0.581413284323669,0.0408727519960198,0.577041755870108,0.040260434777469
+"103",43,"Hyönä & Ekholm (2016), Exp.1",2016,"within","speech","native",82.5,"reading comprehension","perc_correct",NA,NA,NA,NA
+"104",43,"Hyönä & Ekholm (2016), Exp.1",2016,"within","speech","foreign",82.5,"reading comprehension","perc_correct",NA,NA,NA,NA
+"105",43,"Hyönä & Ekholm (2016), Exp.1",2016,"within","speech","native",82.5,"reading comprehension","reading_speed",NA,NA,NA,NA
+"106",43,"Hyönä & Ekholm (2016), Exp.1",2016,"within","speech","foreign",82.5,"reading comprehension","reading_speed",NA,NA,NA,NA
+"107",44,"Hyönä & Ekholm (2016), Exp.2",2016,"within","speech","scrambled",82.5,"reading comprehension","reading_speed",NA,NA,NA,NA
+"108",45,"Hyönä & Ekholm (2016), Exp.3",2016,"within","speech","native",82.5,"reading comprehension","reading_speed",NA,NA,NA,NA
+"109",45,"Hyönä & Ekholm (2016), Exp.3",2016,"within","speech","scrambled",82.5,"reading comprehension","reading_speed",NA,NA,NA,NA
+"110",46,"Hyönä & Ekholm (2016), Exp.4",2016,"within","speech","scrambled",82.5,"reading comprehension","reading_speed",NA,NA,NA,NA

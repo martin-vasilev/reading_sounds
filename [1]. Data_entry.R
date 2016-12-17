@@ -1360,10 +1360,128 @@ data<- Add_data(data, ID= 42, N_C=51, N_E=51, sample="children", cit= "Dockrell 
 # data from Table 1
 
 
+#-----------------
+#--- Study 43 ---#
+#-----------------
+
+# Finnish speech, reading comprehension:
+data<- Add_data(data, ID= 43, N_C=42, sample="adults", cit= "Hyönä & Ekholm (2016), Exp.1",
+                year=2016, design="within", sound="speech",
+                sound_type= "native", db= 82.5, task= "reading comprehension", 
+                measure= "perc_correct", mean_C= (76+80)/2, var_C= (15+15)/2, 
+                mean_E= (75+74)/2, var_E= (14+12)/2, var_type= "SD",
+                reference= "Hyönä, J., & Ekholm, M. (2016). Background Speech Effects on Sentence Processing during Reading: An Eye Movement Study. PloS one, 11(3), e0152133."
+)
+# data from Table 1
+
+
+# Italian speech, reading comprehension:
+data<- Add_data(data, ID= 43, N_C=42, sample="adults", cit= "Hyönä & Ekholm (2016), Exp.1",
+                year=2016, design="within", sound="speech",
+                sound_type= "foreign", db= 82.5, task= "reading comprehension", 
+                measure= "perc_correct", mean_C= (76+80)/2, var_C= (15+15)/2, 
+                mean_E= (79+77)/2, var_E= (15+14)/2, var_type= "SD",
+                reference= "Hyönä, J., & Ekholm, M. (2016). Background Speech Effects on Sentence Processing during Reading: An Eye Movement Study. PloS one, 11(3), e0152133."
+)
+# data from Table 1
+
+#-------
+
+# Finnish speech, reading speed:
+data<- Add_data(data, ID= 43, N_C=42, sample="adults", cit= "Hyönä & Ekholm (2016), Exp.1",
+                year=2016, design="within", sound="speech",
+                sound_type= "native", db= 82.5, task= "reading comprehension", 
+                measure= "reading_speed", mean_C= (4343+4134)/2+(815+821)/2,
+                var_C= (1167+910)/2+(963+1212)/2, 
+                mean_E= (4448+4189)/2+(839+766)/2,
+                var_E= (1053+891)/2 + (936+734)/2, var_type= "SD",
+                reference= "Hyönä, J., & Ekholm, M. (2016). Background Speech Effects on Sentence Processing during Reading: An Eye Movement Study. PloS one, 11(3), e0152133."
+)
+# data from Tables 2 and 5
+
+
+# Italian speech, reading speed:
+data<- Add_data(data, ID= 43, N_C=42, sample="adults", cit= "Hyönä & Ekholm (2016), Exp.1",
+                year=2016, design="within", sound="speech",
+                sound_type= "foreign", db= 82.5, task= "reading comprehension", 
+                measure= "reading_speed", mean_C= (4343+4134)/2+(815+821)/2, 
+                var_C= (1167+910)/2+(963+1212)/2, 
+                mean_E= (4183+4084)/2 + (759+737)/2,
+                var_E= (899+904)/2 + (802+785)/2, var_type= "SD",
+                reference= "Hyönä, J., & Ekholm, M. (2016). Background Speech Effects on Sentence Processing during Reading: An Eye Movement Study. PloS one, 11(3), e0152133."
+)
+# data from Tables 2 and 5
+
+
+#-----------------
+#--- Study 44 ---#
+#-----------------
+
+# scrambled Finnish speech, reading speed:
+data<- Add_data(data, ID= 44, N_C=36, sample="adults", cit= "Hyönä & Ekholm (2016), Exp.2",
+                year=2016, design="within", sound="speech",
+                sound_type= "scrambled", db= 82.5, task= "reading comprehension", 
+                measure= "reading_speed", mean_C= (3708+3598)/2+(515+419)/2,
+                var_C= (937+883)/2+(760+701)/2, 
+                mean_E= ((4153+4156)/2+(3929+3909)/2)/2+((535+515)/2+(452+560)/2)/2,
+                var_E= ((1021+857)/2 + (1058+1026)/2)/2 + ((1151+920)/2+(814+957)/2)/2, var_type= "SD",
+                reference= "Hyönä, J., & Ekholm, M. (2016). Background Speech Effects on Sentence Processing during Reading: An Eye Movement Study. PloS one, 11(3), e0152133."
+)
+
+
+
+#-----------------
+#--- Study 45 ---#
+#-----------------
+
+# 1 participant was excluded
+
+# Finnish speech, reading speed:
+data<- Add_data(data, ID= 45, N_C=36-1, sample="adults", cit= "Hyönä & Ekholm (2016), Exp.3",
+                year=2016, design="within", sound="speech",
+                sound_type= "native", db= 82.5, task= "reading comprehension", 
+                measure= "reading_speed", mean_C= (4161+3915)/2+(405+405)/2,
+                var_C= (1273+1099)/2+(614+517)/2, 
+                mean_E= (4271+4242)/2+(523+559)/2,
+                var_E= (1225+1307)/2+(644+782)/2, var_type= "SD",
+                reference= "Hyönä, J., & Ekholm, M. (2016). Background Speech Effects on Sentence Processing during Reading: An Eye Movement Study. PloS one, 11(3), e0152133."
+)
+
+
+# scrambled Finnish speech, reading speed:
+data<- Add_data(data, ID= 45, N_C=36-1, sample="adults", cit= "Hyönä & Ekholm (2016), Exp.3",
+                year=2016, design="within", sound="speech",
+                sound_type= "scrambled", db= 82.5, task= "reading comprehension", 
+                measure= "reading_speed", mean_C= (4161+3915)/2+(405+405)/2,
+                var_C= (1273+1099)/2+(614+517)/2, 
+                mean_E= (4683+4288)/2+(692+438)/2,
+                var_E= (1681+1432)/2+(954+599)/2, var_type= "SD",
+                reference= "Hyönä, J., & Ekholm, M. (2016). Background Speech Effects on Sentence Processing during Reading: An Eye Movement Study. PloS one, 11(3), e0152133."
+)
+
+
+#-----------------
+#--- Study 46 ---#
+#-----------------
+
+# 1 participant was excluded
+
+# Finnish speech, reading speed:
+data<- Add_data(data, ID= 46, N_C=36, sample="adults", cit= "Hyönä & Ekholm (2016), Exp.4",
+                year=2016, design="within", sound="speech",
+                sound_type= "scrambled", db= 82.5, task= "reading comprehension", 
+                measure= "reading_speed",
+                mean_C= (4416+4205)/2+(612+536)/2,
+                var_C= (1102+1090)/2+(815+685)/2, 
+                mean_E= ((4682+4679)/2+(4575+4512)/2)/2+((580+694)/2+(515+587)/2)/2,
+                var_E= ((1358+1035)/2+(1257+1133)/2)/2+((698+699)/2+(519+674)/2)/2, var_type= "SD",
+                reference= "Hyönä, J., & Ekholm, M. (2016). Background Speech Effects on Sentence Processing during Reading: An Eye Movement Study. PloS one, 11(3), e0152133."
+)
 
 #############
 # Save data #
 #############
+
 
 save(data, file= "Data/data.Rda")
 write.csv(data, file= "Data/data.csv")
