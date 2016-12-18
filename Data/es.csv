@@ -109,3 +109,5 @@
 "108",45,"Hyönä & Ekholm (2016), Exp.3",2016,"within","speech","native",82.5,"reading comprehension","reading_speed",NA,NA,NA,NA
 "109",45,"Hyönä & Ekholm (2016), Exp.3",2016,"within","speech","scrambled",82.5,"reading comprehension","reading_speed",NA,NA,NA,NA
 "110",46,"Hyönä & Ekholm (2016), Exp.4",2016,"within","speech","scrambled",82.5,"reading comprehension","reading_speed",NA,NA,NA,NA
+"111",47,"Armstrong & Chung (2000)",2000,"between","speech","native",NA,"reading comprehension","num_correct",-0.094884273848406,0.102747002350237,-0.0929478600963977,0.0985960405726554
+"112",48,"Madsen (1987), Exp.1",1987,"between","music","various",75,"reading comprehension","num_correct",-0.0996923439971334,0.0400496928172582,-0.0989274411020148,0.0394374772239933

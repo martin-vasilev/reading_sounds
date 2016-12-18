@@ -1464,8 +1464,6 @@ data<- Add_data(data, ID= 45, N_C=36-1, sample="adults", cit= "Hyönä & Ekholm 
 #--- Study 46 ---#
 #-----------------
 
-# 1 participant was excluded
-
 # Finnish speech, reading speed:
 data<- Add_data(data, ID= 46, N_C=36, sample="adults", cit= "Hyönä & Ekholm (2016), Exp.4",
                 year=2016, design="within", sound="speech",
@@ -1478,10 +1476,39 @@ data<- Add_data(data, ID= 46, N_C=36, sample="adults", cit= "Hyönä & Ekholm (2
                 reference= "Hyönä, J., & Ekholm, M. (2016). Background Speech Effects on Sentence Processing during Reading: An Eye Movement Study. PloS one, 11(3), e0152133."
 )
 
+#-----------------
+#--- Study 47 ---#
+#-----------------
+
+# native (TV) speech, reading comprehension:
+data<- Add_data(data, ID= 47, N_C=19, N_E=20, sample="adults", cit= "Armstrong & Chung (2000)",
+                year=2000, design="between", sound="speech",
+                sound_type= "native", db= NA, task= "reading comprehension", 
+                measure= "num_correct", mean_C= 7.84, var_C= 1.46, 
+                mean_E= 7.70, var_E= 1.49, var_type= "SD",
+                reference= "Armstrong, G. B., & Chung, L. (2000). Background Television and Reading Memory in Context Assessing TV Interference and Facilitative Context Effects on Encoding Versus Retrieval Processes. Communication Research, 27(3), 327-352."
+)
+# data from Table 2
+
+
+#-----------------
+#--- Study 48 ---#
+#-----------------
+
+# music background condition (Group 4):
+data<- Add_data(data, ID= 48, N_C=50, N_E=50, sample="adults", cit= "Madsen (1987), Exp.1",
+                year=1987, design="between", sound="music",
+                sound_type= "various", db= 75, task= "reading comprehension", 
+                measure= "num_correct", mean_C= 31.74, var_C= 6.87, 
+                mean_E= 31.04, var_E= 7.17, var_type= "SD",
+                reference= "Madsen, C. K. (1987). Background music: Competition for focus of attention. Applications of research in music behavior, 315-325"
+)
+# data from Table 25.2
+
+
 #############
 # Save data #
 #############
-
 
 save(data, file= "Data/data.Rda")
 write.csv(data, file= "Data/data.csv")
