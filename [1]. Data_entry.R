@@ -1506,6 +1506,36 @@ data<- Add_data(data, ID= 48, N_C=50, N_E=50, sample="adults", cit= "Madsen (198
 # data from Table 25.2
 
 
+#-----------------
+#--- Study 49 ---#
+#-----------------
+
+# aircraft noise:
+data<- Add_data(data, ID= 49, N_C=23, sample="children", cit= "Sörqvist (2010), Exp.1a",
+                year=2010, design="within", sound="noise",
+                sound_type= "aircraft", db= 57.5, task= "reading comprehension", 
+                measure= "prop_correct", mean_C= 0.28, var_C= 0.22, 
+                mean_E= 0.24, var_E= 0.20, var_type= "SD",
+                reference= "Sörqvist, P. (2010). Effects of aircraft noise and speech on prose memory: What role for working memory capacity?. Journal of Environmental Psychology, 30(1), 112-118."
+)
+# data from Table 1
+
+
+#-----------------
+#--- Study 50 ---#
+#-----------------
+
+# aircraft noise:
+data<- Add_data(data, ID= 50, N_C=23, sample="children", cit= "Sörqvist (2010), Exp.1b",
+                year=2010, design="within", sound="speech",
+                sound_type= "native", db= 57.5, task= "reading comprehension", 
+                measure= "prop_correct", mean_C= 0.28, var_C= 0.16, 
+                mean_E= 0.17, var_E= 0.11, var_type= "SD",
+                reference= "Sörqvist, P. (2010). Effects of aircraft noise and speech on prose memory: What role for working memory capacity?. Journal of Environmental Psychology, 30(1), 112-118."
+)
+# data from Table 1
+
+
 #############
 # Save data #
 #############
