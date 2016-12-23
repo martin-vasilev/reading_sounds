@@ -1525,7 +1525,6 @@ data<- Add_data(data, ID= 49, N_C=23, sample="children", cit= "Sörqvist (2010),
 #--- Study 50 ---#
 #-----------------
 
-# aircraft noise:
 data<- Add_data(data, ID= 50, N_C=23, sample="children", cit= "Sörqvist (2010), Exp.1b",
                 year=2010, design="within", sound="speech",
                 sound_type= "native", db= 57.5, task= "reading comprehension", 
@@ -1534,6 +1533,108 @@ data<- Add_data(data, ID= 50, N_C=23, sample="children", cit= "Sörqvist (2010),
                 reference= "Sörqvist, P. (2010). Effects of aircraft noise and speech on prose memory: What role for working memory capacity?. Journal of Environmental Psychology, 30(1), 112-118."
 )
 # data from Table 1
+
+
+#-----------------
+#--- Study 51 ---#
+#-----------------
+
+data<- Add_data(data, ID= 51, N_C=24, sample="adults", cit= "Sörqvist et al. (2010), Exp.1",
+                year=2010, design="within", sound="speech",
+                sound_type= "native", db= 65, task= "reading comprehension", 
+                measure= "prop_correct", mean_C= 0.61, var_C= 0.17, 
+                mean_E= 0.49, var_E= 0.19, var_type= "SD",
+                reference= "Sörqvist, P., Ljungberg, J. K., & Ljung, R. (2010). A sub-process view of working memory capacity: Evidence from effects of speech on prose memory. Memory, 18(3), 310-326."
+)
+# data from Table 1
+
+
+#-----------------
+#--- Study 52 ---#
+#-----------------
+
+data<- Add_data(data, ID= 52, N_C=42, sample="adults", cit= "Sörqvist et al. (2010), Exp.2",
+                year=2010, design="within", sound="speech",
+                sound_type= "native", db= 65, task= "reading comprehension", 
+                measure= "prop_correct", mean_C= 0.54, var_C= 0.15, 
+                mean_E= 0.47, var_E= 0.17, var_type= "SD",
+                reference= "Sörqvist, P., Ljungberg, J. K., & Ljung, R. (2010). A sub-process view of working memory capacity: Evidence from effects of speech on prose memory. Memory, 18(3), 310-326."
+)
+# data from Table 1
+
+
+#-----------------
+#--- Study 53 ---#
+#-----------------
+
+data<- Add_data(data, ID= 53, N_C=32, sample="adults", cit= "Halin et al. (2014)",
+                year=2014, design="within", sound="speech",
+                sound_type= "native", db= 65, task= "reading comprehension", 
+                measure= "prop_correct", mean_C= (61.75+57.51)/2, var_C= NA, 
+                mean_E= (53.75+58.78)/2, var_E= NA, var_type= NA,
+                reference= "Halin, N., Marsh, J. E., Haga, A., Holmgren, M., & Sörqvist, P. (2014). Effects of speech on proofreading: Can task-engagement manipulations shield against distraction?. Journal of Experimental Psychology: Applied,20(1), 69."
+)
+# no error bars, effect size is converted from the ANOVA
+
+
+#-----------------
+#--- Study 54 ---#
+#-----------------
+
+# Contextual mistakes:
+data<- Add_data(data, ID= 54, N_C=31, sample="adults", cit= "Halin et al. (2014), Exp.1",
+                year=2014, design="within", sound="speech",
+                sound_type= "native", db= 65, task= "proofreading (contextual errors)", 
+                measure= "prop_misses", mean_C= ((0.11+0.32)/2 + (0.16+0.34)/2)/2,
+                var_C= ((0.10+0.18)/2 + (0.18+0.20)/2)/2, 
+                mean_E= ((0.19+0.32)/2 + (0.16+0.36)/2)/2,
+                var_E= ((0.18+0.23)/2 + (0.15+0.26)/2)/2, var_type= "SD",
+                reference= "Halin, N., Marsh, J. E., Hellman, A., Hellström, I., & Sörqvist, P. (2014). A shield against distraction. Journal of Applied Research in Memory and Cognition, 3(1), 31-36."
+)
+# Data from Table 1 
+
+
+# Spelling mistakes:
+data<- Add_data(data, ID= 54, N_C=31, sample="adults", cit= "Halin et al. (2014), Exp.1",
+                year=2014, design="within", sound="speech",
+                sound_type= "native", db= 65, task= "proofreading (spelling errors)", 
+                measure= "prop_misses", mean_C= ((0.24+0.31)/2 + (0.33+0.44)/2)/2,
+                var_C= ((0.14+0.14)/2 + (0.17+0.18)/2)/2, 
+                mean_E= ((0.17+0.30)/2 + (0.28+0.40)/2)/2,
+                var_E= ((0.11+0.14)/2 + (0.13+0.13)/2)/2, var_type= "SD",
+                reference= "Halin, N., Marsh, J. E., Hellman, A., Hellström, I., & Sörqvist, P. (2014). A shield against distraction. Journal of Applied Research in Memory and Cognition, 3(1), 31-36."
+)
+# Data from Table 1 
+
+
+#-----------------
+#--- Study 55 ---#
+#-----------------
+
+# Contextual mistakes:
+data<- Add_data(data, ID= 55, N_C=29, sample="adults", cit= "Halin et al. (2014), Exp.2",
+                year=2014, design="within", sound="speech",
+                sound_type= "native", db= 65, task= "proofreading (contextual errors)", 
+                measure= "prop_misses", mean_C= ((0.13+0.26)/2 + (0.17+0.24)/2)/2,
+                var_C= ((0.11+0.22)/2 + (0.17+0.27)/2)/2, 
+                mean_E= ((0.20+0.30)/2 + (0.16+0.29)/2)/2,
+                var_E= ((0.20+0.28)/2 + (0.15+0.20)/2)/2, var_type= "SD",
+                reference= "Halin, N., Marsh, J. E., Hellman, A., Hellström, I., & Sörqvist, P. (2014). A shield against distraction. Journal of Applied Research in Memory and Cognition, 3(1), 31-36."
+)
+# Data from Table 1 
+
+
+# Spelling mistakes:
+data<- Add_data(data, ID= 55, N_C=29, sample="adults", cit= "Halin et al. (2014), Exp.2",
+                year=2014, design="within", sound="speech",
+                sound_type= "native", db= 65, task= "proofreading (spelling errors)", 
+                measure= "prop_misses", mean_C= ((0.28+0.30)/2 + (0.60+0.51)/2)/2,
+                var_C= ((0.15+0.14)/2 + (0.19+0.19)/2)/2, 
+                mean_E= ((0.22+0.30)/2 + (0.54+0.53)/2)/2,
+                var_E= ((0.14+0.11)/2 + (0.20+0.17)/2)/2, var_type= "SD",
+                reference= "Halin, N., Marsh, J. E., Hellman, A., Hellström, I., & Sörqvist, P. (2014). A shield against distraction. Journal of Applied Research in Memory and Cognition, 3(1), 31-36."
+)
+# Data from Table 1 
 
 
 #############

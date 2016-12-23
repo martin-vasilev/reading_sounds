@@ -111,3 +111,12 @@
 "110",46,"Hyönä & Ekholm (2016), Exp.4",2016,"within","speech","scrambled",82.5,"reading comprehension","reading_speed",NA,NA,NA,NA
 "111",47,"Armstrong & Chung (2000)",2000,"between","speech","native",NA,"reading comprehension","num_correct",-0.094884273848406,0.102747002350237,-0.0929478600963977,0.0985960405726554
 "112",48,"Madsen (1987), Exp.1",1987,"between","music","various",75,"reading comprehension","num_correct",-0.0996923439971334,0.0400496928172582,-0.0989274411020148,0.0394374772239933
+"113",49,"Sörqvist (2010), Exp.1a",2010,"within","noise","aircraft",57.5,"reading comprehension","prop_correct",NA,NA,NA,NA
+"114",50,"Sörqvist (2010), Exp.1b",2010,"within","speech","native",57.5,"reading comprehension","prop_correct",NA,NA,NA,NA
+"115",51,"Sörqvist et al. (2010), Exp.1",2010,"within","speech","native",65,"reading comprehension","prop_correct",NA,NA,NA,NA
+"116",52,"Sörqvist et al. (2010), Exp.2",2010,"within","speech","native",65,"reading comprehension","prop_correct",NA,NA,NA,NA
+"117",53,"Halin et al. (2014)",2014,"within","speech","native",65,"reading comprehension","prop_correct",-0.208416650006663,0.0319287109375,NA,NA
+"118",54,"Halin et al. (2014), Exp.1",2014,"within","speech","native",65,"proofreading (contextual errors)","prop_misses",NA,NA,NA,NA
+"119",54,"Halin et al. (2014), Exp.1",2014,"within","speech","native",65,"proofreading (spelling errors)","prop_misses",NA,NA,NA,NA
+"120",55,"Halin et al. (2014), Exp.2",2014,"within","speech","native",65,"proofreading (contextual errors)","prop_misses",NA,NA,NA,NA
+"121",55,"Halin et al. (2014), Exp.2",2014,"within","speech","native",65,"proofreading (spelling errors)","prop_misses",NA,NA,NA,NA

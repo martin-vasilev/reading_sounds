@@ -140,6 +140,14 @@ es$d[92]<- Ttest_to_d(t = -1.97, N_C= data$N_C[92], N_E= data$N_E[92], design= d
 es$var_d[92]<- Ttest_to_d_var(d= es$d[92], N_C= data$N_C[92], N_E= data$N_E[92], design= data$design[92])
 
 
+#------------------------------
+# Study 53 Halin et al. (2014):
+#------------------------------
+
+# negative sign because speech mean was smaller than silence mean
+es$d[117]<- -ANOVA_to_d(Fvalue=1.39, n= data$N_C[117], design= data$design[117], r=r)
+es$var_d[117]<- ANOVA_to_d_var(d= es$d[117], n= data$N_C[117], design= data$design[117], r=r)
+
 
 # Save data: 
 save(es, file= "Data/es.Rda")
