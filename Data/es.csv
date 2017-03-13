@@ -120,3 +120,6 @@
 "119",54,"Halin et al. (2014), Exp.1",2014,"within","speech","native",65,"proofreading (spelling errors)","prop_misses",NA,NA,NA,NA
 "120",55,"Halin et al. (2014), Exp.2",2014,"within","speech","native",65,"proofreading (contextual errors)","prop_misses",NA,NA,NA,NA
 "121",55,"Halin et al. (2014), Exp.2",2014,"within","speech","native",65,"proofreading (spelling errors)","prop_misses",NA,NA,NA,NA
+"122",56,"Haapakangas et al. (2011)",2011,"within","speech","native",48,"proofreading (contextual errors)","prop_correct",NA,NA,NA,NA
+"123",56,"Haapakangas et al. (2011)",2011,"within","speech","native",48,"proofreading (non-contextual errors)","prop_correct",NA,NA,NA,NA
+"124",56,"Haapakangas et al. (2011)",2011,"within","speech","native",48,"proofreading","proofreading_speed",NA,NA,NA,NA

@@ -1,4 +1,6 @@
 
+# git add -A && git commit -m "Your Message"
+
 # Martin R. Vasilev, 2016
 
 #------------------------------#
@@ -1635,6 +1637,56 @@ data<- Add_data(data, ID= 55, N_C=29, sample="adults", cit= "Halin et al. (2014)
                 reference= "Halin, N., Marsh, J. E., Hellman, A., Hellström, I., & Sörqvist, P. (2014). A shield against distraction. Journal of Applied Research in Memory and Cognition, 3(1), 31-36."
 )
 # Data from Table 1 
+
+
+#-----------------
+#--- Study 56 ---#
+#-----------------
+
+# Contextual mistakes (max 30, normal coding):
+data<- Add_data(data, ID= 56, N_C=44, sample="adults", cit= "Haapakangas et al. (2011)",
+                year=2011, design="within", sound="speech",
+                sound_type= "native", db= 48, task= "proofreading (contextual errors)", 
+                measure= "prop_correct", mean_C= 19.2, var_C= 5.9, 
+                mean_E= 18.4, var_E= 6.3, var_type= "SD",
+                reference= "Haapakangas, A., Kankkunen, E., Hongisto, V., Virjonen, P., Oliva, D., & Keskinen, E. (2011). Effects of five speech masking sounds on performance and acoustic satisfaction. Implications for open-plan offices. Acta Acustica united with Acustica, 97(4), 641-655"
+)
+# Data from Table 3 
+
+
+# Non-contextual mistakes (max 30, normal coding):
+data<- Add_data(data, ID= 56, N_C=44, sample="adults", cit= "Haapakangas et al. (2011)",
+                year=2011, design="within", sound="speech",
+                sound_type= "native", db= 48, task= "proofreading (non-contextual errors)", 
+                measure= "prop_correct", mean_C= 19.4, var_C= 5.2, 
+                mean_E= 18.6, var_E= 5.0, var_type= "SD",
+                reference= "Haapakangas, A., Kankkunen, E., Hongisto, V., Virjonen, P., Oliva, D., & Keskinen, E. (2011). Effects of five speech masking sounds on performance and acoustic satisfaction. Implications for open-plan offices. Acta Acustica united with Acustica, 97(4), 641-655"
+)
+# Data from Table 3 
+
+
+# Proof-reading speed (max 140, normal coding):
+data<- Add_data(data, ID= 56, N_C=44, sample="adults", cit= "Haapakangas et al. (2011)",
+                year=2011, design="within", sound="speech",
+                sound_type= "native", db= 48, task= "proofreading", 
+                measure= "proofreading_speed", mean_C= 118, var_C= 18, 
+                mean_E= 117, var_E= 22, var_type= "SD",
+                reference= "Haapakangas, A., Kankkunen, E., Hongisto, V., Virjonen, P., Oliva, D., & Keskinen, E. (2011). Effects of five speech masking sounds on performance and acoustic satisfaction. Implications for open-plan offices. Acta Acustica united with Acustica, 97(4), 641-655"
+)
+# Data from Table 3 
+
+
+#-----------------
+#--- Study 57 ---#
+#-----------------
+
+#data<- Add_data(data, ID= 57, N_C=32, sample="adults", cit= "Halin et al. (2014)",
+#                year=2014, design="within", sound="speech",
+#                sound_type= "native", db= 65, task= "reading comprehension", 
+#                measure= "prop_correct", mean_C= (61.75+57.51)/2, var_C= NA, 
+#                mean_E= (53.75+58.78)/2, var_E= NA, var_type= NA,
+#                reference= "Halin, N., Marsh, J. E., Haga, A., Holmgren, M., & Sörqvist, P. (2014). Effects of speech on proofreading: Can task-engagement manipulations shield against distraction?. Journal of Experimental Psychology: Applied,20(1), 69."
+#)
 
 
 #############
