@@ -1680,13 +1680,15 @@ data<- Add_data(data, ID= 56, N_C=44, sample="adults", cit= "Haapakangas et al. 
 #--- Study 57 ---#
 #-----------------
 
-#data<- Add_data(data, ID= 57, N_C=32, sample="adults", cit= "Halin et al. (2014)",
-#                year=2014, design="within", sound="speech",
-#                sound_type= "native", db= 65, task= "reading comprehension", 
-#                measure= "prop_correct", mean_C= (61.75+57.51)/2, var_C= NA, 
-#                mean_E= (53.75+58.78)/2, var_E= NA, var_type= NA,
-#                reference= "Halin, N., Marsh, J. E., Haga, A., Holmgren, M., & Sörqvist, P. (2014). Effects of speech on proofreading: Can task-engagement manipulations shield against distraction?. Journal of Experimental Psychology: Applied,20(1), 69."
-#)
+data<- Add_data(data, ID= 57, N_C=24, sample="adults", cit= "Baker & Madell (1965)",
+                year=1965, design="within", sound="speech",
+                sound_type= "native", db= NA, task= "reading comprehension", 
+                measure= "mean_correct", mean_C= 79.5, var_C= 18.9, 
+                mean_E= 49.0, var_E= 31.5, var_type= "SD",
+                reference= "Baker, R. W., & Madell, T. O. (1965). A continued investigation of susceptibility to distraction in academically underachieving and achieving male college students.Journal of Educational Psychology,56(5), 254"
+)
+# data from Table 1
+
 
 
 #############
