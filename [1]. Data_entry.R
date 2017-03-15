@@ -10,7 +10,7 @@
 rm(list=ls())
 
 # Load functions:
-source("Functions/Add_data.R")
+source("Functions/Add_data.R"); source("Functions/Add_data_corr.R")
 source("functions/effect_sizes.R")
 #source("Functions/print_data.R")
 
@@ -41,6 +41,12 @@ colnames(data)<- c("ID", "N_C", "N_E", "sample", "cit", "year", "design", "sound
 ########################
 # Start coding studies #
 ########################
+
+
+#------------------------------------------------------------------------------------------------------------#
+#                                             Correlation studies:                                           #
+#------------------------------------------------------------------------------------------------------------#
+
 
 #----------------
 #--- Study 1 ---#
@@ -1702,3 +1708,34 @@ write.csv(data, file= "Data/data.csv")
 #cat("\n"); cat("\n"); cat("###############"); cat("\n"); cat(" ALL FINISHED!"); cat("\n"); cat("###############")
 #sink() # close text file
 #file.show("Output/Data_entry_log.txt")
+
+
+
+#------------------------------------------------------------------------------------------------------------#
+#                                             Correlation studies:                                           #
+#------------------------------------------------------------------------------------------------------------#
+
+data_corr<- data.frame(NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA)
+colnames(data_corr)<- c("ID", "N_C", "N_E", "sample", "age", "grade", "cit", "year", "sound",
+                        "sound_type", "db_C", "db_E", "task", "measure",
+                        "mean_C", "var_C", "mean_E", "var_E", "var_type", "analysis", "reference")
+
+#-----------------
+#--- Study 1 ---#
+#-----------------
+
+data_corr<- Add_data_cor(data_corr, ID=1, N_C= 233, N_E= 240, sample= "children", age= "9-10", grade= "4-5",
+                         cit= "Papanikolaou et al. (2015)", year= 2015, sound= "noise", 
+                         sound_type= "traffic (medium level)", db_C= 60.5, db_E= 72, 
+                         task= "Reading (composite)", measure= "custom test", mean_C = 4.50, var_C = 0.88,
+                         mean_E= 4.08, var_E = 0.92, var_type = "SD", analysis = "prior",
+                         reference = "Papanikolaou, M., Skenteris, N., & Piperakis, S. M. (2015). Effect of external classroom noise on schoolchildren’s reading and mathematics performance: correlation of noise levels and gender.International journal of adolescent medicine and health, 27(1), 25-29."
+                         )
+
+data_corr<- Add_data_cor(data_corr, ID=1, N_C= 233, N_E= 203, sample= "children", age= "9-10", grade= "4-5",
+                         cit= "Papanikolaou et al. (2015)", year= 2015, sound= "noise", 
+                         sound_type= "traffic (high level)", db_C= 60.5, db_E= 76, 
+                         task= "Reading (composite)", measure= "custom test", mean_C = 4.50, var_C = 0.88,
+                         mean_E= 4.12, var_E = 0.94, var_type = "SD", analysis = "prior",
+                         reference = "Papanikolaou, M., Skenteris, N., & Piperakis, S. M. (2015). Effect of external classroom noise on schoolchildren’s reading and mathematics performance: correlation of noise levels and gender.International journal of adolescent medicine and health, 27(1), 25-29."
+)

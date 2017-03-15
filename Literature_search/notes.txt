@@ -9,4 +9,7 @@
   considered.
 - for reading speed, I may want to use opposite coding (e.g. - indicates slower reading) 
 - Halin et al. (2014) JEP:A codes DV as percent misses. THIS NEEDS OPPOSITE ES CODING!!! (i.e. less misses is 
-  better performance). 
+  better performance).
+- make sure I include my first study 
+- Papanikolaou et al. (2015): same confound with effect sizes
+
