@@ -1726,7 +1726,7 @@ colnames(data_corr)<- c("ID", "N_C", "N_E", "sample", "age", "grade", "cit", "ye
 
 data_corr<- Add_data_cor(data_corr, ID=1, N_C= 233, N_E= 240, sample= "children", age= "9-10", grade= "4-5",
                          cit= "Papanikolaou et al. (2015)", year= 2015, sound= "noise", 
-                         sound_type= "traffic (medium level)", db_C= 60.5, db_E= 72, 
+                         sound_type= "road traffic (medium level)", db_C= 60.5, db_E= 72, 
                          task= "Reading (composite)", measure= "custom test", mean_C = 4.50, var_C = 0.88,
                          mean_E= 4.08, var_E = 0.92, var_type = "SD", analysis = "prior",
                          reference = "Papanikolaou, M., Skenteris, N., & Piperakis, S. M. (2015). Effect of external classroom noise on schoolchildren’s reading and mathematics performance: correlation of noise levels and gender.International journal of adolescent medicine and health, 27(1), 25-29."
@@ -1734,8 +1734,30 @@ data_corr<- Add_data_cor(data_corr, ID=1, N_C= 233, N_E= 240, sample= "children"
 
 data_corr<- Add_data_cor(data_corr, ID=1, N_C= 233, N_E= 203, sample= "children", age= "9-10", grade= "4-5",
                          cit= "Papanikolaou et al. (2015)", year= 2015, sound= "noise", 
-                         sound_type= "traffic (high level)", db_C= 60.5, db_E= 76, 
+                         sound_type= "road traffic (high level)", db_C= 60.5, db_E= 76, 
                          task= "Reading (composite)", measure= "custom test", mean_C = 4.50, var_C = 0.88,
                          mean_E= 4.12, var_E = 0.94, var_type = "SD", analysis = "prior",
                          reference = "Papanikolaou, M., Skenteris, N., & Piperakis, S. M. (2015). Effect of external classroom noise on schoolchildren’s reading and mathematics performance: correlation of noise levels and gender.International journal of adolescent medicine and health, 27(1), 25-29."
 )
+
+
+#-----------------
+#--- Study 2 ---#
+#-----------------
+
+data_corr<- Add_data_cor(data_corr, ID=2, N_C= 380, N_E= 313, sample= "children", age= "9-14 (11.9 mean)", grade= "5-6",
+                         cit= "Seabi et al. (2012)", year= 2012, sound= "noise", 
+                         sound_type= "air traffic", db_C= 40, db_E= 69, 
+                         task= "Reading comprehension", measure= "Suffolk Reading Scale Level 2",
+                         mean_C = 32.44, var_C = 16.71,
+                         mean_E= 29.81, var_E = 14.23, var_type = "SD", analysis = "main",
+                         reference = "Seabi, J.,Cockcroft, K., Goldschagg, P., and Greyling, M. (2012). The impact of aircraft noise exposure on South African children’s read- ing comprehension: the moder- ating effect of home language. Noise Health 14, 244–252. doi: 10.4103/1463-1741.102963"
+)
+
+
+#############
+# Save data #
+#############
+
+save(data_corr, file= "Data/data_corr.Rda")
+write.csv(data_corr, file= "Data/data_corr.csv")
