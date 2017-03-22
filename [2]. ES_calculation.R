@@ -159,3 +159,13 @@ write.csv(es, file= "Data/es.csv")
 #library(metagear)
 
 
+#----------------------------------------------------------------------------------
+#                             Correlational studies:
+#----------------------------------------------------------------------------------
+
+# ID 2:
+
+#d:
+d= ANOVA_to_d(Fvalue=11.75, N_C=data_corr$N_C[2], N_E= data_corr$N_E[2], design= "between")
+
+d_var= ANOVA_to_d_var(d, N_C=data_corr$N_C[2], N_E= data_corr$N_E[2], design= "between")
