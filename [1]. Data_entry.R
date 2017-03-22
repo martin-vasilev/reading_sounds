@@ -1755,6 +1755,19 @@ data_corr<- Add_data_cor(data_corr, ID=2, N_C= 380, N_E= 313, sample= "children"
 )
 
 
+#----------------#
+#--- Study 3 --- #
+#----------------#
+# controled acute noise
+data_corr<- Add_data_cor(data_corr, ID=3, N_C= 58, N_E= 58, sample= "children", age= NA, grade= "1-2",
+                         cit= "Evans & Maxwell (1997)", year= 1997, sound= "noise", 
+                         sound_type= "air traffic", db_C= NA, db_E= 65, 
+                         task= "Reading skill", measure= "Woodcock Reading Mastery Test",
+                         mean_C = 235.1, var_C = 30.5,
+                         mean_E= 191.2, var_E = 31.4, var_type = "SD", analysis = "main",
+                         reference = "Evans, G. W., & Maxwell, L. (1997). Chronic Noise Exposure and Reading Deficits The Mediating Effects of Language Acquisition. Environment and Behavior, 29(5), 638-656."
+) # Table 2
+
 #############
 # Save data #
 #############
