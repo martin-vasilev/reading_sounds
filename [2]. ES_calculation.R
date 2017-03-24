@@ -163,6 +163,12 @@ write.csv(es, file= "Data/es.csv")
 #                             Correlational studies:
 #----------------------------------------------------------------------------------
 
+# RANCH study aircraft:
+-0.008/(sqrt(2010)*0.003)
+
+# RANCH study traffic:
+-0.002/(sqrt(2010)*0.004)
+
 # ID 2:
 
 #d:
