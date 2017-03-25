@@ -11,7 +11,7 @@ source("Functions/get_es.R")
 source("Functions/effect_sizes.R")
 
 # Load data:
-load("Data/data.Rda")
+load("Data/data.Rda"); load("Data/data_corr.Rda")
 load("data/r.Rda")
 
 # Calculate Effect sizes
@@ -170,8 +170,24 @@ write.csv(es, file= "Data/es.csv")
 -0.002/(sqrt(2010)*0.004)
 
 # ID 2:
-
 #d:
+# WATCH SIGN!!!!!!!!!!!!!!
 d= ANOVA_to_d(Fvalue=11.75, N_C=data_corr$N_C[2], N_E= data_corr$N_E[2], design= "between")
 
 d_var= ANOVA_to_d_var(d, N_C=data_corr$N_C[2], N_E= data_corr$N_E[2], design= "between")
+
+
+# ID 4:
+# d:
+d= Ttest_to_d(t= -2.02, N_C = data_corr$N_C[5] ,N_E = data_corr$N_E[5], design = "between")
+d_var= Ttest_to_d_var(d, N_C = data_corr$N_C[5] ,N_E = data_corr$N_E[5], design = "between")
+
+
+# ID 5:
+d= -ANOVA_to_d(Fvalue = 7.270, N_C = data_corr$N_C[6] ,N_E = data_corr$N_E[6], design = "between")
+d_var= ANOVA_to_d_var(d, N_C=data_corr$N_C[6], N_E= data_corr$N_E[6], design= "between")
+
+
+# ID 6:
+d= -ANOVA_to_d(Fvalue = 22.58, N_C = data_corr$N_C[7] ,N_E = data_corr$N_E[7], design = "between")
+d_var= ANOVA_to_d_var(d, N_C=data_corr$N_C[7], N_E= data_corr$N_E[7], design= "between")

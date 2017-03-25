@@ -1768,6 +1768,68 @@ data_corr<- Add_data_cor(data_corr, ID=3, N_C= 58, N_E= 58, sample= "children", 
                          reference = "Evans, G. W., & Maxwell, L. (1997). Chronic Noise Exposure and Reading Deficits The Mediating Effects of Language Acquisition. Environment and Behavior, 29(5), 638-656."
 ) # Table 2
 
+
+#----------------#
+#--- Study 4 --- #
+#----------------#
+# controled acute noise
+
+# Groups were formed based on noise exposure at the neighbourhood (does it also mean school?)
+
+data_corr<- Add_data_cor(data_corr, ID=4, N_C= 67, N_E= 68, sample= "children", age= "10.7", grade= "4",
+                         cit= "Evans et al. (1995)", year= 1995, sound= "noise", 
+                         sound_type= "air traffic", db_C= 59.2, db_E= 68.1, 
+                         task= "Reading skill", measure= "Biglmaier Reading Test",
+                         mean_C = 41.30, var_C = NA,
+                         mean_E= 50.80, var_E = NA, var_type = NA, analysis = "main",
+                         reference = "Evans, G. W., Hygge, S., & Bullinger, M. (1995). Chronic noise and psychological stress. Psychological Science, 333-338."
+) # Table 2
+
+# SDs not reported; effect sizes are calculated later from the reported t-statistic
+
+#----------------#
+#--- Study 5 --- #
+#----------------#
+
+# Some methodological issues, see comment in Excel file; used as prior
+
+data_corr<- Add_data_cor(data_corr, ID=5, N_C= 80, N_E= 80, sample= "children", age= NA, grade= "2-6",
+                         cit= "Bronzaft & McCarthy (1975)", year= 1975, sound= "noise", 
+                         sound_type= "train", db_C= NA, db_E= "59-89", 
+                         task= "Reading skill", measure= "The Metropolitan Achievement Reading Test",
+                         mean_C = (2.6+4.2+5.6)/3, var_C = NA,
+                         mean_E= (2.2+3.9+4.5)/3, var_E = NA, var_type = NA, analysis = "prior",
+                         reference = "Bronzaft, A. L., & McCarthy, D. P. (1975). The effect of elevated train noise on reading ability. Environment and Behavior"
+) # Table 2
+
+# SDs not reported; effect sizes are calculated later from the reported F-statistic
+
+# Method reports sample size as 161 but this is inconsistent with reported degrees of freedom.
+# The 1981 paper by the same authors also cite 160 as the number of participants that took part in this study
+
+
+#----------------#
+#--- Study 6 --- #
+#----------------#
+
+# Same setting as # 5
+
+data_corr<- Add_data_cor(data_corr, ID=6, N_C= 30+83+59+33, N_E= 56+27+31+31,
+                         sample= "children", age= NA, grade= "2-6",
+                         cit= "Bronzaft (1981)", year= 1981, sound= "noise", 
+                         sound_type= "train", db_C= NA, db_E= "59-89", 
+                         task= "Reading achievement", measure= "The California Achievement Test",
+                         mean_C = (2.65+3.06+6.23+6.94)/4, var_C = (0.90+1.05+1.88+2.21)/4,
+                         mean_E= (2.26+2.63+5.05+5.99)/4, var_E = (0.75+0.89+0.97+1.46)/4, 
+                         var_type = "SD", analysis = "prior",
+                         reference = "Bronzaft, A. L. (1981). The effect of a noise abatement program on reading ability. Journal of environmental psychology, 1(3), 215-222."
+) # Table 1
+
+# However, note that db measurements at the noisy side are the same as the ones reported in the 1975 paper
+
+# converting the ES from the ANOVA results is better here. Even though both means and SDs are reported this time,
+# there will be a lot of averaging out involved (due to breakdown by grade)
+
 #############
 # Save data #
 #############
