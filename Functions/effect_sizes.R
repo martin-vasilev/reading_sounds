@@ -14,6 +14,10 @@ d_to_r<- function(d, n1, n2, varD=NULL){
   }
 }
 
+r_to_d<- function(r){(2*r)/sqrt(1-r^2)}
+
+r_to_d_var<- function(r_var, r){4*r_var/ ((1-r^2)^3)}
+
 
 Ttest_to_d<- function(t, N_C=NULL, N_E=NULL, n=NULL, design="between", r=NULL){
   # from Lajeunesse (2011)

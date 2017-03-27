@@ -191,3 +191,12 @@ d_var= ANOVA_to_d_var(d, N_C=data_corr$N_C[6], N_E= data_corr$N_E[6], design= "b
 # ID 6:
 d= -ANOVA_to_d(Fvalue = 22.58, N_C = data_corr$N_C[7] ,N_E = data_corr$N_E[7], design = "between")
 d_var= ANOVA_to_d_var(d, N_C=data_corr$N_C[7], N_E= data_corr$N_E[7], design= "between")
+
+# ID 7: 
+
+# I take partial correlation after controlling for poverty
+rcor= -0.49; r_var= ((1-rcor^2)^2)/(20-1) # sample size taken from t-test df (n-1)
+# formula 12.27 in Cooper et al., Chapt. 12, The Handbook of Research Synthesis and Meta-analysis
+d= r_to_d(rcor)
+d_var= r_to_d_var(r_var, rcor)
+

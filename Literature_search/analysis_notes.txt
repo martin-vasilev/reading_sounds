@@ -1,0 +1,12 @@
+Our discussion of effect size analysis has emphasized the need to maintain statistical independence by including only one effect size per subject
+sample in any given analysis. When the research studies under review produce multiple effect sizes for the same conceptual
+relationship, we advocate that only one be selected, randomly or on the basis of some criteria, or that they be averaged
+together so that only one value is contributed to any given analysis. This admittedly conservative approach has the
+disadvantage of ignoring potentially meaningful information which, in some cases, the analyst may be quite reluctant to omit.
+For such situations, Gleser and Olkin (1994) have developed a method for handling dependent effect sizes in a single analysis.
+However, this method requires that the covariance between dependent effect sizes be known or estimated so that it can be
+incorporated into the analysis.
+
+APA (American Psychological Assoc.)
+Lipsey, M. W., & Wilson, D. B. (2001). Practical Meta-analysis. Thousand Oaks, Calif: SAGE Publications, Inc.
+

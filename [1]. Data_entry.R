@@ -1830,6 +1830,26 @@ data_corr<- Add_data_cor(data_corr, ID=6, N_C= 30+83+59+33, N_E= 56+27+31+31,
 # converting the ES from the ANOVA results is better here. Even though both means and SDs are reported this time,
 # there will be a lot of averaging out involved (due to breakdown by grade)
 
+
+#----------------#
+#--- Study 7 --- #
+#----------------#
+
+# correlation study but still relevant to meta-analysis topic
+
+data_corr<- Add_data_cor(data_corr, ID=7, N_C= NA, N_E= NA,
+                         sample= "children", age= NA, grade= "2-4",
+                         cit= "Ronsse & Wang (2010)", year= 2010, sound= "noise", 
+                         sound_type= "generic/ unknown", db_C= NA, db_E= NA, 
+                         task= "Reading achievement", measure= "Iowa Test of Basic Skills",
+                         mean_C = NA, var_C = NA,
+                         mean_E= NA, var_E = NA, 
+                         var_type = NA, analysis = "prior",
+                         reference = "Ronsse, L. M., & Wang, L. M. (2010). AB-10-C037: Effects of noise from building mechanical systems on elementary school student achievement."
+) # p. 352
+
+# ES calculated from the correlation adjusted for poverty
+
 #############
 # Save data #
 #############
