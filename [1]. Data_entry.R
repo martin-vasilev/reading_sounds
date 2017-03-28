@@ -1850,6 +1850,24 @@ data_corr<- Add_data_cor(data_corr, ID=7, N_C= NA, N_E= NA,
 
 # ES calculated from the correlation adjusted for poverty
 
+
+#----------------#
+#--- Study 8 --- #
+#----------------#
+# groups differed on on a couple of demographic variables, but authors present
+# adjusted descriptives
+
+data_corr<- Add_data_cor(data_corr, ID=8, N_C= 215, N_E= 236,
+                         sample= "children", age= "8.8 years", grade= "4",
+                         cit= "Haines et al. (2001)", year= 2001, sound= "noise", 
+                         sound_type= "air traffic", db_C= "<57", db_E= ">63", 
+                         task= "Reading comprehension", measure= "Suffolk Reading Scale Level 2",
+                         mean_C = 95.78, var_C = 0.81,
+                         mean_E= 96.24, var_E = 0.78, 
+                         var_type = "SE", analysis = "main",
+                         reference = "Haines, M. M., Stansfeld, S. A., Brentnall, S., Head, J., Berry, B., Jiggins, M., & Hygge, S. (2001). The West London Schools Study: the effects of chronic aircraft noise exposure on child health. Psychological medicine, 31(08), 1385-1396."
+) # Table 2
+
 #############
 # Save data #
 #############
