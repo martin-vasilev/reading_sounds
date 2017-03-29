@@ -200,3 +200,8 @@ rcor= -0.49; r_var= ((1-rcor^2)^2)/(20-1) # sample size taken from t-test df (n-
 d= r_to_d(rcor)
 d_var= r_to_d_var(r_var, rcor)
 
+# ID 9:
+# covariate outcome correlation is not reported, therefore I use the default (ANOVA formula):
+d= -ANOVA_to_d(Fvalue = 4.5, N_C = data_corr$N_C[10] ,N_E = data_corr$N_E[10], design = "between")
+d_var= ANOVA_to_d_var(d, N_C=data_corr$N_C[10], N_E= data_corr$N_E[10], design= "between")
+

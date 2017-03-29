@@ -1859,14 +1859,39 @@ data_corr<- Add_data_cor(data_corr, ID=7, N_C= NA, N_E= NA,
 
 data_corr<- Add_data_cor(data_corr, ID=8, N_C= 215, N_E= 236,
                          sample= "children", age= "8.8 years", grade= "4",
-                         cit= "Haines et al. (2001)", year= 2001, sound= "noise", 
+                         cit= "Haines et al. (2001a)", year= 2001, sound= "noise", 
                          sound_type= "air traffic", db_C= "<57", db_E= ">63", 
                          task= "Reading comprehension", measure= "Suffolk Reading Scale Level 2",
                          mean_C = 95.78, var_C = 0.81,
                          mean_E= 96.24, var_E = 0.78, 
                          var_type = "SE", analysis = "main",
-                         reference = "Haines, M. M., Stansfeld, S. A., Brentnall, S., Head, J., Berry, B., Jiggins, M., & Hygge, S. (2001). The West London Schools Study: the effects of chronic aircraft noise exposure on child health. Psychological medicine, 31(08), 1385-1396."
+                         reference = "Haines, M. M., Stansfeld, S. A., Brentnall, S., Head, J., Berry, B., Jiggins, M., & Hygge, S. (2001a). The West London Schools Study: the effects of chronic aircraft noise exposure on child health. Psychological medicine, 31(08), 1385-1396."
 ) # Table 2
+
+
+#----------------#
+#--- Study 9 --- #
+#----------------#
+# groups differed on on a few socioeconomic variables, but the authors present
+# adjusted results from ANCOVA
+
+data_corr<- Add_data_cor(data_corr, ID=9, N_C= 171-26, N_E= 169,
+                         sample= "children", age= "9.8 years", grade= "4-5",
+                         cit= "Haines et al. (2001b)", year= 2001, sound= "noise", 
+                         sound_type= "air traffic", db_C= "<57", db_E= ">66", 
+                         task= "Reading comprehension", measure= "Suffolk Reading Scale Level 2",
+                         mean_C = 101.9, var_C = NA,
+                         mean_E= 98.4, var_E = NA, 
+                         var_type = NA, analysis = "main",
+                         reference = "Haines, M. M., Stansfeld, S. A., Job, R. S., Berglund, B., & Head, J. (2001b). Chronic aircraft noise exposure, stress responses, mental health and cognitive performance in school children. Psychological medicine, 31(02), 265-277."
+) # p.272, adjusted
+
+# something that is bugging me is the mismatch between dfs in the ANCOVA and the reported sample sizes
+# However, it's impossible to know if some information about the study is missing or if there was a 
+# mistake
+
+# only means reported, so I calculate ES from F statistic
+
 
 #############
 # Save data #
