@@ -14,3 +14,8 @@
 - Papanikolaou et al. (2015): same confound with effect sizes
 - Johnsson et al. (2012)- consider removing the condition where participants brought their own music (because this deviates from remaining studies)
 - consider adding acute noise during testing as a covariate in the model
+- # 31 and 32 need opposite coding!!!
+- # 32 consider using the same approximation as the music study (probably more accurate/ justifiable).
+- # 38, 39 are coded as usual (i.e. higher score= better performance).
+- # 40, 41- remove reading speed, as this is not reading speed. 
+- # 56- chech what direction of coding is needed

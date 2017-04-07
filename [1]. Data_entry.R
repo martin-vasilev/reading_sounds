@@ -254,6 +254,9 @@ data<- Add_data(data, ID= 9, N_C=49, N_E=49, sample="adults", cit= "Miller & Sch
 #--- Study 10 ---#
 #-----------------
 
+# There is some discrepancy between the abstract and the Method regarding the number of participants
+# I take the number from the Method, which is arguably more reliable. 
+
 data<- Add_data(data, ID= 10, N_C=56, sample="adults", cit= "Doyle & Furnham (2012)", year=2012, 
                 design="within", sound="music",
                 sound_type= "vocal", db= NA, task= "reading comprehension", 
@@ -261,7 +264,7 @@ data<- Add_data(data, ID= 10, N_C=56, sample="adults", cit= "Doyle & Furnham (20
                 mean_E= (6.29+4.18)/2, var_E= (2.76+2.93)/2, var_type= "SD",
                 reference= "Doyle, M., & Furnham, A. (2012). The distracting effects of music on the cognitive test performance of creative and non-creative individuals. Thinking Skills and Creativity, 7(1), 1-7. doi:10.1016/j.tsc.2011.09.002"
 )
-# data from Table 1
+# data from Table 1 (overall measure)
 
 
 #-----------------
@@ -337,7 +340,7 @@ data<- Add_data(data, ID= 13, N_C=45, sample="children", cit= "Mullikin & Henk (
 # vocal music:
 data<- Add_data(data, ID= 14, N_C=19, N_E=20, sample="children", cit= "Avila et al. (2011)", year=2011, 
                 design="between", sound="music",
-                sound_type= "vocal", db= NA, task= "reading comprehension", 
+                sound_type= "vocal/ familiar", db= NA, task= "reading comprehension", 
                 measure= "num_correct", mean_C= 13.42, var_C= 0.50, 
                 mean_E= 9.15, var_E= 0.66, var_type= "SE",
                 reference= "Avila, C., Furnham, A., & McClelland, A. (2011). The influence of distracting familiar vocal music on cognitive performance of introverts and extraverts. Psychology of Music, 40(1), 84-93. doi:10.1177/0305735611422672"
@@ -347,7 +350,7 @@ data<- Add_data(data, ID= 14, N_C=19, N_E=20, sample="children", cit= "Avila et 
 # instrumental music:
 data<- Add_data(data, ID= 14, N_C=19, N_E=19, sample="children", cit= "Avila et al. (2011)", year=2011, 
                 design="between", sound="music",
-                sound_type= "instrumental", db= NA, task= "reading comprehension", 
+                sound_type= "instrumental/ familiar", db= NA, task= "reading comprehension", 
                 measure= "num_correct", mean_C= 13.42, var_C= 0.50, 
                 mean_E= 6.74, var_E= 0.98, var_type= "SE",
                 reference= "Avila, C., Furnham, A., & McClelland, A. (2011). The influence of distracting familiar vocal music on cognitive performance of introverts and extraverts. Psychology of Music, 40(1), 84-93. doi:10.1177/0305735611422672"
@@ -401,7 +404,7 @@ data<- Add_data(data, ID= 15, N_C=43, N_E=42, sample="adults", cit= "Freeburne &
 # data from Table 1
 
 # semi-classical music, comprehension:
-data<- Add_data(data, ID= 15, N_C=40, N_E=42, sample="adults", cit= "Freeburne & Fleischer (1952)", year=1952, 
+data<- Add_data(data, ID= 15, N_C=43, N_E=40, sample="adults", cit= "Freeburne & Fleischer (1952)", year=1952, 
                 design="between", sound="music",
                 sound_type= "semi-classical", db= NA, task= "reading comprehension", 
                 measure= "num_correct", mean_C= 13.40, var_C= 5.81, 
@@ -411,7 +414,7 @@ data<- Add_data(data, ID= 15, N_C=40, N_E=42, sample="adults", cit= "Freeburne &
 # data from Table 1
 
 # semi-classical music, reading speed:
-data<- Add_data(data, ID= 15, N_C=40, N_E=42, sample="adults", cit= "Freeburne & Fleischer (1952)", year=1952, 
+data<- Add_data(data, ID= 15, N_C=43, N_E=40, sample="adults", cit= "Freeburne & Fleischer (1952)", year=1952, 
                 design="between", sound="music",
                 sound_type= "semi-classical", db= NA, task= "reading comprehension", 
                 measure= "reading speed", mean_C= 648.23, var_C= 112.11, 
@@ -422,7 +425,7 @@ data<- Add_data(data, ID= 15, N_C=40, N_E=42, sample="adults", cit= "Freeburne &
 
 
 # jazz music, comprehension:
-data<- Add_data(data, ID= 15, N_C=37, N_E=42, sample="adults", cit= "Freeburne & Fleischer (1952)", year=1952, 
+data<- Add_data(data, ID= 15, N_C=43, N_E=37, sample="adults", cit= "Freeburne & Fleischer (1952)", year=1952, 
                 design="between", sound="music",
                 sound_type= "jazz", db= NA, task= "reading comprehension", 
                 measure= "num_correct", mean_C= 13.40, var_C= 5.81, 
@@ -432,7 +435,7 @@ data<- Add_data(data, ID= 15, N_C=37, N_E=42, sample="adults", cit= "Freeburne &
 # data from Table 1
 
 # jazz music, reading speed:
-data<- Add_data(data, ID= 15, N_C=37, N_E=42, sample="adults", cit= "Freeburne & Fleischer (1952)", year=1952, 
+data<- Add_data(data, ID= 15, N_C=43, N_E=37, sample="adults", cit= "Freeburne & Fleischer (1952)", year=1952, 
                 design="between", sound="music",
                 sound_type= "jazz", db= NA, task= "reading comprehension", 
                 measure= "reading speed", mean_C= 648.23, var_C= 112.11, 
@@ -465,7 +468,7 @@ data<- Add_data(data, ID= 17, N_C=19, N_E=17, sample="adults", cit= "Henderson e
                 design="between", sound="music",
                 sound_type= "classical", db= NA, task= "reading comprehension", 
                 measure= "num_correct", mean_C= 49.2, var_C= NA, 
-                mean_E= 46.1, var_E= NA, var_type= "SD",
+                mean_E= 46.1, var_E= NA, var_type= NA,
                 reference= "Henderson, M. T., Crews, A., & Barlow, J. (1945). A study of the effect of music distraction on reading efficiency. Journal of Applied Psychology, 29(4), 313-317. doi:10.1037/h0056128"
 )
 # data from Table 1
@@ -475,7 +478,7 @@ data<- Add_data(data, ID= 17, N_C=19, N_E=14, sample="adults", cit= "Henderson e
                 design="between", sound="music",
                 sound_type= "pop", db= NA, task= "reading comprehension", 
                 measure= "num_correct", mean_C= 49.2, var_C= NA, 
-                mean_E= 22.9, var_E= NA, var_type= "SD",
+                mean_E= 22.9, var_E= NA, var_type= NA,
                 reference= "Henderson, M. T., Crews, A., & Barlow, J. (1945). A study of the effect of music distraction on reading efficiency. Journal of Applied Psychology, 29(4), 313-317. doi:10.1037/h0056128"
 )
 # data from Table 1
@@ -976,22 +979,22 @@ data<- Add_data(data, ID= 30, N_C=24, sample="adults", cit= "Johansson et al. (2
 #-----------------
 
 # noise, non-contextual errors:
-data<- Add_data(data, ID= 31, N_C=15, N_E=18, sample="adults", cit= "Weinstein, N. D. (1974)", year=1974, 
+data<- Add_data(data, ID= 31, N_C=15, N_E=18, sample="adults", cit= "Weinstein (1974)", year=1974, 
                 design="between", sound="noise",
                 sound_type= "teletype", db= 70, task= "proofreading (non-contextual errors)", 
-                measure= "perc_correct", mean_C= 100-(28+28)/2, var_C= sqrt((90+120)/2), 
-                mean_E= 100 -(36+35)/2, var_E= sqrt((160+300)/2), var_type= "SD",
+                measure= "perc_incorrect", mean_C= (28+28)/2, var_C= sqrt((90+120)/2), 
+                mean_E= (36+35)/2, var_E= sqrt((160+300)/2), var_type= "SD",
                 reference= "Weinstein, N. D. (1974). Effect of noise on intellectual performance. Journal of Applied Psychology, 59(5), 548."
 )
 # data from Table 1
 
 
 # noise, contextual errors:
-data<- Add_data(data, ID= 31, N_C=15, N_E=18, sample="adults", cit= "Weinstein, N. D. (1974)", year=1974, 
+data<- Add_data(data, ID= 31, N_C=15, N_E=18, sample="adults", cit= "Weinstein (1974)", year=1974, 
                 design="between", sound="noise",
                 sound_type= "teletype", db= 70, task= "proofreading (contextual errors)", 
-                measure= "perc_correct", mean_C= 100-(40+44)/2, var_C= sqrt((100+90)/2), 
-                mean_E= 100 -(58+65)/2, var_E= sqrt((240+430)/2), var_type= "SD",
+                measure= "perc_incorrect", mean_C= (40+44)/2, var_C= sqrt((100+90)/2), 
+                mean_E= (58+65)/2, var_E= sqrt((240+430)/2), var_type= "SD",
                 reference= "Weinstein, N. D. (1974). Effect of noise on intellectual performance. Journal of Applied Psychology, 59(5), 548."
 )
 # data from Table 1
@@ -1007,8 +1010,8 @@ data<- Add_data(data, ID= 31, N_C=15, N_E=18, sample="adults", cit= "Weinstein, 
 data<- Add_data(data, ID= 32, N_C=29, sample="adults", cit= "Weinstein (1977)", year=1977, 
                 design="within", sound="speech",
                 sound_type= "native", db= 68, task= "proofreading (non-contextual errors)", 
-                measure= "perc_correct", mean_C= NA, var_C= NA, 
-                mean_E= NA, var_E= NA, var_type= "NA",
+                measure= "perc_incorrect", mean_C= NA, var_C= NA, 
+                mean_E= NA, var_E= NA, var_type= NA,
                 reference= "Weinstein, N. D. (1977). Noise and intellectual performance: A confirmation and extension. Journal of Applied Psychology, 62(1), 104-107"
 )
 # data from Table 1 and text
@@ -1018,8 +1021,8 @@ data<- Add_data(data, ID= 32, N_C=29, sample="adults", cit= "Weinstein (1977)", 
 data<- Add_data(data, ID= 32, N_C=29, sample="adults", cit= "Weinstein (1977)", year=1977, 
                 design="within", sound="speech",
                 sound_type= "native", db= 68, task= "proofreading (contextual errors)", 
-                measure= "perc_correct", mean_C= NA, var_C= NA, 
-                mean_E= NA, var_E= NA, var_type= "NA",
+                measure= "perc_incorrect", mean_C= NA, var_C= NA, 
+                mean_E= NA, var_E= NA, var_type= NA,
                 reference= "Weinstein, N. D. (1977). Noise and intellectual performance: A confirmation and extension. Journal of Applied Psychology, 62(1), 104-107"
 )
 # data from Table 1 and text
@@ -1223,9 +1226,9 @@ data<- Add_data(data, ID= 37, N_C=9, sample="children", cit= "Cool et al. (1994)
 #  music radio program:
 data<- Add_data(data, ID= 38, N_C=91, sample="children", cit= "Mitchell (1949)", year=1949, 
                 design="within", sound="music",
-                sound_type= "radio/ generic", db= NA, task= "reading comprehension", 
-                measure= "num_correct", mean_C= 147.31, var_C= NA, 
-                mean_E= 147.20, var_E= NA, var_type= "NA",
+                sound_type= "radio/ generic", db= NA, task= "reading test (composite)", 
+                measure= "reading_score", mean_C= 147.31, var_C= NA, 
+                mean_E= 147.20, var_E= NA, var_type= NA,
                 reference= "Mitchell, A. H. (1949). The effect of radio programs on silent reading achievement of ninety-one sixth grade students. The Journal of Educational Research, 42(6), 460-470."
 )
 # data from Table 2
@@ -1247,7 +1250,7 @@ data<- Add_data(data, ID= 39, N_C=33, N_E=30, sample="adults", cit= "Armstrong e
 
 
 # TV drama: 
-data<- Add_data(data, ID= 39, N_C=33, N_E=30, sample="adults", cit= "Armstrong et al. (1991)", year=1991, 
+data<- Add_data(data, ID= 39, N_C=33, N_E=32, sample="adults", cit= "Armstrong et al. (1991)", year=1991, 
                 design="between", sound="speech",
                 sound_type= "TV drama", db= NA, task= "reading comprehension", 
                 measure= "reading_score", mean_C= 9.23, var_C= NA, 
@@ -1310,22 +1313,22 @@ data<- Add_data(data, ID= 40, N_C=30, N_E=30, sample="children", cit= "Pool et a
 #-----------------
 
 # soap opera: 
-data<- Add_data(data, ID= 41, N_C=48, N_E=48, sample="children", cit= "Pool et al. (2000), Exp.2", year=2000, 
+data<- Add_data(data, ID= 41, N_C=48, N_E=24, sample="children", cit= "Pool et al. (2000), Exp.2", year=2000, 
                 design="between", sound="speech",
                 sound_type= "TV soap opera (native)", db= 60, task= "reading comprehension", 
                 measure= "prop_correct", mean_C= (0.88+0.64)/2, var_C= (0.07+0.14)/2, 
-                mean_E= (0.86+0.57)/2, var_E= (0.11+0.14)/2, var_type= "SD",
+                mean_E= (0.84+0.54)/2, var_E= (0.14+0.16)/2, var_type= "SD",
                 reference= "Pool, M. M., Van der Voort, T. H., Beentjes, J. W., & Koolstra, C. M. (2000). Background television as an inhibitor of performance on easy and difficult homework assignments. Communication Research, 27(3), 293-326."
 )
 # data from Table 3 
 
 
 # music videos:
-data<- Add_data(data, ID= 41, N_C=48, N_E=48, sample="children", cit= "Pool et al. (2000), Exp.2", year=2000, 
+data<- Add_data(data, ID= 41, N_C=48, N_E=24, sample="children", cit= "Pool et al. (2000), Exp.2", year=2000, 
                 design="between", sound="music",
                 sound_type= "TV music videos", db= 60, task= "reading comprehension", 
                 measure= "prop_correct", mean_C= (0.88+0.64)/2, var_C= (0.07+0.14)/2, 
-                mean_E= (0.87+0.63)/2, var_E= (0.06+0.13)/2, var_type= "SD",
+                mean_E= (0.88+0.62)/2, var_E= (0.05+0.12)/2, var_type= "SD",
                 reference= "Pool, M. M., Van der Voort, T. H., Beentjes, J. W., & Koolstra, C. M. (2000). Background television as an inhibitor of performance on easy and difficult homework assignments. Communication Research, 27(3), 293-326."
 )
 # data from Table 3 
@@ -1358,10 +1361,10 @@ data<- Add_data(data, ID= 41, N_C=48, N_E=48, sample="children", cit= "Pool et a
 #-----------------
 
 # children babble noise:
-data<- Add_data(data, ID= 42, N_C=51, N_E=51, sample="children", cit= "Dockrell & Shield (2006)",
+data<- Add_data(data, ID= 42, N_C=52, N_E=52, sample="children", cit= "Dockrell & Shield (2006)",
                 year=2006, design="between", sound="noise",
                 sound_type= "children babble", db= 65, task= "reading comprehension", 
-                measure= "score", mean_C= 33.45, var_C= 11.62, 
+                measure= "num_correct", mean_C= 33.45, var_C= 11.62, 
                 mean_E= 27.59, var_E= 12.23, var_type= "SD",
                 reference= "Dockrell, J. E., & Shield, B. M. (2006). Acoustical barriers in classrooms: The impact of noise on performance in the classroom. British Educational Research Journal, 32(3), 509-525."
 )
@@ -1369,7 +1372,7 @@ data<- Add_data(data, ID= 42, N_C=51, N_E=51, sample="children", cit= "Dockrell 
 
 
 # children babble noise + environmental noise:
-data<- Add_data(data, ID= 42, N_C=51, N_E=51, sample="children", cit= "Dockrell & Shield (2006)",
+data<- Add_data(data, ID= 42, N_C=52, N_E=52, sample="children", cit= "Dockrell & Shield (2006)",
                 year=2006, design="between", sound="noise",
                 sound_type= "children babble + environmental", db= 65, task= "reading comprehension", 
                 measure= "score", mean_C= 33.45, var_C= 11.62, 
@@ -1591,7 +1594,7 @@ data<- Add_data(data, ID= 53, N_C=32, sample="adults", cit= "Halin et al. (2014)
                 sound_type= "native", db= 65, task= "reading comprehension", 
                 measure= "prop_correct", mean_C= (61.75+57.51)/2, var_C= NA, 
                 mean_E= (53.75+58.78)/2, var_E= NA, var_type= NA,
-                reference= "Halin, N., Marsh, J. E., Haga, A., Holmgren, M., & Sörqvist, P. (2014). Effects of speech on proofreading: Can task-engagement manipulations shield against distraction?. Journal of Experimental Psychology: Applied,20(1), 69."
+                reference= "Halin, N., Marsh, J. E., Hellman, A., Hellström, I., & Sörqvist, P. (2014). A shield against distraction. Journal of Applied Research in Memory and Cognition, 3(1), 31-36."
 )
 # no error bars, effect size is converted from the ANOVA
 
@@ -1608,7 +1611,7 @@ data<- Add_data(data, ID= 54, N_C=31, sample="adults", cit= "Halin et al. (2014)
                 var_C= ((0.10+0.18)/2 + (0.18+0.20)/2)/2, 
                 mean_E= ((0.19+0.32)/2 + (0.16+0.36)/2)/2,
                 var_E= ((0.18+0.23)/2 + (0.15+0.26)/2)/2, var_type= "SD",
-                reference= "Halin, N., Marsh, J. E., Hellman, A., Hellström, I., & Sörqvist, P. (2014). A shield against distraction. Journal of Applied Research in Memory and Cognition, 3(1), 31-36."
+                reference= "Halin, N., Marsh, J. E., Haga, A., Holmgren, M., & Sörqvist, P. (2014). Effects of speech on proofreading: Can task-engagement manipulations shield against distraction?. Journal of Experimental Psychology: Applied,20(1), 69."
 )
 # Data from Table 1 
 
@@ -1621,7 +1624,7 @@ data<- Add_data(data, ID= 54, N_C=31, sample="adults", cit= "Halin et al. (2014)
                 var_C= ((0.14+0.14)/2 + (0.17+0.18)/2)/2, 
                 mean_E= ((0.17+0.30)/2 + (0.28+0.40)/2)/2,
                 var_E= ((0.11+0.14)/2 + (0.13+0.13)/2)/2, var_type= "SD",
-                reference= "Halin, N., Marsh, J. E., Hellman, A., Hellström, I., & Sörqvist, P. (2014). A shield against distraction. Journal of Applied Research in Memory and Cognition, 3(1), 31-36."
+                reference= "Halin, N., Marsh, J. E., Haga, A., Holmgren, M., & Sörqvist, P. (2014). Effects of speech on proofreading: Can task-engagement manipulations shield against distraction?. Journal of Experimental Psychology: Applied,20(1), 69."
 )
 # Data from Table 1 
 
@@ -1638,7 +1641,7 @@ data<- Add_data(data, ID= 55, N_C=29, sample="adults", cit= "Halin et al. (2014)
                 var_C= ((0.11+0.22)/2 + (0.17+0.27)/2)/2, 
                 mean_E= ((0.20+0.30)/2 + (0.16+0.29)/2)/2,
                 var_E= ((0.20+0.28)/2 + (0.15+0.20)/2)/2, var_type= "SD",
-                reference= "Halin, N., Marsh, J. E., Hellman, A., Hellström, I., & Sörqvist, P. (2014). A shield against distraction. Journal of Applied Research in Memory and Cognition, 3(1), 31-36."
+                reference= "Halin, N., Marsh, J. E., Haga, A., Holmgren, M., & Sörqvist, P. (2014). Effects of speech on proofreading: Can task-engagement manipulations shield against distraction?. Journal of Experimental Psychology: Applied,20(1), 69."
 )
 # Data from Table 1 
 
@@ -1651,7 +1654,7 @@ data<- Add_data(data, ID= 55, N_C=29, sample="adults", cit= "Halin et al. (2014)
                 var_C= ((0.15+0.14)/2 + (0.19+0.19)/2)/2, 
                 mean_E= ((0.22+0.30)/2 + (0.54+0.53)/2)/2,
                 var_E= ((0.14+0.11)/2 + (0.20+0.17)/2)/2, var_type= "SD",
-                reference= "Halin, N., Marsh, J. E., Hellman, A., Hellström, I., & Sörqvist, P. (2014). A shield against distraction. Journal of Applied Research in Memory and Cognition, 3(1), 31-36."
+                reference= "Halin, N., Marsh, J. E., Haga, A., Holmgren, M., & Sörqvist, P. (2014). Effects of speech on proofreading: Can task-engagement manipulations shield against distraction?. Journal of Experimental Psychology: Applied,20(1), 69."
 )
 # Data from Table 1 
 
@@ -1661,7 +1664,7 @@ data<- Add_data(data, ID= 55, N_C=29, sample="adults", cit= "Halin et al. (2014)
 #-----------------
 
 # Contextual mistakes (max 30, normal coding):
-data<- Add_data(data, ID= 56, N_C=44, sample="adults", cit= "Haapakangas et al. (2011)",
+data<- Add_data(data, ID= 56, N_C=54, sample="adults", cit= "Haapakangas et al. (2011)",
                 year=2011, design="within", sound="speech",
                 sound_type= "native", db= 48, task= "proofreading (contextual errors)", 
                 measure= "prop_correct", mean_C= 19.2, var_C= 5.9, 
@@ -1672,7 +1675,7 @@ data<- Add_data(data, ID= 56, N_C=44, sample="adults", cit= "Haapakangas et al. 
 
 
 # Non-contextual mistakes (max 30, normal coding):
-data<- Add_data(data, ID= 56, N_C=44, sample="adults", cit= "Haapakangas et al. (2011)",
+data<- Add_data(data, ID= 56, N_C=54, sample="adults", cit= "Haapakangas et al. (2011)",
                 year=2011, design="within", sound="speech",
                 sound_type= "native", db= 48, task= "proofreading (non-contextual errors)", 
                 measure= "prop_correct", mean_C= 19.4, var_C= 5.2, 
@@ -1683,7 +1686,7 @@ data<- Add_data(data, ID= 56, N_C=44, sample="adults", cit= "Haapakangas et al. 
 
 
 # Proof-reading speed (max 140, normal coding):
-data<- Add_data(data, ID= 56, N_C=44, sample="adults", cit= "Haapakangas et al. (2011)",
+data<- Add_data(data, ID= 56, N_C=54, sample="adults", cit= "Haapakangas et al. (2011)",
                 year=2011, design="within", sound="speech",
                 sound_type= "native", db= 48, task= "proofreading", 
                 measure= "proofreading_speed", mean_C= 118, var_C= 18, 
@@ -1700,7 +1703,7 @@ data<- Add_data(data, ID= 56, N_C=44, sample="adults", cit= "Haapakangas et al. 
 data<- Add_data(data, ID= 57, N_C=24, sample="adults", cit= "Baker & Madell (1965)",
                 year=1965, design="within", sound="speech",
                 sound_type= "native", db= NA, task= "reading comprehension", 
-                measure= "mean_correct", mean_C= 79.5, var_C= 18.9, 
+                measure= "perc_correct", mean_C= 79.5, var_C= 18.9, 
                 mean_E= 49.0, var_E= 31.5, var_type= "SD",
                 reference= "Baker, R. W., & Madell, T. O. (1965). A continued investigation of susceptibility to distraction in academically underachieving and achieving male college students.Journal of Educational Psychology,56(5), 254"
 )
