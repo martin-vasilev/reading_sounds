@@ -1039,7 +1039,7 @@ data<- Add_data(data, ID= 33, N_C=36, sample="adults", cit= "Martin et al. (1988
                 design="within", sound="speech",
                 sound_type= "native", db= 82, task= "reading comprehension", 
                 measure= "perc_correct", mean_C= NA, var_C= NA, 
-                mean_E= NA, var_E= NA, var_type= "NA",
+                mean_E= NA, var_E= NA, var_type= NA,
                 reference= "Martin, R. C., Wogalter, M. S., & Forlano, J. G. (1988). Reading comprehension in the presence of unattended speech and music. Journal of memory and language, 27(4), 382-398."
 )
 # data from text p.387
@@ -1050,7 +1050,7 @@ data<- Add_data(data, ID= 33, N_C=36, sample="adults", cit= "Martin et al. (1988
                 design="within", sound="speech",
                 sound_type= "random (native)", db= 82, task= "reading comprehension", 
                 measure= "perc_correct", mean_C= NA, var_C= NA, 
-                mean_E= NA, var_E= NA, var_type= "NA",
+                mean_E= NA, var_E= NA, var_type= NA,
                 reference= "Martin, R. C., Wogalter, M. S., & Forlano, J. G. (1988). Reading comprehension in the presence of unattended speech and music. Journal of memory and language, 27(4), 382-398."
 )
 # data from text p.387
@@ -1067,7 +1067,7 @@ data<- Add_data(data, ID= 34, N_C=36, sample="adults", cit= "Martin et al. (1988
                 design="within", sound="music",
                 sound_type= "instrumental", db= 82, task= "reading comprehension", 
                 measure= "perc_correct", mean_C= NA, var_C= NA, 
-                mean_E= NA, var_E= NA, var_type= "NA",
+                mean_E= NA, var_E= NA, var_type= NA,
                 reference= "Martin, R. C., Wogalter, M. S., & Forlano, J. G. (1988). Reading comprehension in the presence of unattended speech and music. Journal of memory and language, 27(4), 382-398."
 )
 # data from text p.389
@@ -1084,7 +1084,7 @@ data<- Add_data(data, ID= 35, N_C=48, sample="adults", cit= "Martin et al. (1988
                 design="within", sound="noise",
                 sound_type= "white", db= 82, task= "reading comprehension", 
                 measure= "perc_correct", mean_C= NA, var_C= NA, 
-                mean_E= NA, var_E= NA, var_type= "NA",
+                mean_E= NA, var_E= NA, var_type= NA,
                 reference= "Martin, R. C., Wogalter, M. S., & Forlano, J. G. (1988). Reading comprehension in the presence of unattended speech and music. Journal of memory and language, 27(4), 382-398."
 )
 # data from text p. 393
@@ -1095,7 +1095,7 @@ data<- Add_data(data, ID= 35, N_C=48, sample="adults", cit= "Martin et al. (1988
                 design="within", sound="speech",
                 sound_type= "native", db= 82, task= "reading comprehension", 
                 measure= "perc_correct", mean_C= NA, var_C= NA, 
-                mean_E= NA, var_E= NA, var_type= "NA",
+                mean_E= NA, var_E= NA, var_type= NA,
                 reference= "Martin, R. C., Wogalter, M. S., & Forlano, J. G. (1988). Reading comprehension in the presence of unattended speech and music. Journal of memory and language, 27(4), 382-398."
 )
 # data from text p. 393
@@ -1106,7 +1106,7 @@ data<- Add_data(data, ID= 35, N_C=48, sample="adults", cit= "Martin et al. (1988
                 design="within", sound="speech",
                 sound_type= "foreign", db= 82, task= "reading comprehension", 
                 measure= "perc_correct", mean_C= NA, var_C= NA, 
-                mean_E= NA, var_E= NA, var_type= "NA",
+                mean_E= NA, var_E= NA, var_type= NA,
                 reference= "Martin, R. C., Wogalter, M. S., & Forlano, J. G. (1988). Reading comprehension in the presence of unattended speech and music. Journal of memory and language, 27(4), 382-398."
 )
 # data from text p. 393
@@ -1123,7 +1123,7 @@ data<- Add_data(data, ID= 36, N_C=48, sample="adults", cit= "Martin et al. (1988
                 design="within", sound="noise",
                 sound_type= "white", db= 82, task= "reading comprehension", 
                 measure= "perc_correct", mean_C= NA, var_C= NA, 
-                mean_E= NA, var_E= NA, var_type= "NA",
+                mean_E= NA, var_E= NA, var_type= NA,
                 reference= "Martin, R. C., Wogalter, M. S., & Forlano, J. G. (1988). Reading comprehension in the presence of unattended speech and music. Journal of memory and language, 27(4), 382-398."
 )
 # data from text p. 394
@@ -1134,7 +1134,7 @@ data<- Add_data(data, ID= 36, N_C=48, sample="adults", cit= "Martin et al. (1988
                 design="within", sound="speech",
                 sound_type= "non-word", db= 82, task= "reading comprehension", 
                 measure= "perc_correct", mean_C= NA, var_C= NA, 
-                mean_E= NA, var_E= NA, var_type= "NA",
+                mean_E= NA, var_E= NA, var_type= NA,
                 reference= "Martin, R. C., Wogalter, M. S., & Forlano, J. G. (1988). Reading comprehension in the presence of unattended speech and music. Journal of memory and language, 27(4), 382-398."
 )
 # data from text p. 394
@@ -1145,7 +1145,7 @@ data<- Add_data(data, ID= 36, N_C=48, sample="adults", cit= "Martin et al. (1988
                 design="within", sound="speech",
                 sound_type= "random words", db= 82, task= "reading comprehension", 
                 measure= "perc_correct", mean_C= NA, var_C= NA, 
-                mean_E= NA, var_E= NA, var_type= "NA",
+                mean_E= NA, var_E= NA, var_type= NA,
                 reference= "Martin, R. C., Wogalter, M. S., & Forlano, J. G. (1988). Reading comprehension in the presence of unattended speech and music. Journal of memory and language, 27(4), 382-398."
 )
 # data from text p. 394
@@ -1243,7 +1243,7 @@ data<- Add_data(data, ID= 39, N_C=33, N_E=30, sample="adults", cit= "Armstrong e
                 design="between", sound="speech",
                 sound_type= "TV ads", db= NA, task= "reading comprehension", 
                 measure= "reading_score", mean_C= 9.23, var_C= NA, 
-                mean_E= 7.59, var_E= NA, var_type= "NA",
+                mean_E= 7.59, var_E= NA, var_type= NA,
                 reference= "Armstrong, G. B., Boiarsky, G. A., & Mares, M. L. (1991). Background television and reading performance. Communications Monographs, 58(3), 235-253."
 )
 # data from p 243
@@ -1254,7 +1254,7 @@ data<- Add_data(data, ID= 39, N_C=33, N_E=32, sample="adults", cit= "Armstrong e
                 design="between", sound="speech",
                 sound_type= "TV drama", db= NA, task= "reading comprehension", 
                 measure= "reading_score", mean_C= 9.23, var_C= NA, 
-                mean_E= 7.96, var_E= NA, var_type= "NA",
+                mean_E= 7.96, var_E= NA, var_type= NA,
                 reference= "Armstrong, G. B., Boiarsky, G. A., & Mares, M. L. (1991). Background television and reading performance. Communications Monographs, 58(3), 235-253."
 )
 # data from p 243
@@ -1442,14 +1442,24 @@ data<- Add_data(data, ID= 43, N_C=42, sample="adults", cit= "Hyönä & Ekholm (2
 # scrambled Finnish speech, reading speed:
 data<- Add_data(data, ID= 44, N_C=36, sample="adults", cit= "Hyönä & Ekholm (2016), Exp.2",
                 year=2016, design="within", sound="speech",
-                sound_type= "scrambled", db= 82.5, task= "reading comprehension", 
+                sound_type= "scrambled-Different", db= 82.5, task= "reading comprehension", 
                 measure= "reading_speed", mean_C= (3708+3598)/2+(515+419)/2,
                 var_C= (937+883)/2+(760+701)/2, 
-                mean_E= ((4153+4156)/2+(3929+3909)/2)/2+((535+515)/2+(452+560)/2)/2,
-                var_E= ((1021+857)/2 + (1058+1026)/2)/2 + ((1151+920)/2+(814+957)/2)/2, var_type= "SD",
+                mean_E= (4153+3929)/2 + (535+452)/2,
+                var_E= (1021+1058)/2 + (1151+814)/2, var_type= "SD",
                 reference= "Hyönä, J., & Ekholm, M. (2016). Background Speech Effects on Sentence Processing during Reading: An Eye Movement Study. PloS one, 11(3), e0152133."
 )
 
+# scrambled Finnish speech, reading speed:
+data<- Add_data(data, ID= 44, N_C=36, sample="adults", cit= "Hyönä & Ekholm (2016), Exp.2",
+                year=2016, design="within", sound="speech",
+                sound_type= "scrambled-Same", db= 82.5, task= "reading comprehension", 
+                measure= "reading_speed", mean_C= (3708+3598)/2+(515+419)/2,
+                var_C= (937+883)/2+(760+701)/2, 
+                mean_E= (4156+3909)/2+ (515+560)/2,
+                var_E= (857+1026)/2 + (920+957)/2, var_type= "SD",
+                reference= "Hyönä, J., & Ekholm, M. (2016). Background Speech Effects on Sentence Processing during Reading: An Eye Movement Study. PloS one, 11(3), e0152133."
+)
 
 
 #-----------------
@@ -1486,15 +1496,27 @@ data<- Add_data(data, ID= 45, N_C=36-1, sample="adults", cit= "Hyönä & Ekholm 
 #--- Study 46 ---#
 #-----------------
 
-# Finnish speech, reading speed:
+# Scrambled Finnish speech, reading speed:
 data<- Add_data(data, ID= 46, N_C=36, sample="adults", cit= "Hyönä & Ekholm (2016), Exp.4",
                 year=2016, design="within", sound="speech",
-                sound_type= "scrambled", db= 82.5, task= "reading comprehension", 
+                sound_type= "scrambled-Semantic", db= 82.5, task= "reading comprehension", 
                 measure= "reading_speed",
                 mean_C= (4416+4205)/2+(612+536)/2,
                 var_C= (1102+1090)/2+(815+685)/2, 
-                mean_E= ((4682+4679)/2+(4575+4512)/2)/2+((580+694)/2+(515+587)/2)/2,
-                var_E= ((1358+1035)/2+(1257+1133)/2)/2+((698+699)/2+(519+674)/2)/2, var_type= "SD",
+                mean_E= (4682+4575)/2+ (580+515)/2,
+                var_E= (1358+1257)/2 +(698+519)/2, var_type= "SD",
+                reference= "Hyönä, J., & Ekholm, M. (2016). Background Speech Effects on Sentence Processing during Reading: An Eye Movement Study. PloS one, 11(3), e0152133."
+)
+
+# Scrambled Finnish speech, reading speed:
+data<- Add_data(data, ID= 46, N_C=36, sample="adults", cit= "Hyönä & Ekholm (2016), Exp.4",
+                year=2016, design="within", sound="speech",
+                sound_type= "scrambled-Syntactic+Semantic", db= 82.5, task= "reading comprehension", 
+                measure= "reading_speed",
+                mean_C= (4416+4205)/2+(612+536)/2,
+                var_C= (1102+1090)/2+(815+685)/2, 
+                mean_E= (4679+4512)/2+ (694+587)/2,
+                var_E= (1035+1133)/2 +(699+674)/2, var_type= "SD",
                 reference= "Hyönä, J., & Ekholm, M. (2016). Background Speech Effects on Sentence Processing during Reading: An Eye Movement Study. PloS one, 11(3), e0152133."
 )
 
@@ -1710,6 +1732,66 @@ data<- Add_data(data, ID= 57, N_C=24, sample="adults", cit= "Baker & Madell (196
 # data from Table 1
 
 
+#-----------------
+#--- Study 58 ---#
+#-----------------
+
+# comprehension, noise:
+data<- Add_data(data, ID= 58, N_C=40, sample="adults", cit= "Vasilev et al. (n.d.)",
+                year=2016, design="within", sound="noise",
+                sound_type= "speech-spectrum", db= 60, task= "reading comprehension", 
+                measure= "perc_correct", mean_C= 0.9363636, var_C= 0.2443819, 
+                mean_E= 0.9272727, var_E= 0.2599839, var_type= "SD",
+                reference= "Vasilev et al. (n.d.). Unpublished study."
+)
+
+# comprehension, Mandarin:
+data<- Add_data(data, ID= 58, N_C=40, sample="adults", cit= "Vasilev et al. (n.d.)",
+                year=2016, design="within", sound="speech",
+                sound_type= "foreign", db= 60, task= "reading comprehension", 
+                measure= "perc_correct", mean_C= 0.9363636, var_C= 0.2443819, 
+                mean_E= 0.9318182, var_E= 0.2523446, var_type= "SD",
+                reference= "Vasilev et al. (n.d.). Unpublished study."
+)
+
+# comprehension, English:
+data<- Add_data(data, ID= 58, N_C=40, sample="adults", cit= "Vasilev et al. (n.d.)",
+                year=2016, design="within", sound="speech",
+                sound_type= "native", db= 60, task= "reading comprehension", 
+                measure= "perc_correct", mean_C= 0.9363636, var_C= 0.2443819, 
+                mean_E= 0.9090909, var_E= 0.287807, var_type= "SD",
+                reference= "Vasilev et al. (n.d.). Unpublished study."
+)
+
+#####
+
+# reading speed, noise:
+data<- Add_data(data, ID= 58, N_C=40, sample="adults", cit= "Vasilev et al. (n.d.)",
+                year=2016, design="within", sound="noise",
+                sound_type= "speech-spectrum", db= 60, task= "reading comprehension", 
+                measure= "reading_speed", mean_C= 3040, var_C= 1244, 
+                mean_E= 2960, var_E= 1354, var_type= "SD",
+                reference= "Vasilev et al. (n.d.). Unpublished study."
+)
+
+# reading speed, Mandarin:
+data<- Add_data(data, ID= 58, N_C=40, sample="adults", cit= "Vasilev et al. (n.d.)",
+                year=2016, design="within", sound="speech",
+                sound_type= "foreign", db= 60, task= "reading comprehension", 
+                measure= "reading_speed", mean_C= 3040, var_C= 1244, 
+                mean_E= 3150, var_E= 1426, var_type= "SD",
+                reference= "Vasilev et al. (n.d.). Unpublished study."
+)
+
+
+# reading speed, English:
+data<- Add_data(data, ID= 58, N_C=40, sample="adults", cit= "Vasilev et al. (n.d.)",
+                year=2016, design="within", sound="speech",
+                sound_type= "native", db= 60, task= "reading comprehension", 
+                measure= "reading_speed", mean_C= 3040, var_C= 1244, 
+                mean_E= 3370, var_E= 1616, var_type= "SD",
+                reference= "Vasilev et al. (n.d.). Unpublished study."
+)
 
 #############
 # Save data #
@@ -1911,5 +1993,5 @@ data_corr<- Add_data_cor(data_corr, ID=9, N_C= 171-26, N_E= 169,
 # Save data #
 #############
 
-save(data_corr, file= "Data/data_corr.Rda")
-write.csv(data_corr, file= "Data/data_corr.csv")
+#save(data_corr, file= "Data/data_corr.Rda")
+#write.csv(data_corr, file= "Data/data_corr.csv")

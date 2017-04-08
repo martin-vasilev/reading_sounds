@@ -11,7 +11,7 @@ source("Functions/get_es.R")
 source("Functions/effect_sizes.R")
 
 # Load data:
-load("Data/data.Rda"); load("Data/data_corr.Rda")
+load("Data/data.Rda"); #load("Data/data_corr.Rda")
 load("data/r.Rda")
 
 # Calculate Effect sizes
