@@ -1,4 +1,69 @@
 
+Cohens_d<- function(M_C, M_E, S_C, S_E, N_C=NULL, N_E=NULL, N=NULL, r=NULL, design="between", type= "C-E"){
+  
+    if(type=="C-E"){
+      MD<- M_C-M_E
+    }else{
+      MD<- M_E-M_C
+    }
+  
+  if(design=="between"){
+    
+    SDp<- sqrt(((N_C-1)*(S_C^2) + (N_E-1)*(S_E^2))/(N_C+N_E-2))
+    
+  }else{
+    Sdiff<- sqrt(S_C^2 + S_E^2 - 2*r*S_C*S_E)
+    SDp<- Sdiff/sqrt(2*(1-r))
+  }
+  
+  return(MD/SDp)
+}
+
+
+Cohens_d_var<- function(d, N_C=NULL, N_E=NULL, N=NULL, r=NULL, design="between"){
+  
+  if(design=="between"){
+    d_var<- (N_C + N_E)/(N_C*N_E) + (d^2)/(2*(N_C+N_E))
+  } else{
+    d_var<- (1/N + (d^2)/(2*N))* (2*(1-r)) 
+  }
+  
+  return(d_var)
+}
+
+
+Hedges_g<- function(d, N_C=NULL, N_E=NULL, N=NULL, design= "between"){
+  
+  if(design== "between"){
+    df<- N_C + N_E-2
+  }else{
+    df<- N-1
+  }
+  
+  J<- 1- 3/(4*df-1) # correction factor
+  
+  g<- J*d
+  
+  return(g)
+}
+
+
+Hedges_g_var<- function(d_var, N_C=NULL, N_E=NULL, N=NULL, design= "between"){
+  
+  if(design== "between"){
+    df<- N_C + N_E-2
+  }else{
+    df<- N-1
+  }
+  
+  J<- 1- 3/(4*df-1) # correction factor
+  
+  g_var<- (J^2)*d_var
+  
+  return(g_var)
+}
+  
+
 d_to_r<- function(d, n1, n2, varD=NULL){
   # "a" is a correction factor for when n1!= n2
   a<- (n1+ n2)^2/ (n1*n2)
