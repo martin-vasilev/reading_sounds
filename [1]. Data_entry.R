@@ -376,7 +376,7 @@ data<- Add_data(data, ID= 15, N_C=43, N_E=46, sample="adults", cit= "Freeburne &
 data<- Add_data(data, ID= 15, N_C=43, N_E=46, sample="adults", cit= "Freeburne & Fleischer (1952)", year=1952, 
                 design="between", sound="music",
                 sound_type= "classical", db= NA, task= "reading comprehension", 
-                measure= "reading speed", mean_C= 648.23, var_C= 112.11, 
+                measure= "reading_speed", mean_C= 648.23, var_C= 112.11, 
                 mean_E= 696.54, var_E= 159.65, var_type= "SD",
                 reference= "Freeburne, C. M., & Fleischer, M. S. (1952). The effect of music distraction upon reading rate and comprehension. Journal of Educational Psychology, 43(2), 101-109. doi:10.1037/h0054219"
 )
@@ -397,7 +397,7 @@ data<- Add_data(data, ID= 15, N_C=43, N_E=42, sample="adults", cit= "Freeburne &
 data<- Add_data(data, ID= 15, N_C=43, N_E=42, sample="adults", cit= "Freeburne & Fleischer (1952)", year=1952, 
                 design="between", sound="music",
                 sound_type= "pop", db= NA, task= "reading comprehension", 
-                measure= "reading speed", mean_C= 648.23, var_C= 112.11, 
+                measure= "reading_speed", mean_C= 648.23, var_C= 112.11, 
                 mean_E= 704.05, var_E= 159.83, var_type= "SD",
                 reference= "Freeburne, C. M., & Fleischer, M. S. (1952). The effect of music distraction upon reading rate and comprehension. Journal of Educational Psychology, 43(2), 101-109. doi:10.1037/h0054219"
 )
@@ -417,7 +417,7 @@ data<- Add_data(data, ID= 15, N_C=43, N_E=40, sample="adults", cit= "Freeburne &
 data<- Add_data(data, ID= 15, N_C=43, N_E=40, sample="adults", cit= "Freeburne & Fleischer (1952)", year=1952, 
                 design="between", sound="music",
                 sound_type= "semi-classical", db= NA, task= "reading comprehension", 
-                measure= "reading speed", mean_C= 648.23, var_C= 112.11, 
+                measure= "reading_speed", mean_C= 648.23, var_C= 112.11, 
                 mean_E= 695.25, var_E= 148.27, var_type= "SD",
                 reference= "Freeburne, C. M., & Fleischer, M. S. (1952). The effect of music distraction upon reading rate and comprehension. Journal of Educational Psychology, 43(2), 101-109. doi:10.1037/h0054219"
 )
@@ -438,7 +438,7 @@ data<- Add_data(data, ID= 15, N_C=43, N_E=37, sample="adults", cit= "Freeburne &
 data<- Add_data(data, ID= 15, N_C=43, N_E=37, sample="adults", cit= "Freeburne & Fleischer (1952)", year=1952, 
                 design="between", sound="music",
                 sound_type= "jazz", db= NA, task= "reading comprehension", 
-                measure= "reading speed", mean_C= 648.23, var_C= 112.11, 
+                measure= "reading_speed", mean_C= 648.23, var_C= 112.11, 
                 mean_E= 716.59, var_E= 111.45, var_type= "SD",
                 reference= "Freeburne, C. M., & Fleischer, M. S. (1952). The effect of music distraction upon reading rate and comprehension. Journal of Educational Psychology, 43(2), 101-109. doi:10.1037/h0054219"
 )
@@ -1364,7 +1364,7 @@ data<- Add_data(data, ID= 41, N_C=48, N_E=48, sample="children", cit= "Pool et a
 data<- Add_data(data, ID= 42, N_C=52, N_E=52, sample="children", cit= "Dockrell & Shield (2006)",
                 year=2006, design="between", sound="noise",
                 sound_type= "children babble", db= 65, task= "reading comprehension", 
-                measure= "num_correct", mean_C= 33.45, var_C= 11.62, 
+                measure= "reading_score", mean_C= 33.45, var_C= 11.62, 
                 mean_E= 27.59, var_E= 12.23, var_type= "SD",
                 reference= "Dockrell, J. E., & Shield, B. M. (2006). Acoustical barriers in classrooms: The impact of noise on performance in the classroom. British Educational Research Journal, 32(3), 509-525."
 )
@@ -1375,7 +1375,7 @@ data<- Add_data(data, ID= 42, N_C=52, N_E=52, sample="children", cit= "Dockrell 
 data<- Add_data(data, ID= 42, N_C=52, N_E=52, sample="children", cit= "Dockrell & Shield (2006)",
                 year=2006, design="between", sound="noise",
                 sound_type= "children babble + environmental", db= 65, task= "reading comprehension", 
-                measure= "score", mean_C= 33.45, var_C= 11.62, 
+                measure= "reading_score", mean_C= 33.45, var_C= 11.62, 
                 mean_E= 39.48, var_E= 8.95, var_type= "SD",
                 reference= "Dockrell, J. E., & Shield, B. M. (2006). Acoustical barriers in classrooms: The impact of noise on performance in the classroom. British Educational Research Journal, 32(3), 509-525."
 )

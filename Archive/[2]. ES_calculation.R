@@ -7,61 +7,19 @@
 
 rm(list=ls())
 
+source("Functions/get_es.R")
 source("Functions/effect_sizes.R")
 
 # Load data:
-load("Data/data.Rda");
+load("Data/data.Rda"); #load("Data/data_corr.Rda")
 load("data/r.Rda")
 
-reference<- as.character(data$reference)
-data$reference<- NULL
+# Calculate Effect sizes
+es<- get_es(data)
 
-measures<- unique(as.character(data$measure))
-normal_codingQ<- measures[which(!is.element(measures, c("reading_speed", "perc_incorrect", "proofreading_speed",
-                                                  "prop_misses")))]
+colnames(es)<- c("ID", "cit", "year", "design", "sound", "sound_type", "db",
+                 "task", "measure", "d", "var_d", "g", "var_d")
 
-NCD<- which(is.element(data$measure, normal_codingQ) & !is.na(data$var_C))
-
-# Calculate ES for studies with normal coding
-
-data$d<- NA
-data$d_var<- NA
-data$g<- NA
-data$g_var<- NA
-
-for(i in 1:length(NCD)){
-  if(data$design[NCD[i]]=="between"){
-    #
-    data$d[NCD[i]]<- Cohens_d(M_C = data$mean_C[NCD[i]], M_E = data$mean_E[NCD[i]], S_C = data$var_C[NCD[i]],
-                              S_E = data$var_E[NCD[i]], N_C = data$N_C[NCD[i]], N_E = data$N_E[NCD[i]],
-                              design = as.character(data$design[NCD[i]]), type = "E-C")
-    
-    data$d_var[NCD[i]]<- Cohens_d_var(d = data$d[NCD[i]], N_C = data$N_C[NCD[i]], N_E = data$N_E[NCD[i]],
-                                      design = as.character(data$design[NCD[i]]))
-    
-    data$g[NCD[i]]<- Hedges_g(d = data$d[NCD[i]], N_C = data$N_C[NCD[i]], N_E = data$N_E[NCD[i]],
-                              design =  as.character(data$design[NCD[i]]))
-    
-    data$g_var[NCD[i]]<- Hedges_g_var(d_var = data$d_var[NCD[i]], N_C = data$N_C[NCD[i]], N_E = data$N_E[NCD[i]],
-                                      design = as.character(data$design[NCD[i]]))
-    
-  } else{
-    data$d[NCD[i]]<- Cohens_d(M_C = data$mean_C[NCD[i]], M_E = data$mean_E[NCD[i]], S_C = data$var_C[NCD[i]],
-                              S_E = data$var_E[NCD[i]], N = data$N_C[NCD[i]], r = r,
-                              design = as.character(data$design[NCD[i]]), type = "E-C")
-    
-    data$d_var[NCD[i]]<- Cohens_d_var(d = data$d[NCD[i]], N = data$N_C[NCD[i]], r = r,
-                                      design = as.character(data$design[NCD[i]]))
-    
-    data$g[NCD[i]]<- Hedges_g(d = data$d[NCD[i]], N = data$N_C[NCD[i]], 
-                              design =  as.character(data$design[NCD[i]]))
-    
-    data$g_var[NCD[i]]<- Hedges_g_var(d_var = data$d_var[NCD[i]], N = data$N_C[NCD[i]], 
-                                      design = as.character(data$design[NCD[i]]))
-  }
-}
-
-data$reference<- reference
 
 ##################
 # Special cases: #
@@ -199,3 +157,51 @@ write.csv(es, file= "Data/es.csv")
 #source("https://bioconductor.org/biocLite.R")
 #biocLite("EBImage")
 #library(metagear)
+
+
+#----------------------------------------------------------------------------------
+#                             Correlational studies:
+#----------------------------------------------------------------------------------
+
+# RANCH study aircraft:
+-0.008/(sqrt(2010)*0.003)
+
+# RANCH study traffic:
+-0.002/(sqrt(2010)*0.004)
+
+# ID 2:
+#d:
+# WATCH SIGN!!!!!!!!!!!!!!
+d= ANOVA_to_d(Fvalue=11.75, N_C=data_corr$N_C[2], N_E= data_corr$N_E[2], design= "between")
+
+d_var= ANOVA_to_d_var(d, N_C=data_corr$N_C[2], N_E= data_corr$N_E[2], design= "between")
+
+
+# ID 4:
+# d:
+d= Ttest_to_d(t= -2.02, N_C = data_corr$N_C[5] ,N_E = data_corr$N_E[5], design = "between")
+d_var= Ttest_to_d_var(d, N_C = data_corr$N_C[5] ,N_E = data_corr$N_E[5], design = "between")
+
+
+# ID 5:
+d= -ANOVA_to_d(Fvalue = 7.270, N_C = data_corr$N_C[6] ,N_E = data_corr$N_E[6], design = "between")
+d_var= ANOVA_to_d_var(d, N_C=data_corr$N_C[6], N_E= data_corr$N_E[6], design= "between")
+
+
+# ID 6:
+d= -ANOVA_to_d(Fvalue = 22.58, N_C = data_corr$N_C[7] ,N_E = data_corr$N_E[7], design = "between")
+d_var= ANOVA_to_d_var(d, N_C=data_corr$N_C[7], N_E= data_corr$N_E[7], design= "between")
+
+# ID 7: 
+
+# I take partial correlation after controlling for poverty
+rcor= -0.49; r_var= ((1-rcor^2)^2)/(20-1) # sample size taken from t-test df (n-1)
+# formula 12.27 in Cooper et al., Chapt. 12, The Handbook of Research Synthesis and Meta-analysis
+d= r_to_d(rcor)
+d_var= r_to_d_var(r_var, rcor)
+
+# ID 9:
+# covariate outcome correlation is not reported, therefore I use the default (ANOVA formula):
+d= -ANOVA_to_d(Fvalue = 4.5, N_C = data_corr$N_C[10] ,N_E = data_corr$N_E[10], design = "between")
+d_var= ANOVA_to_d_var(d, N_C=data_corr$N_C[10], N_E= data_corr$N_E[10], design= "between")
+
