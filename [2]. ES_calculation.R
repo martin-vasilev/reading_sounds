@@ -17,10 +17,17 @@ reference<- as.character(data$reference)
 data$reference<- NULL
 
 measures<- unique(as.character(data$measure))
-normal_codingQ<- measures[which(!is.element(measures, c("reading_speed", "perc_incorrect", "proofreading_speed",
-                                                  "prop_misses")))]
+#normal_codingQ<- measures[which(!is.element(measures, c("reading_speed", "perc_incorrect", "proofreading_speed",
+#                                                  "prop_misses")))]
+normal_codingQ<- measures[which(!is.element(measures, c("perc_incorrect", "prop_misses")))]
 
-NCD<- which(is.element(data$measure, normal_codingQ) & !is.na(data$var_C))
+
+#NCD<- which(is.element(data$measure, normal_codingQ) & !is.na(data$var_C))
+NCD<- which(!is.na(data$var_C))
+
+
+regulars<- c("num_correct", "prop_correct", "perc_correct", "reading_score")
+oposite<- c("reading_speed", "proofreading_speed", "prop_misses", "perc_incorrect")
 
 # Calculate ES for studies with normal coding
 
@@ -30,11 +37,28 @@ data$g<- NA
 data$g_var<- NA
 
 for(i in 1:length(NCD)){
+  
+  if(is.element(data$measure[NCD[i]], regulars)){
+    type<- "E-C"
+  } else{
+    type<- "C-E"
+  }
+  
+  
   if(data$design[NCD[i]]=="between"){
-    #
-    data$d[NCD[i]]<- Cohens_d(M_C = data$mean_C[NCD[i]], M_E = data$mean_E[NCD[i]], S_C = data$var_C[NCD[i]],
+    
+    if(data$var_type[NCD[i]]== "SD"){
+      data$d[NCD[i]]<- Cohens_d(M_C = data$mean_C[NCD[i]], M_E = data$mean_E[NCD[i]], S_C = data$var_C[NCD[i]],
                               S_E = data$var_E[NCD[i]], N_C = data$N_C[NCD[i]], N_E = data$N_E[NCD[i]],
-                              design = as.character(data$design[NCD[i]]), type = "E-C")
+                              design = as.character(data$design[NCD[i]]), type = type)
+    } else{
+      data$d[NCD[i]]<- Cohens_d(M_C = data$mean_C[NCD[i]], M_E = data$mean_E[NCD[i]], 
+                              S_C = data$var_C[NCD[i]]* sqrt(data$N_C[NCD[i]]),
+                              S_E = data$var_E[NCD[i]]*sqrt(data$N_E[NCD[i]]),
+                              N_C = data$N_C[NCD[i]], N_E = data$N_E[NCD[i]],
+                              design = as.character(data$design[NCD[i]]), type = type)
+    }
+    
     
     data$d_var[NCD[i]]<- Cohens_d_var(d = data$d[NCD[i]], N_C = data$N_C[NCD[i]], N_E = data$N_E[NCD[i]],
                                       design = as.character(data$design[NCD[i]]))
@@ -46,9 +70,19 @@ for(i in 1:length(NCD)){
                                       design = as.character(data$design[NCD[i]]))
     
   } else{
-    data$d[NCD[i]]<- Cohens_d(M_C = data$mean_C[NCD[i]], M_E = data$mean_E[NCD[i]], S_C = data$var_C[NCD[i]],
+    
+    if(data$var_type[NCD[i]]== "SD"){
+        data$d[NCD[i]]<- Cohens_d(M_C = data$mean_C[NCD[i]], M_E = data$mean_E[NCD[i]], S_C = data$var_C[NCD[i]],
                               S_E = data$var_E[NCD[i]], N = data$N_C[NCD[i]], r = r,
-                              design = as.character(data$design[NCD[i]]), type = "E-C")
+                              design = as.character(data$design[NCD[i]]), type = type)
+    }else{
+        data$d[NCD[i]]<- Cohens_d(M_C = data$mean_C[NCD[i]], M_E = data$mean_E[NCD[i]],
+                              S_C = data$var_C[NCD[i]]*sqrt(data$N_C[NCD[i]]),
+                              S_E = data$var_E[NCD[i]]*sqrt(data$N_C[NCD[i]]), 
+                              N = data$N_C[NCD[i]], r = r,
+                              design = as.character(data$design[NCD[i]]), type = type)
+    }
+
     
     data$d_var[NCD[i]]<- Cohens_d_var(d = data$d[NCD[i]], N = data$N_C[NCD[i]], r = r,
                                       design = as.character(data$design[NCD[i]]))
@@ -61,6 +95,9 @@ for(i in 1:length(NCD)){
   }
 }
 
+data$CI95_L<- data$g- 1.96*sqrt(data$g_var)
+data$CI95_R<- data$g+ 1.96*sqrt(data$g_var)
+
 data$reference<- reference
 
 ##################
@@ -69,6 +106,40 @@ data$reference<- reference
 
 # Studies in which effect sizes had to approximated or extracted from test statistics. 
 # This refers to studies with incomplete reporting of descriptive statistics:
+
+
+
+#---------------------------------
+# Study 7 Etaugh & Michals (1975):
+#---------------------------------
+
+# data from text
+
+# Simple effect F statistic not reported, so I extract the SD of the difference from the
+# reported interaction effect. That's the closest approximation possible.
+
+# gender x music interaction:
+d_inter<- ANOVA_to_d(Fvalue= 5.46, n = 32, design = "within", r=r)
+
+# mean difference of the interaction:
+MD<- (8.6-6.6)- (6.6-6.9)
+# pooled SD of the interaction ES
+SDp<- MD/d_inter
+
+# Approximate effect size of music by using the interaction SD:
+d<- ((6.9+6.6)/2- (6.6+8.6)/2)/SDp
+d_var= ANOVA_to_d_var(d, n= 32, design= "within", r=r)
+
+a<- which(data$cit== "Etaugh & Michals (1975)")
+
+data$d[a]<- d
+data$d_var[a]<- d_var
+data$g[a]<- Hedges_g(d = data$d[a], N = data$N_C[a], design = data$design[a])
+data$g_var[a]<- Hedges_g_var(d_var = data$d_var[a], N = data$N_C[a], design = data$design[a])
+
+# 95% CI:
+data$CI95_L[a]<- data$g[a]- 1.96*sqrt(data$g_var[a])
+data$CI95_R[a]<- data$g[a]+ 1.96*sqrt(data$g_var[a])
 
 
 #---------------------------

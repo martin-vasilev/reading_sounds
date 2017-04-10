@@ -162,19 +162,7 @@ data<- Add_data(data, ID= 6, N_C=32, sample="adults", cit= "Etaugh & Michals (19
                 mean_E= (6.9+6.6)/2, var_E= NA, var_type= NA,
                 reference= "Etaugh, C., & Michals, D. (1975). Effects on reading comprehension of preferred music and frequency of studying to music. Perceptual and Motor Skills, 41(2), 553-554. doi:10.2466/pms.1975.41.2.553"
 )
-# data from text
 
-# gender x music interaction:
-d_inter<- ANOVA_to_d(Fvalue= 5.46, n = 32, design = "within", r=r)
-
-# mean difference of the interaction:
-MD<- (8.6-6.6)- (6.6-6.9)
-# pooled SD of the interaction effect
-SDp<- MD/d_inter
-
-# Approximate effect size of music by using the interaction SD:
-d<- ((6.9+6.6)/2- (6.6+8.6)/2)/SDp
-d_var= ANOVA_to_d_var(d, n= 32, design= "within", r=r)
 
 #----------------
 #--- Study 7 ---#
