@@ -124,7 +124,7 @@ d_inter<- ANOVA_to_d(Fvalue= 5.46, n = 32, design = "within", r=r)
 # mean difference of the interaction:
 MD<- (8.6-6.6)- (6.6-6.9)
 # pooled SD of the interaction ES
-SDp<- MD/d_inter
+SDp<- MD/d_inter; #rm(d_inter, MD)
 
 # Approximate effect size of music by using the interaction SD:
 d<- ((6.9+6.6)/2- (6.6+8.6)/2)/SDp
@@ -142,9 +142,90 @@ data$CI95_L[a]<- data$g[a]- 1.96*sqrt(data$g_var[a])
 data$CI95_R[a]<- data$g[a]+ 1.96*sqrt(data$g_var[a])
 
 
+#-----------------------------------
+# Study 17: Henderson et al. (1945):
+#-----------------------------------
+
+a<- which(data$cit== "Henderson et al. (1945)")
+
+# The closest (and only possible) approximation is to obtain the variance from using
+# the pooled SD from the pre-test and post-test (within-subject). This is then used for
+# calculating the (between-subject) effect of background condition on the post-test scores 
+# (which is what is of interest in this paper). 
+
+
+#----
+# silence (baseline):
+#----
+
+d<- Ttest_to_d(t = 0.923, n = data$N_C[a[1]], design = "within", r = r)
+# within-subject because same t-statistic is from a pretest-posttest (repeated-measures)
+MD<- 3.9 # Table 1
+SD_silence<- abs(MD/d)
+
+#----
+# classical music (a[1]):
+#----
+
+# get pooled SD from t-statistic:
+
+d<- Ttest_to_d(t = 0.266, n = data$N_E[a[1]], design = "within", r=r)
+MD<- -1.2 # Table 1
+SD_class<- abs(MD/d)
+
+#----
+# pop music (a[2]):
+#----
+d<- Ttest_to_d(t = 6.160, n = data$N_E[a[2]], design = "within", r=r)
+MD<- -25.1
+SD_pop<- abs(MD/d)
+
+
+# calculate ES for meta-analysis:
+
+# classical:
+data$d[a[1]]<- Cohens_d(M_C = data$mean_C[a[1]], M_E = data$mean_E[a[1]], S_C = SD_silence, 
+                        S_E = SD_class, N_C = data$N_C[a[1]], N_E = data$N_E[a[1]], 
+                        design = data$design[a[1]], type = "E-C")
+data$d_var[a[1]]<- Cohens_d_var(d = data$d[a[1]], N_C = data$N_C[a[1]], N_E = data$N_E[a[1]],
+                                design = data$design[a[1]])
+data$g[a[1]]<- Hedges_g(d = data$d[a[1]], N_C = data$N_C[a[1]], N_E = data$N_E[a[1]], 
+                  design = data$design[a[1]])
+data$g_var[a[1]]<- Hedges_g_var(d_var = data$d_var[a[1]], N_C = data$N_C[a[1]], N_E = data$N_E[a[1]],
+                                design = data$design[a[1]])
+data$CI95_L[a[1]]<- data$g[a[1]]- 1.96*sqrt(data$g_var[a[1]])
+data$CI95_R[a[1]]<- data$g[a[1]]+ 1.96*sqrt(data$g_var[a[1]])
+
+# pop:
+data$d[a[2]]<- Cohens_d(M_C = data$mean_C[a[2]], M_E = data$mean_E[a[2]], S_C = SD_silence, 
+                        S_E = SD_pop, N_C = data$N_C[a[2]], N_E = data$N_E[a[2]], 
+                        design = data$design[a[2]], type = "E-C")
+data$d_var[a[2]]<- Cohens_d_var(d = data$d[a[2]], N_C = data$N_C[a[2]], N_E = data$N_E[a[2]],
+                                design = data$design[a[2]])
+data$g[a[2]]<- Hedges_g(d = data$d[a[2]], N_C = data$N_C[a[2]], N_E = data$N_E[a[2]], 
+                        design = data$design[a[2]])
+data$g_var[a[2]]<- Hedges_g_var(d_var = data$d_var[a[2]], N_C = data$N_C[a[2]], N_E = data$N_E[a[2]],
+                                design = data$design[a[2]])
+data$CI95_L[a[2]]<- data$g[a[2]]- 1.96*sqrt(data$g_var[a[2]])
+data$CI95_R[a[2]]<- data$g[a[2]]+ 1.96*sqrt(data$g_var[a[2]])
+
+
 #---------------------------
 # Study 32 Weinstein (1977):
 #---------------------------
+
+a<- which(data$cit=="Weinstein (1977)")
+
+# Contextual errors: effect size computed from the reported (repeated-measures) ANOVA:
+data$d[a[2]]<- -ANOVA_to_d(Fvalue = 10.0, n = data$N_C[a[2]], design = data$design[a[2]], r= r)
+# negative effect size because study requires opposite coding (>undetected = worse performance)
+data$d_var[a[2]]<- Cohens_d_var(d = data$d[a[2]], N = data$N_C[a[2]], 
+                                design = data$design[a[2]], r = r)
+data$g[a[2]]<- Hedges_g(d = data$d[a[2]], N = data$N_C[a[2]], design = data$design[a[2]])
+data$g_var[a[2]]<- Hedges_g_var(d_var = data$d_var[a[2]], N = data$N_C[a[2]], 
+                                design = data$design[a[2]])
+data$CI95_L[a[2]]<- data$g[a[2]]- 1.96*sqrt(data$g_var[a[2]])
+data$CI95_R[a[2]]<- data$g[a[2]]+ 1.96*sqrt(data$g_var[a[2]])
 
 # Contextual errors: effect size computed from the reported (repeated-measures) ANOVA:
 es$d[76]<- ANOVA_to_d(Fvalue = 10.0, n= data$N_C[76], design= data$design[76], r=r)

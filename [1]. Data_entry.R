@@ -998,8 +998,8 @@ data<- Add_data(data, ID= 31, N_C=15, N_E=18, sample="adults", cit= "Weinstein (
 data<- Add_data(data, ID= 32, N_C=29, sample="adults", cit= "Weinstein (1977)", year=1977, 
                 design="within", sound="speech",
                 sound_type= "native", db= 68, task= "proofreading (non-contextual errors)", 
-                measure= "perc_incorrect", mean_C= NA, var_C= NA, 
-                mean_E= NA, var_E= NA, var_type= NA,
+                measure= "perc_incorrect", mean_C= (45.6+45.1)/2, var_C= NA, 
+                mean_E= (45.9+46.3)/2, var_E= NA, var_type= NA,
                 reference= "Weinstein, N. D. (1977). Noise and intellectual performance: A confirmation and extension. Journal of Applied Psychology, 62(1), 104-107"
 )
 # data from Table 1 and text
@@ -1009,8 +1009,8 @@ data<- Add_data(data, ID= 32, N_C=29, sample="adults", cit= "Weinstein (1977)", 
 data<- Add_data(data, ID= 32, N_C=29, sample="adults", cit= "Weinstein (1977)", year=1977, 
                 design="within", sound="speech",
                 sound_type= "native", db= 68, task= "proofreading (contextual errors)", 
-                measure= "perc_incorrect", mean_C= NA, var_C= NA, 
-                mean_E= NA, var_E= NA, var_type= NA,
+                measure= "perc_incorrect", mean_C= (56.1+47.2)/2, var_C= NA, 
+                mean_E= (60.1+58.1)/2, var_E= NA, var_type= NA,
                 reference= "Weinstein, N. D. (1977). Noise and intellectual performance: A confirmation and extension. Journal of Applied Psychology, 62(1), 104-107"
 )
 # data from Table 1 and text
