@@ -227,10 +227,6 @@ data$g_var[a[2]]<- Hedges_g_var(d_var = data$d_var[a[2]], N = data$N_C[a[2]],
 data$CI95_L[a[2]]<- data$g[a[2]]- 1.96*sqrt(data$g_var[a[2]])
 data$CI95_R[a[2]]<- data$g[a[2]]+ 1.96*sqrt(data$g_var[a[2]])
 
-# Contextual errors: effect size computed from the reported (repeated-measures) ANOVA:
-es$d[76]<- ANOVA_to_d(Fvalue = 10.0, n= data$N_C[76], design= data$design[76], r=r)
-es$d[76]<- - es$d[76]
-es$var_d[76]<- ANOVA_to_d_var(d= es$d[76], n= data$N_C[76], design= data$design[76], r=r)
 
 # Non-contextual errors:
 # Here, the exact F value is not reported (<1). The mean difference is .3.
@@ -250,33 +246,63 @@ es$var_d[75]<- ANOVA_to_d_var(d= es$d[75], n= data$N_C[75], design= data$design[
 # Only qualitative description of the remaining studies is given (i.e. all ps>.10)
 
 # continuous speech:
-es$d[77]<- Ttest_to_d(t = -2.38, n= data$N_C[77], design= data$design[77], r=r)
-es$var_d[77]<- Ttest_to_d_var(d= es$d[77], n= data$N_C[77], design= data$design[77], r=r)
+a<- which(data$cit=="Martin et al. (1988), Exp.1" & data$sound_type== "native")
+data$d[a]<- Ttest_to_d(t = -2.38, n = data$N_C[a], design = data$design[a], r = r)
+# negative sign, see means
+data$d_var[a]<- Ttest_to_d_var(d = data$d[a], n = data$N_C[a], design = data$design[a], r=r)
+data$g[a]<- Hedges_g(d = data$d[a], N = data$N_C[a], design = data$design[a])
+data$g_var[a]<- Hedges_g_var(d_var = data$d_var[a], N = data$N_C[a], design = data$design[a])
+data$CI95_L[a]<- data$g[a] - 1.96*sqrt(data$g_var[a])
+data$CI95_R[a]<- data$g[a] + 1.96*sqrt(data$g_var[a])
 
 # random speech:
-es$d[78]<- Ttest_to_d(t = -2.10, n= data$N_C[78], design= data$design[78], r=r)
-es$var_d[78]<- Ttest_to_d_var(d= es$d[78], n= data$N_C[78], design= data$design[78], r=r)
-
+a<- which(data$cit=="Martin et al. (1988), Exp.1" & data$sound_type== "random (native)")
+data$d[a]<- Ttest_to_d(t = -2.10, n = data$N_C[a], design = data$design[a], r = r)
+# negative sign, see means
+data$d_var[a]<- Ttest_to_d_var(d = data$d[a], n = data$N_C[a], design = data$design[a], r = r)
+data$g[a]<- Hedges_g(d = data$d[a], N = data$N_C[a], design = data$design[a])
+data$g_var[a]<- Hedges_g_var(d_var = data$d_var[a], N = data$N_C[a], design = data$design[a])
+data$CI95_L[a]<- data$g[a]- 1.96*sqrt(data$g_var[a])
+data$CI95_R[a]<- data$g[a]+ 1.96*sqrt(data$g_var[a])
 
 #--------------------------------------
 # Study 34 Martin et al. (1988), Exp.2:
 #--------------------------------------
 
-es$d[79]<- Ttest_to_d(t = 0.263, n= data$N_C[79], design= data$design[79], r=r)
-es$var_d[79]<- Ttest_to_d_var(d= es$d[79], n= data$N_C[79], design= data$design[79], r=r)
+a<- which(data$cit=="Martin et al. (1988), Exp.2" & data$sound_type== "instrumental")
 
+data$d[a]<- Ttest_to_d(t = 0.263, n = data$N_C[a], design = data$design[a], r = r)
+# ES positive, see means
+data$d_var[a]<- Ttest_to_d_var(d = data$d[a], n = data$N_C[a], design = data$design[a], r = r)
+data$g[a]<- Hedges_g(d = data$d[a], N = data$N_C[a], design = data$design[a])
+data$g_var[a]<- Hedges_g_var(d_var = data$d_var[a], N = data$N_C[a], design = data$design[a])
+data$CI95_L[a]<- data$g[a]- 1.96*sqrt(data$g_var[a])
+data$CI95_R[a]<- data$g[a]+ 1.96*sqrt(data$g_var[a])
 
 #--------------------------------------
 # Study 35 Martin et al. (1988), Exp.4:
 #--------------------------------------
 
 # white noise:
-es$d[80]<- Ttest_to_d(t = -1.44, n= data$N_C[80], design= data$design[80], r=r)
-es$var_d[80]<- Ttest_to_d_var(d= es$d[80], n= data$N_C[80], design= data$design[80], r=r)
+a<- which(data$cit=="Martin et al. (1988), Exp.4" & data$sound_type== "white")
+data$d[a]<- Ttest_to_d(t = -1.44, n = data$N_C[a], design = data$design[a], r = r)
+# negative sign, see means
+data$d_var[a]<- Ttest_to_d_var(d = data$d[a], n = data$N_C[a], design = data$design[a], r = r)
+data$g[a]<- Hedges_g(d = data$d[a], N = data$N_C[a], design = data$design[a])
+data$g_var[a]<- Hedges_g_var(d_var = data$d_var[a], N = data$N_C[a], design = data$design[a])
+data$CI95_L[a]<- data$g[a]- 1.96*sqrt(data$g_var[a])
+data$CI95_R[a]<- data$g[a]+ 1.96*sqrt(data$g_var[a])
 
 # English speech:
-es$d[81]<- Ttest_to_d(t = -4.26, n= data$N_C[81], design= data$design[81], r=r)
-es$var_d[81]<- Ttest_to_d_var(d= es$d[81], n= data$N_C[81], design= data$design[81], r=r)
+a<- which(data$cit=="Martin et al. (1988), Exp.4" & data$sound_type== "native")
+data$d[a]<- Ttest_to_d(t = -4.26, n = data$N_C[a], design = data$design[a], r = r)
+# negative sign, see means
+data$d_var[a]<- Ttest_to_d_var(d = data$d[a], n = data$N_C[a], design = data$design[a], r=r)
+data$g[a]<- Hedges_g(d = data$d[a], N = data$N_C[a], design = data$design[a])
+data$g_var[a]<- Hedges_g_var(d_var = data$d_var[a], N = data$N_C[a], design = data$design[a])
+data$CI95_L[a]<- data$g[a]- 1.96*sqrt(data$g_var[a])
+data$CI95_R[a]<- data$g[a]+ 1.96*sqrt(data$g_var[a])
+
 
 # Russian speech:
 es$d[82]<- Ttest_to_d(t = -2.06, n= data$N_C[82], design= data$design[82], r=r)

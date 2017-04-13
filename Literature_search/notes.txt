@@ -19,3 +19,4 @@
 - # 38, 39 are coded as usual (i.e. higher score= better performance).
 - # 40, 41- remove reading speed, as this is not reading speed. 
 - # 56- chech what direction of coding is needed
+- Martin et al. exp2: spoken lyrics, no music= background speech?

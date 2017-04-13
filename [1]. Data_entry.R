@@ -1026,10 +1026,10 @@ data<- Add_data(data, ID= 32, N_C=29, sample="adults", cit= "Weinstein (1977)", 
 data<- Add_data(data, ID= 33, N_C=36, sample="adults", cit= "Martin et al. (1988), Exp.1", year=1988, 
                 design="within", sound="speech",
                 sound_type= "native", db= 82, task= "reading comprehension", 
-                measure= "perc_correct", mean_C= NA, var_C= NA, 
-                mean_E= NA, var_E= NA, var_type= NA,
+                measure= "perc_correct", mean_C= 72.1, var_C= NA, 
+                mean_E= 62.6, var_E= NA, var_type= NA,
                 reference= "Martin, R. C., Wogalter, M. S., & Forlano, J. G. (1988). Reading comprehension in the presence of unattended speech and music. Journal of memory and language, 27(4), 382-398."
-)
+) # means from Table 1
 # data from text p.387
 
 
@@ -1037,10 +1037,10 @@ data<- Add_data(data, ID= 33, N_C=36, sample="adults", cit= "Martin et al. (1988
 data<- Add_data(data, ID= 33, N_C=36, sample="adults", cit= "Martin et al. (1988), Exp.1", year=1988, 
                 design="within", sound="speech",
                 sound_type= "random (native)", db= 82, task= "reading comprehension", 
-                measure= "perc_correct", mean_C= NA, var_C= NA, 
-                mean_E= NA, var_E= NA, var_type= NA,
+                measure= "perc_correct", mean_C= 72.1, var_C= NA, 
+                mean_E= 65.2, var_E= NA, var_type= NA,
                 reference= "Martin, R. C., Wogalter, M. S., & Forlano, J. G. (1988). Reading comprehension in the presence of unattended speech and music. Journal of memory and language, 27(4), 382-398."
-)
+) # means from Table 1
 # data from text p.387
 
 
@@ -1054,10 +1054,10 @@ data<- Add_data(data, ID= 33, N_C=36, sample="adults", cit= "Martin et al. (1988
 data<- Add_data(data, ID= 34, N_C=36, sample="adults", cit= "Martin et al. (1988), Exp.2", year=1988, 
                 design="within", sound="music",
                 sound_type= "instrumental", db= 82, task= "reading comprehension", 
-                measure= "perc_correct", mean_C= NA, var_C= NA, 
-                mean_E= NA, var_E= NA, var_type= NA,
+                measure= "perc_correct", mean_C= 67, var_C= NA, 
+                mean_E= 69, var_E= NA, var_type= NA,
                 reference= "Martin, R. C., Wogalter, M. S., & Forlano, J. G. (1988). Reading comprehension in the presence of unattended speech and music. Journal of memory and language, 27(4), 382-398."
-)
+) # means from Table 2
 # data from text p.389
 
 
@@ -1071,10 +1071,10 @@ data<- Add_data(data, ID= 34, N_C=36, sample="adults", cit= "Martin et al. (1988
 data<- Add_data(data, ID= 35, N_C=48, sample="adults", cit= "Martin et al. (1988), Exp.4", year=1988, 
                 design="within", sound="noise",
                 sound_type= "white", db= 82, task= "reading comprehension", 
-                measure= "perc_correct", mean_C= NA, var_C= NA, 
-                mean_E= NA, var_E= NA, var_type= NA,
+                measure= "perc_correct", mean_C= 69.4, var_C= NA, 
+                mean_E= 67.3, var_E= NA, var_type= NA,
                 reference= "Martin, R. C., Wogalter, M. S., & Forlano, J. G. (1988). Reading comprehension in the presence of unattended speech and music. Journal of memory and language, 27(4), 382-398."
-)
+) # means from Table 4
 # data from text p. 393
 
 
@@ -1082,10 +1082,10 @@ data<- Add_data(data, ID= 35, N_C=48, sample="adults", cit= "Martin et al. (1988
 data<- Add_data(data, ID= 35, N_C=48, sample="adults", cit= "Martin et al. (1988), Exp.4", year=1988, 
                 design="within", sound="speech",
                 sound_type= "native", db= 82, task= "reading comprehension", 
-                measure= "perc_correct", mean_C= NA, var_C= NA, 
-                mean_E= NA, var_E= NA, var_type= NA,
+                measure= "perc_correct", mean_C= 69.4, var_C= NA, 
+                mean_E= 57.8, var_E= NA, var_type= NA,
                 reference= "Martin, R. C., Wogalter, M. S., & Forlano, J. G. (1988). Reading comprehension in the presence of unattended speech and music. Journal of memory and language, 27(4), 382-398."
-)
+) # means from Table 4
 # data from text p. 393
 
 
@@ -1093,10 +1093,10 @@ data<- Add_data(data, ID= 35, N_C=48, sample="adults", cit= "Martin et al. (1988
 data<- Add_data(data, ID= 35, N_C=48, sample="adults", cit= "Martin et al. (1988), Exp.4", year=1988, 
                 design="within", sound="speech",
                 sound_type= "foreign", db= 82, task= "reading comprehension", 
-                measure= "perc_correct", mean_C= NA, var_C= NA, 
-                mean_E= NA, var_E= NA, var_type= NA,
+                measure= "perc_correct", mean_C= 69.4, var_C= NA, 
+                mean_E= 63.8, var_E= NA, var_type= NA,
                 reference= "Martin, R. C., Wogalter, M. S., & Forlano, J. G. (1988). Reading comprehension in the presence of unattended speech and music. Journal of memory and language, 27(4), 382-398."
-)
+) # means from Table 4
 # data from text p. 393
 
 
@@ -1110,10 +1110,10 @@ data<- Add_data(data, ID= 35, N_C=48, sample="adults", cit= "Martin et al. (1988
 data<- Add_data(data, ID= 36, N_C=48, sample="adults", cit= "Martin et al. (1988), Exp.5", year=1988, 
                 design="within", sound="noise",
                 sound_type= "white", db= 82, task= "reading comprehension", 
-                measure= "perc_correct", mean_C= NA, var_C= NA, 
-                mean_E= NA, var_E= NA, var_type= NA,
+                measure= "perc_correct", mean_C= 67.5, var_C= NA, 
+                mean_E= 60.2, var_E= NA, var_type= NA,
                 reference= "Martin, R. C., Wogalter, M. S., & Forlano, J. G. (1988). Reading comprehension in the presence of unattended speech and music. Journal of memory and language, 27(4), 382-398."
-)
+)  # means from Table 5
 # data from text p. 394
 
 
@@ -1121,10 +1121,10 @@ data<- Add_data(data, ID= 36, N_C=48, sample="adults", cit= "Martin et al. (1988
 data<- Add_data(data, ID= 36, N_C=48, sample="adults", cit= "Martin et al. (1988), Exp.5", year=1988, 
                 design="within", sound="speech",
                 sound_type= "non-word", db= 82, task= "reading comprehension", 
-                measure= "perc_correct", mean_C= NA, var_C= NA, 
-                mean_E= NA, var_E= NA, var_type= NA,
+                measure= "perc_correct", mean_C= 67.5, var_C= NA, 
+                mean_E= 59.2, var_E= NA, var_type= NA,
                 reference= "Martin, R. C., Wogalter, M. S., & Forlano, J. G. (1988). Reading comprehension in the presence of unattended speech and music. Journal of memory and language, 27(4), 382-398."
-)
+)  # means from Table 5
 # data from text p. 394
 
 
@@ -1132,10 +1132,10 @@ data<- Add_data(data, ID= 36, N_C=48, sample="adults", cit= "Martin et al. (1988
 data<- Add_data(data, ID= 36, N_C=48, sample="adults", cit= "Martin et al. (1988), Exp.5", year=1988, 
                 design="within", sound="speech",
                 sound_type= "random words", db= 82, task= "reading comprehension", 
-                measure= "perc_correct", mean_C= NA, var_C= NA, 
-                mean_E= NA, var_E= NA, var_type= NA,
+                measure= "perc_correct", mean_C= 67.5, var_C= NA, 
+                mean_E= 51.9, var_E= NA, var_type= NA,
                 reference= "Martin, R. C., Wogalter, M. S., & Forlano, J. G. (1988). Reading comprehension in the presence of unattended speech and music. Journal of memory and language, 27(4), 382-398."
-)
+) # means from Table 5
 # data from text p. 394
 
 
