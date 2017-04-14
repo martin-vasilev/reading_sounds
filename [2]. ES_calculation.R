@@ -229,13 +229,20 @@ data$CI95_R[a[2]]<- data$g[a[2]]+ 1.96*sqrt(data$g_var[a[2]])
 
 
 # Non-contextual errors:
-# Here, the exact F value is not reported (<1). The mean difference is .3.
-# To approximate the F value, I use the ratio of mean difference to F value above (2.5)
-# This is possibly the closest approximation that can be done with the available information
 
-es$d[75]<- ANOVA_to_d(Fvalue = 0.3*2.5, n= data$N_C[75], design= data$design[75], r=r)
-es$d[75]<- - es$d[75]
-es$var_d[75]<- ANOVA_to_d_var(d= es$d[75], n= data$N_C[75], design= data$design[75], r=r)
+# Here, the exact F value is not reported (<1). I use the mean difference and the pooled SD
+# from the previous effect size to approximate d.
+# This is the closest approximation that can be done with the available information
+
+# effect size is negative, requires opposite coding
+SDp<- abs((data$mean_E[a[2]]- data$mean_C[a[2]])/data$d[a[2]])
+data$d[a[1]]<- (data$mean_C[a[1]]- data$mean_E[a[1]])/SDp
+data$d_var[a[1]]<- Cohens_d_var(d = data$d[a[1]], N = data$N_C[a[1]], design = data$design[a[1]], r=r)
+data$g[a[1]]<- Hedges_g(d = data$d[a[1]], N = data$N_C[a[1]], design = data$design[a[1]])
+data$g_var[a[1]]<- Hedges_g_var(d_var = data$d_var[a[1]], N = data$N_C[a[1]], 
+                                design = data$design[a[1]])
+data$CI95_L[a[1]]<- data$g[a[1]]- 1.96*sqrt(data$g_var[a[1]])
+data$CI95_R[a[1]]<- data$g[a[1]]+ 1.96*sqrt(data$g_var[a[1]])
 
 
 #--------------------------------------
@@ -369,29 +376,57 @@ data$CI95_R[a]<- data$g[a]+ 1.96*sqrt(data$g_var[a])
 #--------------------------
 
 # Critical ratio= t value
-es$d[90]<- Ttest_to_d(t = -0.11/1.02, n= data$N_C[90], design= data$design[90], r=r)
-es$var_d[90]<- Ttest_to_d_var(d= es$d[90], n= data$N_C[90], design= data$design[90], r=r)
+a<- which(data$cit== "Mitchell (1949)")
+data$d[a]<- Ttest_to_d(t = -0.11/1.02, n = data$N_C[a], design = data$design[a], r = r)
+# negative sign, see means
+data$d_var[a]<- Ttest_to_d_var(d = data$d[a], n =  data$N_C[a], design = data$design[a], r = r)
+data$g[a]<- Hedges_g(d = data$d[a], N = data$N_C[a], design = data$design[a])
+data$g_var[a]<- Hedges_g_var(d_var = data$d_var[a], N = data$N_C[a], design = data$design[a])
+data$CI95_L[a]<- data$g[a]- 1.96*sqrt(data$g_var[a]) 
+data$CI95_R[a]<- data$g[a]+ 1.96*sqrt(data$g_var[a]) 
 
 
 #----------------------------------
 # Study 39 Armstrong et al. (1991):
 #----------------------------------
 # TV Ads
-es$d[91]<- Ttest_to_d(t = -2.53, N_C= data$N_C[91], N_E= data$N_E[91], design= data$design[91])
-es$var_d[91]<- Ttest_to_d_var(d= es$d[91], N_C= data$N_C[91], N_E= data$N_E[91], design= data$design[91])
+a<- which(data$cit== "Armstrong et al. (1991)" & data$sound_type=="TV ads")
+# negative sign, see means
+data$d[a]<- Ttest_to_d(t = -2.53, N_C = data$N_C[a], N_E = data$N_E[a], design = data$design[a])
+data$d_var[a]<- Ttest_to_d_var(d = data$d[a], N_C = data$N_C[a], N_E = data$N_E[a],
+                               design = data$design[a] )
+data$g[a]<- Hedges_g(d = data$d[a], N_C = data$N_C[a], N_E = data$N_E[a], design = data$design[a])
+data$g_var[a]<- Hedges_g_var(d_var = data$d_var[a], N_C = data$N_C[a], N_E = data$N_E[a], 
+                             design = data$design[a])
+data$CI95_L[a]<- data$g[a]- 1.96*sqrt(data$g_var[a])
+data$CI95_R[a]<- data$g[a]+ 1.96*sqrt(data$g_var[a])
+
 
 # TV drama
-es$d[92]<- Ttest_to_d(t = -1.97, N_C= data$N_C[92], N_E= data$N_E[92], design= data$design[92])
-es$var_d[92]<- Ttest_to_d_var(d= es$d[92], N_C= data$N_C[92], N_E= data$N_E[92], design= data$design[92])
+a<- which(data$cit== "Armstrong et al. (1991)" & data$sound_type=="TV drama")
+# negative sign, see means
+data$d[a]<- Ttest_to_d(t = -1.97, N_C = data$N_C[a], N_E = data$N_E[a], design = data$design[a])
+data$d_var[a]<- Ttest_to_d_var(d = data$d[a], N_C = data$N_C[a], N_E = data$N_E[a], 
+                               design = data$design[a])
+data$g[a]<- Hedges_g(d = data$d[a], N_C = data$N_C[a], N_E = data$N_E[a], design = data$design[a])
+data$g_var[a]<- Hedges_g_var(d_var = data$d_var[a], N_C = data$N_C[a], N_E = data$N_E[a], 
+                             design = data$design[a])
+data$CI95_L[a]<- data$g[a]- 1.96*sqrt(data$g_var[a])
+data$CI95_R[a]<- data$g[a]+ 1.96*sqrt(data$g_var[a])
 
 
 #------------------------------
 # Study 53 Halin et al. (2014):
 #------------------------------
-
+a<- which(data$cit== "Halin et al. (2014)")
 # negative sign because speech mean was smaller than silence mean
-es$d[117]<- -ANOVA_to_d(Fvalue=1.39, n= data$N_C[117], design= data$design[117], r=r)
-es$var_d[117]<- ANOVA_to_d_var(d= es$d[117], n= data$N_C[117], design= data$design[117], r=r)
+data$d[a]<- -ANOVA_to_d(Fvalue = 1.39, n = data$N_C[a], design = data$design[a], r = r)
+data$d_var[a]<- ANOVA_to_d_var(d = data$d[a], n = data$N_C[a], design = data$design[a], r = r)
+data$g[a]<- Hedges_g(d = data$d[a], N = data$N_C[a], design = data$design[a])
+data$g_var[a]<- Hedges_g_var(d_var = data$d_var[a], N = data$N_C[a], design = data$design[a])
+data$CI95_L[a]<- data$g[a]- 1.96*sqrt(data$g_var[a])
+data$CI95_R[a]<- data$g[a]+ 1.96*sqrt(data$g_var[a])
+
 
 
 # Save data: 
