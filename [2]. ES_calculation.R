@@ -10,7 +10,7 @@ rm(list=ls())
 source("Functions/effect_sizes.R")
 
 # Load data:
-load("Data/data.Rda");
+load("Data/data_raw.Rda");
 load("data/r.Rda")
 
 reference<- as.character(data$reference)
@@ -428,10 +428,27 @@ data$CI95_L[a]<- data$g[a]- 1.96*sqrt(data$g_var[a])
 data$CI95_R[a]<- data$g[a]+ 1.96*sqrt(data$g_var[a])
 
 
+#---------------------------------
+# Study 8 Etaugh & Ptasnik (1982):
+#---------------------------------
+
+# Here we need the main effect of study condition (i.e. music vs silence)
+# negative sign, see means
+
+a<- which(data$cit=="Etaugh & Ptasnik (1982)")
+data$d[a]<- -ANOVA_to_d(Fvalue = 5.72, N_C = data$N_C[a], N_E = data$N_E[a], design = data$design[a])
+data$d_var[a]<- ANOVA_to_d_var(d = data$d[a], N_C = data$N_C[a], N_E = data$N_E[a], 
+                               design = data$design[a])
+data$g[a]<- Hedges_g(d = data$d[a], N_C = data$N_C[a], N_E = data$N_E[a], design = data$design[a])
+data$g_var[a]<- Hedges_g_var(d_var = data$d_var[a], N_C = data$N_C[a], N_E = data$N_E[a], 
+                             design = data$design[a])
+data$CI95_L[a]<- data$g[a]- 1.96*sqrt(data$g_var[a])
+data$CI95_R[a]<- data$g[a]+ 1.96*sqrt(data$g_var[a])
+
 
 # Save data: 
-save(es, file= "Data/es.Rda")
-write.csv(es, file= "Data/es.csv")
+save(data, file= "Data/data.Rda")
+write.csv(data, file= "Data/data.csv")
 
 
 #source("https://bioconductor.org/biocLite.R")

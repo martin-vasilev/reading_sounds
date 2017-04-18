@@ -1,3 +1,0 @@
-- ID 7:	there is a test statistic reported for the main effect of background sound
-
-If means come from a proportion, I need to calculate odds ratio
