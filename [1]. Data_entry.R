@@ -597,7 +597,7 @@ perham<- structure(list(cond = structure(c(1L, 3L, 2L, 4L), .Label = c("disliked
 data<- Add_data(data, ID= 22, N_C=30, sample="adults", cit= "Perham & Currie (2014)", year=2014, 
                 design="within", sound="music",
                 sound_type= "disliked lyrical", db= 70, task= "reading comprehension", 
-                measure= "num_correct", mean_C= perham$mean[4], var_C= perham$mean[4]- perham$CI_L[4], 
+                measure= "prop_correct", mean_C= perham$mean[4], var_C= perham$mean[4]- perham$CI_L[4], 
                 mean_E= perham$mean[1], var_E=perham$mean[1]- perham$CI_L[1], var_type= "SE",
                 reference= "Perham, N., & Currie, H. (2014). Does listening to preferred music improve reading comprehension performance?. Applied Cognitive Psychology, 28(2), 279-284. doi:10.1002/acp.2994"
 )
@@ -608,7 +608,7 @@ data<- Add_data(data, ID= 22, N_C=30, sample="adults", cit= "Perham & Currie (20
 data<- Add_data(data, ID= 22, N_C=30, sample="adults", cit= "Perham & Currie (2014)", year=2014, 
                 design="within", sound="music",
                 sound_type= "non-lyrical", db= 70, task= "reading comprehension", 
-                measure= "num_correct", mean_C= perham$mean[4], var_C= perham$mean[4]- perham$CI_L[4], 
+                measure= "prop_correct", mean_C= perham$mean[4], var_C= perham$mean[4]- perham$CI_L[4], 
                 mean_E= perham$mean[2], var_E=perham$mean[2]- perham$CI_L[2], var_type= "SE",
                 reference= "Perham, N., & Currie, H. (2014). Does listening to preferred music improve reading comprehension performance?. Applied Cognitive Psychology, 28(2), 279-284. doi:10.1002/acp.2994"
 )
@@ -619,7 +619,7 @@ data<- Add_data(data, ID= 22, N_C=30, sample="adults", cit= "Perham & Currie (20
 data<- Add_data(data, ID= 22, N_C=30, sample="adults", cit= "Perham & Currie (2014)", year=2014, 
                 design="within", sound="music",
                 sound_type= "liked lyrical", db= 70, task= "reading comprehension", 
-                measure= "num_correct", mean_C= perham$mean[4], var_C= perham$mean[4]- perham$CI_L[4], 
+                measure= "prop_correct", mean_C= perham$mean[4], var_C= perham$mean[4]- perham$CI_L[4], 
                 mean_E= perham$mean[3], var_E=perham$mean[3]- perham$CI_L[3], var_type= "SE",
                 reference= "Perham, N., & Currie, H. (2014). Does listening to preferred music improve reading comprehension performance?. Applied Cognitive Psychology, 28(2), 279-284. doi:10.1002/acp.2994"
 )

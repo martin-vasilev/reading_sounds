@@ -112,9 +112,9 @@ ANOVA_to_d<- function(Fvalue, N_C=NULL, N_E=NULL, n=NULL, design="between", r=NU
   #from Borenstein (2009)
   
   if(design=="between"){
-    d<- sqrt(Fvalue*(N_C+N_E)/ (N_C*N_E))
+    d<- sqrt((Fvalue*(N_C+N_E))/ (N_C*N_E))
   } else{
-    d<- sqrt(2*Fvalue*(1-r)/n)
+    d<- sqrt((2*Fvalue*(1-r))/n)
   }
   return(d)
 }
