@@ -272,6 +272,50 @@ data$g_var[a]<- Hedges_g_var(d_var = data$d_var[a], N = data$N_C[a], design = da
 data$CI95_L[a]<- data$g[a]- 1.96*sqrt(data$g_var[a])
 data$CI95_R[a]<- data$g[a]+ 1.96*sqrt(data$g_var[a])
 
+
+# instrumental music:
+# no test statistics are reported. To approximate the ES, I take the average of the pooled SD for the
+# 2 available ESs.
+
+ID1<- which(data$cit=="Martin et al. (1988), Exp.1" & data$sound_type== "native")
+ID2<- which(data$cit=="Martin et al. (1988), Exp.1" & data$sound_type== "random (native)")
+
+SDp1<- (data$mean_E[ID1]- data$mean_C[ID1])/data$d[ID1]
+SDp2<- (data$mean_E[ID2]- data$mean_C[ID2])/data$d[ID2]
+
+SDp<- mean(c(SDp1, SDp2)) # (average) pooled SD to br used in the remaining ESs in experiment 1
+
+
+a<- which(data$cit=="Martin et al. (1988), Exp.1" & data$sound_type== "instrumental")
+data$d[a]<- (data$mean_E[a]- data$mean_C[a])/ SDp
+data$d_var[a]<- Cohens_d_var(d = data$d[a], N = data$N_C[a], r = r, design = data$design[a])
+data$g[a]<- Hedges_g(d = data$d[a], N = data$N_C[a], design = data$design[a])
+data$g_var[a]<- Hedges_g_var(d_var = data$d_var[a], N = data$N_C[a], design = data$design[a])
+data$CI95_L[a]<- data$g[a]- 1.96*sqrt(data$g_var[a])
+data$CI95_R[a]<- data$g[a]+ 1.96*sqrt(data$g_var[a])
+
+
+# random tones:
+a<- which(data$cit=="Martin et al. (1988), Exp.1" & data$sound_type== "random tones")
+data$d[a]<- (data$mean_E[a]- data$mean_C[a])/ SDp
+data$d_var[a]<- Cohens_d_var(d = data$d[a], N = data$N_C[a], r = r, design = data$design[a])
+data$g[a]<- Hedges_g(d = data$d[a], N = data$N_C[a], design = data$design[a])
+data$g_var[a]<- Hedges_g_var(d_var = data$d_var[a], N = data$N_C[a], design = data$design[a])
+data$CI95_L[a]<- data$g[a]- 1.96*sqrt(data$g_var[a])
+data$CI95_R[a]<- data$g[a]+ 1.96*sqrt(data$g_var[a])
+
+
+# white noise:
+a<- which(data$cit=="Martin et al. (1988), Exp.1" & data$sound_type== "white")
+data$d[a]<- (data$mean_E[a]- data$mean_C[a])/ SDp
+data$d_var[a]<- Cohens_d_var(d = data$d[a], N = data$N_C[a], r = r, design = data$design[a])
+data$g[a]<- Hedges_g(d = data$d[a], N = data$N_C[a], design = data$design[a])
+data$g_var[a]<- Hedges_g_var(d_var = data$d_var[a], N = data$N_C[a], design = data$design[a])
+data$CI95_L[a]<- data$g[a]- 1.96*sqrt(data$g_var[a])
+data$CI95_R[a]<- data$g[a]+ 1.96*sqrt(data$g_var[a])
+
+
+
 #--------------------------------------
 # Study 34 Martin et al. (1988), Exp.2:
 #--------------------------------------
@@ -281,6 +325,22 @@ a<- which(data$cit=="Martin et al. (1988), Exp.2" & data$sound_type== "instrumen
 data$d[a]<- Ttest_to_d(t = 0.263, n = data$N_C[a], design = data$design[a], r = r)
 # ES positive, see means
 data$d_var[a]<- Ttest_to_d_var(d = data$d[a], n = data$N_C[a], design = data$design[a], r = r)
+data$g[a]<- Hedges_g(d = data$d[a], N = data$N_C[a], design = data$design[a])
+data$g_var[a]<- Hedges_g_var(d_var = data$d_var[a], N = data$N_C[a], design = data$design[a])
+data$CI95_L[a]<- data$g[a]- 1.96*sqrt(data$g_var[a])
+data$CI95_R[a]<- data$g[a]+ 1.96*sqrt(data$g_var[a])
+
+
+# lyrical music:
+
+# I used the SDp of the available ES:
+ID<- which(data$cit=="Martin et al. (1988), Exp.2" & data$sound_type== "instrumental")
+
+SDp<- (data$mean_E[ID]- data$mean_C[ID])/data$d[ID]
+
+a<- which(data$cit=="Martin et al. (1988), Exp.2" & data$sound_type== "lyrical")
+data$d[a]<- (data$mean_E[a]- data$mean_C[a])/ SDp
+data$d_var[a]<- Cohens_d_var(d = data$d[a], N = data$N_C[a], r = r, design = data$design[a])
 data$g[a]<- Hedges_g(d = data$d[a], N = data$N_C[a], design = data$design[a])
 data$g_var[a]<- Hedges_g_var(d_var = data$d_var[a], N = data$N_C[a], design = data$design[a])
 data$CI95_L[a]<- data$g[a]- 1.96*sqrt(data$g_var[a])
@@ -445,6 +505,14 @@ data$g_var[a]<- Hedges_g_var(d_var = data$d_var[a], N_C = data$N_C[a], N_E = dat
 data$CI95_L[a]<- data$g[a]- 1.96*sqrt(data$g_var[a])
 data$CI95_R[a]<- data$g[a]+ 1.96*sqrt(data$g_var[a])
 
+
+
+## remove 2 effect sizes that are not reading speed:
+a<- which(data$cit=="Pool et al. (2000), Exp.1" & data$measure=="reading_speed")
+data<- data[-a,]
+
+a<- which(data$cit=="Pool et al. (2000), Exp.2" & data$measure=="reading_speed")
+data<- data[-a,]
 
 # Save data: 
 save(data, file= "Data/data.Rda")

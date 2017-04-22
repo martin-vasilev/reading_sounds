@@ -4,5 +4,3 @@
 - for # 39 ES are not completely independent as both TV conditions (different participants); # 42 is the same
   are compared to the silence group (same participants in both ESs). This needs to be
   considered. 
-- # 40, 41- remove reading speed, as this is not reading speed. 
-- Martin et al. exp2: spoken lyrics, no music= background speech?

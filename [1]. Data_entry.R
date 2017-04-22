@@ -1044,6 +1044,36 @@ data<- Add_data(data, ID= 33, N_C=36, sample="adults", cit= "Martin et al. (1988
 # data from text p.387
 
 
+# instrumental music:
+data<- Add_data(data, ID= 33, N_C=36, sample="adults", cit= "Martin et al. (1988), Exp.1", year=1988, 
+                design="within", sound="music",
+                sound_type= "instrumental", db= 82, task= "reading comprehension", 
+                measure= "perc_correct", mean_C= 72.1, var_C= NA, 
+                mean_E= 72.3, var_E= NA, var_type= NA,
+                reference= "Martin, R. C., Wogalter, M. S., & Forlano, J. G. (1988). Reading comprehension in the presence of unattended speech and music. Journal of memory and language, 27(4), 382-398."
+) # means from Table 1
+
+
+# Random tones:
+data<- Add_data(data, ID= 33, N_C=36, sample="adults", cit= "Martin et al. (1988), Exp.1", year=1988, 
+                design="within", sound="music",
+                sound_type= "random tones", db= 82, task= "reading comprehension", 
+                measure= "perc_correct", mean_C= 72.1, var_C= NA, 
+                mean_E= 67.2, var_E= NA, var_type= NA,
+                reference= "Martin, R. C., Wogalter, M. S., & Forlano, J. G. (1988). Reading comprehension in the presence of unattended speech and music. Journal of memory and language, 27(4), 382-398."
+) # means from Table 1
+
+
+# white noise:
+data<- Add_data(data, ID= 33, N_C=36, sample="adults", cit= "Martin et al. (1988), Exp.1", year=1988, 
+                design="within", sound="noise",
+                sound_type= "white", db= 82, task= "reading comprehension", 
+                measure= "perc_correct", mean_C= 72.1, var_C= NA, 
+                mean_E= 70.4, var_E= NA, var_type= NA,
+                reference= "Martin, R. C., Wogalter, M. S., & Forlano, J. G. (1988). Reading comprehension in the presence of unattended speech and music. Journal of memory and language, 27(4), 382-398."
+) # means from Table 1
+
+
 #-----------------
 #--- Study 34 ---#
 #-----------------
@@ -1059,6 +1089,16 @@ data<- Add_data(data, ID= 34, N_C=36, sample="adults", cit= "Martin et al. (1988
                 reference= "Martin, R. C., Wogalter, M. S., & Forlano, J. G. (1988). Reading comprehension in the presence of unattended speech and music. Journal of memory and language, 27(4), 382-398."
 ) # means from Table 2
 # data from text p.389
+
+
+# lyrical music:
+data<- Add_data(data, ID= 34, N_C=36, sample="adults", cit= "Martin et al. (1988), Exp.2", year=1988, 
+                design="within", sound="music",
+                sound_type= "lyrical", db= 82, task= "reading comprehension", 
+                measure= "perc_correct", mean_C= 67, var_C= NA, 
+                mean_E= 60, var_E= NA, var_type= NA,
+                reference= "Martin, R. C., Wogalter, M. S., & Forlano, J. G. (1988). Reading comprehension in the presence of unattended speech and music. Journal of memory and language, 27(4), 382-398."
+) # means from Table 2
 
 
 #-----------------
