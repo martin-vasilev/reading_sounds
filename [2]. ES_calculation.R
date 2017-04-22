@@ -514,6 +514,12 @@ data<- data[-a,]
 a<- which(data$cit=="Pool et al. (2000), Exp.2" & data$measure=="reading_speed")
 data<- data[-a,]
 
+
+# remove proofreading speed:
+
+data<- subset(data, measure!="proofreading_speed")
+
+
 # Save data: 
 save(data, file= "Data/data.Rda")
 write.csv(data, file= "Data/data.csv")
