@@ -55,3 +55,13 @@ vioplot(data$g[data$design=="within"], col=pallete[3], at=2, add=T)
 axis(1, at = c(1,2), labels = c('Between-subject', 'Within-subject'))
 dev.off()
 
+
+# breakdown by age:
+png('Plots/descriptives/vio_age.png', width = 2400, height = 1600, units = "px", res = 300)
+plot(1, 1, xlim = c(0.5,2.5), ylim = range(data$g), type = 'n', xlab = 'Age category',
+     ylab = 'Effect size (g)', xaxt = 'n', family="serif", cex.lab=1.5, cex.axis=1.5)
+vioplot(data$g[data$sample=="adults"], col=pallete[2], at=1, add=T)
+vioplot(data$g[data$sample=="children"], col=pallete[3], at=2, add=T)
+axis(1, at = c(1,2), labels = c('Adults (> 18 years)', 'Children (< 18 years)'))
+dev.off()
+
