@@ -16,6 +16,9 @@ Proof<- c("proofreading", "proofreading (non-contextual errors)", "proofreading 
 
 library(vioplot)
 
+# code adapted from:
+# https://www.r-bloggers.com/exploratory-data-analysis-combining-box-plots-and-kernel-density-plots-into-violin-plots-for-ozone-pollution-data/
+
 # overall ES:
 png('Plots/descriptives/vio_All.png', width = 1600, height = 1600, units = "px", res = 300)
 plot(1, 1, xlim = c(0.5,1.5), ylim = range(data$g), type = 'n', xlab = 'All studies', ylab = 'Effect size (g)',

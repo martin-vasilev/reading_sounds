@@ -519,6 +519,7 @@ data<- data[-a,]
 
 data<- subset(data, measure!="proofreading_speed")
 
+data<- subset(data, g<3.4)
 
 # Save data: 
 save(data, file= "Data/data.Rda")
