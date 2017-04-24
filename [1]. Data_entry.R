@@ -13,13 +13,7 @@ rm(list=ls())
 source("Functions/Add_data.R"); source("Functions/Add_data_corr.R")
 source("functions/effect_sizes.R")
 #source("Functions/print_data.R")
-
-###############################
-# Settings #
-
-r<- 0.5; save(r, file= "data/r.Rda")
-
-###############################
+source("functions/settings.R")
 
 
 # Create general data frame, to be populated by the script:
