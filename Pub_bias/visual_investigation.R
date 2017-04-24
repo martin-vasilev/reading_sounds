@@ -53,10 +53,14 @@ for(i in 1:nrow(d1)){
   }
 }
 
-plot(d1$g[data$design=="between"], d1$N_all[data$design=="between"], family="serif",
+d1b<- subset(d1, design=="between")
+d1w<- subset(d1, design=="within")
+
+plot(d1b$g, d1b$N_all, family="serif",
      cex.lab=1.7, cex.axis=1.5, cex.main=2.5, main="d",
-     xlab= "Effect size (g)", ylab= "Sample size", pch=21, bg=pallete[3], cex=1.5, ylim= c(0, 340))
-points(d1$g[data$design=="within"], d1$N_all[data$design=="within"], pch=21, bg=pallete[2], cex=1.5)
+     xlab= "Effect size (g)", ylab= "Sample size", pch=21, bg=pallete[3], cex=1.5, ylim= c(0, 340), 
+     xlim= c(-2, 1))
+points(d1w$g, d1w$N_all, pch=21, bg=pallete[2], cex=1.5)
 legend(-0.155, 340, c('between-subject', 'within-subject'),pch = c(21, 21), pt.bg = c(pallete[3], pallete[2]), cex=1.2, 
        title="Design")
 
