@@ -17,6 +17,7 @@ d<- subset(subset(data, is.element(task, RC) & measure!="reading_speed"))
 N=1
 gen<- d[N,]# only 1 ES
 gen$sound<- as.character(gen$sound)
+gen$sound_type<- as.character(gen$sound_type)
 
 # ID 2: 
 N<- 2
@@ -57,3 +58,35 @@ gen<- rbind(gen, a)
 N<- 5
 a<- subset(d, ID==N)
 gen<- rbind(gen, a)
+
+# ID 6: 
+N<- 6
+a<- subset(d, ID==N)
+gen<- rbind(gen, a)
+
+# ID 7:
+N<- 7
+a<- subset(d, ID==N)
+gen<- rbind(gen, a)
+
+# ID 8:
+N<- 8
+a<- subset(d, ID==N)
+gen<- rbind(gen, a)
+
+# ID 9:
+N<- 9
+a<- subset(d, ID==N)
+gen<- rbind(gen, t)
+gen[N,studyCols]<- a[1,studyCols]
+
+gen$sound[N]<- "music"
+gen$sound_type[N]<- "classical+pop+vocal"
+
+# WATCH OUT for SE!
+gen$N_C[N]<- a$N_C[1]
+gen$N_E[N]<- sum(a$N_E)
+gen$mean_C[N]<- a$mean_C[1]
+gen$var_C[N]<- a$var_C[1]
+gen$mean_E[N]<- mean(a$mean_E)
+gen$var_E[N]<- mean(a$var_E)
