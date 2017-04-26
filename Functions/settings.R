@@ -13,3 +13,6 @@ RC<- c("reading comprehension/ select word",  "select word", "reading comprehens
        "reading test (composite)")
 Proof<- c("proofreading", "proofreading (non-contextual errors)", "proofreading (contextual errors)",
           "proofreading (spelling errors)")
+
+# columns that stay the same when aggregating ESs:
+studyCols<- c(1,4,5,6,7,10,11,12,17,18,19,26)
