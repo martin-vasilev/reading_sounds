@@ -90,3 +90,182 @@ gen$mean_C[N]<- a$mean_C[1]
 gen$var_C[N]<- a$var_C[1]
 gen$mean_E[N]<- mean(a$mean_E)
 gen$var_E[N]<- mean(a$var_E)
+gen$d[N]<- mean(a$d)
+gen$d_var[N]<- mean(a$d_var)
+gen$g[N]<- mean(a$g)
+gen$g_var[N]<- mean(a$g_var)
+gen$CI95_L[N]<- gen$g[N] - 1.96*sqrt(gen$g_var[N])
+gen$CI95_R[N]<- gen$g[N] + 1.96*sqrt(gen$g_var[N])
+
+
+# ID 10:
+N<- 10
+a<- subset(d, ID==N)
+gen<- rbind(gen, a)
+
+# ID 11:
+N<- 11
+a<- subset(d, ID==N)
+gen<- rbind(gen, a)
+
+
+# ID 12:
+N<- 12
+a<- subset(d, ID==N)
+gen<- rbind(gen, t)
+gen[N,studyCols]<- a[1,studyCols]
+gen$sound[N]<- "noise+music"
+gen$N_C[N]<- a$N_C[1]
+gen$N_E[N]<- a$N_E[1]
+gen$mean_C[N]<- a$mean_C[1]
+gen$var_C[N]<- a$var_C[1]
+gen$mean_E[N]<- mean(a$mean_E)
+gen$var_E[N]<- mean(a$var_E)
+gen$d[N]<- mean(a$d)
+gen$d_var[N]<- mean(a$d_var)
+gen$g[N]<- mean(a$g)
+gen$g_var[N]<- mean(a$g_var)
+gen$CI95_L[N]<- gen$g[N] - 1.96*sqrt(gen$g_var[N])
+gen$CI95_R[N]<- gen$g[N] + 1.96*sqrt(gen$g_var[N])
+
+
+# ID 13:
+N<- 13
+a<- subset(d, ID==N)
+gen<- rbind(gen, t)
+gen[N,studyCols]<- a[1,studyCols]
+gen$N_C[N]<- a$N_C[1]
+gen$N_E[N]<- a$N_E[1]
+gen$sound[N]<- "music"
+gen$sound_type[N]<- "classical+rock"
+gen$mean_C[N]<- a$mean_C[1]
+gen$var_C[N]<- a$var_C[1]
+gen$mean_E[N]<- mean(a$mean_E)
+gen$var_E[N]<- mean(a$var_E)
+gen$d[N]<- Cohens_d(M_C = gen$mean_C[N], M_E = gen$mean_E[N], S_C = gen$var_C[N], S_E = gen$var_E[N],
+                    N = gen$N_C[N], design = gen$design[N], type = "E-C", r=r)
+gen$d_var[N]<- Cohens_d_var(d = gen$d[N], N = gen$N_C[N], design = gen$design[N], r = r)
+gen$g[N]<- Hedges_g(d = gen$d[N], N = gen$N_C[N], design = gen$design[N])
+gen$g_var[N]<- Hedges_g_var(d_var = gen$d_var[N], N = gen$N_C[N], design = gen$design[N])
+gen$CI95_L[N]<- gen$g[N] - 1.96*sqrt(gen$g_var[N])
+gen$CI95_R[N]<- gen$g[N] + 1.96*sqrt(gen$g_var[N])
+
+# ID 14:
+N<- 14
+a<- subset(d, ID==N)
+gen<- rbind(gen, t)
+gen[N,studyCols]<- a[1,studyCols]
+gen$sound[N]<- "music"
+gen$sound_type[N]<- "vocal+instrumental"
+gen$N_C[N]<- a$N_C[1]
+gen$N_E[N]<- sum(a$N_E)
+gen$mean_C[N]<- a$mean_C[1]
+gen$var_C[N]<- a$var_C[1]
+gen$mean_E[N]<- mean(a$mean_E)
+gen$var_E[N]<- mean(a$var_E)
+gen$d[N]<- mean(a$d)
+gen$d_var[N]<- mean(a$d_var)
+gen$g[N]<- mean(a$g)
+gen$g_var[N]<- mean(a$g_var)
+gen$CI95_L[N]<- gen$g[N] - 1.96*sqrt(gen$g_var[N])
+gen$CI95_R[N]<- gen$g[N] + 1.96*sqrt(gen$g_var[N])
+
+
+# ID 15:
+N<- 15
+a<- subset(d, ID==N)
+gen<- rbind(gen, t)
+gen[N,studyCols]<- a[1,studyCols]
+gen$sound[N]<- "music"
+gen$sound_type[N]<- "various"
+gen$N_C[N]<- a$N_C[1]
+gen$N_E[N]<- sum(a$N_E)  
+gen$mean_C[N]<- a$mean_C[1]
+gen$var_C[N]<- a$var_C[1]
+gen$mean_E[N]<- mean(a$mean_E)
+gen$var_E[N]<- mean(a$var_E)
+gen$d[N]<- mean(a$d)
+gen$d_var[N]<- mean(a$d_var)
+gen$g[N]<- mean(a$g)
+gen$g_var[N]<- mean(a$g_var)
+gen$CI95_L[N]<- gen$g[N] - 1.96*sqrt(gen$g_var[N])
+gen$CI95_R[N]<- gen$g[N] + 1.96*sqrt(gen$g_var[N])
+
+
+# ID 16:
+N<- 16
+a<- subset(d, ID==N)
+gen<- rbind(gen, a)
+
+
+# ID 17:
+N<- 17
+a<- subset(d, ID==N)
+gen<- rbind(gen, t)
+gen[N,studyCols]<- a[1,studyCols]
+gen$N_C[N]<- a$N_C[1]
+gen$N_E[N]<- sum(a$N_E)
+gen$sound[N]<- "music"
+gen$sound_type[N]<- "classical+pop"
+gen$mean_C[N]<- a$mean_C[1]
+gen$mean_E[N]<- mean(a$mean_E)
+gen$d[N]<- mean(a$d)
+gen$d_var[N]<- mean(a$d_var)
+gen$g[N]<- mean(a$g)
+gen$g_var[N]<- mean(a$g_var)
+gen$CI95_L[N]<- gen$g[N] - 1.96*sqrt(gen$g_var[N])
+gen$CI95_R[N]<- gen$g[N] + 1.96*sqrt(gen$g_var[N])
+
+
+# ID 18:
+N<- 18
+a<- subset(d, ID==N)
+gen<- rbind(gen, t)
+gen[N,studyCols]<- a[1,studyCols]
+gen$N_C[N]<- a$N_C[1]
+gen$N_E[N]<- sum(a$N_E)
+gen$sound[N]<- "music"
+gen$sound_type[N]<- "classical+rock"
+gen$mean_C[N]<- a$mean_C[1]
+gen$var_C[N]<- a$var_C[1]
+gen$mean_E[N]<- mean(a$mean_E)
+gen$var_E[N]<- mean(a$var_E)
+gen$d[N]<- mean(a$d)
+gen$d_var[N]<- mean(a$d_var)
+gen$g[N]<- mean(a$g)
+gen$g_var[N]<- mean(a$g_var)
+gen$CI95_L[N]<- gen$g[N] - 1.96*sqrt(gen$g_var[N])
+gen$CI95_R[N]<- gen$g[N] + 1.96*sqrt(gen$g_var[N])
+
+
+# ID 19:
+N<- 19
+a<- subset(d, ID==N)
+gen<- rbind(gen, t)
+gen[N,studyCols]<- a[1,studyCols]
+gen$sound[N]<- "music"
+gen$sound_type[N]<- "complex+simple"
+gen$N_C[N]<- a$N_C[1]
+gen$N_E[N]<- sum(a$N_E)
+gen$mean_C[N]<- a$mean_C[1]
+gen$var_C[N]<- a$var_C[1]
+gen$mean_E[N]<- mean(a$mean_E)
+gen$var_E[N]<- mean(a$var_E)
+gen$d[N]<- mean(a$d)
+gen$d_var[N]<- mean(a$d_var)
+gen$g[N]<- mean(a$g)
+gen$g_var[N]<- mean(a$g_var)
+gen$CI95_L[N]<- gen$g[N] - 1.96*sqrt(gen$g_var[N])
+gen$CI95_R[N]<- gen$g[N] + 1.96*sqrt(gen$g_var[N])
+
+
+# ID 20:
+N<- 20
+a<- subset(d, ID==N)
+gen<- rbind(gen, a)
+
+
+
+# Save data: 
+save(gen, file= "Data/subset/gen.Rda")
+write.csv(gen, file= "Data/subset/gen.csv")
