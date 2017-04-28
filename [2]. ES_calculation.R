@@ -519,6 +519,7 @@ data<- data[-a,]
 
 data<- subset(data, measure!="proofreading_speed")
 
+# remove outlier ES:
 data<- subset(data, g<3.4)
 
 # Save data: 

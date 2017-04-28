@@ -412,7 +412,339 @@ gen$CI95_L[N]<- gen$g[N] - 1.96*sqrt(gen$g_var[N])
 gen$CI95_R[N]<- gen$g[N] + 1.96*sqrt(gen$g_var[N]) 
 
 
+# ID 30:
+N<- 30
+a<- subset(d, ID==N)
+gen<- rbind(gen, t)
+gen[N,studyCols]<- a[1,studyCols]
+gen$sound[N]<- "music+noise"
+gen$N_C[N]<- a$N_C[1]
+gen$N_E[N]<- a$N_E[1]
+gen$mean_C[N]<- a$mean_C[1]
+gen$var_C[N]<- a$var_C[1]
+gen$mean_E[N]<- mean(a$mean_E)
+gen$var_E[N]<- mean(a$var_E)
+gen$d[N]<- Cohens_d(M_C = gen$mean_C[N], M_E = gen$mean_E[N], S_C = gen$var_C[N], S_E = gen$var_E[N], 
+                    N = gen$N_C[N], r = r, design = gen$design[N], type = "E-C")
+gen$d_var[N]<- Cohens_d_var(d = gen$d[N], N = gen$N_C[N], r = r, design = gen$design[N])
+gen$g[N]<- Hedges_g(d = gen$d[N], N = gen$N_C[N], design = gen$design[N])
+gen$g_var[N]<- Hedges_g_var(d_var = gen$d_var[N], N = gen$N_C[N], design = gen$design[N])
+gen$CI95_L[N]<- gen$g[N] - 1.96*sqrt(gen$g_var[N])
+gen$CI95_R[N]<- gen$g[N] + 1.96*sqrt(gen$g_var[N]) 
 
+
+# ID 31:
+N<- 31
+a<- subset(d, ID==N) # no ES
+
+
+# ID 32:
+N<- 32
+a<- subset(d, ID==N) # no ES
+
+
+# ID 33:
+N<- 33
+a<- subset(d, ID==N) 
+gen<- rbind(gen, t)
+gen[N,studyCols]<- a[1,studyCols]
+gen$sound[N]<- "music+speech+noise"
+gen$N_C[N]<- a$N_C[1]
+gen$N_E[N]<- a$N_E[1]
+gen$mean_C[N]<- a$mean_C[1]
+gen$mean_E[N]<- mean(a$mean_E)
+gen$d[N]<- mean(a$d)
+gen$d_var[N]<- mean(a$d_var)
+gen$g[N]<- mean(a$g)
+gen$g_var[N]<- mean(a$g_var)
+gen$CI95_L[N]<- gen$g[N] - 1.96*sqrt(gen$g_var[N])
+gen$CI95_R[N]<- gen$g[N] + 1.96*sqrt(gen$g_var[N]) 
+
+
+# ID 34:
+N<- 34
+a<- subset(d, ID==N) 
+gen<- rbind(gen, t)
+gen[N,studyCols]<- a[1,studyCols]
+gen$sound[N]<- "music"
+gen$sound_type[N]<- "vocal+instrumental"
+gen$N_C[N]<- a$N_C[1]
+gen$N_E[N]<- a$N_E[1]
+gen$mean_C[N]<- a$mean_C[1]
+gen$mean_E[N]<- mean(a$mean_E)
+gen$d[N]<- mean(a$d)
+gen$d_var[N]<- mean(a$d_var)
+gen$g[N]<- mean(a$g)
+gen$g_var[N]<- mean(a$g_var)
+gen$CI95_L[N]<- gen$g[N] - 1.96*sqrt(gen$g_var[N])
+gen$CI95_R[N]<- gen$g[N] + 1.96*sqrt(gen$g_var[N]) 
+
+
+# ID 35:
+N<- 35
+a<- subset(d, ID==N) 
+gen<- rbind(gen, t)
+gen[N,studyCols]<- a[1,studyCols]
+gen$sound[N]<- "noise+speech"
+gen$N_C[N]<- a$N_C[1]
+gen$N_E[N]<- a$N_E[1]
+gen$mean_C[N]<- a$mean_C[1]
+gen$mean_E[N]<- mean(a$mean_E)
+gen$d[N]<- mean(a$d)  
+gen$d_var[N]<- mean(a$d_var)  
+gen$g[N]<- mean(a$g)  
+gen$g_var[N]<- mean(a$g_var)
+gen$CI95_L[N]<- gen$g[N] - 1.96*sqrt(gen$g_var[N])
+gen$CI95_R[N]<- gen$g[N] + 1.96*sqrt(gen$g_var[N]) 
+
+
+# ID 36:
+N<- 36
+a<- subset(d, ID==N) 
+gen<- rbind(gen, t)
+gen[N,studyCols]<- a[1,studyCols]
+gen$sound[N]<- "noise+speech"
+gen$N_C[N]<- a$N_C[1]
+gen$N_E[N]<- a$N_E[1] 
+gen$mean_C[N]<- a$mean_C[1]
+gen$mean_E[N]<- mean(a$mean_E)
+gen$d[N]<- mean(a$d)
+gen$d_var[N]<- mean(a$d_var)
+gen$g[N]<- mean(a$g)
+gen$g_var[N]<- mean(a$g_var)
+gen$CI95_L[N]<- gen$g[N] - 1.96*sqrt(gen$g_var[N])
+gen$CI95_R[N]<- gen$g[N] + 1.96*sqrt(gen$g_var[N]) 
+
+
+# ID 37:
+N<- 37
+a<- subset(d, ID==N) 
+gen<- rbind(gen, t)
+gen[N,studyCols]<- a[1,studyCols]
+gen$sound[N]<- "speech+music"
+gen$N_C[N]<- a$N_C[1]
+gen$N_E[N]<- a$N_E[1]
+gen$mean_C[N]<- a$mean_C[1]
+gen$var_C[N]<- a$var_C[1]
+gen$mean_E[N]<- mean(a$mean_E)
+gen$var_E[N]<- mean(a$var_E)
+gen$d[N]<- Cohens_d(M_C = gen$mean_C[N], M_E = gen$mean_E[N], S_C = gen$var_C[N], S_E = gen$var_E[N], N = gen$N_C[N],
+                    r = r, design = gen$design[N], type = "E-C")
+gen$d_var[N]<- Cohens_d_var(d = gen$d[N], N = gen$N_C[N], r = r, design= gen$design[N])
+gen$g[N]<- Hedges_g(d = gen$d[N], N = gen$N_C[N], design = gen$design[N])
+gen$g_var[N]<- Hedges_g_var(d_var = gen$d_var[N], N = gen$N_C[N], design = gen$design[N])
+gen$CI95_L[N]<- gen$g[N] - 1.96*sqrt(gen$g_var[N])
+gen$CI95_R[N]<- gen$g[N] + 1.96*sqrt(gen$g_var[N]) 
+
+
+# ID 38:
+N<- 38
+a<- subset(d, ID==N) 
+gen<- rbind(gen, a)
+
+
+# ID 39:
+N<- 39
+a<- subset(d, ID==N) 
+gen<- rbind(gen, t)
+gen[N,studyCols]<- a[1,studyCols]
+gen$sound[N]<- "speech"
+gen$sound_type[N]<- "TV ads+drama"
+gen$N_C[N]<- a$N_C[1]
+gen$N_E[N]<- sum(a$N_E)
+gen$mean_C[N]<- a$mean_C[1]
+gen$mean_E[N]<- mean(a$mean_E)
+gen$d[N]<- mean(a$d)
+gen$d_var[N]<- mean(a$d_var)
+gen$g[N]<- mean(a$g)
+gen$g_var[N]<- mean(a$g_var)
+gen$CI95_L[N]<- gen$g[N] - 1.96*sqrt(gen$g_var[N])
+gen$CI95_R[N]<- gen$g[N] + 1.96*sqrt(gen$g_var[N]) 
+
+
+# ID 40:
+N<- 40
+a<- subset(d, ID==N) 
+gen<- rbind(gen, t)
+gen[N,studyCols]<- a[1,studyCols]
+gen$sound[N]<- "speech+music"
+gen$N_C[N]<- a$N_C[1]
+gen$N_E[N]<- sum(a$N_E)
+gen$mean_C[N]<- a$mean_C[1]
+gen$var_C[N]<- a$var_C[1]
+gen$mean_E[N]<- mean(a$mean_E)
+gen$var_E[N]<- mean(a$var_E)
+gen$d[N]<- mean(a$d)
+gen$d_var[N]<- mean(a$d_var)
+gen$g[N]<- mean(a$g)
+gen$g_var[N]<- mean(a$g_var)
+gen$CI95_L[N]<- gen$g[N] - 1.96*sqrt(gen$g_var[N])
+gen$CI95_R[N]<- gen$g[N] + 1.96*sqrt(gen$g_var[N]) 
+
+
+# ID 41:
+N<- 41
+a<- subset(d, ID==N) 
+gen<- rbind(gen, t)
+gen[N,studyCols]<- a[1,studyCols]
+gen$sound[N]<- "speech+music"
+gen$N_C[N]<- a$N_C[1]
+gen$N_E[N]<- sum(a$N_E)
+gen$mean_C[N]<- a$mean_C[1]
+gen$var_C[N]<- a$var_C[1]
+gen$mean_E[N]<- mean(a$mean_E)
+gen$var_E[N]<- mean(a$var_E)
+gen$d[N]<- mean(a$d)
+gen$d_var[N]<- mean(a$d_var)
+gen$g[N]<- mean(a$g)
+gen$g_var[N]<- mean(a$g_var)
+gen$CI95_L[N]<- gen$g[N] - 1.96*sqrt(gen$g_var[N])
+gen$CI95_R[N]<- gen$g[N] + 1.96*sqrt(gen$g_var[N]) 
+
+
+# ID 42:
+N<- 42
+a<- subset(d, ID==N) 
+gen<- rbind(gen, t)
+gen[N,studyCols]<- a[1,studyCols]
+gen$sound[N]<- "noise"
+gen$N_C[N]<- a$N_C[1]
+gen$N_E[N]<- sum(a$N_E)
+gen$mean_C[N]<- a$mean_C[1]
+gen$var_C[N]<- a$var_C[1]
+gen$mean_E[N]<- mean(a$mean_E)
+gen$var_E[N]<- mean(a$var_E)
+gen$d[N]<- mean(a$d)
+gen$d_var[N]<- mean(a$d_var)
+gen$g[N]<- mean(a$g)
+gen$g_var[N]<- mean(a$g_var)
+gen$CI95_L[N]<- gen$g[N] - 1.96*sqrt(gen$g_var[N])
+gen$CI95_R[N]<- gen$g[N] + 1.96*sqrt(gen$g_var[N]) 
+
+
+# ID 43:
+N<- 43
+a<- subset(d, ID==N) 
+gen<- rbind(gen, t)
+gen[N,studyCols]<- a[1,studyCols]
+gen$sound[N]<- "speech"
+gen$sound_type[N]<- "native+foreign"
+gen$N_C[N]<- a$N_C[1]
+gen$N_E[N]<- a$N_E[1]
+gen$mean_C[N]<- a$mean_C[1]
+gen$var_C[N]<- a$var_C[1]
+gen$mean_E[N]<- mean(a$mean_E)
+gen$var_E[N]<- mean(a$var_E)
+gen$d[N]<- Cohens_d(M_C = gen$mean_C[N], M_E = gen$mean_E[N], S_C = gen$var_C[N], S_E = gen$var_E[N], N = gen$N_C[N], 
+                    r = r, design = gen$design[N], type = "E-C")
+gen$d_var[N]<- Cohens_d_var(d = gen$d[N], N = gen$N_C[N], r = r, design = gen$design[N])
+gen$g[N]<- Hedges_g(d = gen$d[N], N = gen$N_C[N], design = gen$design[N])
+gen$g_var[N]<- Hedges_g_var(d_var = gen$d_var[N], N = gen$N_C[N], design = gen$design[N])
+gen$CI95_L[N]<- gen$g[N] - 1.96*sqrt(gen$g_var[N])
+gen$CI95_R[N]<- gen$g[N] + 1.96*sqrt(gen$g_var[N]) 
+
+
+# ID 44:
+N<- 44
+a<- subset(d, ID==N) # no cases
+
+
+# ID 45:
+N<- 45
+a<- subset(d, ID==N) # no cases
+
+
+# ID 46:
+N<- 46
+a<- subset(d, ID==N) # no cases
+
+
+# ID 47:
+N<- 47
+a<- subset(d, ID==N) 
+gen<- rbind(gen, a)
+
+
+# ID 48:
+N<- 48
+a<- subset(d, ID==N) 
+gen<- rbind(gen, a)
+
+
+# ID 49:
+N<- 49
+a<- subset(d, ID==N) 
+gen<- rbind(gen, a)
+
+
+# ID 50
+N<- 50
+a<- subset(d, ID==N) 
+gen<- rbind(gen, a)
+
+
+# ID 51:
+N<- 51
+a<- subset(d, ID==N) 
+gen<- rbind(gen, a)
+
+
+# ID 52:
+N<- 52
+a<- subset(d, ID==N) 
+gen<- rbind(gen, a)
+
+
+# ID 53:
+N<- 53
+a<- subset(d, ID==N) 
+gen<- rbind(gen, a)
+
+
+# ID 54:
+N<- 54
+a<- subset(d, ID==N) # no case
+
+
+# ID 55:
+N<- 55
+a<- subset(d, ID==N) # no case
+
+
+# ID 56:
+N<- 56
+a<- subset(d, ID==N) # no case
+
+
+# ID 57:
+N<- 57
+a<- subset(d, ID==N) 
+gen<- rbind(gen, a)
+
+
+# ID 58:
+N<- 58
+a<- subset(d, ID==N) 
+gen<- rbind(gen, t)
+gen[N,studyCols]<- a[1,studyCols]
+gen$sound[N]<- "noise+speech"
+gen$N_C[N]<- a$N_C[1]
+gen$N_E[N]<- a$N_E[1]
+gen$mean_C[N]<- a$mean_C[1]
+gen$var_C[N]<- a$var_C[1]
+gen$mean_E[N]<- mean(a$mean_E)
+gen$var_E[N]<- mean(a$var_E)
+gen$d[N]<- Cohens_d(M_C = gen$mean_C[N], M_E = gen$mean_E[N], S_C = gen$var_C[N], S_E = gen$var_E[N], N = gen$N_C[N], 
+                    r = r, design = gen$design[N], type = "E-C")
+gen$d_var[N]<- Cohens_d_var(d = gen$d[N], N = gen$N_C[N], r = r, design = gen$design[N])
+gen$g[N]<- Hedges_g(d = gen$d[N], N = gen$N_C[N], design = gen$design[N])
+gen$g_var[N]<- Hedges_g_var(d_var = gen$d_var[N], N = gen$N_C[N], design = gen$design[N])
+gen$CI95_L[N]<- gen$g[N] - 1.96*sqrt(gen$g_var[N])
+gen$CI95_R[N]<- gen$g[N] + 1.96*sqrt(gen$g_var[N]) 
+
+
+#-----
+gen<- subset(gen, !is.na(ID))
 
 
 # Save data: 
