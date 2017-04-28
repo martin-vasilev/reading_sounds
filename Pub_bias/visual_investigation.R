@@ -21,11 +21,11 @@ png('Pub_bias/panel_plot.png', width = 2400, height = 3200, units = "px", res=30
 par(mfrow=c(3,2), mar= c(5,5,5,1))
 
 # funnel plots:
-res <- rma(g, g_var, data=subset(data, is.element(task, RC) & measure!="reading_speed"), method="REML")
+res <- rma(g, g_var, data=gen, method="REML")
 funnel(res, yaxis="sei", main="a", family="serif", cex.lab=1.7, cex.axis=1.5, cex.main=2.5, digits=2,
-       at= c(-2,-1,0,1), xlab= "Effect size (g)")
+       at= c(-2,-1,0,1), xlab= "Effect size (g)",level=c(95, 99), shade=c("white", "darkgray"))
 funnel(res, yaxis="seinv", main="b", family="serif", cex.lab=1.7, cex.axis=1.5, cex.main=2.5, digits=2,
-       at= c(-2,-1,0,1), xlab= "Effect size (g)")
+       at= c(-2,-1,0,1), xlab= "Effect size (g)", level=c(95, 99), shade=c("white", "darkgray"))
 
 
 ## Trim and fill:
@@ -40,7 +40,7 @@ radial(res, main= "c", family="serif", cex.lab=1.7, cex.axis=1.5, cex.main=2.5, 
 
 
 ## Sample size by effect size (+ breakdown by design)
-d1<- subset(data, is.element(task, RC) & measure!="reading_speed")
+d1<- gen
 d1$N_all<- NULL
 for(i in 1:nrow(d1)){
   if(d1$design[i]=="between"){
@@ -64,7 +64,7 @@ legend(-0.155, 340, c('between-subject', 'within-subject'),pch = c(21, 21), pt.b
 
 # effect sizes by publication date:
 library(meta)
-m1<- metagen(TE =g,seTE = sqrt(g_var), sm = "SMD",data=subset(data, is.element(task, RC) & measure!="reading_speed"),
+m1<- metagen(TE =g,seTE = sqrt(g_var), sm = "SMD",data=gen,
              comb.random = T, level = 0.95, method.tau = "REML")
 mr<- metareg(m1, ~year)
 
@@ -77,7 +77,7 @@ axis(2, at = seq(-2, 1, by = 0.5), srt=90, family= "serif", cex.axis = 1.5)
 
 
 # effect sizes by impact factor if journal:
-m2<- metagen(TE =g,seTE = sqrt(g_var), sm = "SMD",data=subset(data, is.element(task, RC) & measure!="reading_speed" & !is.na(IF)),
+m2<- metagen(TE =g,seTE = sqrt(g_var), sm = "SMD",data=gen,
              comb.random = T, level = 0.95, method.tau = "REML")
 mr2<- metareg(m2, ~IF)
 bubble(x = mr2, family="serif", cex.lab=1.7, cex.axis=1.5, cex.main=2.5, xlab= "Journal impact factor",

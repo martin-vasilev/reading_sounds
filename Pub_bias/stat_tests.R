@@ -2,7 +2,7 @@
 source("functions/settings.R")
 library(metafor)
 # reading comprehension:
-m1<- metagen(TE =g,seTE = sqrt(g_var), sm = "SMD",data=subset(data, is.element(task, RC) & measure!="reading_speed"),
+m1<- metagen(TE =g,seTE = sqrt(g_var), sm = "SMD",data=gen,
              comb.random = T, level = 0.95, method.tau = "REML")
 
 metabias(m1, method.bias='linreg')
