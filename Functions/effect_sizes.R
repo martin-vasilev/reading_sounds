@@ -134,3 +134,9 @@ ANOVA_to_d_var<- function(d, N_C=NULL, N_E=NULL, n=NULL, design="between", r=NUL
 
 corr_var<- function(r,n){ ((1-r^2)^2)/(n-1) }
 
+
+Fishers_z<- function(r){ 0.5*log((1+r)/(1-r)) }
+
+Fishers_z_var<- function(n){ 1/(n-3) }
+
+Fishers_z_to_r<- function(z){ (exp(2*z)-1)/(exp(2*z)+1) }

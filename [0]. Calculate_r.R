@@ -174,4 +174,75 @@ var_r[4]<- corr_var(r[4], N[4])
 
 ##################
 
-# 4 (Hyönä & Ekholm, 2016, Experiment 4):
+# 5 (Vasilev et al., 2016):
+N[5]<- 40
+
+# comprehension accuracy:
+allQ<- c(0.2327132, 0.0631446, 0.1442655)
+
+# reading speed
+allSpeed<- c(0.8584911, 0.8320323, 0.8340672)
+
+r[5]<- mean(c(allQ, allSpeed))
+var_r[5]<- corr_var(r[5], N[5])
+
+
+##################
+
+# 6 & 7: Mitchell (1947):
+
+# Correlations are reported separately for boys and girls.
+# Because these represent seprate sub-samples (i.e. they are statistically independent since they are based 
+# on different individuals), I code them as two separate samples of the same study. 
+# The study is still within-subject, because participants completed both the radio and non-radio conditions
+
+
+# boys
+N[6]<- 39
+r[6]<- mean(c(0.88, 0.75))
+var_r[6]<- corr_var(r[6], N[6])
+  
+# girls:
+N[7]<- 46
+r[7]<- mean(c(0.70, 0.71))
+var_r[7]<- corr_var(r[7], N[7])
+  
+
+# here, I follow the advice from Borenstein (2009) to apply Fisher's z-transform, use the z values for the
+# meta-analysis, and convert the result back to r.
+# The reason is that the variance of r strongly  depends on the size of the correlation (see p.233). 
+
+z<- Fishers_z(r)
+z_var<- Fishers_z_var(N)  
+d<- data.frame(z, z_var, N)
+
+
+# meta-analysis:
+library(metafor)
+
+rmeta <- rma(z, z_var, data=d, method="REML")
+
+r_freq<- Fishers_z_to_r(as.numeric(unlist(rmeta$b)))  
+
+library(rjags)
+source("https://raw.githubusercontent.com/martin-vasilev/Bmeta/master/JModel.R")
+
+d2<- d; 
+colnames(d2)<- c("T", "S.sqr", "N")
+d2<- d2[,-3]
+
+Bmeta <-jags.model(JModel("dunif(-2, 2)", "dunif(0, 2)", nrow(d2), "R.txt"),
+                  d2, n.chains=3, n.adapt=3000, quiet=FALSE)
+Post<- coda.samples(Bmeta, c('mu', 'tau', 'theta'), n.iter=75000, thin=5)
+s<- summary(Post)
+
+r_bayes<- Fishers_z_to_r(s$statistics[1,1])
+
+# Unsurprisingly, Bayesian and frequentist estimates agree (to the third decimal):
+r_bayes; r_freq
+
+r<- r_bayes
+
+save(r, file="r.Rda")
+
+
