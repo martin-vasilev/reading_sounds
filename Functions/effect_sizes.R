@@ -131,3 +131,6 @@ ANOVA_to_d_var<- function(d, N_C=NULL, N_E=NULL, n=NULL, design="between", r=NUL
   return(var)
 }
 
+
+corr_var<- function(r,n){ ((1-r^2)^2)/(n-1) }
+
