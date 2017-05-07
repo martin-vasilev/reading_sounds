@@ -754,10 +754,10 @@ gen$mds_var<- NULL
 for(i in 1:nrow(gen)){
   if(gen$design[i]=="between"){
     gen$mds[i]<- gen$g[i]
-    gen$mds_var[i]<- gen$g_var[i]
+    gen$mds_var[i]<- var_IG(N_C = gen$N_C[i], N_E = gen$N_E[i], d_IG = gen$g[i])  # gen$g_var[i]
   } else{
     gen$mds[i]<- d_IG(d_RM =gen$g[i], r = r) #gen$g[i]
-    gen$mds_var[i]<- var_RM(n = gen$N_C[i], d_RM = gen$mds[i])
+    gen$mds_var[i]<- var_IGr(r = r, n = gen$N_C[i], d_IG = gen$mds[i])
   }
 }
 

@@ -208,6 +208,11 @@ r[7]<- mean(c(0.70, 0.71))
 var_r[7]<- corr_var(r[7], N[7])
   
 
+# exp2:
+r[8]<- mean(c(0.5783998, 0.6230977, 0.4000798))
+N[8]<- 48
+var_r[8]<- corr_var(r[8], N[8])
+
 # here, I follow the advice from Borenstein (2009) to apply Fisher's z-transform, use the z values for the
 # meta-analysis, and convert the result back to r.
 # The reason is that the variance of r strongly  depends on the size of the correlation (see p.233). 
@@ -231,7 +236,7 @@ d2<- d;
 colnames(d2)<- c("T", "S.sqr", "N")
 d2<- d2[,-3]
 
-Bmeta <-jags.model(JModel("dunif(-2, 2)", "dunif(0, 2)", nrow(d2), "R.txt"),
+Bmeta <-jags.model(JModel("dunif(-3, 3)", "dunif(0, 3)", nrow(d2), "R.txt"),
                   d2, n.chains=3, n.adapt=3000, quiet=FALSE)
 Post<- coda.samples(Bmeta, c('mu', 'tau', 'theta'), n.iter=75000, thin=5)
 s<- summary(Post)

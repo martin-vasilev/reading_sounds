@@ -165,3 +165,15 @@ var_IG<- function(N_C, N_E, d_IG){
   return(var)
 }
 
+# Variance, table 2, eq.2
+var_IGr<- function(r,n, d_IG){
+  df<- n-1
+  c<- 1- (3/(4*df-1)) 
+  var<- ((2*(1-r))/n)* ((n-1)/(n-3))*(1+ (n/(2*(1-r)))*(d_IG^2))- (d_IG^2)/((c*(n-1))^2)
+  return(var)
+}
+
+n<- (gen$N_C[3]*gen$N_E[3])/(gen$N_C[3]+gen$N_E[3])
+N<- gen$N_C[3]+gen$N_E[3]
+df<- gen$N_C[3]+gen$N_E[3]-2
+c<- 1- 3/(4*df-1)
