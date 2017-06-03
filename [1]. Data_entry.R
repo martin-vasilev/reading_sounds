@@ -960,7 +960,6 @@ data<- Add_data(data, ID= 30, N_C=24, sample="adults", cit= "Johansson et al. (2
                 sound_type= "preferred", db= 65, task= "reading comprehension", 
                 measure= "prop_correct", mean_C= 62.5, var_C= 24.5, 
                 mean_E= 45.8, var_E= 35.9, var_type= "SD",
-                journal= "Applied Cognitive Psychology",
                 journal="Psychology of Music", IF= 	2.01,
                 reference= "Johansson, R., Holmqvist, K., Mossberg, F., & Lindgren, M. (2012). Eye movements and reading comprehension while listening to preferred and non-preferred study music. Psychology of music, 40(3), 339-356."
 )
