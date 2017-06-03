@@ -131,12 +131,49 @@ ANOVA_to_d_var<- function(d, N_C=NULL, N_E=NULL, n=NULL, design="between", r=NUL
   return(var)
 }
 
+# Correlation effect sizes (Borenstein, 2009)
 
 corr_var<- function(r,n){ ((1-r^2)^2)/(n-1) }
-
 
 Fishers_z<- function(r){ 0.5*log((1+r)/(1-r)) }
 
 Fishers_z_var<- function(n){ 1/(n-3) }
 
 Fishers_z_to_r<- function(z){ (exp(2*z)-1)/(exp(2*z)+1) }
+
+
+### From Morris & DeShon (2002), Psych Methods
+# eq.11
+d_IG<- function(d_RM, r){ d_RM*sqrt(2*(1-r)) }
+  
+
+# Variance, table 2, eq.1
+var_RM<- function(n, d_RM){
+  df<- n-1
+  c<- 1- (3/(4*df-1)) 
+  var<- (1/n)*((n-1)/(n-3))*(1+n*(d_RM^2))- (d_RM^2)/((c*(n-1))^2)
+  return(var)
+}
+  
+# Variance, table 2, eq.3
+var_IG<- function(N_C, N_E, d_IG){
+  N<- N_C+ N_E
+  n<- (N_C*N_E)/(N_C+N_E)
+  df<- N_C+ N_E -2
+  c<- 1- (3/(4*df-1))
+  var<- (1/n)*((N-2)/(N-4))*(1+n*(d_IG^2))- (d_IG^2)/((c*(N-2))^2)
+  return(var)
+}
+
+# Variance, table 2, eq.2
+var_IGr<- function(r,n, d_IG){
+  df<- n-1
+  c<- 1- (3/(4*df-1)) 
+  var<- ((2*(1-r))/n)* ((n-1)/(n-3))*(1+ (n/(2*(1-r)))*(d_IG^2))- (d_IG^2)/((c*(n-1))^2)
+  return(var)
+}
+
+n<- (gen$N_C[3]*gen$N_E[3])/(gen$N_C[3]+gen$N_E[3])
+N<- gen$N_C[3]+gen$N_E[3]
+df<- gen$N_C[3]+gen$N_E[3]-2
+c<- 1- 3/(4*df-1)

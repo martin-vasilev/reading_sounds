@@ -746,6 +746,21 @@ gen$CI95_R[N]<- gen$g[N] + 1.96*sqrt(gen$g_var[N])
 #-----
 gen<- subset(gen, !is.na(ID))
 
+references<- gen$reference
+gen$reference<- NULL
+
+gen$mds<- NULL
+gen$mds_var<- NULL
+for(i in 1:nrow(gen)){
+  if(gen$design[i]=="between"){
+    gen$mds[i]<- gen$g[i]
+    gen$mds_var[i]<- var_IG(N_C = gen$N_C[i], N_E = gen$N_E[i], d_IG = gen$g[i])  # gen$g_var[i]
+  } else{
+    gen$mds[i]<- d_IG(d_RM =gen$g[i], r = r) #gen$g[i]
+    gen$mds_var[i]<- var_IGr(r = r, n = gen$N_C[i], d_IG = gen$mds[i])
+  }
+}
+
 
 # Save data: 
 save(gen, file= "Data/subset/gen.Rda")
