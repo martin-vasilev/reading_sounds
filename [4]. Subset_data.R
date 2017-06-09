@@ -1,4 +1,5 @@
 
+rm(list=ls())
 
 load("Data/data.Rda")
 source("functions/settings.R")
@@ -33,11 +34,10 @@ gen$var_C[N]<- a$var_C[1]
 gen$mean_E[N]<- mean(a$mean_E)
 gen$var_E[N]<- mean(a$var_E)
 
-gen$d[N]<- Cohens_d(M_C = gen$mean_C[N], M_E = gen$mean_E[N], S_C = gen$var_C[N], S_E = gen$var_E[N], 
-                    N_C = gen$N_C[N], N_E = gen$N_E[N], design = gen$design[N], type = "E-C")
-gen$d_var[N]<- Cohens_d_var(d = gen$d[N], N_C = gen$N_C[N], N_E = gen$N_E[N], design = gen$design[N])
-gen$g[N]<- Hedges_g(d = gen$d[N], N_C = gen$N_C[N], N_E = gen$N_E[N], design = gen$design[N])
-gen$g_var[N]<- Hedges_g_var(d_var = gen$d_var[N], N_C = gen$N_C[N], N_E = gen$N_E[N], design = gen$design[N])
+gen$d[N]<- mean(a$d)
+gen$d_var[N]<- mean(a$d_var)
+gen$g[N]<- mean(a$g)
+gen$g_var[N]<- mean(a$g_var)
 gen$CI95_L[N]<- gen$g[N]- 1.96*sqrt(gen$g_var[N])
 gen$CI95_R[N]<- gen$g[N]+ 1.96*sqrt(gen$g_var[N])
 
@@ -773,7 +773,7 @@ rm(gen)
 # "general" meta-analysis (all sounds):
 #----------------------------------------
 
-## reading comprehension:
+## reading speed:
 d<- subset(subset(data, is.element(task, RC) & measure=="reading_speed"))
 d$sound<- as.character(d$sound)
 
@@ -843,5 +843,486 @@ gen_speed$CI95_L[N]<- gen_speed$g[N] - 1.96*sqrt(gen_speed$g_var[N])
 gen_speed$CI95_R[N]<- gen_speed$g[N] + 1.96*sqrt(gen_speed$g_var[N]) 
 
 
+# ID 29:
+N<- 29
+a<- subset(d, ID==N) 
+gen_speed[N,studyCols]<- a[1,studyCols]
+gen_speed$N_C[N]<- a$N_C[1]
+gen_speed$N_E[N]<- a$N_C[1]
+gen_speed$sound[N]<- "speech+music"
+gen_speed$mean_C[N]<- a$mean_C[1]
+gen_speed$var_C[N]<- a$var_C[1]
+gen_speed$mean_E[N]<- mean(a$mean_E)
+gen_speed$var_E[N]<- mean(a$var_E)
+gen_speed$d[N]<- mean(a$d)
+gen_speed$d_var[N]<- mean(a$d_var)
+gen_speed$g[N]<- mean(a$g)
+gen_speed$g_var[N]<- mean(a$g_var)
+gen_speed$CI95_L[N]<- gen_speed$g[N] - 1.96*sqrt(gen_speed$g_var[N])
+gen_speed$CI95_R[N]<- gen_speed$g[N] + 1.96*sqrt(gen_speed$g_var[N]) 
+
+
+# ID 30:
+N<- 30
+a<- subset(d, ID==N) 
+gen_speed[N,studyCols]<- a[1,studyCols]
+gen_speed$N_C[N]<- a$N_C[1]
+gen_speed$N_E[N]<- a$N_C[1]
+gen_speed$sound[N]<- "music+noise"
+gen_speed$mean_C[N]<- a$mean_C[1]
+gen_speed$var_C[N]<- a$var_C[1]
+gen_speed$mean_E[N]<- mean(a$mean_E)
+gen_speed$var_E[N]<- mean(a$var_E)
+gen_speed$d[N]<- mean(a$d)
+gen_speed$d_var[N]<- mean(a$d_var)
+gen_speed$g[N]<- mean(a$g)
+gen_speed$g_var[N]<- mean(a$g_var)
+gen_speed$CI95_L[N]<- gen_speed$g[N] - 1.96*sqrt(gen_speed$g_var[N])
+gen_speed$CI95_R[N]<- gen_speed$g[N] + 1.96*sqrt(gen_speed$g_var[N]) 
+
+
+# ID 37:
+N<- 37
+a<- subset(d, ID==N) 
+gen_speed[N,studyCols]<- a[1,studyCols]
+gen_speed$N_C[N]<- a$N_C[1]
+gen_speed$N_E[N]<- a$N_C[1]
+gen_speed$sound[N]<- "speech+music"
+gen_speed$mean_C[N]<- a$mean_C[1]
+gen_speed$var_C[N]<- a$var_C[1]
+gen_speed$mean_E[N]<- mean(a$mean_E)
+gen_speed$var_E[N]<- mean(a$var_E)
+gen_speed$d[N]<- mean(a$d)
+gen_speed$d_var[N]<- mean(a$d_var)
+gen_speed$g[N]<- mean(a$g)
+gen_speed$g_var[N]<- mean(a$g_var)
+gen_speed$CI95_L[N]<- gen_speed$g[N] - 1.96*sqrt(gen_speed$g_var[N])
+gen_speed$CI95_R[N]<- gen_speed$g[N] + 1.96*sqrt(gen_speed$g_var[N]) 
+
+
+# ID 43:
+N<- 43
+a<- subset(d, ID==N) 
+gen_speed[N,studyCols]<- a[1,studyCols]
+gen_speed$N_C[N]<- a$N_C[1]
+gen_speed$N_E[N]<- a$N_C[1]
+gen_speed$sound[N]<- "speech"
+gen_speed$mean_C[N]<- a$mean_C[1]
+gen_speed$var_C[N]<- a$var_C[1]
+gen_speed$mean_E[N]<- mean(a$mean_E)
+gen_speed$var_E[N]<- mean(a$var_E)
+gen_speed$d[N]<- mean(a$d)
+gen_speed$d_var[N]<- mean(a$d_var)
+gen_speed$g[N]<- mean(a$g)
+gen_speed$g_var[N]<- mean(a$g_var)
+gen_speed$CI95_L[N]<- gen_speed$g[N] - 1.96*sqrt(gen_speed$g_var[N])
+gen_speed$CI95_R[N]<- gen_speed$g[N] + 1.96*sqrt(gen_speed$g_var[N]) 
+
+
+# ID 44:
+N<- 44
+a<- subset(d, ID==N) 
+gen_speed[N,studyCols]<- a[1,studyCols]
+gen_speed$N_C[N]<- a$N_C[1]
+gen_speed$N_E[N]<- a$N_C[1]
+gen_speed$sound[N]<- "speech"
+gen_speed$mean_C[N]<- a$mean_C[1]
+gen_speed$var_C[N]<- a$var_C[1]
+gen_speed$mean_E[N]<- mean(a$mean_E)
+gen_speed$var_E[N]<- mean(a$var_E)
+gen_speed$d[N]<- mean(a$d)
+gen_speed$d_var[N]<- mean(a$d_var)
+gen_speed$g[N]<- mean(a$g)
+gen_speed$g_var[N]<- mean(a$g_var)
+gen_speed$CI95_L[N]<- gen_speed$g[N] - 1.96*sqrt(gen_speed$g_var[N])
+gen_speed$CI95_R[N]<- gen_speed$g[N] + 1.96*sqrt(gen_speed$g_var[N]) 
+
+
+# ID 45:
+N<- 45
+a<- subset(d, ID==N) 
+gen_speed[N,studyCols]<- a[1,studyCols]
+gen_speed$N_C[N]<- a$N_C[1]
+gen_speed$N_E[N]<- a$N_C[1]
+gen_speed$sound[N]<- "speech"
+gen_speed$mean_C[N]<- a$mean_C[1]
+gen_speed$var_C[N]<- a$var_C[1]
+gen_speed$mean_E[N]<- mean(a$mean_E)
+gen_speed$var_E[N]<- mean(a$var_E)
+gen_speed$d[N]<- mean(a$d)
+gen_speed$d_var[N]<- mean(a$d_var)
+gen_speed$g[N]<- mean(a$g)
+gen_speed$g_var[N]<- mean(a$g_var)
+gen_speed$CI95_L[N]<- gen_speed$g[N] - 1.96*sqrt(gen_speed$g_var[N])
+gen_speed$CI95_R[N]<- gen_speed$g[N] + 1.96*sqrt(gen_speed$g_var[N]) 
+
+
+# ID 46:
+N<- 46
+a<- subset(d, ID==N) 
+gen_speed[N,studyCols]<- a[1,studyCols]
+gen_speed$N_C[N]<- a$N_C[1]
+gen_speed$N_E[N]<- a$N_C[1]
+gen_speed$sound[N]<- "speech"
+gen_speed$mean_C[N]<- a$mean_C[1]
+gen_speed$var_C[N]<- a$var_C[1]
+gen_speed$mean_E[N]<- mean(a$mean_E)
+gen_speed$var_E[N]<- mean(a$var_E)
+gen_speed$d[N]<- mean(a$d)
+gen_speed$d_var[N]<- mean(a$d_var)
+gen_speed$g[N]<- mean(a$g)
+gen_speed$g_var[N]<- mean(a$g_var)
+gen_speed$CI95_L[N]<- gen_speed$g[N] - 1.96*sqrt(gen_speed$g_var[N])
+gen_speed$CI95_R[N]<- gen_speed$g[N] + 1.96*sqrt(gen_speed$g_var[N]) 
+
+
+# ID 58:
+N<- 58
+a<- subset(d, ID==N) 
+gen_speed[N,studyCols]<- a[1,studyCols]
+gen_speed$N_C[N]<- a$N_C[1]
+gen_speed$N_E[N]<- a$N_C[1]
+gen_speed$sound[N]<- "speech+noise"
+gen_speed$mean_C[N]<- a$mean_C[1]
+gen_speed$var_C[N]<- a$var_C[1]
+gen_speed$mean_E[N]<- mean(a$mean_E)
+gen_speed$var_E[N]<- mean(a$var_E)
+gen_speed$d[N]<- mean(a$d)
+gen_speed$d_var[N]<- mean(a$d_var)
+gen_speed$g[N]<- mean(a$g)
+gen_speed$g_var[N]<- mean(a$g_var)
+gen_speed$CI95_L[N]<- gen_speed$g[N] - 1.96*sqrt(gen_speed$g_var[N])
+gen_speed$CI95_R[N]<- gen_speed$g[N] + 1.96*sqrt(gen_speed$g_var[N]) 
+
 
 gen_speed<- subset(gen_speed, !is.na(ID))
+save(gen_speed, file= "Data/subset/gen_speed.Rda")
+write.csv(gen_speed, file= "Data/subset/gen_speed.csv")
+rm(gen_speed)
+
+
+
+#-----------------------------------------------------------------------------------------------------#
+#                                     Music (reading comprehension)                                   #
+#-----------------------------------------------------------------------------------------------------#
+
+d<- subset(subset(data, is.element(task, RC) & measure!="reading_speed" & sound=="music"))
+
+t<- data[1,]; t[1,]<- NA
+
+
+# initial:
+music<- d[1:6,]# only 1 ES
+
+
+# 9:
+N<-9
+a<- subset(d, ID==N)
+music[N,studyCols]<- a[1,studyCols]
+music$N_C[N]<- a$N_C[1]
+music$N_E[N]<- sum(a$N_E)
+music$sound[N]<- "music"
+music$mean_C[N]<- a$mean_C[1]
+music$var_C[N]<- a$var_C[1]
+music$mean_E[N]<- mean(a$mean_E)
+music$var_E[N]<- mean(a$var_E)
+music$d[N]<- mean(a$d)
+music$d_var[N]<- mean(a$d_var)
+music$g[N]<- mean(a$g)
+music$g_var[N]<- mean(a$g_var)
+music$CI95_L[N]<- music$g[N] - 1.96*sqrt(music$g_var[N])
+music$CI95_R[N]<- music$g[N] + 1.96*sqrt(music$g_var[N]) 
+
+
+# 10:
+N<-10
+a<- subset(d, ID==N)
+music<- rbind(music, a)
+
+
+# 11:
+N<-11
+a<- subset(d, ID==N)
+music<- rbind(music, a)
+
+
+# 12:
+N<-12
+a<- subset(d, ID==N)
+music<- rbind(music, a)
+
+
+# 13:
+N<-13
+a<- subset(d, ID==N)
+music[N,studyCols]<- a[1,studyCols]
+music$N_C[N]<- a$N_C[1]
+music$N_E[N]<- a$N_C[1]
+music$sound[N]<- "music"
+music$mean_C[N]<- a$mean_C[1]
+music$var_C[N]<- a$var_C[1]
+music$mean_E[N]<- mean(a$mean_E)
+music$var_E[N]<- mean(a$var_E)
+music$d[N]<- mean(a$d)
+music$d_var[N]<- mean(a$d_var)
+music$g[N]<- mean(a$g)
+music$g_var[N]<- mean(a$g_var)
+music$CI95_L[N]<- music$g[N] - 1.96*sqrt(music$g_var[N])
+music$CI95_R[N]<- music$g[N] + 1.96*sqrt(music$g_var[N]) 
+
+
+# 14:
+N<-14
+a<- subset(d, ID==N)
+music[N,studyCols]<- a[1,studyCols]
+music$N_C[N]<- a$N_C[1]
+music$N_E[N]<- sum(a$N_E)
+music$sound[N]<- "music"
+music$mean_C[N]<- a$mean_C[1]
+music$var_C[N]<- a$var_C[1]
+music$mean_E[N]<- mean(a$mean_E)
+music$var_E[N]<- mean(a$var_E)
+music$d[N]<- mean(a$d)
+music$d_var[N]<- mean(a$d_var)
+music$g[N]<- mean(a$g)
+music$g_var[N]<- mean(a$g_var)
+music$CI95_L[N]<- music$g[N] - 1.96*sqrt(music$g_var[N])
+music$CI95_R[N]<- music$g[N] + 1.96*sqrt(music$g_var[N]) 
+
+
+# 15:
+N<-15
+a<- subset(d, ID==N)
+music[N,studyCols]<- a[1,studyCols]
+music$N_C[N]<- a$N_C[1]
+music$N_E[N]<- sum(a$N_E)
+music$sound[N]<- "music"
+music$mean_C[N]<- a$mean_C[1]
+music$var_C[N]<- a$var_C[1]
+music$mean_E[N]<- mean(a$mean_E)
+music$var_E[N]<- mean(a$var_E)
+music$d[N]<- mean(a$d)
+music$d_var[N]<- mean(a$d_var)
+music$g[N]<- mean(a$g)
+music$g_var[N]<- mean(a$g_var)
+music$CI95_L[N]<- music$g[N] - 1.96*sqrt(music$g_var[N])
+music$CI95_R[N]<- music$g[N] + 1.96*sqrt(music$g_var[N]) 
+
+
+# 16:
+N<-16
+a<- subset(d, ID==N)
+music<- rbind(music, a)
+
+
+# 17:
+N<-17
+a<- subset(d, ID==N)
+music[N,studyCols]<- a[1,studyCols]
+music$N_C[N]<- a$N_C[1]
+music$N_E[N]<- sum(a$N_E)
+music$sound[N]<- "music"
+music$mean_C[N]<- a$mean_C[1]
+music$var_C[N]<- a$var_C[1]
+music$mean_E[N]<- mean(a$mean_E)
+music$var_E[N]<- mean(a$var_E)
+music$d[N]<- mean(a$d)
+music$d_var[N]<- mean(a$d_var)
+music$g[N]<- mean(a$g)
+music$g_var[N]<- mean(a$g_var)
+music$CI95_L[N]<- music$g[N] - 1.96*sqrt(music$g_var[N])
+music$CI95_R[N]<- music$g[N] + 1.96*sqrt(music$g_var[N]) 
+
+
+# 18:
+N<-18
+a<- subset(d, ID==N)
+music[N,studyCols]<- a[1,studyCols]
+music$N_C[N]<- a$N_C[1]
+music$N_E[N]<- sum(a$N_E)
+music$sound[N]<- "music"
+music$mean_C[N]<- a$mean_C[1]
+music$var_C[N]<- a$var_C[1]
+music$mean_E[N]<- mean(a$mean_E)
+music$var_E[N]<- mean(a$var_E)
+music$d[N]<- mean(a$d)
+music$d_var[N]<- mean(a$d_var)
+music$g[N]<- mean(a$g)
+music$g_var[N]<- mean(a$g_var)
+music$CI95_L[N]<- music$g[N] - 1.96*sqrt(music$g_var[N])
+music$CI95_R[N]<- music$g[N] + 1.96*sqrt(music$g_var[N]) 
+
+
+# 19:
+N<-19
+a<- subset(d, ID==N)
+music[N,studyCols]<- a[1,studyCols]
+music$N_C[N]<- a$N_C[1]
+music$N_E[N]<- sum(a$N_E)
+music$sound[N]<- "music"
+music$mean_C[N]<- a$mean_C[1]
+music$var_C[N]<- a$var_C[1]
+music$mean_E[N]<- mean(a$mean_E)
+music$var_E[N]<- mean(a$var_E)
+music$d[N]<- mean(a$d)
+music$d_var[N]<- mean(a$d_var)
+music$g[N]<- mean(a$g)
+music$g_var[N]<- mean(a$g_var)
+music$CI95_L[N]<- music$g[N] - 1.96*sqrt(music$g_var[N])
+music$CI95_R[N]<- music$g[N] + 1.96*sqrt(music$g_var[N]) 
+
+
+# 20:
+N<-20
+a<- subset(d, ID==N)
+music<- rbind(music, a)
+
+
+# 21:
+N<-21
+a<- subset(d, ID==N)
+music[N,studyCols]<- a[1,studyCols]
+music$N_C[N]<- a$N_C[1]
+music$N_E[N]<- sum(a$N_E)
+music$sound[N]<- "music"
+music$mean_C[N]<- a$mean_C[1]
+music$var_C[N]<- a$var_C[1]
+music$mean_E[N]<- mean(a$mean_E)
+music$var_E[N]<- mean(a$var_E)
+music$d[N]<- mean(a$d)
+music$d_var[N]<- mean(a$d_var)
+music$g[N]<- mean(a$g)
+music$g_var[N]<- mean(a$g_var)
+music$CI95_L[N]<- music$g[N] - 1.96*sqrt(music$g_var[N])
+music$CI95_R[N]<- music$g[N] + 1.96*sqrt(music$g_var[N]) 
+
+
+# 22:
+N<-22
+a<- subset(d, ID==N)
+music[N,studyCols]<- a[1,studyCols]
+music$N_C[N]<- a$N_C[1]
+music$N_E[N]<- a$N_C[1]
+music$sound[N]<- "music"
+music$mean_C[N]<- a$mean_C[1]
+music$var_C[N]<- a$var_C[1]
+music$mean_E[N]<- mean(a$mean_E)
+music$var_E[N]<- mean(a$var_E)
+music$d[N]<- mean(a$d)
+music$d_var[N]<- mean(a$d_var)
+music$g[N]<- mean(a$g)
+music$g_var[N]<- mean(a$g_var)
+music$CI95_L[N]<- music$g[N] - 1.96*sqrt(music$g_var[N])
+music$CI95_R[N]<- music$g[N] + 1.96*sqrt(music$g_var[N]) 
+
+
+# 23:
+N<-23
+a<- subset(d, ID==N)
+music<- rbind(music, a)
+
+
+# 24:
+N<-24
+a<- subset(d, ID==N)
+music[N,studyCols]<- a[1,studyCols]
+music$N_C[N]<- a$N_C[1]
+music$N_E[N]<- sum(a$N_E)
+music$sound[N]<- "music"
+music$mean_C[N]<- a$mean_C[1]
+music$var_C[N]<- a$var_C[1]
+music$mean_E[N]<- mean(a$mean_E)
+music$var_E[N]<- mean(a$var_E)
+music$d[N]<- mean(a$d)
+music$d_var[N]<- mean(a$d_var)
+music$g[N]<- mean(a$g)
+music$g_var[N]<- mean(a$g_var)
+music$CI95_L[N]<- music$g[N] - 1.96*sqrt(music$g_var[N])
+music$CI95_R[N]<- music$g[N] + 1.96*sqrt(music$g_var[N]) 
+
+
+# 29:
+N<-29
+a<- subset(d, ID==N)
+music<- rbind(music, a)
+
+
+# 30:
+N<-30
+a<- subset(d, ID==N)
+music<- rbind(music, a)
+
+
+# 33:
+N<-33
+a<- subset(d, ID==N)
+music[N,studyCols]<- a[1,studyCols]
+music$N_C[N]<- a$N_C[1]
+music$N_E[N]<- a$N_C[1]
+music$sound[N]<- "music"
+music$mean_C[N]<- a$mean_C[1]
+music$var_C[N]<- a$var_C[1]
+music$mean_E[N]<- mean(a$mean_E)
+music$var_E[N]<- mean(a$var_E)
+music$d[N]<- mean(a$d)
+music$d_var[N]<- mean(a$d_var)
+music$g[N]<- mean(a$g)
+music$g_var[N]<- mean(a$g_var)
+music$CI95_L[N]<- music$g[N] - 1.96*sqrt(music$g_var[N])
+music$CI95_R[N]<- music$g[N] + 1.96*sqrt(music$g_var[N]) 
+
+
+# 34:
+N<-34
+a<- subset(d, ID==N)
+music[N,studyCols]<- a[1,studyCols]
+music$N_C[N]<- a$N_C[1]
+music$N_E[N]<- a$N_C[1]
+music$sound[N]<- "music"
+music$mean_C[N]<- a$mean_C[1]
+music$var_C[N]<- a$var_C[1]
+music$mean_E[N]<- mean(a$mean_E)
+music$var_E[N]<- mean(a$var_E)
+music$d[N]<- mean(a$d)
+music$d_var[N]<- mean(a$d_var)
+music$g[N]<- mean(a$g)
+music$g_var[N]<- mean(a$g_var)
+music$CI95_L[N]<- music$g[N] - 1.96*sqrt(music$g_var[N])
+music$CI95_R[N]<- music$g[N] + 1.96*sqrt(music$g_var[N]) 
+
+
+# 37:
+N<-37
+a<- subset(d, ID==N)
+music<- rbind(music, a)
+
+
+# 38:
+N<-38
+a<- subset(d, ID==N)
+music<- rbind(music, a)
+
+
+# 40:
+N<-40
+a<- subset(d, ID==N)
+music<- rbind(music, a)
+
+
+# 41:
+N<-41
+a<- subset(d, ID==N)
+music<- rbind(music, a)
+
+
+# 48:
+N<-48
+a<- subset(d, ID==N)
+music<- rbind(music, a)
+
+
+music<- subset(music, !is.na(ID))
+save(music, file= "Data/subset/music.Rda")
+write.csv(music, file= "Data/subset/music.csv")
+rm(music)
+

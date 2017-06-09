@@ -173,7 +173,7 @@ var_IGr<- function(r,n, d_IG){
   return(var)
 }
 
-n<- (gen$N_C[3]*gen$N_E[3])/(gen$N_C[3]+gen$N_E[3])
-N<- gen$N_C[3]+gen$N_E[3]
-df<- gen$N_C[3]+gen$N_E[3]-2
-c<- 1- 3/(4*df-1)
+#n<- (gen$N_C[3]*gen$N_E[3])/(gen$N_C[3]+gen$N_E[3])
+#N<- gen$N_C[3]+gen$N_E[3]
+#df<- gen$N_C[3]+gen$N_E[3]-2
+#c<- 1- 3/(4*df-1)
