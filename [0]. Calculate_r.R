@@ -9,8 +9,10 @@
 # The obtained estimates are meta-analysed to obtained the pooled correlation coefficient that will be used for 
 # calculating the effect sizes in the meta-analysis.
 
-
 ##########
+
+rm(list=ls())
+
 source("Functions/effect_sizes.R")
 
 r<- NULL

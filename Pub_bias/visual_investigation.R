@@ -3,7 +3,9 @@
 
 # Creates plots for publication bias assessment
 
-load("Data/data.Rda")
+rm(list=ls())
+load("Data/subset/gen.Rda")
+#load("Data/data.Rda")
 source("functions/settings.R")
 
 library(metafor)

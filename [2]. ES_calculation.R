@@ -7,11 +7,12 @@
 
 rm(list=ls())
 
+source("Functions/settings.R")
 source("Functions/effect_sizes.R")
 
 # Load data:
 load("Data/data_raw.Rda");
-load("data/r.Rda")
+load("r.Rda")
 
 reference<- as.character(data$reference)
 data$reference<- NULL
@@ -521,6 +522,28 @@ data<- subset(data, measure!="proofreading_speed")
 
 # remove outlier ES:
 data<- subset(data, g<3.4)
+
+
+if(MdS){
+  for (i in 1:nrow(data)){
+    if(data$design[i]=="within"){
+      data$g[i]<- d_IG(d_RM =data$g[i], r = r)
+    }
+    
+  }
+}
+
+
+if(MdS_var){
+  for (i in 1:nrow(data)){
+    if(data$design[i]=="within"){
+      data$g_var[i]<- var_RM(n = data$N_C[i], d_RM = data$g[i])
+    }
+    
+  }
+}
+
+
 
 # Save data: 
 save(data, file= "Data/data.Rda")
