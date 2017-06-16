@@ -1008,7 +1008,7 @@ rm(gen_speed)
 
 d<- subset(subset(data, is.element(task, RC) & measure!="reading_speed" & sound=="music"))
 
-t<- data[1,]; t[1,]<- NA
+#t<- data[1,]; t[1,]<- NA
 
 
 # initial:
@@ -1325,4 +1325,126 @@ music<- subset(music, !is.na(ID))
 save(music, file= "Data/subset/music.Rda")
 write.csv(music, file= "Data/subset/music.csv")
 rm(music)
+
+
+
+
+#-----------------------------------------------------------------------------------------------------#
+#                                     Noise (reading comprehension)                                   #
+#-----------------------------------------------------------------------------------------------------#
+
+d<- subset(subset(data, is.element(task, RC) & measure!="reading_speed" & sound=="noise"))
+
+noise<- d[1:2,]
+
+
+# 26:
+N<-26
+a<- subset(d, ID==N)
+noise[N,studyCols]<- a[1,studyCols]
+noise$db[N]<- mean(a$db)
+noise$N_C[N]<- a$N_C[1]
+noise$N_E[N]<- sum(a$N_E)
+
+
+noise$sound[N]<- "noise"
+noise$mean_C[N]<- a$mean_C[1]
+noise$var_C[N]<- a$var_C[1]
+noise$mean_E[N]<- mean(a$mean_E)
+noise$var_E[N]<- mean(a$var_E)
+noise$d[N]<- mean(a$d)
+noise$d_var[N]<- mean(a$d_var)
+noise$g[N]<- mean(a$g)
+noise$g_var[N]<- mean(a$g_var)
+noise$CI95_L[N]<- noise$g[N] - 1.96*sqrt(noise$g_var[N])
+noise$CI95_R[N]<- noise$g[N] + 1.96*sqrt(noise$g_var[N]) 
+
+
+# 27:
+N<-27
+a<- subset(d, ID==N)
+noise[N,studyCols]<- a[1,studyCols]
+noise$N_C[N]<- a$N_C[1]
+noise$N_E[N]<- a$N_C[1]
+noise$sound[N]<- "noise"
+noise$mean_C[N]<- mean(a$mean_C[c(1,2)])
+noise$var_C[N]<- mean(a$var_C[c(1,2)])
+noise$mean_E[N]<- mean(a$mean_E)
+noise$var_E[N]<- mean(a$var_E)
+noise$d[N]<- mean(a$d)
+noise$d_var[N]<- mean(a$d_var)
+noise$g[N]<- mean(a$g)
+noise$g_var[N]<- mean(a$g_var)
+noise$CI95_L[N]<- noise$g[N] - 1.96*sqrt(noise$g_var[N])
+noise$CI95_R[N]<- noise$g[N] + 1.96*sqrt(noise$g_var[N]) 
+
+
+# 30:
+N<-30
+a<- subset(d, ID==N)
+noise<- rbind(noise, a)
+
+
+# 33:
+N<-33
+a<- subset(d, ID==N)
+noise<- rbind(noise, a)
+
+# 35:
+N<-35
+a<- subset(d, ID==N)
+noise<- rbind(noise, a)
+
+
+# 36:
+N<-36
+a<- subset(d, ID==N)
+noise<- rbind(noise, a)
+
+
+# 42: 
+N<-42
+a<- subset(d, ID==N)
+noise[N,studyCols]<- a[1,studyCols]
+noise$N_C[N]<- a$N_C[1]
+noise$N_E[N]<- sum(a$N_E)
+noise$sound[N]<- "noise"
+noise$mean_C[N]<- a$mean_C[1]
+noise$var_C[N]<- a$var_C[1]
+noise$mean_E[N]<- mean(a$mean_E)
+noise$var_E[N]<- mean(a$var_E)
+noise$d[N]<- mean(a$d)
+noise$d_var[N]<- mean(a$d_var)
+noise$g[N]<- mean(a$g)
+noise$g_var[N]<- mean(a$g_var)
+noise$CI95_L[N]<- noise$g[N] - 1.96*sqrt(noise$g_var[N])
+noise$CI95_R[N]<- noise$g[N] + 1.96*sqrt(noise$g_var[N]) 
+
+
+# 49:
+N<-49
+a<- subset(d, ID==N)
+noise<- rbind(noise, a)
+
+
+# 58:
+N<-58
+a<- subset(d, ID==N)
+noise<- rbind(noise, a)
+
+
+noise<- subset(noise, !is.na(ID))
+save(noise, file= "Data/subset/noise.Rda")
+write.csv(noise, file= "Data/subset/noise.csv")
+rm(noise)
+
+
+#-----------------------------------------------------------------------------------------------------#
+#                                     Speech (reading comprehension)                                  #
+#-----------------------------------------------------------------------------------------------------#
+
+d<- subset(subset(data, is.element(task, RC) & measure!="reading_speed" & sound=="speech"))
+
+
+
 
