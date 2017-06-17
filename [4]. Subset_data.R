@@ -1445,6 +1445,207 @@ rm(noise)
 
 d<- subset(subset(data, is.element(task, RC) & measure!="reading_speed" & sound=="speech"))
 
+speech<- d[1:3,]
+
+
+# 27:
+N<-27
+a<- subset(d, ID==N)
+speech[N,studyCols]<- a[1,studyCols]
+speech$N_C[N]<- a$N_C[1]
+speech$N_E[N]<- a$N_C[1]
+speech$sound[N]<- "speech"
+speech$mean_C[N]<- a$mean_C[1]
+speech$var_C[N]<- a$var_C[1]
+speech$mean_E[N]<- mean(a$mean_E)
+speech$var_E[N]<- mean(a$var_E)
+speech$d[N]<- mean(a$d)
+speech$d_var[N]<- mean(a$d_var)
+speech$g[N]<- mean(a$g)
+speech$g_var[N]<- mean(a$g_var)
+speech$CI95_L[N]<- speech$g[N] - 1.96*sqrt(speech$g_var[N])
+speech$CI95_R[N]<- speech$g[N] + 1.96*sqrt(speech$g_var[N]) 
+
+
+# 29:
+N<-29
+a<- subset(d, ID==N)
+speech<- rbind(speech, a)
+
+
+# 33:
+N<- 33
+a<- subset(d, ID==N)
+speech[N,studyCols]<- a[1,studyCols]
+speech$N_C[N]<- a$N_C[1]
+speech$N_E[N]<- a$N_C[1]
+speech$sound[N]<- "speech"
+speech$mean_C[N]<- a$mean_C[1]
+speech$var_C[N]<- a$var_C[1]
+speech$mean_E[N]<- mean(a$mean_E)
+speech$var_E[N]<- mean(a$var_E)
+speech$d[N]<- mean(a$d)
+speech$d_var[N]<- mean(a$d_var)
+speech$g[N]<- mean(a$g)
+speech$g_var[N]<- mean(a$g_var)
+speech$CI95_L[N]<- speech$g[N] - 1.96*sqrt(speech$g_var[N])
+speech$CI95_R[N]<- speech$g[N] + 1.96*sqrt(speech$g_var[N]) 
+
+
+# 35:
+N<- 35
+a<- subset(d, ID==N)
+speech[N,studyCols]<- a[1,studyCols]
+speech$N_C[N]<- a$N_C[1]
+speech$N_E[N]<- a$N_C[1]
+speech$sound[N]<- "speech"
+speech$mean_C[N]<- a$mean_C[1]
+speech$var_C[N]<- a$var_C[1]
+speech$mean_E[N]<- mean(a$mean_E)
+speech$var_E[N]<- mean(a$var_E)
+speech$d[N]<- mean(a$d)
+speech$d_var[N]<- mean(a$d_var)
+speech$g[N]<- mean(a$g)
+speech$g_var[N]<- mean(a$g_var)
+speech$CI95_L[N]<- speech$g[N] - 1.96*sqrt(speech$g_var[N])
+speech$CI95_R[N]<- speech$g[N] + 1.96*sqrt(speech$g_var[N]) 
+
+
+# 36:
+N<- 36
+a<- subset(d, ID==N)
+speech[N,studyCols]<- a[1,studyCols]
+speech$N_C[N]<- a$N_C[1]
+speech$N_E[N]<- a$N_C[1]
+speech$sound[N]<- "speech"
+speech$mean_C[N]<- a$mean_C[1]
+speech$var_C[N]<- a$var_C[1]
+speech$mean_E[N]<- mean(a$mean_E)
+speech$var_E[N]<- mean(a$var_E)
+speech$d[N]<- mean(a$d)
+speech$d_var[N]<- mean(a$d_var)
+speech$g[N]<- mean(a$g)
+speech$g_var[N]<- mean(a$g_var)
+speech$CI95_L[N]<- speech$g[N] - 1.96*sqrt(speech$g_var[N])
+speech$CI95_R[N]<- speech$g[N] + 1.96*sqrt(speech$g_var[N]) 
+
+
+#37:
+N<- 37
+a<- subset(d, ID==N)
+speech<- rbind(speech, a)
+
+
+# 39:
+N<- 39
+a<- subset(d, ID==N)
+speech[N,studyCols]<- a[1,studyCols]
+speech$N_C[N]<- a$N_C[1]
+speech$N_E[N]<- sum(a$N_E)
+speech$sound[N]<- "speech"
+speech$mean_C[N]<- a$mean_C[1]
+speech$var_C[N]<- a$var_C[1]
+speech$mean_E[N]<- mean(a$mean_E)
+speech$var_E[N]<- mean(a$var_E)
+speech$d[N]<- mean(a$d)
+speech$d_var[N]<- mean(a$d_var)
+speech$g[N]<- mean(a$g)
+speech$g_var[N]<- mean(a$g_var)
+speech$CI95_L[N]<- speech$g[N] - 1.96*sqrt(speech$g_var[N])
+speech$CI95_R[N]<- speech$g[N] + 1.96*sqrt(speech$g_var[N]) 
+
+
+# 40: 
+N<- 40
+a<- subset(d, ID==N)
+speech<- rbind(speech, a)
+
+
+# 41:
+N<- 41
+a<- subset(d, ID==N)
+speech<- rbind(speech, a)
+
+
+# 43:
+N<- 43
+a<- subset(d, ID==N)
+speech[N,studyCols]<- a[1,studyCols]
+speech$N_C[N]<- a$N_C[1]
+speech$N_E[N]<- a$N_C[1]
+speech$sound[N]<- "speech"
+speech$mean_C[N]<- a$mean_C[1]
+speech$var_C[N]<- a$var_C[1]
+speech$mean_E[N]<- mean(a$mean_E)
+speech$var_E[N]<- mean(a$var_E)
+speech$d[N]<- mean(a$d)
+speech$d_var[N]<- mean(a$d_var)
+speech$g[N]<- mean(a$g)
+speech$g_var[N]<- mean(a$g_var)
+speech$CI95_L[N]<- speech$g[N] - 1.96*sqrt(speech$g_var[N])
+speech$CI95_R[N]<- speech$g[N] + 1.96*sqrt(speech$g_var[N]) 
+
+
+# 47:
+N<- 47
+a<- subset(d, ID==N)
+speech<- rbind(speech, a)
+
+
+# 50:
+N<- 50
+a<- subset(d, ID==N)
+speech<- rbind(speech, a)
+
+
+# 51:
+N<- 51
+a<- subset(d, ID==N)
+speech<- rbind(speech, a)
+
+
+# 52:
+N<- 52
+a<- subset(d, ID==N)
+speech<- rbind(speech, a)
+
+
+# 53:
+N<- 53
+a<- subset(d, ID==N)
+speech<- rbind(speech, a)
+
+
+# 57:
+N<- 57
+a<- subset(d, ID==N)
+speech<- rbind(speech, a)
+
+
+# 58:
+N<- 58
+a<- subset(d, ID==N)
+speech[N,studyCols]<- a[1,studyCols]
+speech$N_C[N]<- a$N_C[1]
+speech$N_E[N]<- a$N_C[1]
+speech$sound[N]<- "speech"
+speech$mean_C[N]<- a$mean_C[1]
+speech$var_C[N]<- a$var_C[1]
+speech$mean_E[N]<- mean(a$mean_E)
+speech$var_E[N]<- mean(a$var_E)
+speech$d[N]<- mean(a$d)
+speech$d_var[N]<- mean(a$d_var)
+speech$g[N]<- mean(a$g)
+speech$g_var[N]<- mean(a$g_var)
+speech$CI95_L[N]<- speech$g[N] - 1.96*sqrt(speech$g_var[N])
+speech$CI95_R[N]<- speech$g[N] + 1.96*sqrt(speech$g_var[N]) 
+
+speech<- subset(speech, !is.na(ID))
+save(speech, file= "Data/subset/speech.Rda")
+write.csv(speech, file= "Data/subset/speech.csv")
+rm(speech)
+
+
 
 
 
