@@ -73,7 +73,7 @@ png('Plots/Prior_sensitivity.png', width = 3600, height = 1600, units = "px", re
 
 
 #par(mfrow=c(1,2), mar= c(5,5,5,1))
-layout(mat = matrix(c(1,1,2,3),nrow = 2,ncol = 2,byrow = TRUE),heights = c(0.3,0.75))
+layout(mat = matrix(c(1,1,2,3),nrow = 2,ncol = 2,byrow = TRUE),heights = c(0.35,0.75))
 par(mar=c(4,4.3,0,3))
 
 
@@ -82,42 +82,42 @@ plot(0, type = "n", axes=FALSE, xlab="", ylab="")
 
 legend(x = "bottom",inset = 0,
        legend = c(p1, p2), 
-       col=c("darkred", "darkorange"), lwd=3, cex=1.2, horiz = FALSE,  
+       col=c("darkred", "darkorange"), lwd=3, cex=1.3, horiz = FALSE,  
        title = expression(bold("Priors")))
 
 
 plot(NA,ylab='Effect size (g)',xlab='Model', ylim= c(round(min(MuCrIl),2)-0.1,
                                                      round(max(MuCrIr),2))+0.05,
      xlim= c(-1, 13), xaxt='n',
-     family="serif", cex.axis=1.3, cex.lab=1.3,xaxs='i', yaxs='i')
+     family="serif", cex.axis=1.4, cex.lab=1.4,xaxs='i', yaxs='i')
 #par(xpd=TRUE)
 
 axis(side = 1, at = xpos, tick = T, labels = c("All (RC)", "All (RS)",
-    "Music (RC)", "Noise (RC)", "Speech (RC)"),  padj = 0.5)
-mtext("Model", line=4, side = 1, cex = 1.1, family="serif")
+    "Music (RC)", "Noise (RC)", "Speech (RC)"),  padj = 0.5, cex=1.6)
+#mtext("Model", line=4, side = 1, cex = 1.4, family="serif")
 
 # Uniform means:
-points(x= xpos-0.5, y= muMean[c(1,3,5,7,9)], pch = 19, cex=1, col="darkred")
+points(x= xpos-0.5, y= muMean[c(1,3,5,7,9)], pch = 19, cex=1.2, col="darkred")
 
 # Normal means:
-points(x= xpos+0.5, y= muMean[c(2,4,6,8,10)], pch = 15, cex=1, col="darkorange")
+points(x= xpos+0.5, y= muMean[c(2,4,6,8,10)], pch = 15, cex=1.2, col="darkorange")
 
 # Uniform CrIs:
 segments(x0=xpos-0.5, y0=MuCrIl[c(1,3,5,7,9)], x1=xpos-0.5, y1=MuCrIr[c(1,3,5,7,9)], 
-         lwd=1, col="darkred")
+         lwd=1.2, col="darkred")
 
 segments(x0=xpos-0.35, y0=MuCrIl[c(1,3,5,7,9)], x1=xpos-0.65, y1=MuCrIl[c(1,3,5,7,9)], 
-         lwd=1, col="darkred")
+         lwd=1.2, col="darkred")
 segments(x0=xpos-0.35, y0=MuCrIr[c(1,3,5,7,9)], x1=xpos-0.65, y1=MuCrIr[c(1,3,5,7,9)], 
-         lwd=1, col="darkred")
+         lwd=1.2, col="darkred")
 # Normal CrIs:
 segments(x0=xpos+0.5, y0=MuCrIl[c(2,4,6,8,10)], x1=xpos+0.5, y1=MuCrIr[c(2,4,6,8,10)], 
-         lwd=1, col="darkorange")
+         lwd=1.2, col="darkorange")
 
 segments(x0=xpos+0.35, y0=MuCrIl[c(2,4,6,8,10)], x1=xpos+0.65, y1=MuCrIl[c(2,4,6,8,10)], 
-         lwd=1, col="darkorange")
+         lwd=1.2, col="darkorange")
 segments(x0=xpos+0.35, y0=MuCrIr[c(2,4,6,8,10)], x1=xpos+0.65, y1=MuCrIr[c(2,4,6,8,10)], 
-         lwd=1, col="darkorange")
+         lwd=1.2, col="darkorange")
 
 
 mtext(expression(paste("Estimate of ", theta)), side = 3, cex = 1.2, font = 2, line = 0.5)
@@ -129,42 +129,48 @@ mtext(expression(paste("Estimate of ", theta)), side = 3, cex = 1.2, font = 2, l
 plot(NA,ylab= expression(paste('Between-study variability (', tau, ")")),xlab='Model',
      ylim= c(round(min(TauCrIl),2)-0.1, round(max(TauCrIr),2))+0.05,
      xlim= c(-1, 13), xaxt='n',
-     family="serif", cex.axis=1.3, cex.lab=1.3,xaxs='i', yaxs='i')
+     family="serif", cex.axis=1.4, cex.lab=1.4,xaxs='i', yaxs='i')
 #par(xpd=TRUE)
 
 axis(side = 1, at = xpos, tick = T, labels = c("All (RC)", "All (RS)",
-              "Music (RC)", "Noise (RC)", "Speech (RC)"),  padj = 0.5)
-mtext("Model", line=4, side = 1, cex = 1.1, family="serif")
+              "Music (RC)", "Noise (RC)", "Speech (RC)"),  padj = 0.5, cex=1.6)
+#mtext("Model", line=4, side = 1, cex = 1.6, family="serif")
 
 # Uniform means:
-points(x= xpos-0.5, y= tauMean[c(1,3,5,7,9)], pch = 19, cex=1, col="darkred")
+points(x= xpos-0.5, y= tauMean[c(1,3,5,7,9)], pch = 19, cex=1.2, col="darkred")
 
 # Normal means:
-points(x= xpos+0.5, y= tauMean[c(2,4,6,8,10)], pch = 15, cex=1, col="darkorange")
+points(x= xpos+0.5, y= tauMean[c(2,4,6,8,10)], pch = 15, cex=1.2, col="darkorange")
 
 # Uniform CrIs:
 segments(x0=xpos-0.5, y0=TauCrIl[c(1,3,5,7,9)], x1=xpos-0.5, y1=TauCrIr[c(1,3,5,7,9)], 
-         lwd=1, col="darkred")
+         lwd=1.2, col="darkred")
 
 segments(x0=xpos-0.35, y0=TauCrIl[c(1,3,5,7,9)], x1=xpos-0.65, y1=TauCrIl[c(1,3,5,7,9)], 
-         lwd=1, col="darkred")
+         lwd=1.2, col="darkred")
 segments(x0=xpos-0.35, y0=TauCrIr[c(1,3,5,7,9)], x1=xpos-0.65, y1=TauCrIr[c(1,3,5,7,9)], 
-         lwd=1, col="darkred")
+         lwd=1.2, col="darkred")
 # Normal CrIs:
 segments(x0=xpos+0.5, y0=TauCrIl[c(2,4,6,8,10)], x1=xpos+0.5, y1=TauCrIr[c(2,4,6,8,10)], 
-         lwd=1, col="darkorange")
+         lwd=1.2, col="darkorange")
 
 segments(x0=xpos+0.35, y0=TauCrIl[c(2,4,6,8,10)], x1=xpos+0.65, y1=TauCrIl[c(2,4,6,8,10)], 
-         lwd=1, col="darkorange")
+         lwd=1.2, col="darkorange")
 segments(x0=xpos+0.35, y0=TauCrIr[c(2,4,6,8,10)], x1=xpos+0.65, y1=TauCrIr[c(2,4,6,8,10)], 
-         lwd=1, col="darkorange")
+         lwd=1.2, col="darkorange")
 
 
 mtext(expression(paste("Estimate of ", tau)), side = 3, cex = 1.2, font = 2, line = 0.5)
 
-
-
-
 dev.off()
+
+
+#=========================================
+# Leave-one-out method (robustness check):
+#=========================================
+
+
+
+
 
 

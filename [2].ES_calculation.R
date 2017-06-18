@@ -520,9 +520,6 @@ data<- data[-a,]
 
 data<- subset(data, measure!="proofreading_speed")
 
-# remove outlier ES:
-data<- subset(data, g<3.4)
-
 
 if(MdS){
   for (i in 1:nrow(data)){
@@ -543,7 +540,11 @@ if(MdS_var){
   }
 }
 
+# remove outlier ES:
+data_old<- data
 
+data<- subset(data, g<3.4)
+save(data_old, file= "Data/data_old.Rda")
 
 # Save data: 
 save(data, file= "Data/data.Rda")
