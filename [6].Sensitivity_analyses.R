@@ -169,7 +169,50 @@ dev.off()
 # Leave-one-out method (robustness check):
 #=========================================
 
+source("Functions/sensitivity_analysis.R")
 
+load("Data/subset/gen.Rda")
+gen2<- gen[, c("g", "g_var")]
+colnames(gen2)<- Bcols
+
+# takes a lot of time
+Sens1<- sensitivity_analysis(gen2, "dunif(-10, 10)", "dunif(0, 10)") 
+save(Sens1, file= "Summary/Sensitivity/G.Rda")
+
+# reading speed
+load("Data/subset/gen_speed.Rda")
+gen_speed2<- gen_speed[, c('g', 'g_var')]
+colnames(gen_speed2)<- Bcols
+
+Sens2<- sensitivity_analysis(gen_speed2, "dunif(-10, 10)", "dunif(0, 10)") 
+save(Sens2, file= "Summary/Sensitivity/GR.Rda")
+
+
+# noise:
+load("Data/subset/noise.Rda")
+noise2<- noise[,c("g", "g_var")]
+colnames(noise2)<- Bcols
+
+Sens3<- sensitivity_analysis(noise2, "dunif(-10, 10)", "dunif(0, 10)") 
+save(Sens3, file= "Summary/Sensitivity/N.Rda")
+
+
+# music:
+load("Data/subset/music.Rda")
+music2<- music[,c("g", "g_var")]
+colnames(music2)<- Bcols
+
+Sens4<- sensitivity_analysis(music2, "dunif(-10, 10)", "dunif(0, 10)") 
+save(Sens4, file= "Summary/Sensitivity/M.Rda")
+
+
+# speech:
+load("Data/subset/speech.Rda")
+speech2<- speech[,c("g", "g_var")]
+colnames(speech2)<- Bcols
+
+Sens5<- sensitivity_analysis(speech2, "dunif(-10, 10)", "dunif(0, 10)") 
+save(Sens5, file= "Summary/Sensitivity/S.Rda")
 
 
 
