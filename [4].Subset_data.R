@@ -749,17 +749,25 @@ gen<- subset(gen, !is.na(ID))
 references<- gen$reference
 gen$reference<- NULL
 
-gen$mds<- NULL
-gen$mds_var<- NULL
+#gen$mds<- NULL
+#gen$mds_var<- NULL
+#for(i in 1:nrow(gen)){
+#  if(gen$design[i]=="between"){
+#    gen$mds[i]<- gen$g[i]
+#    gen$mds_var[i]<- var_IG(N_C = gen$N_C[i], N_E = gen$N_E[i], d_IG = gen$g[i])  # gen$g_var[i]
+#  } else{
+#    gen$mds[i]<- d_IG(d_RM =gen$g[i], r = r) #gen$g[i]
+#    gen$mds_var[i]<- var_IGr(r = r, n = gen$N_C[i], d_IG = gen$mds[i])
+#  }
+#}
+
+
+# recalculate CIs (due to applying MdS adjustment):
 for(i in 1:nrow(gen)){
-  if(gen$design[i]=="between"){
-    gen$mds[i]<- gen$g[i]
-    gen$mds_var[i]<- var_IG(N_C = gen$N_C[i], N_E = gen$N_E[i], d_IG = gen$g[i])  # gen$g_var[i]
-  } else{
-    gen$mds[i]<- d_IG(d_RM =gen$g[i], r = r) #gen$g[i]
-    gen$mds_var[i]<- var_IGr(r = r, n = gen$N_C[i], d_IG = gen$mds[i])
-  }
+  gen$CI95_L[i]<- gen$g[i]- 1.96*sqrt(gen$g_var[i])
+  gen$CI95_R[i]<- gen$g[i]+ 1.96*sqrt(gen$g_var[i])
 }
+
 
 
 # Save data: 
@@ -996,6 +1004,13 @@ gen_speed$CI95_R[N]<- gen_speed$g[N] + 1.96*sqrt(gen_speed$g_var[N])
 
 
 gen_speed<- subset(gen_speed, !is.na(ID))
+
+# re-calculate ES:
+for(i in 1:nrow(gen_speed)){
+  gen_speed$CI95_L[i]<- gen_speed$g[i] - 1.96*sqrt(gen_speed$g_var[i])
+  gen_speed$CI95_R[i]<- gen_speed$g[i] + 1.96*sqrt(gen_speed$g_var[i]) 
+}
+
 save(gen_speed, file= "Data/subset/gen_speed.Rda")
 write.csv(gen_speed, file= "Data/subset/gen_speed.csv")
 rm(gen_speed)
@@ -1250,7 +1265,22 @@ music<- rbind(music, a)
 # 30:
 N<-30
 a<- subset(d, ID==N)
-music<- rbind(music, a)
+music[N,studyCols]<- a[1,studyCols]
+music$N_C[N]<- a$N_C[1]
+music$N_E[N]<- a$N_C[1]
+music$sound[N]<- "music"
+music$mean_C[N]<- a$mean_C[1]
+music$var_C[N]<- a$var_C[1]
+music$mean_E[N]<- mean(a$mean_E)
+music$var_E[N]<- mean(a$var_E)
+music$d[N]<- mean(a$d)
+music$d_var[N]<- mean(a$d_var)
+music$g[N]<- mean(a$g)
+music$g_var[N]<- mean(a$g_var)
+music$CI95_L[N]<- music$g[N] - 1.96*sqrt(music$g_var[N])
+music$CI95_R[N]<- music$g[N] + 1.96*sqrt(music$g_var[N]) 
+
+
 
 
 # 33:
@@ -1322,6 +1352,13 @@ music<- rbind(music, a)
 
 
 music<- subset(music, !is.na(ID))
+
+# re-calculate CIs:
+for(i in 1:nrow(music)){
+  music$CI95_L[i]<- music$g[i] - 1.96*sqrt(music$g_var[i])
+  music$CI95_R[i]<- music$g[i] + 1.96*sqrt(music$g_var[i]) 
+}
+
 save(music, file= "Data/subset/music.Rda")
 write.csv(music, file= "Data/subset/music.csv")
 rm(music)
@@ -1434,6 +1471,13 @@ noise<- rbind(noise, a)
 
 
 noise<- subset(noise, !is.na(ID))
+
+# re-calculate CIs:
+for(i in 1:nrow(noise)){
+  noise$CI95_L[i]<- noise$g[i] - 1.96*sqrt(noise$g_var[i])
+  noise$CI95_R[i]<- noise$g[i] + 1.96*sqrt(noise$g_var[i]) 
+}
+
 save(noise, file= "Data/subset/noise.Rda")
 write.csv(noise, file= "Data/subset/noise.csv")
 rm(noise)
@@ -1641,6 +1685,13 @@ speech$CI95_L[N]<- speech$g[N] - 1.96*sqrt(speech$g_var[N])
 speech$CI95_R[N]<- speech$g[N] + 1.96*sqrt(speech$g_var[N]) 
 
 speech<- subset(speech, !is.na(ID))
+
+# re-calculate CIs:
+for(i in 1:nrow(speech)){
+  speech$CI95_L[i]<- speech$g[i] - 1.96*sqrt(speech$g_var[i])
+  speech$CI95_R[i]<- speech$g[i] + 1.96*sqrt(speech$g_var[i]) 
+}
+
 save(speech, file= "Data/subset/speech.Rda")
 write.csv(speech, file= "Data/subset/speech.csv")
 rm(speech)

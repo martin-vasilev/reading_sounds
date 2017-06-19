@@ -42,7 +42,7 @@ M<- data.frame(music$ID, music$year, music$cit, music$g, music$g_var, music$CI95
                MusicM, MusicL, MusicU)
 colnames(M)<- c("ID", "year", "cit", "g", "g_var", "CIl", "CIu", "Mean", "CrIl", "CrIu")
 # sort by year of publication:
-M<- M[order(M$year, decreasing = T),]
+M<- M[order(M$g, decreasing = T),]
 
 M$w<- 1/M$g_var
 M$w<- M$w/ max(M$w)
@@ -60,8 +60,8 @@ par(mar=c(4,4,3,4))
 #============
 
 plot(0, type = "n", axes=FALSE, xlab="                                 Effect size (g)",
-      ylab="Studies", main= "Music", family="serif",
-      ylim= c(1, nrow(M)), xlim=c(-3.25, 0.75), font.lab=2, cex.main=1.4, cex.lab=1.2)
+      ylab="Studies", main= "a) Music", family="serif",
+      ylim= c(0, nrow(M)), xlim=c(-3.25, 0.75), font.lab=2, cex.main=1.7, cex.lab=1.2)
 axis(2, at = c(nrow(M):1), labels = M$cit, cex.axis=1.05, las=1, line = -9)
 breaks= c(-2,-1.5,-1,-0.5,0, 0.5)
 breaks_s= c("-2",'-1.5','-1','-0.5','0', '0.5')
@@ -74,12 +74,24 @@ segments(x0=rep(breaks[1], nrow(M))+0.035, y0=c(nrow(M):1), x1=rep(breaks[length
 
 
 # line as 0 (es)
-segments(x0=0, y0=c(nrow(M):1), x1=0, y1=nrow(M), lwd=1, lty=1, col="black")
+segments(x0=0, y0=-2, x1=0, y1=nrow(M)+0.5, lwd=1, lty=1, col="black")
 
 
 # Plot observed CIs:
 for(i in 1:nrow(M)){
   if(M$CIl[i]<breaks[1]|M$CIu[i]>breaks[length(breaks)]+0.15){
+    if(M$CIl[i]<breaks[1]){
+      arrows(x0 = M$g[i], y0 = c(nrow(M):1)[i]+0.15, x1 = breaks[1]+0.09, y1 = c(nrow(M):1)[i]+0.15, 
+             length =0.08, lty = 1)
+      segments(x0=M$g[i], y0=c(nrow(M):1)[i]+0.15, x1=M$CIu[i], y1=c(nrow(M):1)[i]+0.15,
+               lwd=1, lty=2, col="black")
+    } 
+    if(M$CIu[i]>breaks[length(breaks)]+0.15){
+      arrows(x0 = M$g[i], y0 = c(nrow(M):1)[i]+0.15, x1 = breaks[length(breaks)]+0.15,
+             y1 = c(nrow(M):1)[i]+0.15, length =0.08, lty = 1)
+      segments(x0=M$g[i], y0=c(nrow(M):1)[i]+0.15, x1=M$CIl[i], y1=c(nrow(M):1)[i]+0.15,
+               lwd=1, lty=2, col="black")
+    }
 } else{
   segments(x0=M$CIl[i], y0=c(nrow(M):1)[i]+0.15, x1=M$CIu[i], y1=c(nrow(M):1)[i]+0.15,
            lwd=1, lty=2, col="black")
@@ -99,9 +111,15 @@ segments(x0=M$CrIl, y0=c(nrow(M):1)-0.15, x1=M$CrIu, y1=c(nrow(M):1)-0.15,
          lwd=1, lty=1, col="darkred")
 
 
+# Pooled estimate:
+segments(x0=PooledCrIl[1], y0=-0.5, x1= PooledCrIu[1], y1=-0.5, lwd=1.5, lty=1, col="darkred")
+points(x= PooledM[1], y=-0.5, pch = 18, cex=3, col="darkred")
+mtext("Pooled mean", side=1, line= -1.8, cex=1.1, font=2, adj = 0)
 
-plot(0, type = "n", axes=FALSE, xlab="Effect size", ylab="Studies 2", main= "Speech")
-plot(0, type = "n", axes=FALSE, xlab="Effect size", ylab="Studies 3", main= "Noise")
+
+
+plot(0, type = "n", axes=FALSE, xlab="Effect size", ylab="Studies 2", main= "b) Speech", cex.main=1.6)
+plot(0, type = "n", axes=FALSE, xlab="Effect size", ylab="Studies 3", main= "c) Noise", cex.main=1.6)
 
 dev.off()
 
