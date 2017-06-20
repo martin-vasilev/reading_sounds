@@ -142,11 +142,10 @@ gen$mean_C[N]<- a$mean_C[1]
 gen$var_C[N]<- a$var_C[1]
 gen$mean_E[N]<- mean(a$mean_E)
 gen$var_E[N]<- mean(a$var_E)
-gen$d[N]<- Cohens_d(M_C = gen$mean_C[N], M_E = gen$mean_E[N], S_C = gen$var_C[N], S_E = gen$var_E[N],
-                    N = gen$N_C[N], design = gen$design[N], type = "E-C", r=r)
-gen$d_var[N]<- Cohens_d_var(d = gen$d[N], N = gen$N_C[N], design = gen$design[N], r = r)
-gen$g[N]<- Hedges_g(d = gen$d[N], N = gen$N_C[N], design = gen$design[N])
-gen$g_var[N]<- Hedges_g_var(d_var = gen$d_var[N], N = gen$N_C[N], design = gen$design[N])
+gen$d[N]<- mean(a$d)
+gen$d_var[N]<- mean(a$d_var)
+gen$g[N]<- mean(a$g)
+gen$g_var[N]<- mean(a$g_var)
 gen$CI95_L[N]<- gen$g[N] - 1.96*sqrt(gen$g_var[N])
 gen$CI95_R[N]<- gen$g[N] + 1.96*sqrt(gen$g_var[N])
 
@@ -299,12 +298,10 @@ gen$mean_C[N]<- a$mean_C[1]
 gen$var_C[N]<- a$var_C[1]
 gen$mean_E[N]<- mean(a$mean_E)
 gen$var_E[N]<- mean(a$var_E)
-gen$d[N]<- Cohens_d(M_C = gen$mean_C[N], M_E = gen$mean_E[N], S_C = gen$var_C[N]*sqrt(gen$N_C[N]),
-                    S_E = gen$var_E[N]*sqrt(gen$N_C[N]), N = gen$N_C[N], r = r, design = gen$design[N],
-                    type = "E-C")
-gen$d_var[N]<- Cohens_d_var(d = gen$d[N], N = gen$N_C[N], r = r, design = gen$design[N])
-gen$g[N]<- Hedges_g(d = gen$d[N], N = gen$N_C[N], design = gen$design[N])
-gen$g_var[N]<- Hedges_g_var(d_var = gen$d_var[N], N = gen$N_C[N], design = gen$design[N])
+gen$d[N]<- mean(a$d)
+gen$d_var[N]<- mean(a$d_var)
+gen$g[N]<- mean(a$g)
+gen$g_var[N]<- mean(a$g_var)
 gen$CI95_L[N]<- gen$g[N] - 1.96*sqrt(gen$g_var[N])
 gen$CI95_R[N]<- gen$g[N] + 1.96*sqrt(gen$g_var[N])
 
@@ -376,11 +373,10 @@ gen$mean_C[N]<- mean(a$mean_C[1:2])
 gen$var_C[N]<- mean(a$var_C[1:2])
 gen$mean_E[N]<- mean(a$mean_E)
 gen$var_E[N]<- mean(a$var_E)
-gen$d[N]<- Cohens_d(M_C = gen$mean_C[N], M_E = gen$mean_E[N], S_C = gen$var_C[N]*sqrt(gen$N_C[N]), 
-                    S_E = gen$var_E[N]*sqrt(gen$N_C[N]), N = gen$N_C[N], r = r, design = gen$design[N], type = "E-C")
-gen$d_var[N]<- Cohens_d_var(d = gen$d[N], N = gen$N_C[N], r = r, design = gen$design[N])
-gen$g[N]<- Hedges_g(d = gen$d[N], N = gen$N_C[N], design = gen$design[N])
-gen$g_var[N]<- Hedges_g_var(d_var = gen$d_var[N], N = gen$N_C[N], design = gen$design[N])
+gen$d[N]<- mean(a$d)
+gen$d_var[N]<- mean(a$d_var)
+gen$g[N]<- mean(a$g)
+gen$g_var[N]<- mean(a$g_var)
 gen$CI95_L[N]<- gen$g[N] - 1.96*sqrt(gen$g_var[N])
 gen$CI95_R[N]<- gen$g[N] + 1.96*sqrt(gen$g_var[N]) 
 
@@ -402,12 +398,10 @@ gen$mean_C[N]<- a$mean_C[1]
 gen$var_C[N]<- a$var_C[1]
 gen$mean_E[N]<- mean(a$mean_E)
 gen$var_E[N]<- mean(a$var_E)
-gen$d[N]<- Cohens_d(M_C = gen$mean_C[N], M_E = gen$mean_E[N], S_C = gen$var_C[N]*sqrt(gen$N_C[N]),
-                    S_E = gen$var_E[N]*sqrt(gen$N_C[N]), N = gen$N_C[N], r = r, design = gen$design[N],
-                    type = "E-C")
-gen$d_var[N]<- Cohens_d_var(d = gen$d[N], N = gen$N_C[N], r = r, design= gen$design[N])
-gen$g[N]<- Hedges_g(d = gen$d[N], N = gen$N_C[N], design = gen$design[N])
-gen$g_var[N]<- Hedges_g_var(d_var = gen$d_var[N], N = gen$N_C[N], design = gen$design[N])
+gen$d[N]<- mean(a$d)
+gen$d_var[N]<- mean(a$d_var)
+gen$g[N]<- mean(a$g)
+gen$g_var[N]<- mean(a$g_var)
 gen$CI95_L[N]<- gen$g[N] - 1.96*sqrt(gen$g_var[N])
 gen$CI95_R[N]<- gen$g[N] + 1.96*sqrt(gen$g_var[N]) 
 
@@ -424,11 +418,10 @@ gen$mean_C[N]<- a$mean_C[1]
 gen$var_C[N]<- a$var_C[1]
 gen$mean_E[N]<- mean(a$mean_E)
 gen$var_E[N]<- mean(a$var_E)
-gen$d[N]<- Cohens_d(M_C = gen$mean_C[N], M_E = gen$mean_E[N], S_C = gen$var_C[N], S_E = gen$var_E[N], 
-                    N = gen$N_C[N], r = r, design = gen$design[N], type = "E-C")
-gen$d_var[N]<- Cohens_d_var(d = gen$d[N], N = gen$N_C[N], r = r, design = gen$design[N])
-gen$g[N]<- Hedges_g(d = gen$d[N], N = gen$N_C[N], design = gen$design[N])
-gen$g_var[N]<- Hedges_g_var(d_var = gen$d_var[N], N = gen$N_C[N], design = gen$design[N])
+gen$d[N]<- mean(a$d)
+gen$d_var[N]<- mean(a$d_var)
+gen$g[N]<- mean(a$g)
+gen$g_var[N]<- mean(a$g_var)
 gen$CI95_L[N]<- gen$g[N] - 1.96*sqrt(gen$g_var[N])
 gen$CI95_R[N]<- gen$g[N] + 1.96*sqrt(gen$g_var[N]) 
 
@@ -528,10 +521,9 @@ gen$mean_C[N]<- a$mean_C[1]
 gen$var_C[N]<- a$var_C[1]
 gen$mean_E[N]<- mean(a$mean_E)
 gen$var_E[N]<- mean(a$var_E)
-gen$d[N]<- Cohens_d(M_C = gen$mean_C[N], M_E = gen$mean_E[N], S_C = gen$var_C[N], S_E = gen$var_E[N], N = gen$N_C[N],
-                    r = r, design = gen$design[N], type = "E-C")
-gen$d_var[N]<- Cohens_d_var(d = gen$d[N], N = gen$N_C[N], r = r, design= gen$design[N])
-gen$g[N]<- Hedges_g(d = gen$d[N], N = gen$N_C[N], design = gen$design[N])
+gen$d[N]<- mean(a$d)
+gen$d_var[N]<- mean(a$d_var)
+gen$g[N]<- mean(a$g)
 gen$g_var[N]<- Hedges_g_var(d_var = gen$d_var[N], N = gen$N_C[N], design = gen$design[N])
 gen$CI95_L[N]<- gen$g[N] - 1.96*sqrt(gen$g_var[N])
 gen$CI95_R[N]<- gen$g[N] + 1.96*sqrt(gen$g_var[N]) 
@@ -635,11 +627,10 @@ gen$mean_C[N]<- a$mean_C[1]
 gen$var_C[N]<- a$var_C[1]
 gen$mean_E[N]<- mean(a$mean_E)
 gen$var_E[N]<- mean(a$var_E)
-gen$d[N]<- Cohens_d(M_C = gen$mean_C[N], M_E = gen$mean_E[N], S_C = gen$var_C[N], S_E = gen$var_E[N], N = gen$N_C[N], 
-                    r = r, design = gen$design[N], type = "E-C")
-gen$d_var[N]<- Cohens_d_var(d = gen$d[N], N = gen$N_C[N], r = r, design = gen$design[N])
-gen$g[N]<- Hedges_g(d = gen$d[N], N = gen$N_C[N], design = gen$design[N])
-gen$g_var[N]<- Hedges_g_var(d_var = gen$d_var[N], N = gen$N_C[N], design = gen$design[N])
+gen$d[N]<- mean(a$d)
+gen$d_var[N]<- mean(a$d_var)
+gen$g[N]<- mean(a$g)
+gen$g_var[N]<- mean(a$g_var)
 gen$CI95_L[N]<- gen$g[N] - 1.96*sqrt(gen$g_var[N])
 gen$CI95_R[N]<- gen$g[N] + 1.96*sqrt(gen$g_var[N]) 
 
@@ -734,11 +725,10 @@ gen$mean_C[N]<- a$mean_C[1]
 gen$var_C[N]<- a$var_C[1]
 gen$mean_E[N]<- mean(a$mean_E)
 gen$var_E[N]<- mean(a$var_E)
-gen$d[N]<- Cohens_d(M_C = gen$mean_C[N], M_E = gen$mean_E[N], S_C = gen$var_C[N], S_E = gen$var_E[N], N = gen$N_C[N], 
-                    r = r, design = gen$design[N], type = "E-C")
-gen$d_var[N]<- Cohens_d_var(d = gen$d[N], N = gen$N_C[N], r = r, design = gen$design[N])
-gen$g[N]<- Hedges_g(d = gen$d[N], N = gen$N_C[N], design = gen$design[N])
-gen$g_var[N]<- Hedges_g_var(d_var = gen$d_var[N], N = gen$N_C[N], design = gen$design[N])
+gen$d[N]<- mean(a$d)
+gen$d_var[N]<- mean(a$d_var)
+gen$g[N]<- mean(a$g)
+gen$g_var[N]<- mean(a$g_var)
 gen$CI95_L[N]<- gen$g[N] - 1.96*sqrt(gen$g_var[N])
 gen$CI95_R[N]<- gen$g[N] + 1.96*sqrt(gen$g_var[N]) 
 
@@ -1698,5 +1688,16 @@ rm(speech)
 
 
 
+#===============================
+#   Meta-regression subsets:
+#===============================
 
+# lyrical vs non-lyrical music:
+
+d<- subset(subset(data, is.element(task, RC) & measure!="reading_speed" & sound=="music"))
+
+types<- as.character(unique(d$sound_type))
+
+NL<- c("classical", "random tones", "stimulative classical", "sedative classical",
+       "instrumental", "rock non-lyrical", "classical non-lyrical")
 
