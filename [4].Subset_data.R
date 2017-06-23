@@ -1696,8 +1696,108 @@ rm(speech)
 
 d<- subset(subset(data, is.element(task, RC) & measure!="reading_speed" & sound=="music"))
 
-types<- as.character(unique(d$sound_type))
-
 NL<- c("classical", "random tones", "stimulative classical", "sedative classical",
-       "instrumental", "rock non-lyrical", "classical non-lyrical")
+       "instrumental", "rock non-lyrical", "classical non-lyrical", "high information load",
+       "instrumental/ familiar", "non-lyrical")
+
+d<- subset(d, cit!="Johansson et al. (2012)")# various music including vocal and instrumental
+# no experimental control over music that was played
+
+uit<- c("various", "TV music videos", "radio/ generic")
+d<-subset(d, !is.element(sound_type, uit))
+
+a<- d[which(is.element(d$sound_type, NL)),]
+
+d<- d[-which(is.element(d$sound_type, NL)),]
+
+# music type unknown, participants brought their own:
+d<- d[-which(d$cit=="Etaugh & Michals (1975)"| d$cit=="Etaugh & Ptasnik (1982)"),]
+
+# no information about rock music, removed:
+d<- d[-which(d$cit=="Mullikin & Henk (1985)"),]
+
+# Furnham & Allass (1999): both conditions are lyrical (average them):
+c<- subset(d, cit=="Furnham & Allass (1999)")
+d<- d[-which(d$cit=="Furnham & Allass (1999)"),]
+d<- rbind(d,t)
+d[nrow(d), studyCols]<- c[1,studyCols]
+
+d$N_C[nrow(d)]<- c$N_C[1]
+d$N_E[nrow(d)]<- sum(c$N_E)
+d$sound[nrow(d)]<- "music"
+#d$sound_type[nrow(d)]<- "complex+simple"
+d$mean_C[nrow(d)]<- c$mean_C[1]
+d$var_C[nrow(d)]<- c$var_C[1]
+d$mean_E[nrow(d)]<- mean(c$mean_E)
+d$var_E[nrow(d)]<- mean(c$var_E)
+d$d[nrow(d)]<- mean(c$d)
+d$d_var[nrow(d)]<- mean(c$d_var)
+d$g[nrow(d)]<- mean(c$g)
+d$g_var[nrow(d)]<- mean(c$g_var)
+
+
+# Fogelson (1973): contained instrumental music (see paper):
+a<- rbind(a, d[which(d$cit=="Fogelson (1973)"),])
+d<- d[-which(d$cit=="Fogelson (1973)"),]
+
+# the music in Kiger is instrumental: https://www.youtube.com/watch?v=XKZ27HW8Q0k
+
+# Furnham & Bradley (1997) classifies as lyrical (checked it)
+
+# Tucker & Bushman (1991): no info whether music was lyrical, exclude:
+d<- d[-which(d$cit=="Tucker & Bushman (1991)"),]
+
+# Daoussis & McKelvie (1986): not know if all the music was lyrical, exclude:
+d<- d[-which(d$cit=="Daoussis & McKelvie (1986)"),]
+
+# Miller & Schyb (1989); 
+# pop condition is also instrumental average out with the classical condition:
+
+a<- rbind(a, d[which(d$cit=="Miller & Schyb (1989)" & d$sound_type=="pop"),])
+
+c<-subset(a, cit=="Miller & Schyb (1989)")
+a<- a[-which(a$cit=="Miller & Schyb (1989)"),]
+d<- d[-which(d$cit=="Miller & Schyb (1989)"& d$sound_type=="pop"),]
+
+a<- rbind(a, t)
+a[nrow(a), studyCols]<- c[1,studyCols]
+
+a$N_C[nrow(a)]<- c$N_C[1]
+a$N_E[nrow(a)]<- sum(c$N_E)
+a$sound[nrow(a)]<- "music"
+#a$sound_type[nrow(a)]<- "complex+simple"
+a$mean_C[nrow(a)]<- c$mean_C[1]
+a$var_C[nrow(a)]<- c$var_C[1]
+a$mean_E[nrow(a)]<- mean(c$mean_E)
+a$var_E[nrow(a)]<- mean(c$var_E)
+a$d[nrow(a)]<- mean(c$d)
+a$d_var[nrow(a)]<- mean(c$d_var)
+a$g[nrow(a)]<- mean(c$g)
+a$g_var[nrow(a)]<- mean(c$g_var)
+
+
+# Kelly (1994): impossible to determine if all music was lyrical, exclude:
+d<- d[-which(d$cit=="Kelly (1994)"),]
+
+# Miller (2014): average out two lyrical conditions:
+c<- subset(d, cit=="Miller (2014)")
+d<- d[-which(d$cit=="Miller (2014)"),]
+
+d<- rbind(d, t)
+d[nrow(d), studyCols]<- c[1,studyCols]
+
+d$N_C[nrow(d)]<- c$N_C[1]
+d$N_E[nrow(d)]<- sum(c$N_E)
+d$sound[nrow(d)]<- "music"
+#d$sound_type[nrow(d)]<- "complex+simple"
+d$mean_C[nrow(d)]<- c$mean_C[1]
+d$var_C[nrow(d)]<- c$var_C[1]
+d$mean_E[nrow(d)]<- mean(c$mean_E)
+d$var_E[nrow(d)]<- mean(c$var_E)
+d$d[nrow(d)]<- mean(c$d)
+d$d_var[nrow(d)]<- mean(c$d_var)
+d$g[nrow(d)]<- mean(c$g)
+d$g_var[nrow(d)]<- mean(c$g_var)
+
+
 
