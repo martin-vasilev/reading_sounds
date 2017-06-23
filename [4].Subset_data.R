@@ -1800,4 +1800,267 @@ d$g[nrow(d)]<- mean(c$g)
 d$g_var[nrow(d)]<- mean(c$g_var)
 
 
+# Perham & Currie (2014): average over the two lyrical conditions
+c<- subset(d, cit=="Perham & Currie (2014)")
+d<- d[-which(d$cit=="Perham & Currie (2014)"),]
+
+
+d<- rbind(d, t)
+d[nrow(d), studyCols]<- c[1,studyCols]
+
+d$N_C[nrow(d)]<- c$N_C[1]
+d$N_E[nrow(d)]<- c$N_C[1]
+d$sound[nrow(d)]<- "music"
+#d$sound_type[nrow(d)]<- "complex+simple"
+d$mean_C[nrow(d)]<- c$mean_C[1]
+d$var_C[nrow(d)]<- c$var_C[1]
+d$mean_E[nrow(d)]<- mean(c$mean_E)
+d$var_E[nrow(d)]<- mean(c$var_E)
+d$d[nrow(d)]<- mean(c$d)
+d$d_var[nrow(d)]<- mean(c$d_var)
+d$g[nrow(d)]<- mean(c$g)
+d$g_var[nrow(d)]<- mean(c$g_var)
+
+# Fendrick (1937): paper discription suggests music was instrumental:
+a<- rbind(a, d[which(d$cit=="Fendrick (1937)"),])
+d<- d[-which(d$cit=="Fendrick (1937)"),]
+
+# Henderson et al. (1945): mixture of lyrical and instrumental (checked on youtube), exclude:
+d<- d[-which(d$cit=="Henderson et al. (1945)"),]
+
+
+# Freeburne & Fleischer (1952): all music was instrumental (checked it on youtube):
+c<- d[which(d$cit=="Freeburne & Fleischer (1952)"),]
+d<- d[-which(d$cit=="Freeburne & Fleischer (1952)"),]
+c<- rbind(c, a[which(a$cit=="Freeburne & Fleischer (1952)"),])
+a<- a[-which(a$cit=="Freeburne & Fleischer (1952)"),]
+
+
+a<- rbind(a, t)
+a[nrow(a), studyCols]<- c[1,studyCols]
+
+a$N_C[nrow(a)]<- c$N_C[1]
+a$N_E[nrow(a)]<- sum(c$N_E)
+a$sound[nrow(a)]<- "music"
+#a$sound_type[nrow(a)]<- "complex+simple"
+a$mean_C[nrow(a)]<- c$mean_C[1]
+a$var_C[nrow(a)]<- c$var_C[1]
+a$mean_E[nrow(a)]<- mean(c$mean_E)
+a$var_E[nrow(a)]<- mean(c$var_E)
+a$d[nrow(a)]<- mean(c$d)
+a$d_var[nrow(a)]<- mean(c$d_var)
+a$g[nrow(a)]<- mean(c$g)
+a$g_var[nrow(a)]<- mean(c$g_var)
+
+
+# lyrical music:
+l<- data.frame(table(d$cit))
+
+max(l$Freq) # all ES are statistically independent
+
+
+# non-lyrical music:
+
+
+#Miller (2014):
+c<- a[which(a$cit=="Miller (2014)"),]
+a<- a[-which(a$cit=="Miller (2014)"),]
+
+
+a<- rbind(a, t)
+a[nrow(a), studyCols]<- c[1,studyCols]
+
+a$N_C[nrow(a)]<- c$N_C[1]
+a$N_E[nrow(a)]<- sum(c$N_E)
+a$sound[nrow(a)]<- "music"
+#a$sound_type[nrow(a)]<- "complex+simple"
+a$mean_C[nrow(a)]<- c$mean_C[1]
+a$var_C[nrow(a)]<- c$var_C[1]
+a$mean_E[nrow(a)]<- mean(c$mean_E)
+a$var_E[nrow(a)]<- mean(c$var_E)
+a$d[nrow(a)]<- mean(c$d)
+a$d_var[nrow(a)]<- mean(c$d_var)
+a$g[nrow(a)]<- mean(c$g)
+a$g_var[nrow(a)]<- mean(c$g_var)
+
+
+
+# Dove (2009):
+c<- a[which(a$cit=="Dove (2009)"),]
+a<- a[-which(a$cit=="Dove (2009)"),]
+
+
+a<- rbind(a, t)
+a[nrow(a), studyCols]<- c[1,studyCols]
+
+a$N_C[nrow(a)]<- c$N_C[1]
+a$N_E[nrow(a)]<- sum(c$N_E)
+a$sound[nrow(a)]<- "music"
+#a$sound_type[nrow(a)]<- "complex+simple"
+a$mean_C[nrow(a)]<- c$mean_C[1]
+a$var_C[nrow(a)]<- c$var_C[1]
+a$mean_E[nrow(a)]<- mean(c$mean_E)
+a$var_E[nrow(a)]<- mean(c$var_E)
+a$d[nrow(a)]<- mean(c$d)
+a$d_var[nrow(a)]<- mean(c$d_var)
+a$g[nrow(a)]<- mean(c$g)
+a$g_var[nrow(a)]<- mean(c$g_var)
+
+
+# Martin et al. (1988), Exp.1:
+c<- a[which(a$cit=="Martin et al. (1988), Exp.1"),]
+a<- a[-which(a$cit=="Martin et al. (1988), Exp.1"),]
+
+a<- rbind(a, t)
+a[nrow(a), studyCols]<- c[1,studyCols]
+
+a$N_C[nrow(a)]<- c$N_C[1]
+a$N_E[nrow(a)]<- c$N_C[1]
+a$sound[nrow(a)]<- "music"
+#a$sound_type[nrow(a)]<- "complex+simple"
+a$mean_C[nrow(a)]<- c$mean_C[1]
+a$var_C[nrow(a)]<- c$var_C[1]
+a$mean_E[nrow(a)]<- mean(c$mean_E)
+a$var_E[nrow(a)]<- mean(c$var_E)
+a$d[nrow(a)]<- mean(c$d)
+a$d_var[nrow(a)]<- mean(c$d_var)
+a$g[nrow(a)]<- mean(c$g)
+a$g_var[nrow(a)]<- mean(c$g_var)
+
+
+l2<- data.frame(table(a$cit))
+max(l2$Freq)
+
+# merge lyrical and non-lyrical data frames:
+a$type<- "non-lyrical"
+a$cov<- -1
+d$type<- "lyrical"
+d$cov<- 1
+
+lm<- rbind(a, d)  
+
+lm$cit<- as.character(lm$cit)
+l3<- data.frame(table(lm$cit))
+
+overlap<- as.character(l3$Var1[which(l3$Freq==2)])
+
+LM1<-lm[-which(lm$type== "non-lyrical" & is.element(lm$cit, overlap[1:length(overlap)-1])),]
+LM1<- LM1[-which(LM1$type== "lyrical" & LM1$cit== overlap[length(overlap)]),]
+
+
+LM2<- lm[-which(lm$type== "lyrical" & is.element(lm$cit, overlap[1:length(overlap)-1])),]
+LM2<- LM2[-which(LM2$type== "non-lyrical" & LM2$cit== overlap[length(overlap)]),]
+
+save(LM1, file= "Data/subset/metareg/LM1.Rda")
+save(LM2, file= "Data/subset/metareg/LM2.Rda")
+
+
+
+######################
+
+# Foreign vs native speech:
+
+db<- subset(subset(data, is.element(task, RC) & measure!="reading_speed" & sound=="speech"))
+
+lab<- c("foreign", "non-word")
+
+f<- subset(db, is.element(sound_type, lab))
+outn<- as.character(f$cit)
+
+n<- subset(db, !is.element(sound_type, lab))
+n<- subset(n, !is.element(cit, outn))
+n<- subset(n, sound_type!="babble")
+
+# Halin (2016):
+c<- n[which(n$cit=="Halin (2016)"),]
+n<- n[-which(n$cit=="Halin (2016)"),]
+
+
+n<- rbind(n, t)
+n[nrow(n), studyCols]<- c[1,studyCols]
+
+n$N_C[nrow(n)]<- c$N_C[1]
+n$N_E[nrow(n)]<- c$N_C[1]
+n$sound[nrow(n)]<- "speech"
+n$mean_C[nrow(n)]<- c$mean_C[1]
+n$var_C[nrow(n)]<- c$var_C[1]
+n$mean_E[nrow(n)]<- mean(c$mean_E)
+n$var_E[nrow(n)]<- mean(c$var_E)
+n$d[nrow(n)]<- mean(c$d)
+n$d_var[nrow(n)]<- mean(c$d_var)
+n$g[nrow(n)]<- mean(c$g)
+n$g_var[nrow(n)]<- mean(c$g_var)
+
+
+# Armstrong et al. (1991):
+c<- n[which(n$cit=="Armstrong et al. (1991)"),]
+n<- n[-which(n$cit=="Armstrong et al. (1991)"),]
+
+
+n<- rbind(n, t)
+n[nrow(n), studyCols]<- c[1,studyCols]
+
+n$N_C[nrow(n)]<- c$N_C[1]
+n$N_E[nrow(n)]<- sum(c$N_E)
+n$sound[nrow(n)]<- "speech"
+n$mean_C[nrow(n)]<- c$mean_C[1]
+n$var_C[nrow(n)]<- c$var_C[1]
+n$mean_E[nrow(n)]<- mean(c$mean_E)
+n$var_E[nrow(n)]<- mean(c$var_E)
+n$d[nrow(n)]<- mean(c$d)
+n$d_var[nrow(n)]<- mean(c$d_var)
+n$g[nrow(n)]<- mean(c$g)
+n$g_var[nrow(n)]<- mean(c$g_var)
+
+
+# Martin et al. (1988), Exp.1:
+c<- n[which(n$cit=="Martin et al. (1988), Exp.1"),]
+n<- n[-which(n$cit=="Martin et al. (1988), Exp.1"),]
+
+n<- rbind(n, t)
+n[nrow(n), studyCols]<- c[1,studyCols]
+
+n$N_C[nrow(n)]<- c$N_C[1]
+n$N_E[nrow(n)]<- c$N_C[1]
+n$sound[nrow(n)]<- "speech"
+n$mean_C[nrow(n)]<- c$mean_C[1]
+n$var_C[nrow(n)]<- c$var_C[1]
+n$mean_E[nrow(n)]<- mean(c$mean_E)
+n$var_E[nrow(n)]<- mean(c$var_E)
+n$d[nrow(n)]<- mean(c$d)
+n$d_var[nrow(n)]<- mean(c$d_var)
+n$g[nrow(n)]<- mean(c$g)
+n$g_var[nrow(n)]<- mean(c$g_var)
+
+# too much variability of audio content:
+n<- n[-which(n$sound_type=="movies"),]
+
+table(as.character(n$cit))
+
+#####
+f$type<- "unintelligible"
+f$cov<- -1
+n$type<- "ïntelligible"
+n$cov<- 1
+
+PH<- rbind(f,n)
+
+save(PH, file="Data/subset/metareg/PH.Rda")
+
+
+
+###### lyrical music vs intelligible speech:
+d$type<- "music"
+d$cov<- -1
+n$type<- "speech"
+n$cov<- 1
+
+SM<- rbind(d,n)
+
+l4<- data.frame(table(as.character(SM$cit)))
+
+# no overlap:
+max(l4$Freq)
+
+save(SM, file= "Data/subset/metareg/SM.Rda")
 
