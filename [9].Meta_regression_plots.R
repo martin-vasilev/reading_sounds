@@ -34,10 +34,10 @@ par(mar=c(4,4.5,4,4))
 
 # lyrical vs non-lyrical, meta-reg:
 plot(0, type = "n", axes=FALSE, xlab="Type of music",
-     ylab="Effect size (g)", main= "Non-lyrical vs Lyrical music", family="serif",
-     ylim= c(-1, 0.25), xlim=c(1, 2), font.lab=2, cex.main=2, cex.lab=2)
+     ylab="Effect size (g)", main= "a) Non-lyrical vs Lyrical\nmusic", family="serif",
+     ylim= c(-1, 0.25), xlim=c(1, 2), font.main=2, cex.main=2, cex.lab=2)
 
-axis(1, at= c(1.1,1.9), labels= c("Non-lyrical", "Lyrical"), cex.axis=2, family="serif")
+axis(1, at= c(1.1,1.9), labels= c("Non-lyrical", "Lyrical"), cex.axis=1.6, family="serif")
 
 axis(2, at = c(0.5,0.25, 0,-0.25,-0.5,-0.75,-1),
      labels = c('.5','.25','0','-.25', '-.5','-.75','-1'),
@@ -80,15 +80,31 @@ load("Summary/Reg/SpMS.Rda")
 load("Data/subset/metareg/SM.Rda")
 
 Nm<- length(which(SM$type=="music"))
-Ns<- nrow(SM)-Nnon
+Ns<- nrow(SM)-Nm
+
+wM<- SM$g_var[1:Nm]
+wS<- SM$g_var[(Nm+1):nrow(SM)]
+
+wM<- 1/wM
+wM<- wM/max(wM)
+
+wS<- 1/wS
+wS<- wS/max(wS)
+
+PM<- sumR2$statistics[4:(4+Nm-1),1]
+PS<- sumR2$statistics[(4+Nm):nrow(sumR2$statistics),1]
+
+xpos1<- seq(1.05, 1.25, (1.25-1.05)/(Nm-1))
+xpos2<- seq(1.7, 1.9, (1.9-1.7)/(Ns-1))
+
 
 
 plot(0, type = "n", axes=FALSE, xlab="Type of sound",
-     ylab="Effect size (g)", main= "Lyrical music vs intelligible speech", family="serif",
-     ylim= c(-1, 0.25), xlim=c(1, 2), font.lab=2, cex.main=2, cex.lab=2)
+     ylab="Effect size (g)", main= "b) Lyrical music vs intelligible\nspeech", family="serif",
+     ylim= c(-1, 0.25), xlim=c(1, 2), font.main=2, cex.main=2, cex.lab=2)
 
 axis(1, at= c(1.1,1.9), labels= c("Lyrical music", "Intelligible speech"),
-     cex.axis=2, family="serif")
+     cex.axis=1.6, family="serif")
 
 axis(2, at = c(0.5,0.25, 0,-0.25,-0.5,-0.75,-1),
      labels = c('.5','.25','0','-.25', '-.5','-.75','-1'),
@@ -96,14 +112,26 @@ axis(2, at = c(0.5,0.25, 0,-0.25,-0.5,-0.75,-1),
 
 abline(a = sumR2$statistics[2,1], b = sumR2$statistics[1,1], col="darkred", lwd=2, lty=5)
 
-text(x= 1.5, y = sumR2$statistics[1,1], labels = paste("b= ", round(sumR2$statistics[1,1],2)),
+text(x= 1.45, y = sumR2$statistics[1,1]-0.28, labels = paste("b= ", round(sumR2$statistics[1,1],2)),
      family="serif", cex = 1.8, srt=1)
 
+points(x = xpos1, PM, pch=21, bg= pallete[4], cex=2 + 1.5*wM)
+points(x=xpos2, PS, pch=21, bg= pallete[5], cex=2+ 1.5*wS)
 
 # third
-plot(0, type = "n", axes=FALSE, xlab="Type of music",
-     ylab="Effect size (g)", main= "", family="serif",
-     ylim= c(-2, 1), xlim=c(1, 10), font.lab=2, cex.main=1.7, cex.lab=1.2)
+
+# Unintelligible vs Intelligible speech:
+plot(0, type = "n", axes=FALSE, xlab="Type of speech",
+     ylab="Effect size (g)", main= "c) Unintelligible vs intelligible\nspeech", family="serif",
+     ylim= c(-1, 0.25), xlim=c(1, 2), font.main=2, cex.main=2, cex.lab=2)
+
+axis(1, at= c(1.1,1.9), labels= c("Unintelligible", "Intelligible"),
+     cex.axis=1.6, family="serif")
+
+axis(2, at = c(0.5,0.25, 0,-0.25,-0.5,-0.75,-1),
+     labels = c('.5','.25','0','-.25', '-.5','-.75','-1'),
+     cex.axis=1.6)
+
 
 
 # Bar plots of simple effect:
