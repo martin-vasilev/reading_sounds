@@ -70,6 +70,11 @@ gelman.diag(lyrM, confidence=0.95)
 acfplot(lyrM)
 #traceplot(lyrM, smooth=FALSE) # take long to print with many studies
 
+# posterior plots:
+SL<-jags.samples(lyrM1, variable.names='mu', n.iter=75000, thin=5, n.adapt=3000)
+SL<-c(SL$mu[1,,1], SL$mu[1,,2], SL$mu[1,,3], SL$mu[1,,4], SL$mu[1,,5])
+save(SL, file="Posterior/SL.Rda")
+
 
 # non-lyrical:
 nonLyrM1<-jags.model(Bmeta("dunif(-10, 10)", "dunif(0, 10)", nrow(nonLyr), "nonLyrM.txt"),
@@ -83,6 +88,10 @@ gelman.diag(nonLyrM, confidence=0.95)
 acfplot(nonLyrM)
 #traceplot(nonLyrM, smooth=FALSE) # take long to print with many studies
 
+# posterior plots:
+SNL<-jags.samples(nonLyrM1, variable.names='mu', n.iter=75000, thin=5, n.adapt=3000)
+SNL<-c(SNL$mu[1,,1], SNL$mu[1,,2], SNL$mu[1,,3], SNL$mu[1,,4], SNL$mu[1,,5])
+save(SNL, file="Posterior/SNL.Rda")
 
 
 # Intelligible speech vs lyrical music:
@@ -137,3 +146,56 @@ save(SpMS, file="Summary/Reg/SpMS.Rda")
 gelman.diag(SpM, confidence=0.95)
 acfplot(SpM)
 #traceplot(SpM, smooth=FALSE) # take long to print with many studies
+
+
+####
+
+# Intelligible vs unintelligible speech:
+
+load("Data/subset/metareg/PH.Rda")
+
+PH<- PH[,c("g", "g_var", "cov")]
+colnames(PH)<- BRcols
+
+
+MR_PH1<- jags.model(BmetaReg("dunif(-10, 10)", "dunif(0, 10)", "dunif(-10, 10)", nrow(PH),
+                             "PHM1.txt"), PH, n.chains=5, n.adapt=3000, quiet=FALSE)
+MR_PH<- coda.samples(MR_PH1, c('mu', 'tau', "beta", "theta"), n.iter=75000, thin=5)
+sumR3<- summary(MR_PH); save(sumR3, file="Summary/Reg/sumR3.Rda") # MAIN
+
+gelman.diag(MR_PH, confidence=0.95)
+acfplot(MR_PH)
+#traceplot(MR_PH, smooth=FALSE) # take long to print with many studies
+
+
+
+### Simple effects:
+PH1<- subset(PH, cov==-1) # phonological
+PH1<- PH1[,-3]
+PH2<- subset(PH, cov==1) # intelligible speech
+PH2<- PH2[,-3]
+
+phonM1<-jags.model(Bmeta("dunif(-10, 10)", "dunif(0, 10)", nrow(PH1), "phonM1.txt"),
+                   PH1, n.chains=5, n.adapt=3000,  quiet=FALSE)
+phonM<- coda.samples(phonM1, c('mu', 'tau', 'theta'), n.iter=75000, thin=5)
+phonS<- summary(phonM)
+save(phonS, file="Summary/Reg/phonS.Rda")
+
+
+gelman.diag(phonM, confidence=0.95)
+acfplot(phonM)
+#traceplot(phonM, smooth=FALSE) # take long to print with many studies
+
+
+# intelligible:
+semM1<-jags.model(Bmeta("dunif(-10, 10)", "dunif(0, 10)", nrow(PH2), "semM1.txt"),
+                  PH2, n.chains=5, n.adapt=3000,  quiet=FALSE,
+                 inits= list("mu"= runif(1,-3,3), "tau"= runif(1,0,3)))
+semM<- coda.samples(semM1, c('mu', 'tau', 'theta'), n.iter=75000, thin=5)
+semS<- summary(semM)
+save(semS, file="Summary/Reg/semS.Rda")
+
+gelman.diag(semM, confidence=0.95)
+acfplot(semM)
+#traceplot(semM, smooth=FALSE) # take long to print with many studies
+

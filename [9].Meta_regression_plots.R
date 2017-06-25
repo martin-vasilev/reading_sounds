@@ -29,19 +29,23 @@ wLyr<- wLyr/max(wLyr)
 png('Plots/MetaReg_plot1.png', width = 6000, height = 4000, units = "px", res=600, type="cairo")
 
 layout(mat = matrix(c(1,2,3,4,5,6),nrow = 2,ncol = 3,byrow = TRUE),heights = c(0.5,0.5))
-par(mar=c(4,4.5,4,4))
+par(mar=c(4.5,7,4,3))
 
 
 # lyrical vs non-lyrical, meta-reg:
 plot(0, type = "n", axes=FALSE, xlab="Type of music",
-     ylab="Effect size (g)", main= "a) Non-lyrical vs Lyrical\nmusic", family="serif",
-     ylim= c(-1, 0.25), xlim=c(1, 2), font.main=2, cex.main=2, cex.lab=2)
+     ylab="Effect size (g)", main= "Non-lyrical vs Lyrical\nmusic", family="serif",
+     ylim= c(-1, 0.25), xlim=c(1, 2), font.main=1, cex.main=2.2, cex.lab=2)
 
 axis(1, at= c(1.1,1.9), labels= c("Non-lyrical", "Lyrical"), cex.axis=1.6, family="serif")
 
 axis(2, at = c(0.5,0.25, 0,-0.25,-0.5,-0.75,-1),
      labels = c('.5','.25','0','-.25', '-.5','-.75','-1'),
      cex.axis=1.6)
+
+par(xpd=TRUE)
+text(x = 0.6, y = 0.25, labels = "A",  font=2, cex=3)
+par(xpd=FALSE)
 #breaks= c(-2,-1.5,-1,-0.5,0, 0.5)
 #breaks_s= c("-2",'-1.5','-1','-0.5','0', '0.5')
 #
@@ -100,8 +104,8 @@ xpos2<- seq(1.7, 1.9, (1.9-1.7)/(Ns-1))
 
 
 plot(0, type = "n", axes=FALSE, xlab="Type of sound",
-     ylab="Effect size (g)", main= "b) Lyrical music vs intelligible\nspeech", family="serif",
-     ylim= c(-1, 0.25), xlim=c(1, 2), font.main=2, cex.main=2, cex.lab=2)
+     ylab="Effect size (g)", main= "Lyrical music vs intelligible\nspeech", family="serif",
+     ylim= c(-1, 0.25), xlim=c(1, 2), font.main=1, cex.main=2.2, cex.lab=2)
 
 axis(1, at= c(1.1,1.9), labels= c("Lyrical music", "Intelligible speech"),
      cex.axis=1.6, family="serif")
@@ -121,9 +125,34 @@ points(x=xpos2, PS, pch=21, bg= pallete[5], cex=2+ 1.5*wS)
 # third
 
 # Unintelligible vs Intelligible speech:
+
+load("Summary/Reg/sumR3.Rda")
+load("Data/subset/metareg/PH.Rda")
+load("Summary/Reg/phonS.Rda")
+load("Summary/Reg/semS.Rda")
+
+Nphon<- length(which(PH$type=="unintelligible"))
+Nsem<- nrow(PH)-Nphon
+
+wPhon<- PH$g_var[1:Nphon]
+wSem<- PH$g_var[(Nphon+1):nrow(PH)]
+
+wPhon<- 1/wPhon
+wPhon<- wPhon/max(wPhon)
+
+wSem<- 1/wSem
+wSem<- wSem/max(wSem)
+
+Pphon<- sumR3$statistics[4:(4+Nphon-1),1]
+Psem<- sumR3$statistics[(4+Nphon):nrow(sumR3$statistics),1]
+
+xpos1<- seq(1.05, 1.25, (1.25-1.05)/(Nphon-1))
+xpos2<- seq(1.7, 1.9, (1.9-1.7)/(Nsem-1))
+
+
 plot(0, type = "n", axes=FALSE, xlab="Type of speech",
-     ylab="Effect size (g)", main= "c) Unintelligible vs intelligible\nspeech", family="serif",
-     ylim= c(-1, 0.25), xlim=c(1, 2), font.main=2, cex.main=2, cex.lab=2)
+     ylab="Effect size (g)", main= "Unintelligible vs intelligible\nspeech", family="serif",
+     ylim= c(-1, 0.25), xlim=c(1, 2), font.main=1, cex.main=2.2, cex.lab=2)
 
 axis(1, at= c(1.1,1.9), labels= c("Unintelligible", "Intelligible"),
      cex.axis=1.6, family="serif")
@@ -132,16 +161,23 @@ axis(2, at = c(0.5,0.25, 0,-0.25,-0.5,-0.75,-1),
      labels = c('.5','.25','0','-.25', '-.5','-.75','-1'),
      cex.axis=1.6)
 
+abline(a = 0, b = sumR3$statistics[1,1], col="darkred", lwd=2, lty=5)
+
+text(x= 1.45, y = sumR3$statistics[1,1]+0.03, labels = paste("b= ", round(sumR3$statistics[1,1],2)),
+     family="serif", cex = 1.8, srt=-5)
+
+points(x = xpos1, Pphon, pch=21, bg= pallete[6], cex=2 + 1.5*wPhon)
+points(x=xpos2, Psem, pch=21, bg= pallete[8], cex=2+ 1.5*wSem)
 
 
 # Bar plots of simple effect:
 
 plot(NA, type = "n", axes=FALSE, family="serif",ylab="Effect size (g)", xlab="Type of music",
-      ylim= c(-1, 0.25), xlim=c(1, 2), font.lab=2, cex.main=1.7, cex.lab=2, col="white")
+      ylim= c(-1, 0.25), xlim=c(1, 2), cex.main=1.7, cex.lab=2, col="white")
 axis(2, at = c(-1,-0.75,-0.5, -0.25, 0, 0.25,0.5),
      labels = c('-1', '-.75','-.5','-.25','0', '.25','.5'),
      cex.axis=1.6)
-axis(1, at= c(1.1,1.9), labels= c("Non-lyrical", "Lyrical"), cex.axis=2, family="serif")
+axis(1, at= c(1.1,1.9), labels= c("Non-lyrical", "Lyrical"), cex.axis=1.6, family="serif")
 
 #plot(c(nonLyrS$statistics[1,1], lyrS$statistics[1,1]),font.lab=2, cex.lab=1.8,
 #        names.arg = c("Non-lyrical", "Lyrical"), col= c(pallete[2], pallete[3]),
@@ -154,4 +190,59 @@ arrows(x0 = 1.75, y0 =lyrS$quantiles[1,1] , x1 = 1.75, y1 = lyrS$quantiles[1,5],
        code=3, angle=90, length=0.08, lwd=1.5)
 points(1.75, lyrS$statistics[1,1], bg= pallete[3], pch=22, cex=1.5)
 
+par(xpd=TRUE)
+text(x = 0.6, y = 0.25, labels = "B",  font=2, cex=3)
+par(xpd=FALSE)
+
+# second
+plot(NA, type = "n", axes=FALSE, family="serif",ylab="Effect size (g)", xlab="Type of sound",
+     ylim= c(-1, 0.25), xlim=c(1, 2), cex.main=1.7, cex.lab=2, col="white")
+axis(2, at = c(-1,-0.75,-0.5, -0.25, 0, 0.25,0.5),
+     labels = c('-1', '-.75','-.5','-.25','0', '.25','.5'),
+     cex.axis=1.6)
+axis(1, at= c(1.1,1.9), labels= c("Lyrical music", "Intelligible speech"), cex.axis=1.6, family="serif")
+
+load("Summary/Reg/smS.Rda")
+load("Summary/Reg/SpMS.Rda")
+
+arrows(x0 = 1.25, y0 =smS$quantiles[1,1] , x1 = 1.25, y1 = smS$quantiles[1,5],
+       code=3, angle=90, length=0.08, lwd=1.5)
+points(1.25, smS$statistics[1,1], bg= pallete[4], pch=22, cex=1.5)
+
+arrows(x0 = 1.75, y0 =SpMS$quantiles[1,1] , x1 = 1.75, y1 = SpMS$quantiles[1,5],
+       code=3, angle=90, length=0.08, lwd=1.5)
+points(1.75, SpMS$statistics[1,1], bg= pallete[5], pch=22, cex=1.5)
+
+
+
+# third
+plot(NA, type = "n", axes=FALSE, family="serif",ylab="Effect size (g)", xlab="Type of speech",
+     ylim= c(-1, 0.25), xlim=c(1, 2), cex.main=1.7, cex.lab=2, col="white")
+axis(2, at = c(-1,-0.75,-0.5, -0.25, 0, 0.25,0.5),
+     labels = c('-1', '-.75','-.5','-.25','0', '.25','.5'),
+     cex.axis=1.6)
+axis(1, at= c(1.1,1.9), labels= c("Unintelligible", "Intelligible"), cex.axis=1.6, family="serif")
+
+load("Summary/Reg/phonS.Rda")
+load("Summary/Reg/semS.Rda")
+
+arrows(x0 = 1.25, y0 =phonS$quantiles[1,1] , x1 = 1.25, y1 = phonS$quantiles[1,5],
+       code=3, angle=90, length=0.08, lwd=1.5)
+points(1.25, phonS$statistics[1,1], bg= pallete[6], pch=22, cex=1.5)
+
+arrows(x0 = 1.75, y0 =semS$quantiles[1,1] , x1 = 1.75, y1 = semS$quantiles[1,5],
+       code=3, angle=90, length=0.08, lwd=1.5)
+points(1.75, semS$statistics[1,1], bg= pallete[8], pch=22, cex=1.5)
+
+#load("Posterior/SNL.Rda")
+
+#vioplot(SNL, col=pallete[2], add=T, at=1.25, wex=0.4) 
+
+#load("Posterior/SL.Rda")
+
+#vioplot(SL, col=pallete[3], add=T, at=1.75, wex=0.4) 
+
 dev.off()
+
+
+
