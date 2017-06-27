@@ -1952,6 +1952,97 @@ data<- Add_data(data, ID= 58, N_C=40, sample="adults", cit= "Vasilev et al. (n.d
                 reference= "Vasilev et al. (n.d.). Unpublished study."
 )
 
+
+
+#-----------------
+#--- Study 59 ---#
+#-----------------
+
+# comprehension, 7th graders:
+data<- Add_data(data, ID= 59, N_C=22, N_E=20, sample="children", cit= "Falcon (2017), Sample 1",
+                year=2017, design="between", sound="music",
+                sound_type= "classical", db= 55, task= "reading comprehension", 
+                measure= "num_correct", mean_C= 5.86, var_C= 2.100, 
+                mean_E= 5.35, var_E= 1.694, var_type= "SD",
+                journal="NA", IF=NA,
+                reference= "Falcon, E. (2017). The relationship between background classical music and reading comprehension on seventh and eighth grade students (Doctoral dissertation, St. Thomas University)."
+) # Table 1 (Appendix)
+
+
+#-----------------
+#--- Study 60 ---#
+#-----------------
+
+# The two grades were separate (independant) samples and thus are treated as two experiments
+
+# comprehension, 8th graders:
+data<- Add_data(data, ID= 60, N_C=25, N_E=28, sample="children", cit= "Falcon (2017), Sample 2",
+                year=2017, design="between", sound="music",
+                sound_type= "classical", db= 55, task= "reading comprehension", 
+                measure= "num_correct", mean_C= 5.24, var_C= 2.204, 
+                mean_E= 7.68, var_E= 1.389, var_type= "SD",
+                journal="NA", IF=NA,
+                reference= "Falcon, E. (2017). The relationship between background classical music and reading comprehension on seventh and eighth grade students (Doctoral dissertation, St. Thomas University)."
+) # Table 3 (Appendix)
+
+
+#-----------------
+#--- Study 61 ---#
+#-----------------
+
+# comprehension, liked music:
+data<- Add_data(data, ID= 61, N_C=20, sample="adults", cit= "Ahuja (2016)",
+                year=2016, design="within", sound="music",
+                sound_type= "liked", db= 60, task= "reading comprehension", 
+                measure= "num_correct", mean_C= 2.45, var_C= 0.887, 
+                mean_E= 1.60, var_E= 0.681, var_type= "SD",
+                journal="NA", IF=NA,
+                reference= "Ahuja, J. K. (2016). THE EFFECTS OF BACKGROUND MUSIC ON COGNITIVE PERFORMANCE."
+) # Table 1
+
+
+# comprehension, disliked music:
+data<- Add_data(data, ID= 61, N_C=20, sample="adults", cit= "Ahuja (2016)",
+                year=2016, design="within", sound="music",
+                sound_type= "disliked", db= 60, task= "reading comprehension", 
+                measure= "num_correct", mean_C= 2.45, var_C= 0.887, 
+                mean_E= 2.35, var_E= 0.671, var_type= "SD",
+                journal="NA", IF=NA,
+                reference= "Ahuja, J. K. (2016). THE EFFECTS OF BACKGROUND MUSIC ON COGNITIVE PERFORMANCE."
+) # Table 1
+
+
+#-----------------
+#--- Study 62 ---#
+#-----------------
+
+# I assume that the order of groups follows the same order as presented in Table
+# This is necessary for determinign sample sizes since it is not explicitly mentioned
+# which group corresponds to which sound condition
+
+# reading comprehension, music:
+data<- Add_data(data, ID= 62, N_C=31, N_E=29, sample="adults", cit= "Kou et al. (2017)",
+                year=2017, design="between", sound="music",
+                sound_type= "pop (vocal)", db= 65, task= "reading comprehension", 
+                measure= "num_correct", mean_C= 6.50, var_C= 2.52, 
+                mean_E= 7.43, var_E= 2.48, var_type= "SD",
+                journal="Psychology of Music", IF=1.394,
+                reference= "Kou, S., McClelland, A., & Furnham, A. (2017). The effect of background music and noise on the cognitive test performance of Chinese introverts and extraverts. Psychology of Music, 0305735617704300."
+) # Table 2
+
+
+# reading comprehension, noise:
+data<- Add_data(data, ID= 62, N_C=31, N_E=32, sample="adults", cit= "Kou et al. (2017)",
+                year=2017, design="between", sound="noise",
+                sound_type= "office", db= 65, task= "reading comprehension", 
+                measure= "num_correct", mean_C= 6.50, var_C= 2.52, 
+                mean_E= 6.17, var_E= 2.42, var_type= "SD",
+                journal="Psychology of Music", IF=1.394,
+                reference= "Kou, S., McClelland, A., & Furnham, A. (2017). The effect of background music and noise on the cognitive test performance of Chinese introverts and extraverts. Psychology of Music, 0305735617704300."
+) # Table 2
+
+
+
 #############
 # Save data #
 #############
