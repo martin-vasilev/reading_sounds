@@ -2042,6 +2042,21 @@ data<- Add_data(data, ID= 62, N_C=31, N_E=32, sample="adults", cit= "Kou et al. 
 ) # Table 2
 
 
+#-----------------
+#--- Study 63 ---#
+#-----------------
+
+# Proofreading accuracy:
+data<- Add_data(data, ID= 63, N_C=12, sample="adults", cit= "Sukowski et al. (2016)",
+                year=2016, design="within", sound="speech",
+                sound_type= "native", db= (62+57)/2, task= "proofreading", 
+                measure= "num_correct", mean_C= 36.17, var_C= NA, 
+                mean_E= 31.33, var_E= NA, var_type= NA,
+                journal=NA, IF=NA,
+                reference= "Sukowski, H., & Romanus, E. (2016, September). Effects of background speech on reading performance in adults. In Proceedings of Meetings on Acoustics 22ICA (Vol. 28, No. 1, p. 050002). ASA."
+) # Figure 1, ES converted later from t-statistic
+
+
 
 #############
 # Save data #

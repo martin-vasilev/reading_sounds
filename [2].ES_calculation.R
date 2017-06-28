@@ -508,6 +508,25 @@ data$CI95_R[a]<- data$g[a]+ 1.96*sqrt(data$g_var[a])
 
 
 
+#---------------------------------
+# Study 63 Sukowski et al. (2016):
+#---------------------------------
+
+# ES is converted from t-test statistic (repeated-measures)
+# sign is negative, check means in the paper:
+
+a<- which(data$cit=="Sukowski et al. (2016)")
+data$d[a]<- Ttest_to_d(t = -4.509, n = data$N_C[a], design = data$design[a], r = r)
+data$d_var[a]<- Ttest_to_d_var(d = data$d[a], n = data$N_C[a], design = data$design[a], r = r)
+data$g[a]<- Hedges_g(d = data$d[a], N = data$N_C[a], design = data$design[a])
+data$g_var[a]<- Hedges_g_var(d_var = data$d_var[a], N = data$N_C[a], design = data$design[a])
+
+data$CI95_L[a]<- data$g[a]- 1.96*sqrt(data$g_var[a])
+data$CI95_R[a]<- data$g[a]+ 1.96*sqrt(data$g_var[a])
+
+
+
+
 ## remove 2 effect sizes that are not reading speed:
 a<- which(data$cit=="Pool et al. (2000), Exp.1" & data$measure=="reading_speed")
 data<- data[-a,]
