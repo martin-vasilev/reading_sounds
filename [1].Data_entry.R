@@ -2084,6 +2084,32 @@ data<- Add_data(data, ID= 64, N_C=42, sample="adults", cit= "Yan et al. (2017)",
 ) # Table 2a
 
 
+
+#-----------------
+#--- Study 65 ---#
+#-----------------
+
+# general effect of music, reading comprehension:
+data<- Add_data(data, ID= 65, N_C=8+16, N_E=5+9+19+14, sample="adults", cit= "Gillis (2016)",
+                year=2016, design="between", sound="music",
+                sound_type= "various", db= NA, task= "reading comprehension", 
+                measure= "num_correct", mean_C= 8.39864864864865, var_C= NA, 
+                mean_E= mean(c(8.52027027027027, 8.54054054054054)), var_E= NA, var_type= NA,
+                journal= NA, IF=NA,
+                reference= "Gillis, A. (2016). Effect of Background Music on Reading Comprehension and Self-Report of College Students."
+) # Figure 1
+
+# coding of individual sound conditions (lyrical, instrumental not possible due to missing SDs)
+
+# Figure 1, digitilized:
+
+# Silence: 8.39864864864865
+# Lyrical:  8.52027027027027
+# Instrumental: 8.54054054054054
+# Total: 8.54054054054054
+
+
+
 #############
 # Save data #
 #############

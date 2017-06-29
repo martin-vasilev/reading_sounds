@@ -525,6 +525,21 @@ data$CI95_L[a]<- data$g[a]- 1.96*sqrt(data$g_var[a])
 data$CI95_R[a]<- data$g[a]+ 1.96*sqrt(data$g_var[a])
 
 
+#-------------------------
+# Study 65  Gillis (2016):
+#-------------------------
+# ES is positive, see means
+# converted from reported anova:
+
+a<- which(data$cit=="Gillis (2016)")
+data$d[a]<- ANOVA_to_d(Fvalue = 0.07, N_C = data$N_C[a], N_E = data$N_E[a], design = data$design[a])
+data$d_var[a]<- ANOVA_to_d_var(d = data$d[a], N_C = data$N_C[a], N_E = data$N_E[a], design = data$design[a])
+data$g[a]<- Hedges_g(d = data$d[a], N_C = data$N_C[a], N_E = data$N_E[a], design = data$design[a])
+data$g_var[a]<- Hedges_g_var(d_var = data$d_var[a], N_C = data$N_C[a], N_E = data$N_E[a],
+                             design = data$design[a])
+data$CI95_L[a]<- data$g[a]- 1.96*sqrt(data$g_var[a])
+data$CI95_R[a]<- data$g[a]+ 1.96*sqrt(data$g_var[a])
+
 
 
 ## remove 2 effect sizes that are not reading speed:
