@@ -2058,6 +2058,32 @@ data<- Add_data(data, ID= 63, N_C=12, sample="adults", cit= "Sukowski et al. (20
 
 
 
+#-----------------
+#--- Study 64 ---#
+#-----------------
+
+# Reading speeed, meaningful speech:
+data<- Add_data(data, ID= 64, N_C=42, sample="adults", cit= "Yan et al. (2017)",
+                year=2017, design="within", sound="speech",
+                sound_type= "native", db= (58+66)/2, task= "reading comprehension", 
+                measure= "reading_speed", mean_C= 5405, var_C= 268, 
+                mean_E= 5830, var_E= 306, var_type= "SE",
+                journal= "The Quarterly Journal of Experimental Psychology", IF=2.129,
+                reference= "Yan, G., Meng, Z., Liu, N., He, L., & Paterson, K. B. (2017). Effects of Irrelevant Background Speech on Eye Movements during Reading. The Quarterly Journal of Experimental Psychology, (just-accepted), 1-20."
+) # Table 2a
+
+
+# Reading speeed, meaningless speech:
+data<- Add_data(data, ID= 64, N_C=42, sample="adults", cit= "Yan et al. (2017)",
+                year=2017, design="within", sound="speech",
+                sound_type= "meaningless", db= (58+66)/2, task= "reading comprehension", 
+                measure= "reading_speed", mean_C= 5405, var_C= 268, 
+                mean_E= 5252, var_E= 237, var_type= "SE",
+                journal= "The Quarterly Journal of Experimental Psychology", IF=2.129,
+                reference= "Yan, G., Meng, Z., Liu, N., He, L., & Paterson, K. B. (2017). Effects of Irrelevant Background Speech on Eye Movements during Reading. The Quarterly Journal of Experimental Psychology, (just-accepted), 1-20."
+) # Table 2a
+
+
 #############
 # Save data #
 #############
