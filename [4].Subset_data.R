@@ -733,6 +733,64 @@ gen$CI95_L[N]<- gen$g[N] - 1.96*sqrt(gen$g_var[N])
 gen$CI95_R[N]<- gen$g[N] + 1.96*sqrt(gen$g_var[N]) 
 
 
+# ID 59:
+N<- 59
+a<- subset(d, ID==N) 
+gen<- rbind(gen, a)
+
+
+# ID 60:
+N<- 60
+a<- subset(d, ID==N) 
+gen<- rbind(gen, a)
+
+
+# ID 61:
+N<- 61
+a<- subset(d, ID==N) 
+gen<- rbind(gen, t)
+gen[N,studyCols]<- a[1,studyCols]
+gen$sound[N]<- "music"
+gen$N_C[N]<- a$N_C[1]
+gen$N_E[N]<- a$N_E[1]
+gen$mean_C[N]<- a$mean_C[1]
+gen$var_C[N]<- a$var_C[1]
+gen$mean_E[N]<- mean(a$mean_E)
+gen$var_E[N]<- mean(a$var_E)
+gen$d[N]<- mean(a$d)
+gen$d_var[N]<- mean(a$d_var)
+gen$g[N]<- mean(a$g)
+gen$g_var[N]<- mean(a$g_var)
+gen$CI95_L[N]<- gen$g[N] - 1.96*sqrt(gen$g_var[N])
+gen$CI95_R[N]<- gen$g[N] + 1.96*sqrt(gen$g_var[N]) 
+
+
+# ID 62:
+N<- 62
+a<- subset(d, ID==N) 
+gen<- rbind(gen, t)
+gen[N,studyCols]<- a[1,studyCols]
+gen$sound[N]<- "music+noise"
+gen$N_C[N]<- a$N_C[1]
+gen$N_E[N]<- sum(a$N_E)
+gen$mean_C[N]<- a$mean_C[1]
+gen$var_C[N]<- a$var_C[1]
+gen$mean_E[N]<- mean(a$mean_E)
+gen$var_E[N]<- mean(a$var_E)
+gen$d[N]<- mean(a$d)
+gen$d_var[N]<- mean(a$d_var)
+gen$g[N]<- mean(a$g)
+gen$g_var[N]<- mean(a$g_var)
+gen$CI95_L[N]<- gen$g[N] - 1.96*sqrt(gen$g_var[N])
+gen$CI95_R[N]<- gen$g[N] + 1.96*sqrt(gen$g_var[N]) 
+
+
+# ID 65:
+N<- 65
+a<- subset(d, ID==N) 
+gen<- rbind(gen, a)
+
+
 #-----
 gen<- subset(gen, !is.na(ID))
 
@@ -991,6 +1049,26 @@ gen_speed$g[N]<- mean(a$g)
 gen_speed$g_var[N]<- mean(a$g_var)
 gen_speed$CI95_L[N]<- gen_speed$g[N] - 1.96*sqrt(gen_speed$g_var[N])
 gen_speed$CI95_R[N]<- gen_speed$g[N] + 1.96*sqrt(gen_speed$g_var[N]) 
+
+
+# ID 64:
+N<- 64
+a<- subset(d, ID==N) 
+gen_speed[N,studyCols]<- a[1,studyCols]
+gen_speed$N_C[N]<- a$N_C[1]
+gen_speed$N_E[N]<- a$N_C[1]
+gen_speed$sound[N]<- "speech"
+gen_speed$mean_C[N]<- a$mean_C[1]
+gen_speed$var_C[N]<- a$var_C[1]
+gen_speed$mean_E[N]<- mean(a$mean_E)
+gen_speed$var_E[N]<- mean(a$var_E)
+gen_speed$d[N]<- mean(a$d)
+gen_speed$d_var[N]<- mean(a$d_var)
+gen_speed$g[N]<- mean(a$g)
+gen_speed$g_var[N]<- mean(a$g_var)
+gen_speed$CI95_L[N]<- gen_speed$g[N] - 1.96*sqrt(gen_speed$g_var[N])
+gen_speed$CI95_R[N]<- gen_speed$g[N] + 1.96*sqrt(gen_speed$g_var[N]) 
+
 
 
 gen_speed<- subset(gen_speed, !is.na(ID))

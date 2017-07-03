@@ -10,9 +10,9 @@ source("functions/settings.R")
 
 library(metafor)
 
-res_music<- rma(g, g_var, data=subset(data, sound=="music"), method="REML")
-res_noise<- rma(g, g_var, data=subset(data, sound=="noise"), method="REML")
-res_speech<- rma(g, g_var, data=subset(data, sound=="speech"), method="REML")
+#res_music<- rma(g, g_var, data=subset(data, sound=="music"), method="REML")
+#res_noise<- rma(g, g_var, data=subset(data, sound=="noise"), method="REML")
+#res_speech<- rma(g, g_var, data=subset(data, sound=="speech"), method="REML")
 
 #funnel(res_music, yaxis="sei", main="Inverse Standard Error", )
 #funnel(res_noise, yaxis="sei", main="Inverse Standard Error")
