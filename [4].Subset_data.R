@@ -1419,6 +1419,49 @@ a<- subset(d, ID==N)
 music<- rbind(music, a)
 
 
+# 59:
+N<-59
+a<- subset(d, ID==N)
+music<- rbind(music, a)
+
+
+# 60:
+N<-60
+a<- subset(d, ID==N)
+music<- rbind(music, a)
+
+
+# 61:
+N<-61
+a<- subset(d, ID==N)
+music[N,studyCols]<- a[1,studyCols]
+music$N_C[N]<- a$N_C[1]
+music$N_E[N]<- a$N_C[1]
+music$sound[N]<- "music"
+music$mean_C[N]<- a$mean_C[1]
+music$var_C[N]<- a$var_C[1]
+music$mean_E[N]<- mean(a$mean_E)
+music$var_E[N]<- mean(a$var_E)
+music$d[N]<- mean(a$d)
+music$d_var[N]<- mean(a$d_var)
+music$g[N]<- mean(a$g)
+music$g_var[N]<- mean(a$g_var)
+music$CI95_L[N]<- music$g[N] - 1.96*sqrt(music$g_var[N])
+music$CI95_R[N]<- music$g[N] + 1.96*sqrt(music$g_var[N]) 
+
+
+# 62:
+N<-62
+a<- subset(d, ID==N)
+music<- rbind(music, a)
+
+
+# 65:
+N<-65
+a<- subset(d, ID==N)
+music<- rbind(music, a)
+
+
 music<- subset(music, !is.na(ID))
 
 # re-calculate CIs:
@@ -1534,6 +1577,12 @@ noise<- rbind(noise, a)
 
 # 58:
 N<-58
+a<- subset(d, ID==N)
+noise<- rbind(noise, a)
+
+
+# 62:
+N<-62
 a<- subset(d, ID==N)
 noise<- rbind(noise, a)
 
