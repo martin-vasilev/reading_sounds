@@ -1,0 +1,15 @@
+model {
+for (i in 1:54) {
+P[i] <- 1/S.sqr[i]      # Calculate precision
+T[i] ~ dnorm(theta[i] + beta*cov[i], P[i]) # study effects
+theta[i] ~ dnorm(mu, prec) # random effects
+
+}
+mu ~ dunif(-10, 10) # mean difference prior
+tau ~ dunif(0, 10) # tau prior
+beta ~ dunif(-10, 10) #additional prior for beta (covariate)
+tau.sqr <- tau*tau   # between-study variance
+prec<- 1/tau.sqr # precision of tau
+# Note: precision means that studies with smaller
+#       variance are given greater weight.
+}
