@@ -254,3 +254,179 @@ gelman.diag(semM, confidence=0.95)
 acfplot(semM)
 #traceplot(semM, smooth=FALSE) # take long to print with many studies
 
+
+
+
+
+#---------------------------------------------------------------------
+#                            Children...
+#---------------------------------------------------------------------
+
+load("Data/subset/gen.Rda")
+gen$cov<- NULL
+
+for(i in 1:nrow(gen)){
+  if(gen$sample[i]=="children"){
+    gen$cov[i]<- -1
+  } else{
+    gen$cov[i]<- 1
+  }
+}
+
+gen<- gen[,c('g', 'g_var', 'cov')]
+colnames(gen)<- BRcols
+table(gen$cov)
+
+### reading comprehension (all sounds):
+
+MR_chGCP<- jags.model(BmetaReg("dunif(-10, 10)", "dunif(0, 10)", "dunif(-10, 10)", nrow(gen),
+                             "MR_chGCP.txt"), gen, n.chains=5, n.adapt=3000, quiet=FALSE)
+R_chGCP<- coda.samples(MR_chGCP, c('mu', 'tau', "beta", "theta"), n.iter=75000, thin=5)
+sumR_chGCP<- summary(R_chGCP); save(sumR_chGCP, file="Summary/Reg/sumR_chGCP.Rda") # MAIN
+
+gelman.diag(R_chGCP, confidence=0.95)
+acfplot(R_chGCP)
+#traceplot(R_chGCP, smooth=FALSE) # take long to print with many studies
+
+# ecdf:
+S1<-jags.samples(MR_chGCP, variable.names='beta', n.iter=75000, thin=5, n.adapt=3000)
+S1<-c(S1$beta[1,,1],S1$beta[1,,2],S1$beta[1,,3], S1$beta[1,,4], S1$beta[1,,5])
+ECDF_CGCP<- ecdf(S1); 1-ECDF_CGCP(0)
+
+
+
+#### reading speed:
+load("Data/subset/gen_speed.Rda")
+gen_speed$cov<- NULL
+
+for(i in 1:nrow(gen_speed)){
+  if(gen_speed$sample[i]=="children"){
+    gen_speed$cov[i]<- -1
+  } else{
+    gen_speed$cov[i]<- 1
+  }
+}
+
+gen_speed<- gen_speed[,c('g', 'g_var', 'cov')]
+colnames(gen_speed)<- BRcols
+
+
+##
+MR_chGRS<- jags.model(BmetaReg("dunif(-10, 10)", "dunif(0, 10)", "dunif(-10, 10)", nrow(gen_speed),
+                               "MR_chGRS.txt"), gen_speed, n.chains=5, n.adapt=3000, quiet=FALSE)
+R_chGRS<- coda.samples(MR_chGRS, c('mu', 'tau', "beta", "theta"), n.iter=75000, thin=5)
+sumR_chGRS<- summary(R_chGRS); save(sumR_chGRS, file="Summary/Reg/sumR_chGRS.Rda") # MAIN
+
+gelman.diag(R_chGRS, confidence=0.95)
+acfplot(R_chGRS)
+#traceplot(R_chGRS, smooth=FALSE) # take long to print with many studies
+
+# ecdf:
+S1<-jags.samples(MR_chGRS, variable.names='beta', n.iter=75000, thin=5, n.adapt=3000)
+S1<-c(S1$beta[1,,1],S1$beta[1,,2],S1$beta[1,,3], S1$beta[1,,4], S1$beta[1,,5])
+ECDF_CGRS<- ecdf(S1); 1-ECDF_CGRS(0)
+
+
+
+###### music:
+
+load("Data/subset/music.Rda")
+
+music$cov<- NULL
+
+for(i in 1:nrow(music)){
+  if(music$sample[i]=="children"){
+    music$cov[i]<- -1
+  } else{
+    music$cov[i]<- 1
+  }
+}
+
+music<- music[,c('g', 'g_var', 'cov')]
+colnames(music)<- BRcols
+table(music$cov)
+
+
+##
+MR_chGM<- jags.model(BmetaReg("dunif(-10, 10)", "dunif(0, 10)", "dunif(-10, 10)", nrow(music),
+                               "MR_chGM.txt"), music, n.chains=5, n.adapt=3000, quiet=FALSE)
+R_chGM<- coda.samples(MR_chGM, c('mu', 'tau', "beta", "theta"), n.iter=75000, thin=5)
+sumR_chGM<- summary(R_chGM); save(sumR_chGM, file="Summary/Reg/sumR_chGM.Rda") # MAIN
+
+gelman.diag(R_chGM, confidence=0.95)
+acfplot(R_chGM)
+#traceplot(R_chGM, smooth=FALSE) # take long to print with many studies
+
+# ecdf:
+S1<-jags.samples(MR_chGM, variable.names='beta', n.iter=75000, thin=5, n.adapt=3000)
+S1<-c(S1$beta[1,,1],S1$beta[1,,2],S1$beta[1,,3], S1$beta[1,,4], S1$beta[1,,5])
+ECDF_CGM<- ecdf(S1); 1-ECDF_CGM(0)
+
+
+
+####### speech:
+load("Data/subset/speech.Rda")
+
+speech$cov<- NULL
+
+for(i in 1:nrow(speech)){
+  if(speech$sample[i]=="children"){
+    speech$cov[i]<- -1
+  } else{
+    speech$cov[i]<- 1
+  }
+}
+
+speech<- speech[,c('g', 'g_var', 'cov')]
+colnames(speech)<- BRcols
+table(speech$cov)
+
+
+##
+MR_chGS<- jags.model(BmetaReg("dunif(-10, 10)", "dunif(0, 10)", "dunif(-10, 10)", nrow(speech),
+                              "MR_chGS.txt"), speech, n.chains=5, n.adapt=3000, quiet=FALSE)
+R_chGS<- coda.samples(MR_chGS, c('mu', 'tau', "beta", "theta"), n.iter=75000, thin=5)
+sumR_chGS<- summary(R_chGS); save(sumR_chGS, file="Summary/Reg/sumR_chGS.Rda") # MAIN
+
+gelman.diag(R_chGS, confidence=0.95)
+acfplot(R_chGS)
+#traceplot(R_chGS, smooth=FALSE) # take long to print with many studies
+
+# ecdf:
+S1<-jags.samples(MR_chGS, variable.names='beta', n.iter=75000, thin=5, n.adapt=3000)
+S1<-c(S1$beta[1,,1],S1$beta[1,,2],S1$beta[1,,3], S1$beta[1,,4], S1$beta[1,,5])
+ECDF_CGS<- ecdf(S1); 1-ECDF_CGS(0)
+
+
+###### Noise:
+load("Data/subset/noise.Rda")
+
+noise$cov<- NULL
+
+for(i in 1:nrow(noise)){
+  if(noise$sample[i]=="children"){
+    noise$cov[i]<- -1
+  } else{
+    noise$cov[i]<- 1
+  }
+}
+
+noise<- noise[,c('g', 'g_var', 'cov')]
+colnames(noise)<- BRcols
+table(noise$cov)
+
+
+##
+MR_chGN<- jags.model(BmetaReg("dunif(-10, 10)", "dunif(0, 10)", "dunif(-10, 10)", nrow(noise),
+                              "MR_chGN.txt"), noise, n.chains=5, n.adapt=3000, quiet=FALSE)
+R_chGN<- coda.samples(MR_chGN, c('mu', 'tau', "beta", "theta"), n.iter=75000, thin=5)
+sumR_chGN<- summary(R_chGN); save(sumR_chGN, file="Summary/Reg/sumR_chGN.Rda") # MAIN
+
+gelman.diag(R_chGN, confidence=0.95)
+acfplot(R_chGN)
+#traceplot(R_chGN, smooth=FALSE) # take long to print with many studies
+
+# ecdf:
+S1<-jags.samples(MR_chGN, variable.names='beta', n.iter=75000, thin=5, n.adapt=3000)
+S1<-c(S1$beta[1,,1],S1$beta[1,,2],S1$beta[1,,3], S1$beta[1,,4], S1$beta[1,,5])
+ECDF_CGN<- ecdf(S1); 1-ECDF_CGN(0)
