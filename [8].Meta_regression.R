@@ -34,6 +34,61 @@ S1<-jags.samples(MR_LM1, variable.names='beta', n.iter=75000, thin=5, n.adapt=30
 S1<-c(S1$beta[1,,1],S1$beta[1,,2],S1$beta[1,,3], S1$beta[1,,4], S1$beta[1,,5])
 ECDF1<- ecdf(S1); ECDF1(0)
 
+rng<- seq(-2, -1.9, 0.01)
+rng2<- seq(-1.9, -1.8, 0.01)
+rng3<- seq(-1.8, -1.7, 0.01)
+rng4<- seq(-1.7, -1.6, 0.01)
+rng5<- seq(-1.6, -1.5, 0.01)
+rng6<- seq(-1.5, -1.4, 0.01)
+rng7<- seq(-1.4, -1.3, 0.01)
+rng8<- seq(-1.3, -1.2, 0.01)
+rng9<- seq(-1.2, -1.1, 0.01)
+rng10<- seq(-1.1, -1.0, 0.01)
+rng11<- seq(-1, -0.9, 0.01)
+rng12<- seq(-0.9, -0.8, 0.01)
+rng13<- seq(-0.8, -0.7, 0.01)
+rng14<- seq(-0.7, -0.6, 0.01)
+rng15<- seq(-0.6, -0.5, 0.01)
+rng16<- seq(-0.5, -0.4, 0.01)
+rng17<- seq(-0.4, -0.3, 0.01)
+rng18<- seq(-0.3, -0.2, 0.01)
+rng19<- seq(-0.2, -0.1, 0.01)
+rng20<- seq(-0.1, 0, 0.01)
+
+probs<- ECDF1(rng)
+probs2<- ECDF1(rng2)
+probs3<- ECDF1(rng3)
+probs4<- ECDF1(rng4)
+probs5<- ECDF1(rng5)
+probs6<- ECDF1(rng6)
+probs7<- ECDF1(rng7)
+probs8<- ECDF1(rng8)
+probs9<- ECDF1(rng9)
+probs10<- ECDF1(rng10)
+probs11<- ECDF1(rng11)
+probs12<- ECDF1(rng12)
+probs13<- ECDF1(rng13)
+probs14<- ECDF1(rng14)
+probs15<- ECDF1(rng15)
+probs16<- ECDF1(rng16)
+probs17<- ECDF1(rng17)
+probs18<- ECDF1(rng18)
+probs19<- ECDF1(rng19)
+probs20<- ECDF1(rng20)
+
+
+df<- rbind(probs, probs2, probs3, probs4, probs5, probs6, probs7, probs8,
+           probs9, probs10, probs11, probs12, probs13, probs14, probs15, 
+           probs16, probs17, probs18, probs19, probs20)
+
+
+rng<- seq(-1.5,1.5, 0.1)
+prob<- ECDF1(rng)
+
+df<- data.frame(rng, prob)
+
+p=plot_ly(df, x = ~rng, y = ~prob, type="scatter",
+          mode = "markers", color = ~prob, size = ~prob)
 
 
 # oposite coding (sensitivity test):
