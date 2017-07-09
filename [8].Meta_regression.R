@@ -256,6 +256,88 @@ acfplot(semM)
 
 
 
+#######################################
+#  Environmental vs acoustical noise:
+#######################################
+load("Data/subset/metareg/EAN.Rda")
+
+EAN<- EAN[,c("g", "g_var", "cov")]
+colnames(EAN)<- BRcols
+
+
+MR_EAN<- jags.model(BmetaReg("dunif(-10, 10)", "dunif(0, 10)", "dunif(-10, 10)", nrow(EAN),
+                             "MR_EAN.txt"), EAN, n.chains=5, n.adapt=3000, quiet=FALSE)
+R_EAN<- coda.samples(MR_EAN, c('mu', 'tau', "beta", "theta"), n.iter=75000, thin=5)
+sumEAN<- summary(R_EAN); save(sumEAN, file="Summary/Reg/sumEAN.Rda") # MAIN
+
+gelman.diag(R_EAN, confidence=0.95)
+acfplot(R_EAN)
+traceplot(R_EAN, smooth=FALSE) # take long to print with many studies
+
+# ecdf:
+S2<-jags.samples(MR_EAN, variable.names='beta', n.iter=75000, thin=5, n.adapt=3000)
+S2<-c(S2$beta[1,,1],S2$beta[1,,2],S2$beta[1,,3], S2$beta[1,,4], S2$beta[1,,5])
+ECDF_EAN<- ecdf(S2); ECDF_EAN(0)
+
+
+### Simple effects:
+EAN1<- subset(EAN, cov==-1) # acoustical noise
+EAN1<- EAN1[,-3]
+EAN2<- subset(EAN, cov==1) # environmental noise
+EAN2<- EAN2[,-3]
+
+ACM<-jags.model(Bmeta("dunif(-10, 10)", "dunif(0, 10)", nrow(EAN1), "ACM.txt"),
+                 EAN1, n.chains=5, n.adapt=3000,  quiet=FALSE
+                 )
+AC<- coda.samples(ACM, c('mu', 'tau', 'theta'), n.iter=75000, thin=5)
+sumAC<- summary(AC)
+save(sumAC, file="Summary/Reg/sumAC.Rda")
+
+
+gelman.diag(AC, confidence=0.95)
+acfplot(AC)
+traceplot(AC, smooth=FALSE) # takes long to print with many studies
+
+
+# environmental noise:
+ENM<-jags.model(Bmeta("dunif(-10, 10)", "dunif(0, 10)", nrow(EAN2), "ENM.txt"),
+                EAN2, n.chains=5, n.adapt=3000,  quiet=FALSE,
+                 inits= list("mu"= runif(1,-3,3), "tau"= runif(1,0,3)))
+EN<- coda.samples(ENM, c('mu', 'tau', 'theta'), n.iter=75000, thin=5)
+sumEN<- summary(EN)
+save(sumEN, file="Summary/Reg/sumEN.Rda")
+
+gelman.diag(EN, confidence=0.95)
+acfplot(EN)
+traceplot(EN, smooth=FALSE) # take long to print with many studies
+
+
+
+###########################################
+#  Instrumental music vs acoustical noise:
+###########################################
+load("Data/subset/metareg/MAN.Rda")
+
+MAN<- MAN[,c("g", "g_var", "cov")]
+colnames(MAN)<- BRcols
+
+
+MR_MAN<- jags.model(BmetaReg("dunif(-10, 10)", "dunif(0, 10)", "dunif(-10, 10)", nrow(MAN),
+                             "MR_MAN.txt"), MAN, n.chains=5, n.adapt=3000, quiet=FALSE)
+R_MAN<- coda.samples(MR_MAN, c('mu', 'tau', "beta", "theta"), n.iter=75000, thin=5)
+sumMAN<- summary(R_MAN); save(sumMAN, file="Summary/Reg/sumMAN.Rda") # MAIN
+
+gelman.diag(R_MAN, confidence=0.95)
+acfplot(R_MAN)
+traceplot(R_MAN, smooth=FALSE) # takes long to print with many studies
+
+# ecdf:
+S2<-jags.samples(MR_MAN, variable.names='beta', n.iter=75000, thin=5, n.adapt=3000)
+S2<-c(S2$beta[1,,1],S2$beta[1,,2],S2$beta[1,,3], S2$beta[1,,4], S2$beta[1,,5])
+ECDF_MAN<- ecdf(S2); ECDF_MAN(0)
+
+
+
 #---------------------------------------------------------------------
 #                            Children...
 #---------------------------------------------------------------------
