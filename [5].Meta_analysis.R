@@ -212,9 +212,91 @@ acfplot(S2p)
 #traceplot(S2p, smooth=FALSE) # takes long to print with many studies
 
 
+
+
+#-------------------------
+# Proofreading accuracy  :
+#-------------------------
+
+load("Data/subset/proof.Rda")
+proof<- proof[,c("g", "g_var")]
+colnames(proof)<- Bcols
+
+
+PRM<-jags.model(Bmeta("dunif(-10, 10)", "dunif(0, 10)", nrow(proof), "PRM.txt"),
+                proof, n.chains=5, n.adapt=3000,  quiet=FALSE,
+               inits= list("mu"= runif(1,-3,3), "tau"= runif(1,0,3)))
+PR<- coda.samples(PRM, c('mu', 'tau', 'theta'), n.iter=75000, thin=5)
+PRs<- summary(PR)
+save(PRs, file="Summary/PRs.Rda")
+#S1<- jags.samples(S1, variable.names='mu', n.iter=75000, thin=5, n.adapt=3000)
+#S1mu<-c(S1$mu[1,,1])
+#save(S1mu, file="Posterior/S1mu.Rda")
+
+# check results:
+gelman.diag(PR, confidence=0.95)
+acfplot(PR)
+traceplot(PR, smooth=FALSE) # takes long to print with many studies
+
+
+# frequenist analysis:
+(F6 <- rma(proof$T, proof$S.sqr, method="REML"))
+
+
+# sensitivity analysis with different priors:
+PRM2<-jags.model(Bmeta("dnorm(0, 1.0E-4)", "dnorm(0, 1.0E-4)  I(0, )", nrow(proof), "PRM2.txt"),
+                 proof, n.chains=5, n.adapt=3000, quiet=FALSE)
+PR2<- coda.samples(PRM2, c('mu', 'tau', 'theta'), n.iter=75000, thin=5)
+PRs2<- summary(PR2)
+save(PRs2, file="Summary/PRs2.Rda")
+
+# check results:
+gelman.diag(PR2, confidence=0.95)
+acfplot(PR2)
+traceplot(PR2, smooth=FALSE) # takes long to print with many studies
+
+
+###################################################
+# Proofreading accuracy- speech only
+
+rm(proof)
+
+load("Data/subset/proof.Rda")
+proof<- subset(proof, sound!="noise")
+proof<- proof[,c("g", "g_var")]
+colnames(proof)<- Bcols
+
+
+load("Data/subset/proof.Rda")
+proof<- proof[,c("g", "g_var")]
+colnames(proof)<- Bcols
+
+
+PRM_SO<-jags.model(Bmeta("dunif(-10, 10)", "dunif(0, 10)", nrow(proof), "PRM_SO.txt"),
+                proof, n.chains=5, n.adapt=3000,  quiet=FALSE,
+                inits= list("mu"= runif(1,-3,3), "tau"= runif(1,0,3)))
+PR_SO<- coda.samples(PRM_SO, c('mu', 'tau', 'theta'), n.iter=75000, thin=5)
+PR_SOs<- summary(PR_SO)
+save(PR_SOs, file="Summary/PR_SOs.Rda")
+#S1<- jags.samples(S1, variable.names='mu', n.iter=75000, thin=5, n.adapt=3000)
+#S1mu<-c(S1$mu[1,,1])
+#save(S1mu, file="Posterior/S1mu.Rda")
+
+# check results:
+gelman.diag(PR_SO, confidence=0.95)
+acfplot(PR_SO)
+traceplot(PR_SO, smooth=FALSE) # takes long to print with many studies
+
+
+# frequenist analysis:
+(F7 <- rma(proof$T, proof$S.sqr, method="REML"))
+
+
 ## save freq summaries:
 save(F1, file="Summary/freq/F1.Rda")
 save(F2, file="Summary/freq/F2.Rda")
 save(F3, file="Summary/freq/F3.Rda")
 save(F4, file="Summary/freq/F4.Rda")
 save(F5, file="Summary/freq/F5.Rda")
+save(F6, file="Summary/freq/F6.Rda")
+save(F7, file="Summary/freq/F7.Rda")
