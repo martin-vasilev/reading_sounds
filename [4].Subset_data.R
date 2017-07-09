@@ -1815,6 +1815,142 @@ rm(speech)
 
 
 
+#-----------------------------------------------------------------------------------------------------#
+#                                        Proofreading accuracy                                        #
+#-----------------------------------------------------------------------------------------------------#
+
+d<- subset(data, is.element(task, Proof))
+
+proof<- d[1,]
+
+# 31:
+N<-31
+a<- subset(d, ID==N)
+proof[N,studyCols]<- a[1,studyCols]
+proof$N_C[N]<- a$N_C[1]
+proof$N_E[N]<- a$N_E[1]
+proof$sound[N]<- "noise"
+proof$sound_type[N]<- a$sound_type[1]
+proof$task[N]<- "proofreading"
+proof$mean_C[N]<- mean(a$mean_C)
+proof$var_C[N]<- mean(a$var_C)
+proof$mean_E[N]<- mean(a$mean_E)
+proof$var_E[N]<- mean(a$var_E)
+proof$d[N]<- mean(a$d)
+proof$d_var[N]<- mean(a$d_var)
+proof$g[N]<- mean(a$g)
+proof$g_var[N]<- mean(a$g_var)
+proof$CI95_L[N]<- proof$g[N] - 1.96*sqrt(proof$g_var[N])
+proof$CI95_R[N]<- proof$g[N] + 1.96*sqrt(proof$g_var[N]) 
+
+
+# 32:
+N<-32
+a<- subset(d, ID==N)
+proof[N,studyCols]<- a[1,studyCols]
+proof$N_C[N]<- a$N_C[1]
+proof$N_E[N]<- a$N_C[1]
+proof$sound[N]<- "speech"
+proof$sound_type[N]<- a$sound_type[1]
+proof$task[N]<- "proofreading"
+proof$mean_C[N]<- mean(a$mean_C)
+proof$mean_E[N]<- mean(a$mean_E)
+proof$d[N]<- mean(a$d)
+proof$d_var[N]<- mean(a$d_var)
+proof$g[N]<- mean(a$g)
+proof$g_var[N]<- mean(a$g_var)
+proof$CI95_L[N]<- proof$g[N] - 1.96*sqrt(proof$g_var[N])
+proof$CI95_R[N]<- proof$g[N] + 1.96*sqrt(proof$g_var[N]) 
+
+
+# 54:
+N<-54
+a<- subset(d, ID==N)
+proof[N,studyCols]<- a[1,studyCols]
+proof$N_C[N]<- a$N_C[1]
+proof$N_E[N]<- a$N_C[1]
+proof$sound[N]<- "speech"
+proof$sound_type[N]<- a$sound_type[1]
+proof$task[N]<- "proofreading"
+proof$mean_C[N]<- mean(a$mean_C)
+proof$var_C[N]<- mean(a$var_C)
+proof$mean_E[N]<- mean(a$mean_E)
+proof$var_E[N]<- mean(a$var_E)
+proof$d[N]<- mean(a$d)
+proof$d_var[N]<- mean(a$d_var)
+proof$g[N]<- mean(a$g)
+proof$g_var[N]<- mean(a$g_var)
+proof$CI95_L[N]<- proof$g[N] - 1.96*sqrt(proof$g_var[N])
+proof$CI95_R[N]<- proof$g[N] + 1.96*sqrt(proof$g_var[N]) 
+
+
+# 55:
+N<-55
+a<- subset(d, ID==N)
+proof[N,studyCols]<- a[1,studyCols]
+proof$N_C[N]<- a$N_C[1]
+proof$N_E[N]<- a$N_C[1]
+proof$sound[N]<- "speech"
+proof$sound_type[N]<- a$sound_type[1]
+proof$task[N]<- "proofreading"
+proof$mean_C[N]<- mean(a$mean_C)
+proof$var_C[N]<- mean(a$var_C)
+proof$mean_E[N]<- mean(a$mean_E)
+proof$var_E[N]<- mean(a$var_E)
+proof$d[N]<- mean(a$d)
+proof$d_var[N]<- mean(a$d_var)
+proof$g[N]<- mean(a$g)
+proof$g_var[N]<- mean(a$g_var)
+proof$CI95_L[N]<- proof$g[N] - 1.96*sqrt(proof$g_var[N])
+proof$CI95_R[N]<- proof$g[N] + 1.96*sqrt(proof$g_var[N]) 
+
+
+# 56:
+N<-56
+a<- subset(d, ID==N)
+proof[N,studyCols]<- a[1,studyCols]
+proof$N_C[N]<- a$N_C[1]
+proof$N_E[N]<- a$N_C[1]
+proof$sound[N]<- "speech"
+proof$sound_type[N]<- a$sound_type[1]
+proof$task[N]<- "proofreading"
+proof$mean_C[N]<- mean(a$mean_C)
+proof$var_C[N]<- mean(a$var_C)
+proof$mean_E[N]<- mean(a$mean_E)
+proof$var_E[N]<- mean(a$var_E)
+proof$d[N]<- mean(a$d)
+proof$d_var[N]<- mean(a$d_var)
+proof$g[N]<- mean(a$g)
+proof$g_var[N]<- mean(a$g_var)
+proof$CI95_L[N]<- proof$g[N] - 1.96*sqrt(proof$g_var[N])
+proof$CI95_R[N]<- proof$g[N] + 1.96*sqrt(proof$g_var[N]) 
+
+
+# 63:
+N<- 63
+a<- subset(d, ID==N)
+proof<- rbind(proof, a)
+
+
+proof<- subset(proof, !is.na(ID))
+
+# re-calculate CIs:
+for(i in 1:nrow(proof)){
+  proof$CI95_L[i]<- proof$g[i] - 1.96*sqrt(proof$g_var[i])
+  proof$CI95_R[i]<- proof$g[i] + 1.96*sqrt(proof$g_var[i]) 
+}
+
+save(proof, file= "Data/subset/proof.Rda")
+write.csv(proof, file= "Data/subset/proof.csv")
+
+
+proofSO<- subset(proof, cit!= "Weinstein (1974)") # speech only
+save(proofSO, file= "Data/subset/proofSO.Rda")
+write.csv(proofSO, file= "Data/subset/proofSO.csv")
+
+rm(proof, proofSO)
+
+
 #===============================
 #   Meta-regression subsets:
 #===============================
@@ -1836,6 +1972,10 @@ d<-subset(d, !is.element(sound_type, uit))
 a<- d[which(is.element(d$sound_type, NL)),]
 
 d<- d[-which(is.element(d$sound_type, NL)),]
+
+
+# music was chosen by participants (no control), exclude:
+d<- d[-which(d$cit=="Ahuja (2016)"),]
 
 # music type unknown, participants brought their own:
 d<- d[-which(d$cit=="Etaugh & Michals (1975)"| d$cit=="Etaugh & Ptasnik (1982)"),]
@@ -2187,7 +2327,131 @@ SM<- rbind(d,n)
 l4<- data.frame(table(as.character(SM$cit)))
 
 # no overlap:
-max(l4$Freq)
+max(l4$Freq)==1
 
 save(SM, file= "Data/subset/metareg/SM.Rda")
 
+
+#####- environmental noise vs acoustical noise- ######
+inst<- a
+
+db<- subset(subset(data, is.element(task, RC) & measure!="reading_speed" & sound=="noise"))
+
+an<- c("continuous", "white", "speech-spectrum")
+
+ac<- subset(db, is.element(sound_type, an))
+
+d<- subset(db, !is.element(sound_type, an))
+
+env<- d[1:3,]
+
+# 27
+N<- 27
+a<- db[which(db$ID==N),]
+
+env[N,studyCols]<- a[1,studyCols]
+env$task[N]<- "reading comprehension"
+env$N_C[N]<- a$N_C[1]
+env$N_E[N]<- a$N_C[1]
+env$sound[N]<- "noise"
+env$mean_C[N]<- mean(a$mean_C[1:2]) # because they have the same silence baseline
+env$var_C[N]<- mean(a$var_C[1:2])
+env$mean_E[N]<- mean(a$mean_E)
+env$var_E[N]<- mean(a$var_E)
+env$d[N]<- mean(a$d)
+env$d_var[N]<- mean(a$d_var)
+env$g[N]<- mean(a$g)
+env$g_var[N]<- mean(a$g_var)
+env$CI95_L[N]<- env$g[N] - 1.96*sqrt(env$g_var[N])
+env$CI95_R[N]<- env$g[N] + 1.96*sqrt(env$g_var[N]) 
+
+
+# 30
+N<- 30
+a<- db[which(db$ID==N),]
+env<- rbind(env, a)
+
+
+# 42
+N<- 42
+a<- db[which(db$ID==N),]
+
+env[N,studyCols]<- a[1,studyCols]
+env$N_C[N]<- a$N_C[1]
+env$N_E[N]<- sum(a$N_E)
+env$sound[N]<- "noise"
+env$mean_C[N]<- a$mean_C[1]
+env$var_C[N]<- a$var_C[1]
+env$mean_E[N]<- mean(a$mean_E)
+env$var_E[N]<- mean(a$var_E)
+env$d[N]<- mean(a$d)
+env$d_var[N]<- mean(a$d_var)
+env$g[N]<- mean(a$g)
+env$g_var[N]<- mean(a$g_var)
+env$CI95_L[N]<- env$g[N] - 1.96*sqrt(env$g_var[N])
+env$CI95_R[N]<- env$g[N] + 1.96*sqrt(env$g_var[N])
+
+
+# 49
+N<- 49
+a<- db[which(db$ID==N),]
+env<- rbind(env, a)
+
+
+# 62
+N<- 62
+a<- db[which(db$ID==N),]
+env<- rbind(env, a)
+
+env<- subset(env, !is.na(ID))
+env<- subset(env, cit!="Martin et al. (1988), Exp.1")
+env<- subset(env, cit!="Johansson (1983)") # to avoid non-independence
+
+# re-calculate CIs:
+for(i in 1:nrow(env)){
+  env$CI95_L[i]<- env$g[i] - 1.96*sqrt(env$g_var[i])
+  env$CI95_R[i]<- env$g[i] + 1.96*sqrt(env$g_var[i]) 
+}
+
+env$type<- "environmental"
+env$cov<- 1
+
+ac$type<- "acoustical"
+ac$cov<- -1
+
+EAN<- rbind(ac,env)
+
+
+n4<- data.frame(table(as.character(EAN$cit)))
+
+# no overlap:
+max(n4$Freq)==1
+
+
+for(i in 1:nrow(EAN)){
+  EAN$CI95_L[i]<- EAN$g[i] - 1.96*sqrt(EAN$g_var[i])
+  EAN$CI95_R[i]<- EAN$g[i] + 1.96*sqrt(EAN$g_var[i]) 
+}
+
+
+save(EAN, file= "Data/subset/metareg/EAN.Rda")
+
+
+#####- instrumental music vs acoustical noise- ######
+inst<- subset(inst, cit!="Martin et al. (1988), Exp.1")
+inst$type<- "instrumental"
+inst$cov<- 1
+
+MAN<- rbind(ac, inst)
+
+mn4<- data.frame(table(as.character(MAN$cit)))
+
+# no overlap:
+max(mn4$Freq)==1
+
+for(i in 1:nrow(MAN)){
+  MAN$CI95_L[i]<- MAN$g[i] - 1.96*sqrt(MAN$g_var[i])
+  MAN$CI95_R[i]<- MAN$g[i] + 1.96*sqrt(MAN$g_var[i]) 
+}
+
+save(MAN, file= "Data/subset/metareg/MAN.Rda")
