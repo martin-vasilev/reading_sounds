@@ -30,7 +30,7 @@ acfplot(R_LM1)
 #traceplot(R_LM1, smooth=FALSE) # take long to print with many studies
 
 # ecdf:
-S1<-jags.samples(MR_LM1, variable.names='beta', n.iter=75000, thin=5, n.adapt=3000)
+S1<-jags.samples(MR_LM1, variable.names= c('beta', 'mu'), n.iter=75000, thin=5, n.adapt=3000)
 S1<-c(S1$beta[1,,1],S1$beta[1,,2],S1$beta[1,,3], S1$beta[1,,4], S1$beta[1,,5])
 ECDF1<- ecdf(S1); ECDF1(0)
 
@@ -102,7 +102,7 @@ acfplot(R_LM2)
 #traceplot(R_LM2, smooth=FALSE) # take long to print with many studies
 
 # ecdf:
-S2<-jags.samples(MR_LM2, variable.names='beta', n.iter=75000, thin=5, n.adapt=3000)
+S2<-jags.samples(MR_LM2, variable.names=c('beta', 'mu'), n.iter=75000, thin=5, n.adapt=3000)
 S2<-c(S2$beta[1,,1],S2$beta[1,,2],S2$beta[1,,3], S2$beta[1,,4], S2$beta[1,,5])
 ECDF2<- ecdf(S2); ECDF2(0)
 
@@ -126,7 +126,7 @@ acfplot(lyrM)
 #traceplot(lyrM, smooth=FALSE) # take long to print with many studies
 
 # posterior plots:
-SL<-jags.samples(lyrM1, variable.names='mu', n.iter=75000, thin=5, n.adapt=3000)
+SL<-jags.samples(lyrM1, variable.names=c('beta', 'mu'), n.iter=75000, thin=5, n.adapt=3000)
 SL<-c(SL$mu[1,,1], SL$mu[1,,2], SL$mu[1,,3], SL$mu[1,,4], SL$mu[1,,5])
 save(SL, file="Posterior/SL.Rda")
 
@@ -144,7 +144,7 @@ acfplot(nonLyrM)
 #traceplot(nonLyrM, smooth=FALSE) # take long to print with many studies
 
 # posterior plots:
-SNL<-jags.samples(nonLyrM1, variable.names='mu', n.iter=75000, thin=5, n.adapt=3000)
+SNL<-jags.samples(nonLyrM1, variable.names=c('beta', 'mu'), n.iter=75000, thin=5, n.adapt=3000)
 SNL<-c(SNL$mu[1,,1], SNL$mu[1,,2], SNL$mu[1,,3], SNL$mu[1,,4], SNL$mu[1,,5])
 save(SNL, file="Posterior/SNL.Rda")
 
@@ -166,7 +166,7 @@ acfplot(R_SM1)
 #traceplot(R_SM1, smooth=FALSE) # take long to print with many studies
 
 # ecdf:
-S2<-jags.samples(MR_SM1, variable.names='beta', n.iter=75000, thin=5, n.adapt=3000)
+S2<-jags.samples(MR_SM1, variable.names=c('beta', 'mu'), n.iter=75000, thin=5, n.adapt=3000)
 S2<-c(S2$beta[1,,1],S2$beta[1,,2],S2$beta[1,,3], S2$beta[1,,4], S2$beta[1,,5])
 ECDF2<- ecdf(S2); ECDF2(0)
 
@@ -275,7 +275,7 @@ acfplot(R_EAN)
 traceplot(R_EAN, smooth=FALSE) # take long to print with many studies
 
 # ecdf:
-S2<-jags.samples(MR_EAN, variable.names='beta', n.iter=75000, thin=5, n.adapt=3000)
+S2<-jags.samples(MR_EAN, variable.names=c('beta', 'mu'), n.iter=75000, thin=5, n.adapt=3000)
 S2<-c(S2$beta[1,,1],S2$beta[1,,2],S2$beta[1,,3], S2$beta[1,,4], S2$beta[1,,5])
 ECDF_EAN<- ecdf(S2); ECDF_EAN(0)
 
@@ -332,7 +332,7 @@ acfplot(R_MAN)
 traceplot(R_MAN, smooth=FALSE) # takes long to print with many studies
 
 # ecdf:
-S2<-jags.samples(MR_MAN, variable.names='beta', n.iter=75000, thin=5, n.adapt=3000)
+S2<-jags.samples(MR_MAN, variable.names=c('beta', 'mu'), n.iter=75000, thin=5, n.adapt=3000)
 S2<-c(S2$beta[1,,1],S2$beta[1,,2],S2$beta[1,,3], S2$beta[1,,4], S2$beta[1,,5])
 ECDF_MAN<- ecdf(S2); ECDF_MAN(0)
 
@@ -369,7 +369,7 @@ acfplot(R_chGCP)
 #traceplot(R_chGCP, smooth=FALSE) # take long to print with many studies
 
 # ecdf:
-S1<-jags.samples(MR_chGCP, variable.names='beta', n.iter=75000, thin=5, n.adapt=3000)
+S1<-jags.samples(MR_chGCP, variable.names=c('beta', 'mu'), n.iter=75000, thin=5, n.adapt=3000)
 S1<-c(S1$beta[1,,1],S1$beta[1,,2],S1$beta[1,,3], S1$beta[1,,4], S1$beta[1,,5])
 ECDF_CGCP<- ecdf(S1); 1-ECDF_CGCP(0)
 
@@ -402,7 +402,7 @@ acfplot(R_chGRS)
 #traceplot(R_chGRS, smooth=FALSE) # take long to print with many studies
 
 # ecdf:
-S1<-jags.samples(MR_chGRS, variable.names='beta', n.iter=75000, thin=5, n.adapt=3000)
+S1<-jags.samples(MR_chGRS, variable.names=c('beta', 'mu'), n.iter=75000, thin=5, n.adapt=3000)
 S1<-c(S1$beta[1,,1],S1$beta[1,,2],S1$beta[1,,3], S1$beta[1,,4], S1$beta[1,,5])
 ECDF_CGRS<- ecdf(S1); 1-ECDF_CGRS(0)
 
@@ -438,7 +438,7 @@ acfplot(R_chGM)
 #traceplot(R_chGM, smooth=FALSE) # take long to print with many studies
 
 # ecdf:
-S1<-jags.samples(MR_chGM, variable.names='beta', n.iter=75000, thin=5, n.adapt=3000)
+S1<-jags.samples(MR_chGM, variable.names=c('beta', 'mu'), n.iter=75000, thin=5, n.adapt=3000)
 S1<-c(S1$beta[1,,1],S1$beta[1,,2],S1$beta[1,,3], S1$beta[1,,4], S1$beta[1,,5])
 ECDF_CGM<- ecdf(S1); 1-ECDF_CGM(0)
 
@@ -473,7 +473,7 @@ acfplot(R_chGS)
 #traceplot(R_chGS, smooth=FALSE) # take long to print with many studies
 
 # ecdf:
-S1<-jags.samples(MR_chGS, variable.names='beta', n.iter=75000, thin=5, n.adapt=3000)
+S1<-jags.samples(MR_chGS, variable.names=c('beta', 'mu'), n.iter=75000, thin=5, n.adapt=3000)
 S1<-c(S1$beta[1,,1],S1$beta[1,,2],S1$beta[1,,3], S1$beta[1,,4], S1$beta[1,,5])
 ECDF_CGS<- ecdf(S1); 1-ECDF_CGS(0)
 
@@ -507,6 +507,6 @@ acfplot(R_chGN)
 #traceplot(R_chGN, smooth=FALSE) # take long to print with many studies
 
 # ecdf:
-S1<-jags.samples(MR_chGN, variable.names='beta', n.iter=75000, thin=5, n.adapt=3000)
+S1<-jags.samples(MR_chGN, variable.names=c('beta', 'mu'), n.iter=75000, thin=5, n.adapt=3000)
 S1<-c(S1$beta[1,,1],S1$beta[1,,2],S1$beta[1,,3], S1$beta[1,,4], S1$beta[1,,5])
 ECDF_CGN<- ecdf(S1); 1-ECDF_CGN(0)
