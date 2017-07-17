@@ -23,14 +23,17 @@ G1<-jags.model(Bmeta("dunif(-10, 10)", "dunif(0, 10)", nrow(gen2), "G1.txt"),
 G1p<- coda.samples(G1, c('mu', 'tau', 'theta'), n.iter=75000, thin=5)
 G1s<- summary(G1p)
 save(G1s, file="Summary/G1s.Rda")
+
 JS1<- jags.samples(G1, variable.names='mu', n.iter=75000, thin=5, n.adapt=3000)
+S1<-c(JS1$mu[1,,1],JS1$mu[1,,2],JS1$mu[1,,3], JS1$mu[1,,4], JS1$mu[1,,5])
+ECDF1<- ecdf(S1); ECDF1(0)
 G1mu<-c(JS1$mu[1,,1])
 save(G1mu, file="Posterior/G1mu.Rda")
 
 # check results:
 gelman.diag(G1p, confidence=0.95)
 acfplot(G1p)
-#traceplot(G1p, smooth=FALSE) # take long to print with many studies
+#traceplot(G1p, smooth=FALSE) # takes long to print with many studies
 
 
 # sensitivity analysis with different priors:
@@ -50,6 +53,7 @@ acfplot(G2p)
 (F1 <- rma(gen2$T, gen2$S.sqr, method="REML"))
 
 
+###############################################################################
 # Reading speed (general):
 load("Data/subset/gen_speed.Rda")
 gen_speed2<- gen_speed[, c('g', 'g_var')]
@@ -62,7 +66,10 @@ GR1<-jags.model(Bmeta("dunif(-10, 10)", "dunif(0, 10)", nrow(gen_speed2), "GR1.t
 GR1p<- coda.samples(GR1, c('mu', 'tau', 'theta'), n.iter=75000, thin=5)
 GR1s<- summary(GR1p)
 save(GR1s, file="Summary/GR1s.Rda")
+
 JSR1<- jags.samples(GR1, variable.names='mu', n.iter=75000, thin=5, n.adapt=3000)
+S1<-c(JSR1$mu[1,,1],JSR1$mu[1,,2],JSR1$mu[1,,3], JSR1$mu[1,,4], JSR1$mu[1,,5])
+ECDF2<- ecdf(S1); ECDF2(0)
 GR1mu<-c(JSR1$mu[1,,1])
 save(GR1mu, file="Posterior/GR1mu.Rda")
 
@@ -101,7 +108,10 @@ N1<-jags.model(Bmeta("dunif(-10, 10)", "dunif(0, 10)", nrow(noise2), "N1.txt"),
 N1p<- coda.samples(N1, c('mu', 'tau', 'theta'), n.iter=75000, thin=5)
 N1s<- summary(N1p)
 save(N1s, file="Summary/N1s.Rda")
+
 NS1<- jags.samples(N1, variable.names='mu', n.iter=75000, thin=5, n.adapt=3000)
+S1<-c(NS1$mu[1,,1],NS1$mu[1,,2],NS1$mu[1,,3], NS1$mu[1,,4], NS1$mu[1,,5])
+ECDF3<- ecdf(S1); ECDF3(0)
 N1mu<-c(NS1$mu[1,,1])
 save(N1mu, file="Posterior/N1mu.Rda")
 
