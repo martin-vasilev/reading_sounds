@@ -95,6 +95,36 @@ acfplot(GR2p)
 #traceplot(GR2p, smooth=FALSE) # takes long to print with many studies
 
 
+##########################################
+
+#------------------------------
+# Reading speed: speech-only
+#------------------------------
+
+rs_speech<- subset(gen_speed, sound=="speech")
+rs_speech<- rs_speech[, c('g', 'g_var')]
+colnames(rs_speech)<- Bcols
+
+RSSm<-jags.model(Bmeta("dunif(-10, 10)", "dunif(0, 10)", nrow(rs_speech), "RSSm.txt"),
+                 rs_speech, n.chains=5, n.adapt=3000,  quiet=FALSE,
+                inits= list("mu"= runif(1,-3,3), "tau"= runif(1,0,3)))
+RSS<- coda.samples(RSSm, c('mu', 'tau', 'theta'), n.iter=75000, thin=5)
+RSSs<- summary(RSS)
+save(RSSs, file="Summary/RSSs.Rda")
+
+RSS1<- jags.samples(RSSm, variable.names='mu', n.iter=75000, thin=5, n.adapt=3000)
+Ss1<-c(RSS1$mu[1,,1],RSS1$mu[1,,2],RSS1$mu[1,,3], RSS1$mu[1,,4], RSS1$mu[1,,5])
+ECDF10<- ecdf(Ss1); ECDF10(0)
+
+
+# check results:
+gelman.diag(RSS, confidence=0.95)
+acfplot(RSS)
+#traceplot(RSS, smooth=FALSE) # takes long to print with many studies
+plot(RSS, density= F)
+
+
+
 #--------------------
 # background noise  :
 #--------------------
@@ -118,7 +148,7 @@ save(N1mu, file="Posterior/N1mu.Rda")
 # check results:
 gelman.diag(N1p, confidence=0.95)
 acfplot(N1p)
-traceplot(N1p, smooth=FALSE) # take long to print with many studies
+traceplot(N1p, smooth=FALSE) # takes long to print with many studies
 
 
 # frequenist analysis:
@@ -153,7 +183,10 @@ M1<-jags.model(Bmeta("dunif(-10, 10)", "dunif(0, 10)", nrow(music2), "M1.txt"),
 M1p<- coda.samples(M1, c('mu', 'tau', 'theta'), n.iter=75000, thin=5)
 M1s<- summary(M1p)
 save(M1s, file="Summary/M1s.Rda")
+
 MS1<- jags.samples(M1, variable.names='mu', n.iter=75000, thin=5, n.adapt=3000)
+S1<-c(MS1$mu[1,,1],MS1$mu[1,,2],MS1$mu[1,,3], MS1$mu[1,,4], MS1$mu[1,,5])
+ECDF4<- ecdf(S1); ECDF4(0)
 M1mu<-c(MS1$mu[1,,1])
 save(M1mu, file="Posterior/M1mu.Rda")
 
@@ -161,7 +194,7 @@ save(M1mu, file="Posterior/M1mu.Rda")
 gelman.diag(M1p, confidence=0.95)
 acfplot(M1p)
 traceplot(M1p, smooth=FALSE) # takes long to print with many studies
-
+plot(M1p, density = F)
 
 # frequenist analysis:
 (F4 <- rma(music2$T, music2$S.sqr, method="REML"))
@@ -195,7 +228,10 @@ S1<-jags.model(Bmeta("dunif(-10, 10)", "dunif(0, 10)", nrow(speech2), "S1.txt"),
 S1p<- coda.samples(S1, c('mu', 'tau', 'theta'), n.iter=75000, thin=5)
 S1s<- summary(S1p)
 save(S1s, file="Summary/S1s.Rda")
+
 SS1<- jags.samples(S1, variable.names='mu', n.iter=75000, thin=5, n.adapt=3000)
+Sx<-c(SS1$mu[1,,1],SS1$mu[1,,2],SS1$mu[1,,3], SS1$mu[1,,4], SS1$mu[1,,5])
+ECDF5<- ecdf(Sx); ECDF5(0)
 S1mu<-c(SS1$mu[1,,1])
 save(S1mu, file="Posterior/S1mu.Rda")
 
@@ -203,7 +239,7 @@ save(S1mu, file="Posterior/S1mu.Rda")
 gelman.diag(S1p, confidence=0.95)
 acfplot(S1p)
 #traceplot(S1p, smooth=FALSE) # takes long to print with many studies
-
+plot(S1p, density = F)
 
 # frequenist analysis:
 (F5 <- rma(speech2$T, speech2$S.sqr, method="REML"))
@@ -239,7 +275,10 @@ PRM<-jags.model(Bmeta("dunif(-10, 10)", "dunif(0, 10)", nrow(proof), "PRM.txt"),
 PR<- coda.samples(PRM, c('mu', 'tau', 'theta'), n.iter=75000, thin=5)
 PRs<- summary(PR)
 save(PRs, file="Summary/PRs.Rda")
-#S1<- jags.samples(S1, variable.names='mu', n.iter=75000, thin=5, n.adapt=3000)
+
+SPR<- jags.samples(PRM, variable.names='mu', n.iter=75000, thin=5, n.adapt=3000)
+Sx<-c(SPR$mu[1,,1],SPR$mu[1,,2],SPR$mu[1,,3], SPR$mu[1,,4], SPR$mu[1,,5])
+ECDF6<- ecdf(Sx); ECDF6(0)
 #S1mu<-c(S1$mu[1,,1])
 #save(S1mu, file="Posterior/S1mu.Rda")
 
@@ -247,7 +286,7 @@ save(PRs, file="Summary/PRs.Rda")
 gelman.diag(PR, confidence=0.95)
 acfplot(PR)
 traceplot(PR, smooth=FALSE) # takes long to print with many studies
-
+plot(PR, density = F)
 
 # frequenist analysis:
 (F6 <- rma(proof$T, proof$S.sqr, method="REML"))
@@ -277,18 +316,21 @@ proof<- proof[,c("g", "g_var")]
 colnames(proof)<- Bcols
 
 
-load("Data/subset/proof.Rda")
-proof<- proof[,c("g", "g_var")]
-colnames(proof)<- Bcols
+#load("Data/subset/proof.Rda")
+#proof<- proof[,c("g", "g_var")]
+#colnames(proof)<- Bcols
 
 
 PRM_SO<-jags.model(Bmeta("dunif(-10, 10)", "dunif(0, 10)", nrow(proof), "PRM_SO.txt"),
                 proof, n.chains=5, n.adapt=3000,  quiet=FALSE,
-                inits= list("mu"= runif(1,-3,3), "tau"= runif(1,0,3)))
+                 )
 PR_SO<- coda.samples(PRM_SO, c('mu', 'tau', 'theta'), n.iter=75000, thin=5)
 PR_SOs<- summary(PR_SO)
 save(PR_SOs, file="Summary/PR_SOs.Rda")
-#S1<- jags.samples(S1, variable.names='mu', n.iter=75000, thin=5, n.adapt=3000)
+
+SPR2<- jags.samples(PRM_SO, variable.names='mu', n.iter=75000, thin=5, n.adapt=3000)
+Sx<-c(SPR2$mu[1,,1],SPR2$mu[1,,2],SPR2$mu[1,,3], SPR2$mu[1,,4], SPR2$mu[1,,5])
+ECDF7<- ecdf(Sx); ECDF7(0)
 #S1mu<-c(S1$mu[1,,1])
 #save(S1mu, file="Posterior/S1mu.Rda")
 
