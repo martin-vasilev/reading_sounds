@@ -374,6 +374,14 @@ S1<-c(S1$beta[1,,1],S1$beta[1,,2],S1$beta[1,,3], S1$beta[1,,4], S1$beta[1,,5])
 ECDF_CGCP<- ecdf(S1); 1-ECDF_CGCP(0)
 
 
+################# Freq:
+library(meta)
+m1<- metagen(TE=`T`,seTE = sqrt(S.sqr), sm = "SMD",data=gen,
+             comb.random = T, level = 0.95, method.tau = "REML")
+mr<- metareg(m1, ~cov)
+
+
+
 
 #### reading speed:
 load("Data/subset/gen_speed.Rda")
@@ -441,6 +449,13 @@ acfplot(R_chGM)
 S1<-jags.samples(MR_chGM, variable.names=c('beta', 'mu'), n.iter=75000, thin=5, n.adapt=3000)
 S1<-c(S1$beta[1,,1],S1$beta[1,,2],S1$beta[1,,3], S1$beta[1,,4], S1$beta[1,,5])
 ECDF_CGM<- ecdf(S1); 1-ECDF_CGM(0)
+#
+
+#####
+m2<- metagen(TE=`T`,seTE = sqrt(S.sqr), sm = "SMD",data=music,
+             comb.random = T, level = 0.95, method.tau = "REML")
+mr2<- metareg(m2, ~cov)
+
 
 
 
@@ -478,6 +493,12 @@ S1<-c(S1$beta[1,,1],S1$beta[1,,2],S1$beta[1,,3], S1$beta[1,,4], S1$beta[1,,5])
 ECDF_CGS<- ecdf(S1); 1-ECDF_CGS(0)
 
 
+#####
+m3<- metagen(TE=`T`,seTE = sqrt(S.sqr), sm = "SMD",data=speech,
+             comb.random = T, level = 0.95, method.tau = "REML")
+mr3<- metareg(m3, ~cov)
+
+
 ###### Noise:
 load("Data/subset/noise.Rda")
 
@@ -510,3 +531,8 @@ acfplot(R_chGN)
 S1<-jags.samples(MR_chGN, variable.names=c('beta', 'mu'), n.iter=75000, thin=5, n.adapt=3000)
 S1<-c(S1$beta[1,,1],S1$beta[1,,2],S1$beta[1,,3], S1$beta[1,,4], S1$beta[1,,5])
 ECDF_CGN<- ecdf(S1); 1-ECDF_CGN(0)
+
+#####
+m4<- metagen(TE=`T`,seTE = sqrt(S.sqr), sm = "SMD",data=noise,
+             comb.random = T, level = 0.95, method.tau = "REML")
+mr4<- metareg(m4, ~cov)
