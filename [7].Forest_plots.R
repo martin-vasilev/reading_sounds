@@ -80,7 +80,7 @@ N$w<- N$w/ max(N$w)
 #============
 png('Plots/Forest_plots.png', width = 7000, height = 7000, units = "px", res=600, type="cairo")
 
-layout(mat = matrix(c(1,2,1,3),nrow = 2,ncol = 2,byrow = TRUE),heights = c(0.5,0.3, 0.2))
+layout(mat = matrix(c(1,2,1,3),nrow = 2,ncol = 2,byrow = TRUE),heights = c(0.4,0.3, 0.2))
 par(mar=c(4,4,3,4))
 
 #============
@@ -104,7 +104,7 @@ segments(x0=rep(breaks[1], nrow(M))+0.035, y0=c(nrow(M):1), x1=rep(breaks[length
 # line as 0 (es)
 segments(x0=0, y0=-2, x1=0, y1=nrow(M)+0.5, lwd=1, lty=1, col="black")
 
-
+par(xpd=TRUE)
 # Plot observed CIs:
 for(i in 1:nrow(M)){
   if(M$CIl[i]<breaks[1]|M$CIu[i]>breaks[length(breaks)]+0.15){
@@ -138,7 +138,7 @@ points(x= M$Mean, y=c(nrow(M):1)-0.15, pch = 15, cex=1+2*M$w, col="darkred")
 segments(x0=M$CrIl, y0=c(nrow(M):1)-0.15, x1=M$CrIu, y1=c(nrow(M):1)-0.15,
          lwd=1, lty=1, col="darkred")
 
-
+par(xpd=FALSE)
 # Pooled estimate:
 segments(x0=PooledCrIl[1], y0=-0.5, x1= PooledCrIu[1], y1=-0.5, lwd=1.5, lty=1, col="darkred")
 points(x= PooledM[1], y=-0.5, pch = 18, cex=3, col="darkred")
@@ -271,3 +271,24 @@ mtext("Pooled mean", side=1, line= -1.3, cex=1.1, font=2, adj = 0)
 dev.off()
 
 
+
+###### legend plot:
+png('Plots/Forest_legend.png', width = 7000, height = 1200, units = "px", res=600, type="cairo")
+par(mar=c(0,0,0,0))
+plot(0, type = "n", axes=FALSE, xlab="", ylab= "", xlim= c(0, 7000), ylim= c(0, 1200))
+
+rect(xleft = 2500,ybottom = 300,xright = 4500, ytop = 700, border = "black")
+
+
+segments(x0=2600, y0=600, x1=3000, y1=600,lwd=1.5, lty=2, col="black")
+points(x= 2800-15, y= 600, pch = 22, cex=2, col="black", bg="white")
+
+text(x = 3700, y =600, labels = "Observed mean (95% CI)" , family= "serif", cex= 1.3)
+##
+
+segments(x0=2600, y0=400, x1=3000-15, y1=400,lwd=1.5, lty=1, col="darkred")
+points(x= 2800-15, y= 400, pch = 15, cex=2, col="darkred")
+text(x = 3700, y =400, labels = "Posterior mean (95% CrI)" , family= "serif", cex=1.3)
+
+
+dev.off()
