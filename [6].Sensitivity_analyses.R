@@ -188,6 +188,15 @@ Sens2<- sensitivity_analysis(gen_speed2, "dunif(-10, 10)", "dunif(0, 10)")
 save(Sens2, file= "Summary/Sensitivity/GR.Rda")
 
 
+# proofreading accuracy:
+load("Data/subset/proof.Rda")
+proof2<- proof[, c('g', 'g_var')]
+colnames(proof2)<- Bcols
+
+Sens6<- sensitivity_analysis(proof2, "dunif(-10, 10)", "dunif(0, 10)") 
+save(Sens6, file= "Summary/Sensitivity/Proof.Rda")
+
+
 # noise:
 load("Data/subset/noise.Rda")
 noise2<- noise[,c("g", "g_var")]

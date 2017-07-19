@@ -283,12 +283,12 @@ rect(xleft = 2500,ybottom = 300,xright = 4500, ytop = 700, border = "black")
 segments(x0=2600, y0=600, x1=3000, y1=600,lwd=1.5, lty=2, col="black")
 points(x= 2800-15, y= 600, pch = 22, cex=2, col="black", bg="white")
 
-text(x = 3700, y =600, labels = "Observed mean (95% CI)" , family= "serif", cex= 1.3)
+text(x = 3700, y =600, labels = "Observed mean (95% CI)" , family= "serif", cex= 1.2)
 ##
 
 segments(x0=2600, y0=400, x1=3000-15, y1=400,lwd=1.5, lty=1, col="darkred")
 points(x= 2800-15, y= 400, pch = 15, cex=2, col="darkred")
-text(x = 3700, y =400, labels = "Posterior mean (95% CrI)" , family= "serif", cex=1.3)
+text(x = 3700, y =400, labels = "Posterior mean (95% CrI)" , family= "serif", cex=1.2)
 
 
 dev.off()
