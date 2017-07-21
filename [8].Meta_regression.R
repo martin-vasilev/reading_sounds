@@ -28,67 +28,12 @@ sumR1<- summary(R_LM1); save(sumR1, file="Summary/Reg/sumR1.Rda") # MAIN
 gelman.diag(R_LM1, confidence=0.95)
 acfplot(R_LM1)
 #traceplot(R_LM1, smooth=FALSE) # take long to print with many studies
+plot(R_LM1, density=FALSE)
 
 # ecdf:
 S1<-jags.samples(MR_LM1, variable.names= c('beta', 'mu'), n.iter=75000, thin=5, n.adapt=3000)
 S1<-c(S1$beta[1,,1],S1$beta[1,,2],S1$beta[1,,3], S1$beta[1,,4], S1$beta[1,,5])
 ECDF1<- ecdf(S1); ECDF1(0)
-
-rng<- seq(-2, -1.9, 0.01)
-rng2<- seq(-1.9, -1.8, 0.01)
-rng3<- seq(-1.8, -1.7, 0.01)
-rng4<- seq(-1.7, -1.6, 0.01)
-rng5<- seq(-1.6, -1.5, 0.01)
-rng6<- seq(-1.5, -1.4, 0.01)
-rng7<- seq(-1.4, -1.3, 0.01)
-rng8<- seq(-1.3, -1.2, 0.01)
-rng9<- seq(-1.2, -1.1, 0.01)
-rng10<- seq(-1.1, -1.0, 0.01)
-rng11<- seq(-1, -0.9, 0.01)
-rng12<- seq(-0.9, -0.8, 0.01)
-rng13<- seq(-0.8, -0.7, 0.01)
-rng14<- seq(-0.7, -0.6, 0.01)
-rng15<- seq(-0.6, -0.5, 0.01)
-rng16<- seq(-0.5, -0.4, 0.01)
-rng17<- seq(-0.4, -0.3, 0.01)
-rng18<- seq(-0.3, -0.2, 0.01)
-rng19<- seq(-0.2, -0.1, 0.01)
-rng20<- seq(-0.1, 0, 0.01)
-
-probs<- ECDF1(rng)
-probs2<- ECDF1(rng2)
-probs3<- ECDF1(rng3)
-probs4<- ECDF1(rng4)
-probs5<- ECDF1(rng5)
-probs6<- ECDF1(rng6)
-probs7<- ECDF1(rng7)
-probs8<- ECDF1(rng8)
-probs9<- ECDF1(rng9)
-probs10<- ECDF1(rng10)
-probs11<- ECDF1(rng11)
-probs12<- ECDF1(rng12)
-probs13<- ECDF1(rng13)
-probs14<- ECDF1(rng14)
-probs15<- ECDF1(rng15)
-probs16<- ECDF1(rng16)
-probs17<- ECDF1(rng17)
-probs18<- ECDF1(rng18)
-probs19<- ECDF1(rng19)
-probs20<- ECDF1(rng20)
-
-
-df<- rbind(probs, probs2, probs3, probs4, probs5, probs6, probs7, probs8,
-           probs9, probs10, probs11, probs12, probs13, probs14, probs15, 
-           probs16, probs17, probs18, probs19, probs20)
-
-
-rng<- seq(-1.5,1.5, 0.1)
-prob<- ECDF1(rng)
-
-df<- data.frame(rng, prob)
-
-p=plot_ly(df, x = ~rng, y = ~prob, type="scatter",
-          mode = "markers", color = ~prob, size = ~prob)
 
 
 # oposite coding (sensitivity test):
@@ -100,6 +45,7 @@ sumR2<- summary(R_LM2); save(sumR2, file="Summary/Reg/sumR2.Rda") # MAIN
 gelman.diag(R_LM2, confidence=0.95)
 acfplot(R_LM2)
 #traceplot(R_LM2, smooth=FALSE) # take long to print with many studies
+plot(R_LM2, density=F)
 
 # ecdf:
 S2<-jags.samples(MR_LM2, variable.names=c('beta', 'mu'), n.iter=75000, thin=5, n.adapt=3000)
@@ -126,7 +72,7 @@ acfplot(lyrM)
 #traceplot(lyrM, smooth=FALSE) # take long to print with many studies
 
 # posterior plots:
-SL<-jags.samples(lyrM1, variable.names=c('beta', 'mu'), n.iter=75000, thin=5, n.adapt=3000)
+SL<-jags.samples(lyrM1, variable.names=c('mu'), n.iter=75000, thin=5, n.adapt=3000)
 SL<-c(SL$mu[1,,1], SL$mu[1,,2], SL$mu[1,,3], SL$mu[1,,4], SL$mu[1,,5])
 save(SL, file="Posterior/SL.Rda")
 
@@ -144,7 +90,7 @@ acfplot(nonLyrM)
 #traceplot(nonLyrM, smooth=FALSE) # take long to print with many studies
 
 # posterior plots:
-SNL<-jags.samples(nonLyrM1, variable.names=c('beta', 'mu'), n.iter=75000, thin=5, n.adapt=3000)
+SNL<-jags.samples(nonLyrM1, variable.names=c('mu'), n.iter=75000, thin=5, n.adapt=3000)
 SNL<-c(SNL$mu[1,,1], SNL$mu[1,,2], SNL$mu[1,,3], SNL$mu[1,,4], SNL$mu[1,,5])
 save(SNL, file="Posterior/SNL.Rda")
 
@@ -168,7 +114,7 @@ acfplot(R_SM1)
 # ecdf:
 S2<-jags.samples(MR_SM1, variable.names=c('beta', 'mu'), n.iter=75000, thin=5, n.adapt=3000)
 S2<-c(S2$beta[1,,1],S2$beta[1,,2],S2$beta[1,,3], S2$beta[1,,4], S2$beta[1,,5])
-ECDF2<- ecdf(S2); ECDF2(0)
+ECDF3<- ecdf(S2); ECDF3(0)
 
 
 ### Simple effects:
@@ -204,7 +150,6 @@ acfplot(SpM)
 
 
 ####
-
 # Intelligible vs unintelligible speech:
 
 load("Data/subset/metareg/PH.Rda")
@@ -221,6 +166,12 @@ sumR3<- summary(MR_PH); save(sumR3, file="Summary/Reg/sumR3.Rda") # MAIN
 gelman.diag(MR_PH, confidence=0.95)
 acfplot(MR_PH)
 #traceplot(MR_PH, smooth=FALSE) # take long to print with many studies
+
+
+# ecdf:
+S2<-jags.samples(MR_PH1, variable.names=c('beta', 'mu'), n.iter=75000, thin=5, n.adapt=3000)
+S2<-c(S2$beta[1,,1],S2$beta[1,,2],S2$beta[1,,3], S2$beta[1,,4], S2$beta[1,,5])
+ECDFPH<- ecdf(S2); ECDFPH(0)
 
 
 
@@ -272,7 +223,8 @@ sumEAN<- summary(R_EAN); save(sumEAN, file="Summary/Reg/sumEAN.Rda") # MAIN
 
 gelman.diag(R_EAN, confidence=0.95)
 acfplot(R_EAN)
-traceplot(R_EAN, smooth=FALSE) # take long to print with many studies
+#traceplot(R_EAN, smooth=FALSE) # take long to print with many studies
+plot(R_EAN, density=F)
 
 # ecdf:
 S2<-jags.samples(MR_EAN, variable.names=c('beta', 'mu'), n.iter=75000, thin=5, n.adapt=3000)
@@ -296,8 +248,8 @@ save(sumAC, file="Summary/Reg/sumAC.Rda")
 
 gelman.diag(AC, confidence=0.95)
 acfplot(AC)
-traceplot(AC, smooth=FALSE) # takes long to print with many studies
-
+#traceplot(AC, smooth=FALSE) # takes long to print with many studies
+plot(AC, density=F)
 
 # environmental noise:
 ENM<-jags.model(Bmeta("dunif(-10, 10)", "dunif(0, 10)", nrow(EAN2), "ENM.txt"),
@@ -309,8 +261,8 @@ save(sumEN, file="Summary/Reg/sumEN.Rda")
 
 gelman.diag(EN, confidence=0.95)
 acfplot(EN)
-traceplot(EN, smooth=FALSE) # take long to print with many studies
-
+#traceplot(EN, smooth=FALSE) # take long to print with many studies
+plot(EN, density=F)
 
 
 ###########################################
@@ -329,7 +281,8 @@ sumMAN<- summary(R_MAN); save(sumMAN, file="Summary/Reg/sumMAN.Rda") # MAIN
 
 gelman.diag(R_MAN, confidence=0.95)
 acfplot(R_MAN)
-traceplot(R_MAN, smooth=FALSE) # takes long to print with many studies
+#traceplot(R_MAN, smooth=FALSE) # takes long to print with many studies
+plot(R_MAN, density = F)
 
 # ecdf:
 S2<-jags.samples(MR_MAN, variable.names=c('beta', 'mu'), n.iter=75000, thin=5, n.adapt=3000)
@@ -357,8 +310,8 @@ gen<- gen[,c('g', 'g_var', 'cov')]
 colnames(gen)<- BRcols
 table(gen$cov)
 
-### reading comprehension (all sounds):
 
+### reading comprehension (all sounds):
 MR_chGCP<- jags.model(BmetaReg("dunif(-10, 10)", "dunif(0, 10)", "dunif(-10, 10)", nrow(gen),
                              "MR_chGCP.txt"), gen, n.chains=5, n.adapt=3000, quiet=FALSE)
 R_chGCP<- coda.samples(MR_chGCP, c('mu', 'tau', "beta", "theta"), n.iter=75000, thin=5)
