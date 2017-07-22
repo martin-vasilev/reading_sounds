@@ -342,7 +342,7 @@ xpos2<- seq(1.7, 1.9, (1.9-1.7)/(Nm-1))
 
 
 plot(0, type = "n", axes=FALSE, xlab="Type of sound",
-     ylab="Effect size (g)", main= "Acoustical noise vs. \nInstrumental music ", family="serif",
+     ylab="Effect size (g)", main= "Acoustical noise vs. \nNon-lyrical music ", family="serif",
      ylim= c(-2, 2), xlim=c(1, 2), font.main=1, cex.main=1.7, cex.lab=1.5)
 
 axis(1, at= c(1.1,1.9), labels= c("Noise", "Music"), cex.axis=1.3, family="serif")
