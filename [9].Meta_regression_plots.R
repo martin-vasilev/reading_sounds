@@ -35,30 +35,30 @@ par(mar=c(4.5,7,4,3))
 # lyrical vs non-lyrical, meta-reg:
 plot(0, type = "n", axes=FALSE, xlab="Type of music",
      ylab="Effect size (g)", main= "Non-lyrical vs Lyrical\nmusic", family="serif",
-     ylim= c(-1, 1), xlim=c(1, 2), font.main=1, cex.main=2.2, cex.lab=2)
+     ylim= c(-2, 2), xlim=c(1, 2), font.main=1, cex.main=2.2, cex.lab=2)
 
 axis(1, at= c(1.1,1.9), labels= c("Non-lyrical", "Lyrical"), cex.axis=1.6, family="serif")
 
-axis(2, at = c(1,0.75,0.5,0.25, 0,-0.25,-0.5,-0.75,-1),
-     labels = c('1', '.75','.5','.25','0','-.25', '-.5','-.75','-1'),
+axis(2, at = c(2,1.5, 1,0.5,0,-0.5,-1,-1.5,-2),
+     labels = c('2','','1','','0', '', '-1', '','-2'),
      cex.axis=1.6)
 
 par(xpd=TRUE)
-text(x = 0.52, y = 1, labels = "a",  font=2, cex=3, family="serif")
+text(x = 0.52, y = 2, labels = "a",  font=2, cex=3, family="serif")
 par(xpd=FALSE)
 #breaks= c(-2,-1.5,-1,-0.5,0, 0.5)
 #breaks_s= c("-2",'-1.5','-1','-0.5','0', '0.5')
 #
 #a<- seq(0, 0.2, 1/1000)
-abline(a = 0, b = sumR1$statistics[1,1], col="darkred", lwd=2, lty=5)
+abline(a = 0, b = sumR1$statistics[1,1], col="darkred", lwd=3, lty=5)
 #for( i in 1:10){
 #  abline(a = 0+a[i], b = sumR1$statistics[1,1], col= adjustcolor("darkred", alpha.f = 0.1),
 #         lwd=2, lty=1)
 #}
 
 #abline(a = sumR1$statistics[1,1]-0.2, b=sumR1$statistics[1,1]-0.2, col="darkred", lwd=2, lty=1)
-text(x= 1.47, y = sumR1$statistics[1,1]+0.07, labels = paste("b= ", round(sumR1$statistics[1,1],2)),
-     family="serif", cex = 1.8, srt=-5)
+text(x= 1.50, y = sumR1$statistics[1,1]+0.2, labels = paste("b= ", round(sumR1$statistics[1,1],2)),
+     family="serif", cex = 1.8, srt=-3)
 
 #xx<- c(1,1,1.1, 1.1, 1.2, 1.2, 1.3, 1.3, 1.4, 1.4, 1.5, 1.5, 1.6, 1.6, 1.7, 1.7, 1.8, 1.8, 1.9, 1.9,
 #       2,2)
@@ -67,8 +67,10 @@ text(x= 1.47, y = sumR1$statistics[1,1]+0.07, labels = paste("b= ", round(sumR1$
 #        col = "darkred", angle = -0.17, density = 1)
         
 
-Pnon<- sumR1$statistics[4:(4+Nnon-1),1]
-Pslyr<- sumR1$statistics[(4+Nnon):nrow(sumR1$statistics),1]
+#Pnon<- sumR1$statistics[4:(4+Nnon-1),1]
+Pnon<- LM1$g[LM1$type=="non-lyrical"]
+#Pslyr<- sumR1$statistics[(4+Nnon):nrow(sumR1$statistics),1]
+Pslyr<- LM1$g[LM1$type=="lyrical"]
 
 xpos1<- seq(1.05, 1.25, (1.25-1.05)/(Nnon-1))
 xpos2<- seq(1.7, 1.9, (1.9-1.7)/(Nlyr-1))
@@ -95,8 +97,10 @@ wM<- wM/max(wM)
 wS<- 1/wS
 wS<- wS/max(wS)
 
-PM<- sumR2$statistics[4:(4+Nm-1),1]
-PS<- sumR2$statistics[(4+Nm):nrow(sumR2$statistics),1]
+#PM<- sumR2$statistics[4:(4+Nm-1),1]
+PM<- SM$g[SM$type=="music"]
+#PS<- sumR2$statistics[(4+Nm):nrow(sumR2$statistics),1]
+PS<- SM$g[SM$type=="speech"]
 
 xpos1<- seq(1.05, 1.25, (1.25-1.05)/(Nm-1))
 xpos2<- seq(1.7, 1.9, (1.9-1.7)/(Ns-1))
@@ -105,18 +109,19 @@ xpos2<- seq(1.7, 1.9, (1.9-1.7)/(Ns-1))
 
 plot(0, type = "n", axes=FALSE, xlab="Type of sound",
      ylab="Effect size (g)", main= "Lyrical music vs intelligible\nspeech", family="serif",
-     ylim= c(-1, 1), xlim=c(1, 2), font.main=1, cex.main=2.2, cex.lab=2)
+     ylim= c(-2, 2), xlim=c(1, 2), font.main=1, cex.main=2.2, cex.lab=2)
 
 axis(1, at= c(1.1,1.9), labels= c("Lyrical music", "Intelligible speech"),
      cex.axis=1.6, family="serif")
 
-axis(2, at = c(1,0.75,0.5,0.25, 0,-0.25,-0.5,-0.75,-1),
-     labels = c('1','.75','.5','.25','0','-.25', '-.5','-.75','-1'),
+axis(2, at = c(2,1.5, 1,0.5,0,-0.5,-1,-1.5,-2),
+     labels = c('2','','1','','0', '', '-1', '','-2'),
      cex.axis=1.6)
 
-abline(a = sumR2$statistics[2,1], b = sumR2$statistics[1,1], col="darkred", lwd=2, lty=5)
 
-text(x= 1.45, y = sumR2$statistics[1,1]-0.2, labels = paste("b= ", round(sumR2$statistics[1,1],2)),
+abline(a = sumR2$statistics[2,1], b = sumR2$statistics[1,1], col="darkred", lwd=3, lty=5)
+#abline(a = 0, b = sumR2$statistics[1,1], col="darkred", lwd=3, lty=5)
+text(x= 1.45, y = sumR2$statistics[1,1]-0.1, labels = paste("b= ", round(sumR2$statistics[1,1],2)),
      family="serif", cex = 1.8, srt=1)
 
 points(x = xpos1, PM, pch=21, bg= pallete[4], cex=2 + 1.5*wM)
@@ -143,8 +148,10 @@ wPhon<- wPhon/max(wPhon)
 wSem<- 1/wSem
 wSem<- wSem/max(wSem)
 
-Pphon<- sumR3$statistics[4:(4+Nphon-1),1]
-Psem<- sumR3$statistics[(4+Nphon):nrow(sumR3$statistics),1]
+#Pphon<- sumR3$statistics[4:(4+Nphon-1),1]
+Pphon<- PH$g[PH$type=="unintelligible"]
+#Psem<- sumR3$statistics[(4+Nphon):nrow(sumR3$statistics),1]
+Psem<- PH$g[PH$type=="ïntelligible"]
 
 xpos1<- seq(1.05, 1.25, (1.25-1.05)/(Nphon-1))
 xpos2<- seq(1.7, 1.9, (1.9-1.7)/(Nsem-1))
@@ -152,23 +159,23 @@ xpos2<- seq(1.7, 1.9, (1.9-1.7)/(Nsem-1))
 
 plot(0, type = "n", axes=FALSE, xlab="Type of speech",
      ylab="Effect size (g)", main= "Unintelligible vs intelligible\nspeech", family="serif",
-     ylim= c(-1, 1), xlim=c(1, 2), font.main=1, cex.main=2.2, cex.lab=2)
+     ylim= c(-2, 2), xlim=c(1, 2), font.main=1, cex.main=2.2, cex.lab=2)
 
 axis(1, at= c(1.1,1.9), labels= c("Unintelligible", "Intelligible"),
      cex.axis=1.6, family="serif")
 
-axis(2, at = c(1,0.75,0.5,0.25, 0,-0.25,-0.5,-0.75,-1),
-     labels = c('1', '.75','.5','.25','0','-.25', '-.5','-.75','-1'),
+axis(2, at = c(2,1.5, 1,0.5,0,-0.5,-1,-1.5,-2),
+     labels = c('2','','1','','0', '', '-1', '','-2'),
      cex.axis=1.6)
 
-abline(a = 0, b = sumR3$statistics[1,1], col="darkred", lwd=2, lty=5)
+abline(a = 0, b = sumR3$statistics[1,1], col="darkred", lwd=3, lty=5)
 
-text(x= 1.45, y = sumR3$statistics[1,1]+0.1, labels = paste("b= ", round(sumR3$statistics[1,1],2)),
-     family="serif", cex = 1.8, srt=-3)
+
+text(x= 1.50, y = sumR3$statistics[1,1]+0.25, labels = paste("b= ", round(sumR3$statistics[1,1],2)),
+     family="serif", cex = 1.8, srt=-2)
 
 points(x = xpos1, Pphon, pch=21, bg= pallete[6], cex=2 + 1.5*wPhon)
 points(x=xpos2, Psem, pch=21, bg= pallete[8], cex=2+ 1.5*wSem)
-
 
 # Bar plots of simple effect:
 
@@ -251,7 +258,7 @@ dev.off()
 #-------------------
 
 
-png('Plots/MetaReg_plot2.png', width = 4000, height = 4000, units = "px", res=600, type="cairo")
+png('Plots/MetaReg_plot2.png', width = 4000, height = 4200, units = "px", res=600, type="cairo")
 
 layout(mat = matrix(c(1,2,3,4),nrow = 2,ncol = 2,byrow = TRUE),heights = c(0.5,0.5))
 par(mar=c(4.5,7,4,2))
@@ -273,8 +280,10 @@ wA<- wA/max(wA)
 wE<- 1/wE
 wE<- wE/max(wE)
 
-PA<- sumEAN$statistics[4:(4+Na-1),1]
-PE<- sumEAN$statistics[(4+Na):nrow(sumEAN$statistics),1]
+#PA<- sumEAN$statistics[4:(4+Na-1),1]
+PA<- EAN$g[EAN$type=="acoustical"]
+#PE<- sumEAN$statistics[(4+Na):nrow(sumEAN$statistics),1]
+PE<- EAN$g[EAN$type=="environmental"]
 
 xpos1<- seq(1.05, 1.25, (1.25-1.05)/(Na-1))
 xpos2<- seq(1.7, 1.9, (1.9-1.7)/(Ne-1))
@@ -283,22 +292,22 @@ xpos2<- seq(1.7, 1.9, (1.9-1.7)/(Ne-1))
 
 plot(0, type = "n", axes=FALSE, xlab="Type of noise",
      ylab="Effect size (g)", main= "Acoustical vs.\nEnvironmental noise", family="serif",
-     ylim= c(-1, 0.25), xlim=c(1, 2), font.main=1, cex.main=1.5, cex.lab=1.4)
+     ylim= c(-2, 2), xlim=c(1, 2), font.main=1, cex.main=1.7, cex.lab=1.5)
 
-axis(1, at= c(1.1,1.9), labels= c("Acoustical", "Environmental"), cex.axis=1.2, family="serif")
+axis(1, at= c(1.1,1.9), labels= c("Acoustical", "Environmental"), cex.axis=1.3, family="serif")
 
-axis(2, at = c(0.5,0.25, 0,-0.25,-0.5,-0.75,-1),
-     labels = c('.5','.25','0','-.25', '-.5','-.75','-1'),
-     cex.axis=1.1)
+axis(2, at = c(2,1.5, 1,0.5,0,-0.5,-1,-1.5,-2),
+     labels = c('2','','1','','0', '', '-1', '','-2'),
+     cex.axis=1.2)
 
 par(xpd=TRUE)
-text(x = 0.6, y = 0.25, labels = "a",  font=2, cex=2.5, family="serif")
+text(x = 0.42, y = 2, labels = "a",  font=2, cex=2.5, family="serif")
 par(xpd=FALSE)
 
 
-abline(a = sumEAN$statistics[2,1], b = sumEAN$statistics[1,1], col="darkred", lwd=2, lty=5)
-text(x= 1.45, y = sumEAN$statistics[1,1]-0.28, labels = paste("b= ", round(sumEAN$statistics[1,1],2)),
-     family="serif", cex = 1.8, srt=1)
+abline(a = sumEAN$statistics[2,1], b = sumEAN$statistics[1,1], col="darkred", lwd=3, lty=5)
+text(x= 1.52, y = sumEAN$statistics[1,1]+0.4, labels = paste("b= ", round(sumEAN$statistics[1,1],2)),
+     family="serif", cex = 1.5, srt=-2)
 
 points(x = xpos1, PA, pch=21, bg= pallete[2], cex=2 + 1.5*wA)
 points(x=xpos2, PE, pch=21, bg= pallete[3], cex=2+ 1.5*wE)
@@ -322,8 +331,10 @@ wA<- wA/max(wA)
 wM<- 1/wM
 wM<- wM/max(wM)
 
-PA<- sumMAN$statistics[4:(4+Na-1),1]
-PM<- sumMAN$statistics[(4+Na):nrow(sumMAN$statistics),1]
+#PA<- sumMAN$statistics[4:(4+Na-1),1]
+PA<- MAN$g[MAN$type=="acoustical"]
+#PM<- sumMAN$statistics[(4+Na):nrow(sumMAN$statistics),1]
+PM<- MAN$g[MAN$type=="instrumental"]
 
 xpos1<- seq(1.05, 1.25, (1.25-1.05)/(Na-1))
 xpos2<- seq(1.7, 1.9, (1.9-1.7)/(Nm-1))
@@ -332,18 +343,18 @@ xpos2<- seq(1.7, 1.9, (1.9-1.7)/(Nm-1))
 
 plot(0, type = "n", axes=FALSE, xlab="Type of sound",
      ylab="Effect size (g)", main= "Acoustical noise vs. \nInstrumental music ", family="serif",
-     ylim= c(-1, 0.25), xlim=c(1, 2), font.main=1, cex.main=1.5, cex.lab=1.4)
+     ylim= c(-2, 2), xlim=c(1, 2), font.main=1, cex.main=1.7, cex.lab=1.5)
 
-axis(1, at= c(1.1,1.9), labels= c("Noise", "Music"), cex.axis=1.2, family="serif")
+axis(1, at= c(1.1,1.9), labels= c("Noise", "Music"), cex.axis=1.3, family="serif")
 
-axis(2, at = c(0.5,0.25, 0,-0.25,-0.5,-0.75,-1),
-     labels = c('.5','.25','0','-.25', '-.5','-.75','-1'),
-     cex.axis=1.1)
+axis(2, at = c(2,1.5, 1,0.5,0,-0.5,-1,-1.5,-2),
+     labels = c('2','','1','','0', '', '-1', '','-2'),
+     cex.axis=1.2)
 
 
-abline(a = sumMAN$statistics[2,1], b = sumMAN$statistics[1,1], col="darkred", lwd=2, lty=5)
-text(x= 1.45, y = sumMAN$statistics[1,1]-0.28, labels = paste("b= ", round(sumMAN$statistics[1,1],2)),
-     family="serif", cex = 1.8, srt=1)
+abline(a = sumMAN$statistics[2,1], b = sumMAN$statistics[1,1], col="darkred", lwd=3, lty=5)
+text(x= 1.4, y = sumMAN$statistics[1,1]+0.45, labels = paste("b= ", round(sumMAN$statistics[1,1],2)),
+     family="serif", cex = 1.5, srt=-1)
 
 points(x = xpos1, PA, pch=21, bg= pallete[4], cex=2 + 1.5*wA)
 points(x=xpos2, PM, pch=21, bg= pallete[5], cex=2+ 1.5*wM)
@@ -353,11 +364,11 @@ points(x=xpos2, PM, pch=21, bg= pallete[5], cex=2+ 1.5*wM)
 # Bar plots of simple effect:
 
 plot(NA, type = "n", axes=FALSE, family="serif",ylab="Effect size (g)", xlab="Type of noise",
-     ylim= c(-1, 0.25), xlim=c(1, 2), cex.main=1.5, cex.lab=1.4, col="white")
-axis(2, at = c(-1,-0.75,-0.5, -0.25, 0, 0.25,0.5),
-     labels = c('-1', '-.75','-.5','-.25','0', '.25','.5'),
-     cex.axis=1.1)
-axis(1, at= c(1.1,1.9), labels= c("Acoustical", "Environmental"), cex.axis=1.2, family="serif")
+     ylim= c(-1, 1), xlim=c(1, 2), cex.main=1.5, cex.lab=1.5, col="white")
+axis(2, at = c(-1,-0.75,-0.5, -0.25, 0, 0.25,0.5,0.75,1),
+     labels = c('-1', '','-.5','','0', '','.5', '', '1'),
+     cex.axis=1.2)
+axis(1, at= c(1.1,1.9), labels= c("Acoustical", "Environmental"), cex.axis=1.3, family="serif")
 
 load("Summary/Reg/sumAC.Rda")
 load("Summary/Reg/sumEN.Rda")
@@ -372,17 +383,17 @@ arrows(x0 = 1.75, y0 =sumEN$quantiles[1,1] , x1 = 1.75, y1 = sumEN$quantiles[1,5
 points(1.75, sumEN$statistics[1,1], bg= pallete[3], pch=22, cex=1.5)
 
 par(xpd=TRUE)
-text(x = 0.6, y = 0.25, labels = "b",  font=2, cex=2.5, family="serif")
+text(x = 0.42, y = 1, labels = "b",  font=2, cex=2.5, family="serif")
 par(xpd=FALSE)
 
 
 # second:
 plot(NA, type = "n", axes=FALSE, family="serif",ylab="Effect size (g)", xlab="Type of sound",
-     ylim= c(-1, 0.25), xlim=c(1, 2), cex.main=1.5, cex.lab=1.4, col="white")
-axis(2, at = c(-1,-0.75,-0.5, -0.25, 0, 0.25,0.5),
-     labels = c('-1', '-.75','-.5','-.25','0', '.25','.5'),
-     cex.axis=1.1)
-axis(1, at= c(1.1,1.9), labels= c("Noise", "Music"), cex.axis=1.2, family="serif")
+     ylim= c(-1, 1), xlim=c(1, 2), cex.main=1.5, cex.lab=1.5, col="white")
+axis(2, at = c(-1,-0.75,-0.5, -0.25, 0, 0.25,0.5,0.75,1),
+     labels = c('-1', '','-.5','','0', '','.5', '', '1'),
+     cex.axis=1.2)
+axis(1, at= c(1.1,1.9), labels= c("Noise", "Music"), cex.axis=1.3, family="serif")
 
 
 arrows(x0 = 1.25, y0 =sumAC$quantiles[1,1] , x1 = 1.25, y1 = sumAC$quantiles[1,5],
