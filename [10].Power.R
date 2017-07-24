@@ -55,17 +55,17 @@ require(grDevices)
 png('Plots/powerPlot.png', width = 4800, height = 2800, units = "px", res=600, type="cairo")
 
 
-filled.contour(seq(0.01, 2, 0.01), Nrange, P3,color.palette = terrain.colors,
+filled.contour(seq(0.005, 2, 0.01), Nrange, P3,color.palette = terrain.colors,
                plot.title = title(main = "",
                                   xlab = "|Effect size|", ylab = "Sample size",
                                   family="serif", cex.lab=1.3),
-               plot.axes = { axis(1, seq(0, 2, by = 0.25), family="serif")
+               plot.axes = { axis(1, seq(0, 2, by = 0.1), family="serif")
                  axis(2, seq(0, 400, by = 50), family="serif") },
                key.title = title(main = "Power", family="serif"))
 
-#par(xpd=TRUE)
-#arrows(x0 = -0.045, y0 = 425, x1 =0.5, y1 = 425, lwd=1.3,
-#       length =0.08, angle=90, code=3, lty = 1, col= "darkred")
+par(xpd=TRUE)
+arrows(x0 = 0.01, y0 = 425, x1 =0.5, y1 = 425, lwd=1.3,
+       length =0.08, angle=90, code=3, lty = 1, col= "darkred")
 
 dev.off()
 
