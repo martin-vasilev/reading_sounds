@@ -226,3 +226,34 @@ save(Sens5, file= "Summary/Sensitivity/S.Rda")
 
 
 
+#########################
+#    Alt. coding (LM)   #
+#########################
+
+library(vioplot)
+
+load("Posterior/LM1p.Rda")
+load("Posterior/LM2p.Rda")
+
+png('Plots/LM_alt_cod.png', width = 1600, height = 1600, units = "px", res = 300)
+
+plot(1, 1, xlim = c(0.5,2.5), ylim = c(-1,1), type = 'n', xlab = 'Model',
+     ylab = 'Mean difference (g)', xaxt = 'n', family="serif", cex.lab=1.5, cex.axis=1.5,
+     main= "Lyrical vs non-lyrical music: \nMeta-regression results")
+
+abline(a = 0,0, col="darkred", lwd=1.3, lty=2)
+
+vioplot(LM1p, col=pallete[2], at=1, add=T) 
+vioplot(LM2p, col=pallete[3], at=2, add=T)
+
+
+axis(1, at = c(1,2), labels = c('Paper', 'Alternative coding'), family="serif", cex.axis=1.3)
+
+text(x = 1, y = 0.65, labels = paste("b= ", round(mean(LM1p),2), sep=""), 
+     family="serif", cex= 1.2)
+
+text(x = 2, y = 0.65, labels = paste("b= ", round(mean(LM2p),2), sep=""), 
+     family="serif", cex= 1.2)
+
+dev.off()
+

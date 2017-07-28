@@ -35,6 +35,9 @@ S1<-jags.samples(MR_LM1, variable.names= c('beta', 'mu'), n.iter=75000, thin=5, 
 S1<-c(S1$beta[1,,1],S1$beta[1,,2],S1$beta[1,,3], S1$beta[1,,4], S1$beta[1,,5])
 ECDF1<- ecdf(S1); ECDF1(0)
 
+LM1p<- S1$beta[1,,1]
+save(LM1p, file= "Posterior/LM1p.Rda")
+
 
 # oposite coding (sensitivity test):
 MR_LM2<- jags.model(BmetaReg("dunif(-10, 10)", "dunif(0, 10)", "dunif(-10, 10)", nrow(LM2),
@@ -52,6 +55,8 @@ S2<-jags.samples(MR_LM2, variable.names=c('beta', 'mu'), n.iter=75000, thin=5, n
 S2<-c(S2$beta[1,,1],S2$beta[1,,2],S2$beta[1,,3], S2$beta[1,,4], S2$beta[1,,5])
 ECDF2<- ecdf(S2); ECDF2(0)
 
+LM2p<- S2$beta[1,,1]
+save(LM2p, file= "Posterior/LM2p.Rda")
 
 ### Simple effects:
 lyr<- subset(LM1, cov==1)
