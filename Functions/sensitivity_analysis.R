@@ -23,7 +23,7 @@ sensitivity_analysis<- function(data1, mu="dunif(-200, 200)", tau="dunif(0, 200)
                      data, n.chains=3, n.adapt=3000, quiet=TRUE)
     string<- paste("Repeating analysis without study ", i," ...", sep="")
     print(string)
-    M<- coda.samples(M_M, c('mu', 'tau','theta'), n.iter=75000, thin=5, quiet=TRUE)
+    M<- coda.samples(M_M, c('mu', 'tau','theta'), n.iter=100000, thin=5, quiet=TRUE)
     sum<- summary(M); sum
     
     K[i]<- sum$statistics[1,1] # Pooled mean

@@ -22,8 +22,10 @@ colnames(LM2)<- BRcols
 # lyrical vs non-lyrical music:
 MR_LM1<- jags.model(BmetaReg("dunif(-10, 10)", "dunif(0, 10)", "dunif(-10, 10)", nrow(LM1),
                      "R1.txt"), LM1, n.chains=5, n.adapt=3000, quiet=FALSE)
-R_LM1<- coda.samples(MR_LM1, c('mu', 'tau', "beta", "theta"), n.iter=75000, thin=5)
+R_LM1<- coda.samples(MR_LM1, c('mu', 'tau', "beta", "theta"), n.iter=Niter, thin=5)
 sumR1<- summary(R_LM1); save(sumR1, file="Summary/Reg/sumR1.Rda") # MAIN
+effectiveSize(R_LM1)
+
 
 gelman.diag(R_LM1, confidence=0.95)
 acfplot(R_LM1)
@@ -31,7 +33,7 @@ acfplot(R_LM1)
 plot(R_LM1, density=FALSE)
 
 # ecdf:
-S1<-jags.samples(MR_LM1, variable.names= c('beta', 'mu'), n.iter=75000, thin=5, n.adapt=3000)
+S1<-jags.samples(MR_LM1, variable.names= c('beta', 'mu'), n.iter=Niter, thin=5, n.adapt=3000)
 S1<-c(S1$beta[1,,1],S1$beta[1,,2],S1$beta[1,,3], S1$beta[1,,4], S1$beta[1,,5])
 ECDF1<- ecdf(S1); ECDF1(0)
 
@@ -42,8 +44,9 @@ save(LM1p, file= "Posterior/LM1p.Rda")
 # oposite coding (sensitivity test):
 MR_LM2<- jags.model(BmetaReg("dunif(-10, 10)", "dunif(0, 10)", "dunif(-10, 10)", nrow(LM2),
                              "R2.txt"), LM2, n.chains=5, n.adapt=3000, quiet=FALSE)
-R_LM2<- coda.samples(MR_LM2, c('mu', 'tau', "beta"), n.iter=75000, thin=5)
+R_LM2<- coda.samples(MR_LM2, c('mu', 'tau', "beta"), n.iter=Niter, thin=5)
 sumR2<- summary(R_LM2); save(sumR2, file="Summary/Reg/sumR2.Rda") # MAIN
+effectiveSize(R_LM2)
 
 gelman.diag(R_LM2, confidence=0.95)
 acfplot(R_LM2)
@@ -51,7 +54,7 @@ acfplot(R_LM2)
 plot(R_LM2, density=F)
 
 # ecdf:
-S2<-jags.samples(MR_LM2, variable.names=c('beta', 'mu'), n.iter=75000, thin=5, n.adapt=3000)
+S2<-jags.samples(MR_LM2, variable.names=c('beta', 'mu'), n.iter=Niter, thin=5, n.adapt=3000)
 S2<-c(S2$beta[1,,1],S2$beta[1,,2],S2$beta[1,,3], S2$beta[1,,4], S2$beta[1,,5])
 ECDF2<- ecdf(S2); ECDF2(0)
 
@@ -67,17 +70,17 @@ nonLyr<- nonLyr[,-3]
 lyrM1<-jags.model(Bmeta("dunif(-10, 10)", "dunif(0, 10)", nrow(lyr), "lyrM.txt"),
                   lyr, n.chains=5, n.adapt=3000,  quiet=FALSE,
                        inits= list("mu"= runif(1,-3,3), "tau"= runif(1,0,3)))
-lyrM<- coda.samples(lyrM1, c('mu', 'tau', 'theta'), n.iter=75000, thin=5)
+lyrM<- coda.samples(lyrM1, c('mu', 'tau', 'theta'), n.iter=Niter, thin=5)
 lyrS<- summary(lyrM)
 save(lyrS, file="Summary/Reg/lyrS.Rda")
-
+effectiveSize(lyrM)
 
 gelman.diag(lyrM, confidence=0.95)
 acfplot(lyrM)
 #traceplot(lyrM, smooth=FALSE) # take long to print with many studies
 
 # posterior plots:
-SL<-jags.samples(lyrM1, variable.names=c('mu'), n.iter=75000, thin=5, n.adapt=3000)
+SL<-jags.samples(lyrM1, variable.names=c('mu'), n.iter=Niter, thin=5, n.adapt=3000)
 SL<-c(SL$mu[1,,1], SL$mu[1,,2], SL$mu[1,,3], SL$mu[1,,4], SL$mu[1,,5])
 save(SL, file="Posterior/SL.Rda")
 
@@ -86,16 +89,17 @@ save(SL, file="Posterior/SL.Rda")
 nonLyrM1<-jags.model(Bmeta("dunif(-10, 10)", "dunif(0, 10)", nrow(nonLyr), "nonLyrM.txt"),
                   nonLyr, n.chains=5, n.adapt=3000,  quiet=FALSE,
                   inits= list("mu"= runif(1,-3,3), "tau"= runif(1,0,3)))
-nonLyrM<- coda.samples(nonLyrM1, c('mu', 'tau', 'theta'), n.iter=75000, thin=5)
+nonLyrM<- coda.samples(nonLyrM1, c('mu', 'tau', 'theta'), n.iter=Niter, thin=5)
 nonLyrS<- summary(nonLyrM)
 save(nonLyrS, file="Summary/Reg/nonLyrS.Rda")
+effectiveSize(nonLyrM)
 
 gelman.diag(nonLyrM, confidence=0.95)
 acfplot(nonLyrM)
 #traceplot(nonLyrM, smooth=FALSE) # take long to print with many studies
 
 # posterior plots:
-SNL<-jags.samples(nonLyrM1, variable.names=c('mu'), n.iter=75000, thin=5, n.adapt=3000)
+SNL<-jags.samples(nonLyrM1, variable.names=c('mu'), n.iter=Niter, thin=5, n.adapt=3000)
 SNL<-c(SNL$mu[1,,1], SNL$mu[1,,2], SNL$mu[1,,3], SNL$mu[1,,4], SNL$mu[1,,5])
 save(SNL, file="Posterior/SNL.Rda")
 
@@ -109,15 +113,17 @@ colnames(SM)<- BRcols
 
 MR_SM1<- jags.model(BmetaReg("dunif(-10, 10)", "dunif(0, 10)", "dunif(-10, 10)", nrow(SM),
                              "RSM1.txt"), SM, n.chains=5, n.adapt=3000, quiet=FALSE)
-R_SM1<- coda.samples(MR_SM1, c('mu', 'tau', "beta", "theta"), n.iter=75000, thin=5)
+R_SM1<- coda.samples(MR_SM1, c('mu', 'tau', "beta", "theta"), n.iter=Niter, thin=5)
 sumR2<- summary(R_SM1); save(sumR2, file="Summary/Reg/sumR2.Rda") # MAIN
+effectiveSize(R_SM1)
+
 
 gelman.diag(R_SM1, confidence=0.95)
 acfplot(R_SM1)
 #traceplot(R_SM1, smooth=FALSE) # take long to print with many studies
 
 # ecdf:
-S2<-jags.samples(MR_SM1, variable.names=c('beta', 'mu'), n.iter=75000, thin=5, n.adapt=3000)
+S2<-jags.samples(MR_SM1, variable.names=c('beta', 'mu'), n.iter=Niter, thin=5, n.adapt=3000)
 S2<-c(S2$beta[1,,1],S2$beta[1,,2],S2$beta[1,,3], S2$beta[1,,4], S2$beta[1,,5])
 ECDF3<- ecdf(S2); ECDF3(0)
 
@@ -131,10 +137,10 @@ SM2<- SM2[,-3]
 smM1<-jags.model(Bmeta("dunif(-10, 10)", "dunif(0, 10)", nrow(SM1), "smM.txt"),
                  SM1, n.chains=5, n.adapt=3000,  quiet=FALSE,
                   inits= list("mu"= runif(1,-3,3), "tau"= runif(1,0,3)))
-smM<- coda.samples(smM1, c('mu', 'tau', 'theta'), n.iter=75000, thin=5)
+smM<- coda.samples(smM1, c('mu', 'tau', 'theta'), n.iter=Niter, thin=5)
 smS<- summary(smM)
 save(smS, file="Summary/Reg/smS.Rda")
-
+effectiveSize(smM)
 
 gelman.diag(smM, confidence=0.95)
 acfplot(smM)
@@ -145,13 +151,15 @@ acfplot(smM)
 SpM2<-jags.model(Bmeta("dunif(-10, 10)", "dunif(0, 10)", nrow(SM2), "SpM2.txt"),
                  SM2, n.chains=5, n.adapt=3000,  quiet=FALSE,
                      inits= list("mu"= runif(1,-3,3), "tau"= runif(1,0,3)))
-SpM<- coda.samples(SpM2, c('mu', 'tau', 'theta'), n.iter=75000, thin=5)
+SpM<- coda.samples(SpM2, c('mu', 'tau', 'theta'), n.iter=Niter, thin=5)
 SpMS<- summary(SpM)
 save(SpMS, file="Summary/Reg/SpMS.Rda")
+effectiveSize(SpM)
 
 gelman.diag(SpM, confidence=0.95)
 acfplot(SpM)
 #traceplot(SpM, smooth=FALSE) # take long to print with many studies
+
 
 
 ####
@@ -165,8 +173,9 @@ colnames(PH)<- BRcols
 
 MR_PH1<- jags.model(BmetaReg("dunif(-10, 10)", "dunif(0, 10)", "dunif(-10, 10)", nrow(PH),
                              "PHM1.txt"), PH, n.chains=5, n.adapt=3000, quiet=FALSE)
-MR_PH<- coda.samples(MR_PH1, c('mu', 'tau', "beta", "theta"), n.iter=75000, thin=5)
+MR_PH<- coda.samples(MR_PH1, c('mu', 'tau', "beta", "theta"), n.iter=Niter, thin=5)
 sumR3<- summary(MR_PH); save(sumR3, file="Summary/Reg/sumR3.Rda") # MAIN
+effectiveSize(MR_PH)
 
 gelman.diag(MR_PH, confidence=0.95)
 acfplot(MR_PH)
@@ -174,7 +183,7 @@ acfplot(MR_PH)
 
 
 # ecdf:
-S2<-jags.samples(MR_PH1, variable.names=c('beta', 'mu'), n.iter=75000, thin=5, n.adapt=3000)
+S2<-jags.samples(MR_PH1, variable.names=c('beta', 'mu'), n.iter=Niter, thin=5, n.adapt=3000)
 S2<-c(S2$beta[1,,1],S2$beta[1,,2],S2$beta[1,,3], S2$beta[1,,4], S2$beta[1,,5])
 ECDFPH<- ecdf(S2); ECDFPH(0)
 
@@ -188,9 +197,10 @@ PH2<- PH2[,-3]
 
 phonM1<-jags.model(Bmeta("dunif(-10, 10)", "dunif(0, 10)", nrow(PH1), "phonM1.txt"),
                    PH1, n.chains=5, n.adapt=3000,  quiet=FALSE)
-phonM<- coda.samples(phonM1, c('mu', 'tau', 'theta'), n.iter=75000, thin=5)
+phonM<- coda.samples(phonM1, c('mu', 'tau', 'theta'), n.iter=Niter, thin=5)
 phonS<- summary(phonM)
 save(phonS, file="Summary/Reg/phonS.Rda")
+effectiveSize(phonM)
 
 
 gelman.diag(phonM, confidence=0.95)
@@ -202,9 +212,10 @@ acfplot(phonM)
 semM1<-jags.model(Bmeta("dunif(-10, 10)", "dunif(0, 10)", nrow(PH2), "semM1.txt"),
                   PH2, n.chains=5, n.adapt=3000,  quiet=FALSE,
                  inits= list("mu"= runif(1,-3,3), "tau"= runif(1,0,3)))
-semM<- coda.samples(semM1, c('mu', 'tau', 'theta'), n.iter=75000, thin=5)
+semM<- coda.samples(semM1, c('mu', 'tau', 'theta'), n.iter=Niter, thin=5)
 semS<- summary(semM)
 save(semS, file="Summary/Reg/semS.Rda")
+effectiveSize(semM)
 
 gelman.diag(semM, confidence=0.95)
 acfplot(semM)
@@ -223,8 +234,9 @@ colnames(EAN)<- BRcols
 
 MR_EAN<- jags.model(BmetaReg("dunif(-10, 10)", "dunif(0, 10)", "dunif(-10, 10)", nrow(EAN),
                              "MR_EAN.txt"), EAN, n.chains=5, n.adapt=3000, quiet=FALSE)
-R_EAN<- coda.samples(MR_EAN, c('mu', 'tau', "beta", "theta"), n.iter=75000, thin=5)
+R_EAN<- coda.samples(MR_EAN, c('mu', 'tau', "beta", "theta"), n.iter=Niter, thin=5)
 sumEAN<- summary(R_EAN); save(sumEAN, file="Summary/Reg/sumEAN.Rda") # MAIN
+effectiveSize(R_EAN)
 
 gelman.diag(R_EAN, confidence=0.95)
 acfplot(R_EAN)
@@ -232,7 +244,7 @@ acfplot(R_EAN)
 plot(R_EAN, density=F)
 
 # ecdf:
-S2<-jags.samples(MR_EAN, variable.names=c('beta', 'mu'), n.iter=75000, thin=5, n.adapt=3000)
+S2<-jags.samples(MR_EAN, variable.names=c('beta', 'mu'), n.iter=Niter, thin=5, n.adapt=3000)
 S2<-c(S2$beta[1,,1],S2$beta[1,,2],S2$beta[1,,3], S2$beta[1,,4], S2$beta[1,,5])
 ECDF_EAN<- ecdf(S2); ECDF_EAN(0)
 
@@ -246,9 +258,10 @@ EAN2<- EAN2[,-3]
 ACM<-jags.model(Bmeta("dunif(-10, 10)", "dunif(0, 10)", nrow(EAN1), "ACM.txt"),
                  EAN1, n.chains=5, n.adapt=3000,  quiet=FALSE
                  )
-AC<- coda.samples(ACM, c('mu', 'tau', 'theta'), n.iter=75000, thin=5)
+AC<- coda.samples(ACM, c('mu', 'tau', 'theta'), n.iter=Niter, thin=5)
 sumAC<- summary(AC)
 save(sumAC, file="Summary/Reg/sumAC.Rda")
+effectiveSize(AC)
 
 
 gelman.diag(AC, confidence=0.95)
@@ -260,9 +273,10 @@ plot(AC, density=F)
 ENM<-jags.model(Bmeta("dunif(-10, 10)", "dunif(0, 10)", nrow(EAN2), "ENM.txt"),
                 EAN2, n.chains=5, n.adapt=3000,  quiet=FALSE,
                  inits= list("mu"= runif(1,-3,3), "tau"= runif(1,0,3)))
-EN<- coda.samples(ENM, c('mu', 'tau', 'theta'), n.iter=75000, thin=5)
+EN<- coda.samples(ENM, c('mu', 'tau', 'theta'), n.iter=Niter, thin=5)
 sumEN<- summary(EN)
 save(sumEN, file="Summary/Reg/sumEN.Rda")
+effectiveSize(EN)
 
 gelman.diag(EN, confidence=0.95)
 acfplot(EN)
@@ -281,8 +295,9 @@ colnames(MAN)<- BRcols
 
 MR_MAN<- jags.model(BmetaReg("dunif(-10, 10)", "dunif(0, 10)", "dunif(-10, 10)", nrow(MAN),
                              "MR_MAN.txt"), MAN, n.chains=5, n.adapt=3000, quiet=FALSE)
-R_MAN<- coda.samples(MR_MAN, c('mu', 'tau', "beta", "theta"), n.iter=75000, thin=5)
+R_MAN<- coda.samples(MR_MAN, c('mu', 'tau', "beta", "theta"), n.iter=Niter, thin=5)
 sumMAN<- summary(R_MAN); save(sumMAN, file="Summary/Reg/sumMAN.Rda") # MAIN
+effectiveSize(R_MAN)
 
 gelman.diag(R_MAN, confidence=0.95)
 acfplot(R_MAN)
@@ -290,7 +305,7 @@ acfplot(R_MAN)
 plot(R_MAN, density = F)
 
 # ecdf:
-S2<-jags.samples(MR_MAN, variable.names=c('beta', 'mu'), n.iter=75000, thin=5, n.adapt=3000)
+S2<-jags.samples(MR_MAN, variable.names=c('beta', 'mu'), n.iter=Niter, thin=5, n.adapt=3000)
 S2<-c(S2$beta[1,,1],S2$beta[1,,2],S2$beta[1,,3], S2$beta[1,,4], S2$beta[1,,5])
 ECDF_MAN<- ecdf(S2); ECDF_MAN(0)
 
@@ -319,15 +334,16 @@ table(gen$cov)
 ### reading comprehension (all sounds):
 MR_chGCP<- jags.model(BmetaReg("dunif(-10, 10)", "dunif(0, 10)", "dunif(-10, 10)", nrow(gen),
                              "MR_chGCP.txt"), gen, n.chains=5, n.adapt=3000, quiet=FALSE)
-R_chGCP<- coda.samples(MR_chGCP, c('mu', 'tau', "beta", "theta"), n.iter=75000, thin=5)
+R_chGCP<- coda.samples(MR_chGCP, c('mu', 'tau', "beta", "theta"), n.iter=Niter, thin=5)
 sumR_chGCP<- summary(R_chGCP); save(sumR_chGCP, file="Summary/Reg/sumR_chGCP.Rda") # MAIN
+effectiveSize(R_chGCP)
 
 gelman.diag(R_chGCP, confidence=0.95)
 acfplot(R_chGCP)
 #traceplot(R_chGCP, smooth=FALSE) # take long to print with many studies
 
 # ecdf:
-S1<-jags.samples(MR_chGCP, variable.names=c('beta', 'mu'), n.iter=75000, thin=5, n.adapt=3000)
+S1<-jags.samples(MR_chGCP, variable.names=c('beta', 'mu'), n.iter=Niter, thin=5, n.adapt=3000)
 S1<-c(S1$beta[1,,1],S1$beta[1,,2],S1$beta[1,,3], S1$beta[1,,4], S1$beta[1,,5])
 ECDF_CGCP<- ecdf(S1); 1-ECDF_CGCP(0)
 
@@ -360,7 +376,7 @@ colnames(gen_speed)<- BRcols
 ##
 MR_chGRS<- jags.model(BmetaReg("dunif(-10, 10)", "dunif(0, 10)", "dunif(-10, 10)", nrow(gen_speed),
                                "MR_chGRS.txt"), gen_speed, n.chains=5, n.adapt=3000, quiet=FALSE)
-R_chGRS<- coda.samples(MR_chGRS, c('mu', 'tau', "beta", "theta"), n.iter=75000, thin=5)
+R_chGRS<- coda.samples(MR_chGRS, c('mu', 'tau', "beta", "theta"), n.iter=Niter, thin=5)
 sumR_chGRS<- summary(R_chGRS); save(sumR_chGRS, file="Summary/Reg/sumR_chGRS.Rda") # MAIN
 
 gelman.diag(R_chGRS, confidence=0.95)
@@ -368,7 +384,7 @@ acfplot(R_chGRS)
 #traceplot(R_chGRS, smooth=FALSE) # take long to print with many studies
 
 # ecdf:
-S1<-jags.samples(MR_chGRS, variable.names=c('beta', 'mu'), n.iter=75000, thin=5, n.adapt=3000)
+S1<-jags.samples(MR_chGRS, variable.names=c('beta', 'mu'), n.iter=Niter, thin=5, n.adapt=3000)
 S1<-c(S1$beta[1,,1],S1$beta[1,,2],S1$beta[1,,3], S1$beta[1,,4], S1$beta[1,,5])
 ECDF_CGRS<- ecdf(S1); 1-ECDF_CGRS(0)
 
@@ -396,15 +412,16 @@ table(music$cov)
 ##
 MR_chGM<- jags.model(BmetaReg("dunif(-10, 10)", "dunif(0, 10)", "dunif(-10, 10)", nrow(music),
                                "MR_chGM.txt"), music, n.chains=5, n.adapt=3000, quiet=FALSE)
-R_chGM<- coda.samples(MR_chGM, c('mu', 'tau', "beta", "theta"), n.iter=75000, thin=5)
+R_chGM<- coda.samples(MR_chGM, c('mu', 'tau', "beta", "theta"), n.iter=Niter, thin=5)
 sumR_chGM<- summary(R_chGM); save(sumR_chGM, file="Summary/Reg/sumR_chGM.Rda") # MAIN
+effectiveSize(R_chGM)
 
 gelman.diag(R_chGM, confidence=0.95)
 acfplot(R_chGM)
 #traceplot(R_chGM, smooth=FALSE) # take long to print with many studies
 
 # ecdf:
-S1<-jags.samples(MR_chGM, variable.names=c('beta', 'mu'), n.iter=75000, thin=5, n.adapt=3000)
+S1<-jags.samples(MR_chGM, variable.names=c('beta', 'mu'), n.iter=Niter, thin=5, n.adapt=3000)
 S1<-c(S1$beta[1,,1],S1$beta[1,,2],S1$beta[1,,3], S1$beta[1,,4], S1$beta[1,,5])
 ECDF_CGM<- ecdf(S1); 1-ECDF_CGM(0)
 #
@@ -438,15 +455,16 @@ table(speech$cov)
 ##
 MR_chGS<- jags.model(BmetaReg("dunif(-10, 10)", "dunif(0, 10)", "dunif(-10, 10)", nrow(speech),
                               "MR_chGS.txt"), speech, n.chains=5, n.adapt=3000, quiet=FALSE)
-R_chGS<- coda.samples(MR_chGS, c('mu', 'tau', "beta", "theta"), n.iter=75000, thin=5)
+R_chGS<- coda.samples(MR_chGS, c('mu', 'tau', "beta", "theta"), n.iter=Niter, thin=5)
 sumR_chGS<- summary(R_chGS); save(sumR_chGS, file="Summary/Reg/sumR_chGS.Rda") # MAIN
+effectiveSize(R_chGS)
 
 gelman.diag(R_chGS, confidence=0.95)
 acfplot(R_chGS)
 #traceplot(R_chGS, smooth=FALSE) # take long to print with many studies
 
 # ecdf:
-S1<-jags.samples(MR_chGS, variable.names=c('beta', 'mu'), n.iter=75000, thin=5, n.adapt=3000)
+S1<-jags.samples(MR_chGS, variable.names=c('beta', 'mu'), n.iter=Niter, thin=5, n.adapt=3000)
 S1<-c(S1$beta[1,,1],S1$beta[1,,2],S1$beta[1,,3], S1$beta[1,,4], S1$beta[1,,5])
 ECDF_CGS<- ecdf(S1); 1-ECDF_CGS(0)
 
@@ -478,15 +496,16 @@ table(noise$cov)
 ##
 MR_chGN<- jags.model(BmetaReg("dunif(-10, 10)", "dunif(0, 10)", "dunif(-10, 10)", nrow(noise),
                               "MR_chGN.txt"), noise, n.chains=5, n.adapt=3000, quiet=FALSE)
-R_chGN<- coda.samples(MR_chGN, c('mu', 'tau', "beta", "theta"), n.iter=75000, thin=5)
+R_chGN<- coda.samples(MR_chGN, c('mu', 'tau', "beta", "theta"), n.iter=Niter, thin=5)
 sumR_chGN<- summary(R_chGN); save(sumR_chGN, file="Summary/Reg/sumR_chGN.Rda") # MAIN
+effectiveSize(R_chGN)
 
 gelman.diag(R_chGN, confidence=0.95)
 acfplot(R_chGN)
 #traceplot(R_chGN, smooth=FALSE) # take long to print with many studies
 
 # ecdf:
-S1<-jags.samples(MR_chGN, variable.names=c('beta', 'mu'), n.iter=75000, thin=5, n.adapt=3000)
+S1<-jags.samples(MR_chGN, variable.names=c('beta', 'mu'), n.iter=Niter, thin=5, n.adapt=3000)
 S1<-c(S1$beta[1,,1],S1$beta[1,,2],S1$beta[1,,3], S1$beta[1,,4], S1$beta[1,,5])
 ECDF_CGN<- ecdf(S1); 1-ECDF_CGN(0)
 

@@ -1,5 +1,5 @@
 model {
-for (i in 1:35) {
+for (i in 1:53) {
 P[i] <- 1/S.sqr[i]      # Calculate precision
 T[i] ~ dnorm(theta[i], P[i]) # study effects
 theta[i] ~ dnorm(mu, prec) # random effects

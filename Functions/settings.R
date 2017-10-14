@@ -27,4 +27,4 @@ MdS<- TRUE
 # same, but also for variance:
 MdS_var= FALSE
 
-
+Niter<- 100000
