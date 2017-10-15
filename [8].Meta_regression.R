@@ -44,7 +44,7 @@ save(LM1p, file= "Posterior/LM1p.Rda")
 # oposite coding (sensitivity test):
 MR_LM2<- jags.model(BmetaReg("dunif(-10, 10)", "dunif(0, 10)", "dunif(-10, 10)", nrow(LM2),
                              "R2.txt"), LM2, n.chains=5, n.adapt=3000, quiet=FALSE)
-R_LM2<- coda.samples(MR_LM2, c('mu', 'tau', "beta"), n.iter=Niter, thin=5)
+R_LM2<- coda.samples(MR_LM2, c('mu', 'tau', "beta"), n.iter=Niter+50000)
 sumR2<- summary(R_LM2); save(sumR2, file="Summary/Reg/sumR2.Rda") # MAIN
 effectiveSize(R_LM2)
 
@@ -54,7 +54,7 @@ acfplot(R_LM2)
 plot(R_LM2, density=F)
 
 # ecdf:
-S2<-jags.samples(MR_LM2, variable.names=c('beta', 'mu'), n.iter=Niter, thin=5, n.adapt=3000)
+S2<-jags.samples(MR_LM2, variable.names=c('beta', 'mu'), n.iter=Niter+50000, thin=5, n.adapt=3000)
 S2<-c(S2$beta[1,,1],S2$beta[1,,2],S2$beta[1,,3], S2$beta[1,,4], S2$beta[1,,5])
 ECDF2<- ecdf(S2); ECDF2(0)
 
