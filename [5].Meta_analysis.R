@@ -43,6 +43,7 @@ G2<-jags.model(Bmeta("dnorm(0, 1.0E-4)", "dnorm(0, 1.0E-4)  I(0, )", nrow(gen2),
 G2p<- coda.samples(G2, c('mu', 'tau', 'theta'), n.iter=Niter, thin=5)
 G2s<- summary(G2p)
 save(G2s, file="Summary/G2s.Rda")
+effectiveSize(G2p)
 
 # check results:
 gelman.diag(G2p, confidence=0.95)
@@ -90,6 +91,7 @@ GR2<-jags.model(Bmeta("dnorm(0, 1.0E-4)", "dnorm(0, 1.0E-4)  I(0, )", nrow(gen_s
 GR2p<- coda.samples(GR2, c('mu', 'tau', 'theta'), n.iter=Niter, thin=5)
 GR2s<- summary(GR2p)
 save(GR2s, file="Summary/GR2s.Rda")
+effectiveSize(GR2p)
 
 # check results:
 gelman.diag(GR2p, confidence=0.95)
@@ -165,6 +167,7 @@ N2<-jags.model(Bmeta("dnorm(0, 1.0E-4)", "dnorm(0, 1.0E-4)  I(0, )", nrow(noise2
 N2p<- coda.samples(N2, c('mu', 'tau', 'theta'), n.iter=Niter, thin=5)
 N2s<- summary(N2p)
 save(N2s, file="Summary/N2s.Rda")
+effectiveSize(N2p)
 
 # check results:
 gelman.diag(N2p, confidence=0.95)
@@ -212,6 +215,7 @@ M2<-jags.model(Bmeta("dnorm(0, 1.0E-4)", "dnorm(0, 1.0E-4)  I(0, )", nrow(music2
 M2p<- coda.samples(M2, c('mu', 'tau', 'theta'), n.iter=Niter, thin=5)
 M2s<- summary(M2p)
 save(M2s, file="Summary/M2s.Rda")
+effectiveSize(M2p)
 
 # check results:
 gelman.diag(M2p, confidence=0.95)
@@ -258,6 +262,7 @@ S2<-jags.model(Bmeta("dnorm(0, 1.0E-4)", "dnorm(0, 1.0E-4)  I(0, )", nrow(speech
 S2p<- coda.samples(S2, c('mu', 'tau', 'theta'), n.iter=Niter, thin=5)
 S2s<- summary(S2p)
 save(S2s, file="Summary/S2s.Rda")
+effectiveSize(S2p)
 
 # check results:
 gelman.diag(S2p, confidence=0.95)
