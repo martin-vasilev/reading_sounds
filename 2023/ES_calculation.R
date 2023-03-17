@@ -411,3 +411,134 @@ data<- Add_data(data, ID= 77, N_C=74, N_E = 74, sample="adults", cit= "Moreno (2
 # Table 12
 
 
+#----------------
+#--- Study 13 --- #
+#----------------
+
+data<- Add_data(data, ID= 78, N_C=17, N_E = 17, sample="adults", cit= "Murphy et al. (2018)", year=2018, 
+                design="within", sound="speech",
+                sound_type= "intelligible", db= NA, task= "reading comprehension", IF= 1.652,
+                measure= "perc_correct", mean_C= 82.49448123620309,
+                var_C= 2.207506, 
+                mean_E=  56.445916114790286, var_E= 3.090508,
+                var_type= "SE",
+                journal= "Experimental Aging Research",
+                reference= "Murphy, D. R., Bailey, H., Pearson, M., & Albert, G. (2018). The irrelevant speech effect among younger and older adults: The influence of background noises on reading comprehension. Experimental Aging Research, 44(2), 162-178."
+)
+# younger adults, Figure 2
+
+
+data<- Add_data(data, ID= 78, N_C=17, N_E = 17, sample="adults", cit= "Murphy et al. (2018)", year=2018, 
+                design="within", sound="speech",
+                sound_type= "unintelligible", db= NA, task= "reading comprehension", IF= 1.652,
+                measure= "perc_correct", mean_C= 82.49448123620309,
+                var_C= 2.207506, 
+                mean_E=  63.730684326710815, var_E= 2.980132,
+                var_type= "SE",
+                journal= "Experimental Aging Research",
+                reference= "Murphy, D. R., Bailey, H., Pearson, M., & Albert, G. (2018). The irrelevant speech effect among younger and older adults: The influence of background noises on reading comprehension. Experimental Aging Research, 44(2), 162-178."
+)
+# younger adults, Figure 2
+
+
+data<- Add_data(data, ID= 78, N_C=17, N_E = 17, sample="adults", cit= "Murphy et al. (2018)", year=2018, 
+                design="within", sound="music",
+                sound_type= "intelligible", db= NA, task= "reading comprehension", IF= 1.652,
+                measure= "perc_correct", mean_C= 82.49448123620309,
+                var_C= 2.207506, 
+                mean_E=  60.86092715231788, var_E= 3.97351,
+                var_type= "SE",
+                journal= "Experimental Aging Research",
+                reference= "Murphy, D. R., Bailey, H., Pearson, M., & Albert, G. (2018). The irrelevant speech effect among younger and older adults: The influence of background noises on reading comprehension. Experimental Aging Research, 44(2), 162-178."
+)
+# younger adults, Figure 2
+
+data<- Add_data(data, ID= 78, N_C=17, N_E = 17, sample="adults", cit= "Murphy et al. (2018)", year=2018, 
+                design="within", sound="music",
+                sound_type= "unintelligible", db= NA, task= "reading comprehension", IF= 1.652,
+                measure= "perc_correct", mean_C= 82.49448123620309,
+                var_C= 2.207506, 
+                mean_E=  67.59381898454747, var_E= 3.311258,
+                var_type= "SE",
+                journal= "Experimental Aging Research",
+                reference= "Murphy, D. R., Bailey, H., Pearson, M., & Albert, G. (2018). The irrelevant speech effect among younger and older adults: The influence of background noises on reading comprehension. Experimental Aging Research, 44(2), 162-178."
+)
+# younger adults, Figure 2
+
+
+data<- Add_data(data, ID= 78, N_C=17, N_E = 17, sample="adults", cit= "Murphy et al. (2018)", year=2018, 
+                design="within", sound="music",
+                sound_type= "instrumental", db= NA, task= "reading comprehension", IF= 1.652,
+                measure= "perc_correct", mean_C= 82.49448123620309,
+                var_C= 2.207506, 
+                mean_E=  67.2626931567329, var_E= 2.980132,
+                var_type= "SE",
+                journal= "Experimental Aging Research",
+                reference= "Murphy, D. R., Bailey, H., Pearson, M., & Albert, G. (2018). The irrelevant speech effect among younger and older adults: The influence of background noises on reading comprehension. Experimental Aging Research, 44(2), 162-178."
+)
+# younger adults, Figure 2
+
+
+data<- Add_data(data, ID= 78, N_C=15, N_E = 15, sample="adults", cit= "Murphy et al. (2018)", year=2018, 
+                design="within", sound="speech",
+                sound_type= "intelligible", db= NA, task= "reading comprehension", IF= 1.652,
+                measure= "perc_correct", mean_C= 73.00220750551875,
+                var_C= 2.869757, 
+                mean_E=  48.05739514348786, var_E= 3.311258,
+                var_type= "SE",
+                journal= "Experimental Aging Research",
+                reference= "Murphy, D. R., Bailey, H., Pearson, M., & Albert, G. (2018). The irrelevant speech effect among younger and older adults: The influence of background noises on reading comprehension. Experimental Aging Research, 44(2), 162-178."
+)
+# older adults, Figure 2
+
+
+data<- Add_data(data, ID= 78, N_C=15, N_E = 15, sample="adults", cit= "Murphy et al. (2018)", year=2018, 
+                design="within", sound="speech",
+                sound_type= "unintelligible", db= NA, task= "reading comprehension", IF= 1.652,
+                measure= "perc_correct", mean_C= 73.00220750551875,
+                var_C= 2.869757, 
+                mean_E=  59.31567328918322, var_E= 3.752759,
+                var_type= "SE",
+                journal= "Experimental Aging Research",
+                reference= "Murphy, D. R., Bailey, H., Pearson, M., & Albert, G. (2018). The irrelevant speech effect among younger and older adults: The influence of background noises on reading comprehension. Experimental Aging Research, 44(2), 162-178."
+)
+# older adults, Figure 2
+
+
+data<- Add_data(data, ID= 78, N_C=15, N_E = 15, sample="adults", cit= "Murphy et al. (2018)", year=2018, 
+                design="within", sound="music",
+                sound_type= "intelligible", db= NA, task= "reading comprehension", IF= 1.652,
+                measure= "perc_correct", mean_C= 73.00220750551875,
+                var_C= 2.869757, 
+                mean_E=  56.445916114790286, var_E= 3.752759,
+                var_type= "SE",
+                journal= "Experimental Aging Research",
+                reference= "Murphy, D. R., Bailey, H., Pearson, M., & Albert, G. (2018). The irrelevant speech effect among younger and older adults: The influence of background noises on reading comprehension. Experimental Aging Research, 44(2), 162-178."
+)
+# older adults, Figure 2
+
+
+data<- Add_data(data, ID= 78, N_C=15, N_E = 15, sample="adults", cit= "Murphy et al. (2018)", year=2018, 
+                design="within", sound="music",
+                sound_type= "unintelligible", db= NA, task= "reading comprehension", IF= 1.652,
+                measure= "perc_correct", mean_C= 73.00220750551875,
+                var_C= 2.869757, 
+                mean_E=  66.26931567328919, var_E= 4.304636,
+                var_type= "SE",
+                journal= "Experimental Aging Research",
+                reference= "Murphy, D. R., Bailey, H., Pearson, M., & Albert, G. (2018). The irrelevant speech effect among younger and older adults: The influence of background noises on reading comprehension. Experimental Aging Research, 44(2), 162-178."
+)
+# older adults, Figure 2
+
+
+data<- Add_data(data, ID= 78, N_C=15, N_E = 15, sample="adults", cit= "Murphy et al. (2018)", year=2018, 
+                design="within", sound="music",
+                sound_type= "instrumental", db= NA, task= "reading comprehension", IF= 1.652,
+                measure= "perc_correct", mean_C= 73.00220750551875,
+                var_C= 2.869757, 
+                mean_E=  59.31567328918322, var_E= 2.980132,
+                var_type= "SE",
+                journal= "Experimental Aging Research",
+                reference= "Murphy, D. R., Bailey, H., Pearson, M., & Albert, G. (2018). The irrelevant speech effect among younger and older adults: The influence of background noises on reading comprehension. Experimental Aging Research, 44(2), 162-178."
+)
+# older adults, Figure 2
