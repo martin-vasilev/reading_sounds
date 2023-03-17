@@ -120,3 +120,69 @@ data<- Add_data(data, ID= 68, N_C=37, N_E = 37, sample="adults", cit= "Herring a
 )
 
 
+#----------------
+#--- Study 4 --- #
+#----------------
+
+data<- Add_data(data, ID= 69, N_C=129, N_E = 129, sample="children", cit= "Dong et al. (2022)", year=2022, design="within", 
+                sound="music",
+                sound_type= "Pop", db=NA, task= "reading comprehension", IF= 1.90,
+                measure= "reading_speed", mean_C= mean(c(36.30, 43.53)), var_C= mean(c(3.14, 4.64)), 
+                mean_E= mean(c(36.56, 36.42, 36.50, 36.68, 52.00, 48.57, 45.47, 45.92)), 
+                var_E= mean(c(3.38, 3.46, 3.33, 3.46, 5.55, 5.12, 4.99, 5.11)), var_type= "SD",
+                journal= "Psychology of Music",
+                reference= "Dong, Y., Zheng, H. Y., Wu, S. X. Y., Huang, F. Y., Peng, S. N., Sun, S. Y. K., & Zeng, H. (2022). The effect of Chinese pop background music on Chinese poetry reading comprehension. Psychology of Music, 03057356211062940."
+)
+
+# Table 1
+
+
+#----------------
+#--- Study 5 --- #
+#----------------
+
+data<- Add_data(data, ID= 70, N_C=13, N_E = 13, sample="adults", cit= "Du et al. (2020)", year=2022, design="between", 
+                sound="music",
+                sound_type= "low arousal", db=NA, task= "reading comprehension", IF= 4.99,
+                measure= "perc_correct", mean_C= mean(c(96.00, 96.62)), var_C= mean(c(2.38, 3.20)), mean_E= mean(c(92.31, 94.38)), var_E= mean(c(9.80, 7.57)),
+                var_type= "SD",
+                journal= "Scientific Reports",
+                reference= "Du, M., Jiang, J., Li, Z., Man, D., & Jiang, C. (2020). The effects of background music on neural responses during reading comprehension. Scientific Reports, 10(1), 1-10."
+)
+
+
+data<- Add_data(data, ID= 70, N_C=13, N_E = 13, sample="adults", cit= "Du et al. (2020)", year=2022, design="between", 
+                sound="music",
+                sound_type= "high arousal", db=NA, task= "reading comprehension", IF= 4.99,
+                measure= "perc_correct", mean_C= mean(c(96.00, 96.62)), var_C= mean(c(2.38, 3.20)), mean_E= mean(c(95.08, 94.92)), var_E= mean(c(4.29, 4.17)),
+                var_type= "SD",
+                journal= "Scientific Reports",
+                reference= "Du, M., Jiang, J., Li, Z., Man, D., & Jiang, C. (2020). The effects of background music on neural responses during reading comprehension. Scientific Reports, 10(1), 1-10."
+)
+# Table 1
+
+
+#### RTs
+data<- Add_data(data, ID= 70, N_C=13, N_E = 13, sample="adults", cit= "Du et al. (2020)", year=2022, design="between", 
+                sound="music",
+                sound_type= "low arousal", db=NA, task= "reading comprehension", IF= 4.99,
+                measure= "reading_speed", mean_C= mean(c(788.16, 786.84)), var_C= mean(c(135.78, 158.32)), 
+                mean_E= mean(c(863.64, 888.35)), var_E= mean(c(147.65, 169.30)),
+                var_type= "SD",
+                journal= "Scientific Reports",
+                reference= "Du, M., Jiang, J., Li, Z., Man, D., & Jiang, C. (2020). The effects of background music on neural responses during reading comprehension. Scientific Reports, 10(1), 1-10."
+)
+
+data<- Add_data(data, ID= 70, N_C=13, N_E = 13, sample="adults", cit= "Du et al. (2020)", year=2022, design="between", 
+                sound="music",
+                sound_type= "high arousal", db=NA, task= "reading comprehension", IF= 4.99,
+                measure= "reading_speed", mean_C= mean(c(788.16, 786.84)), var_C= mean(c(135.78, 158.32)), 
+                mean_E= mean(c(793.81, 804.86)), var_E= mean(c(113.93, 85.64)),
+                var_type= "SD",
+                journal= "Scientific Reports",
+                reference= "Du, M., Jiang, J., Li, Z., Man, D., & Jiang, C. (2020). The effects of background music on neural responses during reading comprehension. Scientific Reports, 10(1), 1-10."
+)
+
+
+# Table 1
+
