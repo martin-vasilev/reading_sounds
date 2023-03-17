@@ -378,3 +378,36 @@ data<- Add_data(data, ID= 76, N_C=32, N_E = 32, sample="children", cit= "Moreno 
 )
 
 
+
+
+#----------------
+#--- Study 12 --- #
+#----------------
+
+
+data<- Add_data(data, ID= 77, N_C=74, N_E = 74, sample="adults", cit= "Moreno (2020)", year=2020, 
+                design="within", sound="music",
+                sound_type= "slow", db=72.3, task= "reading comprehension", IF= NA,
+                measure= "num_correct", mean_C= 3.85,
+                var_C= 0.11, 
+                mean_E=  4.04, var_E= 0.08,
+                var_type= "SE",
+                journal= "Dissertation",
+                reference= "Moreno, M. (2020). Andante, allegro o silenzio: An examination of background music tempo on facial emotions, electrodermal responses, and reading task performance (Order No. 27737493). Available from ProQuest Dissertations & Theses Global: The Humanities and Social Sciences Collection. (2425163110). Retrieved from http://libproxy.lib.csusb.edu/login?url=https://www.proquest.com/dissertations-theses/andante-allegro-o-silenzio-examination-background/docview/2425163110/se-2?accountid=10359"
+)
+
+data<- Add_data(data, ID= 77, N_C=74, N_E = 74, sample="adults", cit= "Moreno (2020)", year=2020, 
+                design="within", sound="music",
+                sound_type= "fast", db=72.3, task= "reading comprehension", IF= NA,
+                measure= "num_correct", mean_C= 3.85,
+                var_C= 0.11, 
+                mean_E=  3.61, var_E= 0.09,
+                var_type= "SE",
+                journal= "Dissertation",
+                reference= "Moreno, M. (2020). Andante, allegro o silenzio: An examination of background music tempo on facial emotions, electrodermal responses, and reading task performance (Order No. 27737493). Available from ProQuest Dissertations & Theses Global: The Humanities and Social Sciences Collection. (2425163110). Retrieved from http://libproxy.lib.csusb.edu/login?url=https://www.proquest.com/dissertations-theses/andante-allegro-o-silenzio-examination-background/docview/2425163110/se-2?accountid=10359"
+)
+
+
+# Table 12
+
+
