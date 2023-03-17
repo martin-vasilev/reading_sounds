@@ -271,3 +271,63 @@ data<- Add_data(data, ID= 72, N_C=61, N_E = 61, sample="adults", cit= "Hao and C
                 reference= "Hao, H., & Conway, A. R. (2021). The impact of auditory distraction on reading comprehension: An individual differences investigation. Memory & Cognition, 1-12."
 )
 # Digitized from Figure 1
+
+
+#----------------
+#--- Study 8 --- #
+#----------------
+
+
+data<- Add_data(data, ID= 73, N_C=8, N_E = 9, sample="adults", cit= "Kaul et al. (2020)", year=2020, 
+                design="between", sound="music",
+                sound_type= "lyrical", db=NA, task= "reading comprehension", IF= NA,
+                measure= "num_correct", mean_C= 5.5,
+                var_C= 2.204, 
+                mean_E=  6.22, var_E= 2.386,
+                var_type= "SD",
+                journal= "Minnesota Undergraduate Research & Academic Journal",
+                reference= "Kaul, A., Phung, H., Yap, J., & McCaul, A. (2020). Help or Hinder: The Effects of Music on College Students Reading Comprehension. Minnesota Undergraduate Research & Academic Journal, 3(3)."
+)
+
+data<- Add_data(data, ID= 73, N_C=8, N_E = 10, sample="adults", cit= "Kaul et al. (2020)", year=2020, 
+                design="between", sound="music",
+                sound_type= "instrumental", db=NA, task= "reading comprehension", IF= NA,
+                measure= "num_correct", mean_C= 5.5,
+                var_C= 2.204, 
+                mean_E=  5.60, var_E= 2.989,
+                var_type= "SD",
+                journal= "Minnesota Undergraduate Research & Academic Journal",
+                reference= "Kaul, A., Phung, H., Yap, J., & McCaul, A. (2020). Help or Hinder: The Effects of Music on College Students Reading Comprehension. Minnesota Undergraduate Research & Academic Journal, 3(3)."
+)
+
+# sample sizes are written different at different places, but I take the ones from Table 2
+
+
+#----------------
+#--- Study 9 --- #
+#----------------
+
+
+data<- Add_data(data, ID= 74, N_C=30, N_E = 30, sample="adults", cit= "Meng et al. (2020)", year=2020, 
+                design="within", sound="speech",
+                sound_type= "intelligible", db=64, task= "semantic acceptability", IF= 3.140,
+                measure= "reading_speed", mean_C= 421,
+                var_C= 7, 
+                mean_E=  361, var_E= 6,
+                var_type= "SE",
+                journal= "Journal of Experimental Psychology: Learning, Memory, and Cognition",
+                reference= "Meng, Z., Lan, Z.B., Yan, G.L., Marsh, J.E., & Liversedge., S.P. (2020). Task Demands Modulate the Effects of Speech on Text Processing. Journal of Experimental Psychology: Learning, Memory, and Cognition, 46(10), 1892–1905."
+)
+
+data<- Add_data(data, ID= 74, N_C=30, N_E = 30, sample="adults", cit= "Meng et al. (2020)", year=2020, 
+                design="within", sound="speech",
+                sound_type= "unintelligible", db=64, task= "semantic acceptability", IF= 3.140,
+                measure= "reading_speed", mean_C= 421,
+                var_C= 7, 
+                mean_E=  409, var_E= 6,
+                var_type= "SE",
+                journal= "Journal of Experimental Psychology: Learning, Memory, and Cognition",
+                reference= "Meng, Z., Lan, Z.B., Yan, G.L., Marsh, J.E., & Liversedge., S.P. (2020). Task Demands Modulate the Effects of Speech on Text Processing. Journal of Experimental Psychology: Learning, Memory, and Cognition, 46(10), 1892–1905."
+)
+
+# we take data from the semantic acceptability task as it is closer to reading
