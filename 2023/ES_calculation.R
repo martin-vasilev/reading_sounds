@@ -141,7 +141,7 @@ data<- Add_data(data, ID= 69, N_C=129, N_E = 129, sample="children", cit= "Dong 
 #--- Study 5 --- #
 #----------------
 
-data<- Add_data(data, ID= 70, N_C=13, N_E = 13, sample="adults", cit= "Du et al. (2020)", year=2022, design="between", 
+data<- Add_data(data, ID= 70, N_C=13, N_E = 13, sample="adults", cit= "Du et al. (2020)", year=2020, design="between", 
                 sound="music",
                 sound_type= "low arousal", db=NA, task= "reading comprehension", IF= 4.99,
                 measure= "perc_correct", mean_C= mean(c(96.00, 96.62)), var_C= mean(c(2.38, 3.20)), mean_E= mean(c(92.31, 94.38)), var_E= mean(c(9.80, 7.57)),
@@ -151,7 +151,7 @@ data<- Add_data(data, ID= 70, N_C=13, N_E = 13, sample="adults", cit= "Du et al.
 )
 
 
-data<- Add_data(data, ID= 70, N_C=13, N_E = 13, sample="adults", cit= "Du et al. (2020)", year=2022, design="between", 
+data<- Add_data(data, ID= 70, N_C=13, N_E = 13, sample="adults", cit= "Du et al. (2020)", year=2020, design="between", 
                 sound="music",
                 sound_type= "high arousal", db=NA, task= "reading comprehension", IF= 4.99,
                 measure= "perc_correct", mean_C= mean(c(96.00, 96.62)), var_C= mean(c(2.38, 3.20)), mean_E= mean(c(95.08, 94.92)), var_E= mean(c(4.29, 4.17)),
@@ -163,7 +163,7 @@ data<- Add_data(data, ID= 70, N_C=13, N_E = 13, sample="adults", cit= "Du et al.
 
 
 #### RTs
-data<- Add_data(data, ID= 70, N_C=13, N_E = 13, sample="adults", cit= "Du et al. (2020)", year=2022, design="between", 
+data<- Add_data(data, ID= 70, N_C=13, N_E = 13, sample="adults", cit= "Du et al. (2020)", year=2020, design="between", 
                 sound="music",
                 sound_type= "low arousal", db=NA, task= "reading comprehension", IF= 4.99,
                 measure= "reading_speed", mean_C= mean(c(788.16, 786.84)), var_C= mean(c(135.78, 158.32)), 
@@ -173,7 +173,7 @@ data<- Add_data(data, ID= 70, N_C=13, N_E = 13, sample="adults", cit= "Du et al.
                 reference= "Du, M., Jiang, J., Li, Z., Man, D., & Jiang, C. (2020). The effects of background music on neural responses during reading comprehension. Scientific Reports, 10(1), 1-10."
 )
 
-data<- Add_data(data, ID= 70, N_C=13, N_E = 13, sample="adults", cit= "Du et al. (2020)", year=2022, design="between", 
+data<- Add_data(data, ID= 70, N_C=13, N_E = 13, sample="adults", cit= "Du et al. (2020)", year=2020, design="between", 
                 sound="music",
                 sound_type= "high arousal", db=NA, task= "reading comprehension", IF= 4.99,
                 measure= "reading_speed", mean_C= mean(c(788.16, 786.84)), var_C= mean(c(135.78, 158.32)), 
@@ -185,4 +185,33 @@ data<- Add_data(data, ID= 70, N_C=13, N_E = 13, sample="adults", cit= "Du et al.
 
 
 # Table 1
+
+
+
+#----------------
+#--- Study 6 --- #
+#----------------
+
+data<- Add_data(data, ID= 71, N_C=55, N_E = 55, sample="adults", cit= "Gheewalla et al. (2021)", year=2021, design="within", 
+                sound="noise",
+                sound_type= "white", db=85, task= "reading comprehension", IF= 2.561,
+                measure= "reading_speed", mean_C= 135.10, var_C= 40.44, 
+                mean_E= 155.16, var_E= 38.50,
+                var_type= "SD",
+                journal= "Ergonomics",
+                reference= "Gheewalla, F., McClelland, A., & Furnham, A. (2021). Effects of background noise and extraversion on reading comprehension performance. Ergonomics, 64(5), 593-599. Doi:10.1080/00140139.2020.1854352"
+)
+
+# Table 1
+data<- Add_data(data, ID= 71, N_C=55, N_E = 55, sample="adults", cit= "Gheewalla et al. (2021)", year=2021, design="within", 
+                sound="noise",
+                sound_type= "sirens", db=85, task= "reading comprehension", IF= 2.561,
+                measure= "reading_speed", mean_C= 135.10, var_C= 40.44, 
+                mean_E= 184.06, var_E= 49.10,
+                var_type= "SD",
+                journal= "Ergonomics",
+                reference= "Gheewalla, F., McClelland, A., & Furnham, A. (2021). Effects of background noise and extraversion on reading comprehension performance. Ergonomics, 64(5), 593-599. Doi:10.1080/00140139.2020.1854352"
+)
+
+
 
