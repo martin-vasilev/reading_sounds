@@ -331,3 +331,32 @@ data<- Add_data(data, ID= 74, N_C=30, N_E = 30, sample="adults", cit= "Meng et a
 )
 
 # we take data from the semantic acceptability task as it is closer to reading
+
+
+#----------------
+#--- Study 10 --- #
+#----------------
+
+
+data<- Add_data(data, ID= 75, N_C=34, N_E = 34, sample="adults", cit= "Mohan and Thomas (2020)", year=2020, 
+                design="within", sound="music",
+                sound_type= "Indian", db=NA, task= "reading comprehension", IF= NA,
+                measure= "reading_score", mean_C= 3.14,
+                var_C= 1.34, 
+                mean_E=  5.03, var_E= 1.445,
+                var_type= "SD",
+                journal= "International Journal of Adolescence and Youth",
+                reference= "Mohan, A., & Thomas, E. (2020). Effect of background music and the cultural preference to music on adolescents’ task performance. International Journal of Adolescence and Youth, 25(1), 562-573. Doi:10.1080/02673843.2019.1689368"
+)
+
+data<- Add_data(data, ID= 75, N_C=34, N_E = 34, sample="adults", cit= "Mohan and Thomas (2020)", year=2020, 
+                design="within", sound="music",
+                sound_type= "western", db=NA, task= "reading comprehension", IF= NA,
+                measure= "reading_score", mean_C= 3.14,
+                var_C= 1.34, 
+                mean_E=  4.89, var_E= 1.659,
+                var_type= "SD",
+                journal= "International Journal of Adolescence and Youth",
+                reference= "Mohan, A., & Thomas, E. (2020). Effect of background music and the cultural preference to music on adolescents’ task performance. International Journal of Adolescence and Youth, 25(1), 562-573. Doi:10.1080/02673843.2019.1689368"
+)
+
