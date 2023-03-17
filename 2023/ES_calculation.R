@@ -360,3 +360,21 @@ data<- Add_data(data, ID= 75, N_C=34, N_E = 34, sample="adults", cit= "Mohan and
                 reference= "Mohan, A., & Thomas, E. (2020). Effect of background music and the cultural preference to music on adolescents’ task performance. International Journal of Adolescence and Youth, 25(1), 562-573. Doi:10.1080/02673843.2019.1689368"
 )
 
+
+#----------------
+#--- Study 11 --- #
+#----------------
+
+
+data<- Add_data(data, ID= 76, N_C=32, N_E = 32, sample="children", cit= "Moreno and Woodruff (2021)", year=2021, 
+                design="within", sound="music",
+                sound_type= "instrumental", db=72.3, task= "reading comprehension", IF= NA,
+                measure= "num_correct", mean_C= 3.70,
+                var_C= 0.18, 
+                mean_E=  4.20, var_E= 0.15,
+                var_type= "SE",
+                journal= "Technology, Knowledge and Learning",
+                reference= "Moreno, M., & Woodruff, E. (2021). Exploring the effects of background music on real-time emotional expressions, performance, and confusion mediation in middle school students. Technology, Knowledge and Learning, doi:10.1007/s10758-021-09556-9"
+)
+
+
