@@ -214,4 +214,60 @@ data<- Add_data(data, ID= 71, N_C=55, N_E = 55, sample="adults", cit= "Gheewalla
 )
 
 
+#----------------
+#--- Study 7 --- #
+#----------------
 
+# easy to read font
+data<- Add_data(data, ID= 72, N_C=61, N_E = 61, sample="adults", cit= "Hao and Conway (2021)", year=2021, design="within", 
+                sound="speech",
+                sound_type= "intelligible", db=NA, task= "reading comprehension", IF= 2.482,
+                measure= "num_correct", mean_C= 7.115384615384615,
+                var_C= 0.3418803, 
+                mean_E= 6.73076923076923, var_E= 0.3098291,
+                var_type= "SE",
+                journal= "Memory & Cognition",
+                reference= "Hao, H., & Conway, A. R. (2021). The impact of auditory distraction on reading comprehension: An individual differences investigation. Memory & Cognition, 1-12."
+)
+# Digitized from Figure 1
+
+# hard to read font
+data<- Add_data(data, ID= 72, N_C=61, N_E = 61, sample="adults", cit= "Hao and Conway (2021)", year=2021, design="within", 
+                sound="speech",
+                sound_type= "intelligible", db=NA, task= "reading comprehension", IF= 2.482,
+                measure= "num_correct", mean_C= 7.9914529914529915,
+                var_C=0.2350427, 
+                mean_E=  7.510683760683761, var_E= 0.2884615,
+                var_type= "SE",
+                journal= "Memory & Cognition",
+                reference= "Hao, H., & Conway, A. R. (2021). The impact of auditory distraction on reading comprehension: An individual differences investigation. Memory & Cognition, 1-12."
+)
+# Digitized from Figure 1
+
+
+# easy to read font
+data<- Add_data(data, ID= 72, N_C=61, N_E = 61, sample="adults", cit= "Hao and Conway (2021)", year=2021, design="within", 
+                sound="speech",
+                sound_type= "unintelligible", db=NA, task= "reading comprehension", IF= 2.482,
+                measure= "num_correct", mean_C= 7.115384615384615,
+                var_C= 0.3418803, 
+                mean_E= 7.168803418803419, var_E= 0.3311966,
+                var_type= "SE",
+                journal= "Memory & Cognition",
+                reference= "Hao, H., & Conway, A. R. (2021). The impact of auditory distraction on reading comprehension: An individual differences investigation. Memory & Cognition, 1-12."
+)
+# Digitized from Figure 1
+
+
+# hard to read font
+data<- Add_data(data, ID= 72, N_C=61, N_E = 61, sample="adults", cit= "Hao and Conway (2021)", year=2021, design="within", 
+                sound="speech",
+                sound_type= "unintelligible", db=NA, task= "reading comprehension", IF= 2.482,
+                measure= "num_correct", mean_C= 7.9914529914529915,
+                var_C=0.2350427, 
+                mean_E=  7.80982905982906, var_E= 0.2884615,
+                var_type= "SE",
+                journal= "Memory & Cognition",
+                reference= "Hao, H., & Conway, A. R. (2021). The impact of auditory distraction on reading comprehension: An individual differences investigation. Memory & Cognition, 1-12."
+)
+# Digitized from Figure 1
