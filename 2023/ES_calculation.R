@@ -542,3 +542,35 @@ data<- Add_data(data, ID= 78, N_C=15, N_E = 15, sample="adults", cit= "Murphy et
                 reference= "Murphy, D. R., Bailey, H., Pearson, M., & Albert, G. (2018). The irrelevant speech effect among younger and older adults: The influence of background noises on reading comprehension. Experimental Aging Research, 44(2), 162-178."
 )
 # older adults, Figure 2
+
+
+
+#----------------
+#--- Study 14 --- #
+#----------------
+
+
+data<- Add_data(data, ID= 79, N_C=50, N_E = 50, sample="adults", cit= "Que et al. (2020)", year=2020, 
+                design="between", sound="music",
+                sound_type= "various", db= 70, task= "reading comprehension", IF= NA,
+                measure= "prop_correct", mean_C= 0.431,
+                var_C= 0.151, 
+                mean_E=  0.474, var_E= 0.150,
+                var_type= "SD",
+                journal= "JCDL '20: Proceedings of the ACM/IEEE Joint Conference on Digital Libraries in 2020",
+                reference= "Que, Y., Zheng, Y., Hsiao, J. H., & Hu, X. (2020). Exploring the effect of personalized background music on reading comprehension. Paper presented at the Proceedings of the ACM/IEEE Joint Conference on Digital Libraries, 57-66. Doi:10.1145/3383583.3398543 Retrieved from www.scopus.com"
+)
+
+# Table 1
+
+
+data<- Add_data(data, ID= 79, N_C=50, N_E = 50, sample="adults", cit= "Que et al. (2020)", year=2020, 
+                design="between", sound="music",
+                sound_type= "various", db= 70, task= "reading comprehension", IF= NA,
+                measure= "reading_speed", mean_C= 28.6,
+                var_C= 10.8, 
+                mean_E=  30.7, var_E= 12.6,
+                var_type= "SD",
+                journal= "JCDL '20: Proceedings of the ACM/IEEE Joint Conference on Digital Libraries in 2020",
+                reference= "Que, Y., Zheng, Y., Hsiao, J. H., & Hu, X. (2020). Exploring the effect of personalized background music on reading comprehension. Paper presented at the Proceedings of the ACM/IEEE Joint Conference on Digital Libraries, 57-66. Doi:10.1145/3383583.3398543 Retrieved from www.scopus.com"
+)
