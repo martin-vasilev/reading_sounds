@@ -630,3 +630,22 @@ data<- Add_data(data, ID= 80, N_C=30, N_E = 30, sample="adults", cit= "Ren et al
                 journal= "Advances in Psychology",
                 reference= "Ren, Y., Xu, W., & Guizhou, G. (2019). Effect of Chinese and English Background Music on Efficiency of Chinese and English Reading Comprehension."
 )
+
+
+
+#----------------
+#--- Study 16 --- #
+#----------------
+
+data<- Add_data(data, ID= 81, N_C=29, N_E = 29, sample="adults", cit= "Ross et al. (2021)", year=2021, 
+                design="within", sound="speech",
+                sound_type= "babble", db= mean(c(45, 65)), task= "text word learning", IF= NA,
+                measure= "perc_correct", mean_C= 25.86,
+                var_C= 22.14, 
+                mean_E=  mean(c(23.56, 31.03)), var_E= mean(c(23.78, 23.46)),
+                var_type= "SD",
+                journal= "Dissertation",
+                reference= "Ross, C. A. (2021). Examining the effects of background noise on contextualized word learning (Order No. 28811802). Available from ProQuest Dissertations & Theses Global: The Humanities and Social Sciences Collection. (2598030912). Retrieved from http://libproxy.lib.csusb.edu/login?url=https://www.proquest.com/dissertations-theses/examining-effects-background-noise-on/docview/2598030912/se-2?accountid=10359"
+)
+
+# Table 3, average out two sound intensities
