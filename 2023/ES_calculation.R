@@ -704,3 +704,58 @@ data<- Add_data(data, ID= 82, N_C=28, N_E = 28, sample="children", cit= "Su et a
                 journal= "Journal of Educational Technology & Society",
                 reference= "Su, Y. N., Kao, C. C., Hsu, C. C., Pan, L. C., Cheng, S. C., & Huang, Y. M. (2017). How does Mozart’s music affect children’s reading? The evidence from learning anxiety and reading rates with e-books. Journal of Educational Technology & Society, 20(2), 101-112."
 )
+
+
+
+#----------------
+#--- Study 18 --- #
+#----------------
+
+
+data<- Add_data(data, ID= 83, N_C=48, N_E = 48, sample="adults", cit= "Vasilev et al. (2019)", year=2019, 
+                design="within", sound="noise",
+                sound_type= "sine tones", db= 65, task= "reading comprehension", IF= 2.138,
+                measure= "reading_speed", mean_C= 246,
+                var_C= 83, 
+                mean_E=  243, var_E= 85,
+                var_type= "SD",
+                journal= "Quarterly Journal of Experimental Psychology",
+                reference= "Vasilev, M. R., Parmentier, F. B., Angele, B., & Kirkby, J. A. (2019). Distraction by deviant sounds during reading: An eye-movement study. Quarterly Journal of Experimental Psychology, 72(7), 1863-1875."
+)
+
+data<- Add_data(data, ID= 83, N_C=48, N_E = 48, sample="adults", cit= "Vasilev et al. (2019)", year=2019, 
+                design="within", sound="noise",
+                sound_type= "deviant", db= 65, task= "reading comprehension", IF= 2.138,
+                measure= "reading_speed", mean_C= 246,
+                var_C= 83, 
+                mean_E=  254, var_E= 102,
+                var_type= "SD",
+                journal= "Quarterly Journal of Experimental Psychology",
+                reference= "Vasilev, M. R., Parmentier, F. B., Angele, B., & Kirkby, J. A. (2019). Distraction by deviant sounds during reading: An eye-movement study. Quarterly Journal of Experimental Psychology, 72(7), 1863-1875."
+)
+# Table 3
+# coding just FFD since the effect seems to originate from there
+
+
+# Comprehension accuracy:
+data<- Add_data(data, ID= 83, N_C=48, N_E = 48, sample="adults", cit= "Vasilev et al. (2019)", year=2019, 
+                design="within", sound="noise",
+                sound_type= "sine tones", db= 65, task= "reading comprehension", IF= 2.138,
+                measure= "perc_correct", mean_C= 95.1,
+                var_C= 21.7, 
+                mean_E=  94.7, var_E= 22.4,
+                var_type= "SD",
+                journal= "Quarterly Journal of Experimental Psychology",
+                reference= "Vasilev, M. R., Parmentier, F. B., Angele, B., & Kirkby, J. A. (2019). Distraction by deviant sounds during reading: An eye-movement study. Quarterly Journal of Experimental Psychology, 72(7), 1863-1875."
+)
+
+data<- Add_data(data, ID= 83, N_C=48, N_E = 48, sample="adults", cit= "Vasilev et al. (2019)", year=2019, 
+                design="within", sound="noise",
+                sound_type= "deviant", db= 65, task= "reading comprehension", IF= 2.138,
+                measure= "perc_correct", mean_C= 95.1,
+                var_C= 21.7, 
+                mean_E=  95.2, var_E= 21.3,
+                var_type= "SD",
+                journal= "Quarterly Journal of Experimental Psychology",
+                reference= "Vasilev, M. R., Parmentier, F. B., Angele, B., & Kirkby, J. A. (2019). Distraction by deviant sounds during reading: An eye-movement study. Quarterly Journal of Experimental Psychology, 72(7), 1863-1875."
+)
