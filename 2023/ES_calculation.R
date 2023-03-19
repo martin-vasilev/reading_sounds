@@ -649,3 +649,58 @@ data<- Add_data(data, ID= 81, N_C=29, N_E = 29, sample="adults", cit= "Ross et a
 )
 
 # Table 3, average out two sound intensities
+
+
+#----------------
+#--- Study 17 --- #
+#----------------
+
+data<- Add_data(data, ID= 82, N_C=34, N_E = 34, sample="children", cit= "Su et al. (2017), Sample 1", year=2017, 
+                design="within", sound="music",
+                sound_type= "instrumental", db= NA, task= "reading comprehension", IF= 2.633,
+                measure= "num_correct", mean_C= 6.94,
+                var_C= 3.38, 
+                mean_E=  8.97, var_E= 3.42,
+                var_type= "SD",
+                journal= "Journal of Educational Technology & Society",
+                reference= "Su, Y. N., Kao, C. C., Hsu, C. C., Pan, L. C., Cheng, S. C., & Huang, Y. M. (2017). How does Mozart’s music affect children’s reading? The evidence from learning anxiety and reading rates with e-books. Journal of Educational Technology & Society, 20(2), 101-112."
+)
+
+# Table 6
+
+data<- Add_data(data, ID= 82, N_C=28, N_E = 28, sample="children", cit= "Su et al. (2017), Sample 2", year=2017, 
+                design="within", sound="music",
+                sound_type= "instrumental", db= NA, task= "reading comprehension", IF= 2.633,
+                measure= "num_correct", mean_C= 7.75,
+                var_C= 2.19, 
+                mean_E=  10.32, var_E= 2.44,
+                var_type= "SD",
+                journal= "Journal of Educational Technology & Society",
+                reference= "Su, Y. N., Kao, C. C., Hsu, C. C., Pan, L. C., Cheng, S. C., & Huang, Y. M. (2017). How does Mozart’s music affect children’s reading? The evidence from learning anxiety and reading rates with e-books. Journal of Educational Technology & Society, 20(2), 101-112."
+)
+
+# reading speed
+
+data<- Add_data(data, ID= 82, N_C=34, N_E = 34, sample="children", cit= "Su et al. (2017), Sample 1", year=2017, 
+                design="within", sound="music",
+                sound_type= "instrumental", db= NA, task= "reading comprehension", IF= 2.633,
+                measure= "reading_speed", mean_C= 282.58,
+                var_C= 10.09, 
+                mean_E=  291.12, var_E= 11.74,
+                var_type= "SD",
+                journal= "Journal of Educational Technology & Society",
+                reference= "Su, Y. N., Kao, C. C., Hsu, C. C., Pan, L. C., Cheng, S. C., & Huang, Y. M. (2017). How does Mozart’s music affect children’s reading? The evidence from learning anxiety and reading rates with e-books. Journal of Educational Technology & Society, 20(2), 101-112."
+)
+
+# Table 3
+
+data<- Add_data(data, ID= 82, N_C=28, N_E = 28, sample="children", cit= "Su et al. (2017), Sample 2", year=2017, 
+                design="within", sound="music",
+                sound_type= "instrumental", db= NA, task= "reading comprehension", IF= 2.633,
+                measure= "reading_speed", mean_C= 282.21,
+                var_C= 10.14, 
+                mean_E=  289.93, var_E= 9.66,
+                var_type= "SD",
+                journal= "Journal of Educational Technology & Society",
+                reference= "Su, Y. N., Kao, C. C., Hsu, C. C., Pan, L. C., Cheng, S. C., & Huang, Y. M. (2017). How does Mozart’s music affect children’s reading? The evidence from learning anxiety and reading rates with e-books. Journal of Educational Technology & Society, 20(2), 101-112."
+)
