@@ -706,7 +706,6 @@ data<- Add_data(data, ID= 82, N_C=28, N_E = 28, sample="children", cit= "Su et a
 )
 
 
-
 #----------------
 #--- Study 18 --- #
 #----------------
@@ -813,4 +812,84 @@ data<- Add_data(data, ID= 84, N_C=71, N_E = 71, sample="adults", cit= "Zdorova e
                 reference= "Zdorova, N., Malyutina, S., Laurinavichyute, A., Kaprielova, A., Ziubanova, A., & Lopukhina, A. (2023). Do we rely on good-enough processing in reading under auditory and visual noise?. Plos one, 18(1), e0277429."
 ) # Table 2, TVT
 
- 
+
+#----------------
+#--- Study 20 --- #
+#----------------
+
+
+data<- Add_data(data, ID= 85, N_C=63, N_E = 63, sample="adults", cit= "Zhang et al. (2018), Exp.1", year=2018, 
+                design="within", sound="music",
+                sound_type= "various", db= NA, task= "reading comprehension", IF= 3.140,
+                measure= "prop_correct", mean_C= 62.70,
+                var_C= 16, 
+                mean_E=  58.83, var_E= 19,
+                var_type= "SD",
+                journal= "Journal of Experimental Psychology: Learning, Memory, and Cognition",
+                reference= "Zhang, H., Miller, K., Cleveland, R., & Cortina, K. (2018). How listening to music affects reading: Evidence from eye tracking. Journal of Experimental Psychology: Learning, Memory, and Cognition, 44(11), 1778."
+)
+
+
+data<- Add_data(data, ID= 85, N_C=63, N_E = 63, sample="adults", cit= "Zhang et al. (2018), Exp.1", year=2018, 
+                design="within", sound="music",
+                sound_type= "various", db= NA, task= "reading comprehension", IF= 3.140,
+                measure= "reading_speed", mean_C= 7.65,
+                var_C= 2.40, 
+                mean_E=  8.37, var_E= 3.04,
+                var_type= "SD",
+                journal= "Journal of Experimental Psychology: Learning, Memory, and Cognition",
+                reference= "Zhang, H., Miller, K., Cleveland, R., & Cortina, K. (2018). How listening to music affects reading: Evidence from eye tracking. Journal of Experimental Psychology: Learning, Memory, and Cognition, 44(11), 1778."
+)
+
+
+#----------------
+#--- Study 21 --- #
+#----------------
+
+data<- Add_data(data, ID= 86, N_C=39, N_E = 39, sample="adults", cit= "Quan and Kuo (2023)", year=2023, 
+                design="within", sound="music",
+                sound_type= "Chinese", db= NA, task= "reading comprehension", IF= 1.904,
+                measure= "prop_correct", mean_C= 0.84,
+                var_C= 0.15,
+                mean_E=  0.86, var_E= 0.17,
+                var_type= "SD",
+                journal= "Psychology of Music",
+                reference= "Quan, Y., & Kuo, Y.-L. (2023). The effects of Chinese and English background music on Chinese reading comprehension. Psychology of Music, 51(2), 655–663. https://doi.org/10.1177/03057356221101647"
+)
+
+# Table 1
+
+data<- Add_data(data, ID= 86, N_C=39, N_E = 39, sample="adults", cit= "Quan and Kuo (2023)", year=2023, 
+                design="within", sound="music",
+                sound_type= "English", db= NA, task= "reading comprehension", IF= 1.904,
+                measure= "prop_correct", mean_C= 0.84,
+                var_C= 0.15,
+                mean_E=  0.78, var_E= 0.23,
+                var_type= "SD",
+                journal= "Psychology of Music",
+                reference= "Quan, Y., & Kuo, Y.-L. (2023). The effects of Chinese and English background music on Chinese reading comprehension. Psychology of Music, 51(2), 655–663. https://doi.org/10.1177/03057356221101647"
+)
+
+
+data<- Add_data(data, ID= 86, N_C=39, N_E = 39, sample="adults", cit= "Quan and Kuo (2023)", year=2023, 
+                design="within", sound="music",
+                sound_type= "Chinese", db= NA, task= "reading comprehension", IF= 1.904,
+                measure= "reading_rate", mean_C= 6.75,
+                var_C= 3.06,
+                mean_E=  6.32, var_E= 2.86,
+                var_type= "SD",
+                journal= "Psychology of Music",
+                reference= "Quan, Y., & Kuo, Y.-L. (2023). The effects of Chinese and English background music on Chinese reading comprehension. Psychology of Music, 51(2), 655–663. https://doi.org/10.1177/03057356221101647"
+)
+
+
+data<- Add_data(data, ID= 86, N_C=39, N_E = 39, sample="adults", cit= "Quan and Kuo (2023)", year=2023, 
+                design="within", sound="music",
+                sound_type= "English", db= NA, task= "reading comprehension", IF= 1.904,
+                measure= "reading_rate", mean_C= 6.75,
+                var_C= 3.06,
+                mean_E=  5.90, var_E= 2.41,
+                var_type= "SD",
+                journal= "Psychology of Music",
+                reference= "Quan, Y., & Kuo, Y.-L. (2023). The effects of Chinese and English background music on Chinese reading comprehension. Psychology of Music, 51(2), 655–663. https://doi.org/10.1177/03057356221101647"
+)
