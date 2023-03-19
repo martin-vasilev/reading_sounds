@@ -574,3 +574,59 @@ data<- Add_data(data, ID= 79, N_C=50, N_E = 50, sample="adults", cit= "Que et al
                 journal= "JCDL '20: Proceedings of the ACM/IEEE Joint Conference on Digital Libraries in 2020",
                 reference= "Que, Y., Zheng, Y., Hsiao, J. H., & Hu, X. (2020). Exploring the effect of personalized background music on reading comprehension. Paper presented at the Proceedings of the ACM/IEEE Joint Conference on Digital Libraries, 57-66. Doi:10.1145/3383583.3398543 Retrieved from www.scopus.com"
 )
+
+
+#----------------
+#--- Study 15 --- #
+#----------------
+
+data<- Add_data(data, ID= 80, N_C=30, N_E = 30, sample="adults", cit= "Ren et al. (2019)", year=2019, 
+                design="within", sound="music",
+                sound_type= "Chinese", db= 60, task= "reading comprehension", IF= NA,
+                measure= "prop_correct", mean_C= 0.71,
+                var_C= 0.22, 
+                mean_E=  0.64, var_E= 0.30,
+                var_type= "SD",
+                journal= "Advances in Psychology",
+                reference= "Ren, Y., Xu, W., & Guizhou, G. (2019). Effect of Chinese and English Background Music on Efficiency of Chinese and English Reading Comprehension."
+)
+
+# We code data only for reading in L1- Chinese
+
+
+data<- Add_data(data, ID= 80, N_C=30, N_E = 30, sample="adults", cit= "Ren et al. (2019)", year=2019, 
+                design="within", sound="music",
+                sound_type= "English", db= 60, task= "reading comprehension", IF= NA,
+                measure= "prop_correct", mean_C= 0.71,
+                var_C= 0.22, 
+                mean_E=  0.69, var_E= 0.18,
+                var_type= "SD",
+                journal= "Advances in Psychology",
+                reference= "Ren, Y., Xu, W., & Guizhou, G. (2019). Effect of Chinese and English Background Music on Efficiency of Chinese and English Reading Comprehension."
+)
+
+
+data<- Add_data(data, ID= 80, N_C=30, N_E = 30, sample="adults", cit= "Ren et al. (2019)", year=2019, 
+                design="within", sound="music",
+                sound_type= "Chinese", db= 60, task= "reading comprehension", IF= NA,
+                measure= "reading_speed", mean_C= 56748.60,
+                var_C= 16625.90, 
+                mean_E=  66352.00, var_E= 18423.52,
+                var_type= "SD",
+                journal= "Advances in Psychology",
+                reference= "Ren, Y., Xu, W., & Guizhou, G. (2019). Effect of Chinese and English Background Music on Efficiency of Chinese and English Reading Comprehension."
+)
+
+# We code data only for reading in L1- Chinese
+
+
+data<- Add_data(data, ID= 80, N_C=30, N_E = 30, sample="adults", cit= "Ren et al. (2019)", year=2019, 
+                design="within", sound="music",
+                sound_type= "English", db= 60, task= "reading comprehension", IF= NA,
+                measure= "reading_speed", mean_C= 56748.60,
+                var_C= 16625.90, 
+                mean_E=  51869.30, var_E= 21831.66,
+                var_type= "SD",
+                journal= "Advances in Psychology",
+                reference= "Ren, Y., Xu, W., & Guizhou, G. (2019). Effect of Chinese and English Background Music on Efficiency of Chinese and English Reading Comprehension."
+)
