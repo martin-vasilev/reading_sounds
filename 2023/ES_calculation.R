@@ -961,3 +961,53 @@ data<- Add_data(data, ID= 88, N_C=90, N_E = 90, sample="adults", cit= "Corradine
                 reference= "Corradine, R. (2020). Personality and performance: Can we predict optimum working environments based on personality? M.Sc. dissertation. Bournemouth University."
 )
 
+
+#----------------
+#--- Study 23 --- #
+#----------------
+
+data<- Add_data(data, ID= 89, N_C=36, N_E = 36, sample="adults", cit= "Goldenberg (2021)", year=2021, 
+                design="within", sound="noise",
+                sound_type= "quiet office", db= NA, task= "reading comprehension", IF= NA,
+                measure= "num_correct", mean_C= 6.22,
+                var_C= 4.86,
+                mean_E=  6.42, var_E= 4.80,
+                var_type= "SD",
+                journal= "Dissertation",
+                reference= "Goldenberg, V. (2021). Measured and perceived impact of noise during reading. An eye tracking study. M.Sc. dissertation. Bournemouth University."
+)
+
+
+data<- Add_data(data, ID= 89, N_C=36, N_E = 36, sample="adults", cit= "Goldenberg (2021)", year=2021, 
+                design="within", sound="noise",
+                sound_type= "busy office", db= NA, task= "reading comprehension", IF= NA,
+                measure= "num_correct", mean_C= 6.22,
+                var_C= 4.86,
+                mean_E=  5.72, var_E= 4.95,
+                var_type= "SD",
+                journal= "Dissertation",
+                reference= "Goldenberg, V. (2021). Measured and perceived impact of noise during reading. An eye tracking study. M.Sc. dissertation. Bournemouth University."
+)
+
+data<- Add_data(data, ID= 89, N_C=36, N_E = 36, sample="adults", cit= "Goldenberg (2021)", year=2021, 
+                design="within", sound="noise",
+                sound_type= "quiet office", db= NA, task= "reading comprehension", IF= NA,
+                measure= "reading_speed", mean_C= 310,
+                var_C= 204,
+                mean_E=  323, var_E= 225,
+                var_type= "SD",
+                journal= "Dissertation",
+                reference= "Goldenberg, V. (2021). Measured and perceived impact of noise during reading. An eye tracking study. M.Sc. dissertation. Bournemouth University."
+) # TVT
+
+
+data<- Add_data(data, ID= 89, N_C=36, N_E = 36, sample="adults", cit= "Goldenberg (2021)", year=2021, 
+                design="within", sound="noise",
+                sound_type= "busy office", db= NA, task= "reading comprehension", IF= NA,
+                measure= "reading_speed", mean_C= 310,
+                var_C= 204,
+                mean_E=  328, var_E= 235,
+                var_type= "SD",
+                journal= "Dissertation",
+                reference= "Goldenberg, V. (2021). Measured and perceived impact of noise during reading. An eye tracking study. M.Sc. dissertation. Bournemouth University."
+)
