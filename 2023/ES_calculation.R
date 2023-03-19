@@ -759,3 +759,58 @@ data<- Add_data(data, ID= 83, N_C=48, N_E = 48, sample="adults", cit= "Vasilev e
                 journal= "Quarterly Journal of Experimental Psychology",
                 reference= "Vasilev, M. R., Parmentier, F. B., Angele, B., & Kirkby, J. A. (2019). Distraction by deviant sounds during reading: An eye-movement study. Quarterly Journal of Experimental Psychology, 72(7), 1863-1875."
 )
+
+
+#----------------
+#--- Study 19 --- #
+#----------------
+
+data<- Add_data(data, ID= 84, N_C=71, N_E = 71, sample="adults", cit= "Zdorova et al. (2023), Exp.1", year=2023, 
+                design="within", sound="speech",
+                sound_type= "babble", db= 50, task= "reading comprehension", IF= 3.752,
+                measure= "prop_correct", mean_C= 0.74,
+                var_C= 0.21, 
+                mean_E=  0.72, var_E= 0.21,
+                var_type= "SD",
+                journal= "Plos One",
+                reference= "Zdorova, N., Malyutina, S., Laurinavichyute, A., Kaprielova, A., Ziubanova, A., & Lopukhina, A. (2023). Do we rely on good-enough processing in reading under auditory and visual noise?. Plos one, 18(1), e0277429."
+)
+
+# Table 2, take plausible sentences as they are closest to natural reading
+
+
+data<- Add_data(data, ID= 84, N_C=71, N_E = 71, sample="adults", cit= "Zdorova et al. (2023), Exp.1", year=2023, 
+                design="within", sound="speech",
+                sound_type= "babble", db= 50, task= "reading comprehension", IF= 3.752,
+                measure= "reading_speed", mean_C= mean(c(211, 226)),
+                var_C= mean(c(46,54)), 
+                mean_E=  mean(c(245, 237)), var_E= mean(c(41, 44)),
+                var_type= "SD",
+                journal= "Plos One",
+                reference= "Zdorova, N., Malyutina, S., Laurinavichyute, A., Kaprielova, A., Ziubanova, A., & Lopukhina, A. (2023). Do we rely on good-enough processing in reading under auditory and visual noise?. Plos one, 18(1), e0277429."
+) # Table 2, FFD
+
+data<- Add_data(data, ID= 84, N_C=71, N_E = 71, sample="adults", cit= "Zdorova et al. (2023), Exp.1", year=2023, 
+                design="within", sound="speech",
+                sound_type= "babble", db= 50, task= "reading comprehension", IF= 3.752,
+                measure= "reading_speed", mean_C= mean(c(475, 409)),
+                var_C= mean(c(152,121)), 
+                mean_E=  mean(c(415, 321)), var_E= mean(c(192, 110)),
+                var_type= "SD",
+                journal= "Plos One",
+                reference= "Zdorova, N., Malyutina, S., Laurinavichyute, A., Kaprielova, A., Ziubanova, A., & Lopukhina, A. (2023). Do we rely on good-enough processing in reading under auditory and visual noise?. Plos one, 18(1), e0277429."
+) # Table 2, GD
+
+
+data<- Add_data(data, ID= 84, N_C=71, N_E = 71, sample="adults", cit= "Zdorova et al. (2023), Exp.1", year=2023, 
+                design="within", sound="speech",
+                sound_type= "babble", db= 50, task= "reading comprehension", IF= 3.752,
+                measure= "reading_speed", mean_C= mean(c(1000, 844)),
+                var_C= mean(c(575,432)), 
+                mean_E=  mean(c(1010, 928)), var_E= mean(c(559, 456)),
+                var_type= "SD",
+                journal= "Plos One",
+                reference= "Zdorova, N., Malyutina, S., Laurinavichyute, A., Kaprielova, A., Ziubanova, A., & Lopukhina, A. (2023). Do we rely on good-enough processing in reading under auditory and visual noise?. Plos one, 18(1), e0277429."
+) # Table 2, TVT
+
+ 
