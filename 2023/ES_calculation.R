@@ -893,3 +893,31 @@ data<- Add_data(data, ID= 86, N_C=39, N_E = 39, sample="adults", cit= "Quan and 
                 journal= "Psychology of Music",
                 reference= "Quan, Y., & Kuo, Y.-L. (2023). The effects of Chinese and English background music on Chinese reading comprehension. Psychology of Music, 51(2), 655–663. https://doi.org/10.1177/03057356221101647"
 )
+
+
+#----------------
+#--- Study 21 --- #
+#----------------
+
+data<- Add_data(data, ID= 87, N_C=33, N_E = 33, sample="adults", cit= "Dackombe (2020)", year=2020, 
+                design="within", sound="music",
+                sound_type= "classical", db= NA, task= "reading comprehension", IF= NA,
+                measure= "prop_correct", mean_C= 0.62,
+                var_C= 0.22,
+                mean_E=  .71, var_E= 0.2,
+                var_type= "SD",
+                journal= "Dissertation",
+                reference= "Dackombe. N. (2020). Does Anxiety Modulate the Degree of Distraction Caused by Different Music Genres? Undergraduate dissertation. Bournemouth University"
+)
+
+
+data<- Add_data(data, ID= 87, N_C=33, N_E = 33, sample="adults", cit= "Dackombe (2020)", year=2020, 
+                design="within", sound="music",
+                sound_type= "rap", db= NA, task= "reading comprehension", IF= NA,
+                measure= "prop_correct", mean_C= 0.62,
+                var_C= 0.22,
+                mean_E=  .66, var_E= 0.26,
+                var_type= "SD",
+                journal= "Dissertation",
+                reference= "Dackombe. N. (2020). Does Anxiety Modulate the Degree of Distraction Caused by Different Music Genres? Undergraduate dissertation. Bournemouth University"
+)
