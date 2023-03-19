@@ -921,3 +921,43 @@ data<- Add_data(data, ID= 87, N_C=33, N_E = 33, sample="adults", cit= "Dackombe 
                 journal= "Dissertation",
                 reference= "Dackombe. N. (2020). Does Anxiety Modulate the Degree of Distraction Caused by Different Music Genres? Undergraduate dissertation. Bournemouth University"
 )
+
+
+#----------------
+#--- Study 22 --- #
+#----------------
+
+data<- Add_data(data, ID= 88, N_C=90, N_E = 90, sample="adults", cit= "Corradine (2020)", year=2020, 
+                design="within", sound="noise",
+                sound_type= "brown", db= NA, task= "reading comprehension", IF= NA,
+                measure= "num_correct", mean_C= 4.03,
+                var_C= 1.17,
+                mean_E=  3.76, var_E= 1.17,
+                var_type= "SD",
+                journal= "Dissertation",
+                reference= "Corradine, R. (2020). Personality and performance: Can we predict optimum working environments based on personality? M.Sc. dissertation. Bournemouth University."
+)
+
+data<- Add_data(data, ID= 88, N_C=90, N_E = 90, sample="adults", cit= "Corradine (2020)", year=2020, 
+                design="within", sound="music",
+                sound_type= "classical", db= NA, task= "reading comprehension", IF= NA,
+                measure= "num_correct", mean_C= 4.03,
+                var_C= 1.17,
+                mean_E=  3.70, var_E= 1.17,
+                var_type= "SD",
+                journal= "Dissertation",
+                reference= "Corradine, R. (2020). Personality and performance: Can we predict optimum working environments based on personality? M.Sc. dissertation. Bournemouth University."
+)
+
+
+data<- Add_data(data, ID= 88, N_C=90, N_E = 90, sample="adults", cit= "Corradine (2020)", year=2020, 
+                design="within", sound="music",
+                sound_type= "pop", db= NA, task= "reading comprehension", IF= NA,
+                measure= "num_correct", mean_C= 4.03,
+                var_C= 1.17,
+                mean_E=  3.78, var_E= 1.25,
+                var_type= "SD",
+                journal= "Dissertation",
+                reference= "Corradine, R. (2020). Personality and performance: Can we predict optimum working environments based on personality? M.Sc. dissertation. Bournemouth University."
+)
+
