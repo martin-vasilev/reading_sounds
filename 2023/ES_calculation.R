@@ -1011,3 +1011,260 @@ data<- Add_data(data, ID= 89, N_C=36, N_E = 36, sample="adults", cit= "Goldenber
                 journal= "Dissertation",
                 reference= "Goldenberg, V. (2021). Measured and perceived impact of noise during reading. An eye tracking study. M.Sc. dissertation. Bournemouth University."
 )
+
+
+#----------------
+#--- Study 24 --- #
+#----------------
+
+data<- Add_data(data, ID= 90, N_C=36, N_E = 36, sample="adults", cit= "Goldenberg (2021)", year=2021, 
+                design="within", sound="noise",
+                sound_type= "quiet office", db= NA, task= "reading comprehension", IF= NA,
+                measure= "num_correct", mean_C= 6.22,
+                var_C= 4.86,
+                mean_E=  6.42, var_E= 4.80,
+                var_type= "SD",
+                journal= "Dissertation",
+                reference= "Goldenberg, V. (2021). Measured and perceived impact of noise during reading. An eye tracking study. M.Sc. dissertation. Bournemouth University."
+)
+
+
+
+#----------------
+#--- Study 25 --- #
+#----------------
+
+data<- Add_data(data, ID= 91, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.1", year=2023, 
+                design="within", sound="music",
+                sound_type= "instrumental", db= NA, task= "reading comprehension", IF= NA,
+                measure= "perc_correct", mean_C= 87.0,
+                var_C= 33.6,
+                mean_E=  85.1, var_E= 35.6,
+                var_type= "SD",
+                journal= "Pre-print",
+                reference= "Vasilev, M. R., Hitching, L., Tyrrell, S., & House, P. (2022). What makes background music distracting? Investigating the role of song lyrics using self-paced reading."
+)
+# Table 1
+
+data<- Add_data(data, ID= 91, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.1", year=2023, 
+                design="within", sound="music",
+                sound_type= "lyrical", db= NA, task= "reading comprehension", IF= NA,
+                measure= "perc_correct", mean_C= 87.0,
+                var_C= 33.6,
+                mean_E=  84.7, var_E= 36.0,
+                var_type= "SD",
+                journal= "Pre-print",
+                reference= "Vasilev, M. R., Hitching, L., Tyrrell, S., & House, P. (2022). What makes background music distracting? Investigating the role of song lyrics using self-paced reading."
+)
+
+## reaction time
+
+data<- Add_data(data, ID= 91, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.1", year=2023, 
+                design="within", sound="music",
+                sound_type= "instrumental", db= NA, task= "reading comprehension", IF= NA,
+                measure= "reading_speed", mean_C= 405,
+                var_C= 241,
+                mean_E=  403, var_E= 239,
+                var_type= "SD",
+                journal= "Pre-print",
+                reference= "Vasilev, M. R., Hitching, L., Tyrrell, S., & House, P. (2022). What makes background music distracting? Investigating the role of song lyrics using self-paced reading."
+)
+# Table 1
+
+data<- Add_data(data, ID= 91, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.1", year=2023, 
+                design="within", sound="music",
+                sound_type= "lyrical", db= NA, task= "reading comprehension", IF= NA,
+                measure= "reading_speed", mean_C= 405,
+                var_C= 241,
+                mean_E=  410, var_E= 257,
+                var_type= "SD",
+                journal= "Pre-print",
+                reference= "Vasilev, M. R., Hitching, L., Tyrrell, S., & House, P. (2022). What makes background music distracting? Investigating the role of song lyrics using self-paced reading."
+)
+
+
+
+
+#----------------
+#--- Study 26 --- #
+#----------------
+
+data<- Add_data(data, ID= 92, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.2", year=2023, 
+                design="within", sound="music",
+                sound_type= "instrumental", db= 67, task= "reading comprehension", IF= NA,
+                measure= "perc_correct", mean_C= 85.3,
+                var_C= 35.4,
+                mean_E=  84.0, var_E= 36.6,
+                var_type= "SD",
+                journal= "Pre-print",
+                reference= "Vasilev, M. R., Hitching, L., Tyrrell, S., & House, P. (2022). What makes background music distracting? Investigating the role of song lyrics using self-paced reading."
+)
+# Table 1
+
+data<- Add_data(data, ID= 92, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.2", year=2023, 
+                design="within", sound="music",
+                sound_type= "lyrical", db= 67, task= "reading comprehension", IF= NA,
+                measure= "perc_correct", mean_C= 85.3,
+                var_C= 35.4,
+                mean_E=  80.9, var_E= 39.3,
+                var_type= "SD",
+                journal= "Pre-print",
+                reference= "Vasilev, M. R., Hitching, L., Tyrrell, S., & House, P. (2022). What makes background music distracting? Investigating the role of song lyrics using self-paced reading."
+)
+
+## reaction time
+
+data<- Add_data(data, ID= 92, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.2", year=2023, 
+                design="within", sound="music",
+                sound_type= "instrumental", db= 67, task= "reading comprehension", IF= NA,
+                measure= "reading_speed", mean_C= 452,
+                var_C= 255,
+                mean_E=  451, var_E= 248,
+                var_type= "SD",
+                journal= "Pre-print",
+                reference= "Vasilev, M. R., Hitching, L., Tyrrell, S., & House, P. (2022). What makes background music distracting? Investigating the role of song lyrics using self-paced reading."
+)
+# Table 1
+
+data<- Add_data(data, ID= 92, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.2", year=2023, 
+                design="within", sound="music",
+                sound_type= "lyrical", db= 67, task= "reading comprehension", IF= NA,
+                measure= "reading_speed", mean_C= 452,
+                var_C= 255,
+                mean_E=  464, var_E= 262,
+                var_type= "SD",
+                journal= "Pre-print",
+                reference= "Vasilev, M. R., Hitching, L., Tyrrell, S., & House, P. (2022). What makes background music distracting? Investigating the role of song lyrics using self-paced reading."
+)
+
+
+#----------------
+#--- Study 27 --- #
+#----------------
+
+data<- Add_data(data, ID= 93, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.3", year=2023, 
+                design="within", sound="music",
+                sound_type= "instrumental", db= NA, task= "reading comprehension", IF= NA,
+                measure= "perc_correct", mean_C= 87.1,
+                var_C= 33.5,
+                mean_E=  87.1, var_E= 33.5,
+                var_type= "SD",
+                journal= "Pre-print",
+                reference= "Vasilev, M. R., Hitching, L., Tyrrell, S., & House, P. (2022). What makes background music distracting? Investigating the role of song lyrics using self-paced reading."
+)
+# Table 1
+
+data<- Add_data(data, ID= 93, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.3", year=2023, 
+                design="within", sound="music",
+                sound_type= "lyrical", db= NA, task= "reading comprehension", IF= NA,
+                measure= "perc_correct", mean_C= 87.1,
+                var_C= 33.5,
+                mean_E=  85.6, var_E= 35.1,
+                var_type= "SD",
+                journal= "Pre-print",
+                reference= "Vasilev, M. R., Hitching, L., Tyrrell, S., & House, P. (2022). What makes background music distracting? Investigating the role of song lyrics using self-paced reading."
+)
+
+## reaction time
+
+data<- Add_data(data, ID= 93, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.3", year=2023, 
+                design="within", sound="music",
+                sound_type= "instrumental", db= NA, task= "reading comprehension", IF= NA,
+                measure= "reading_speed", mean_C= 377,
+                var_C= 248,
+                mean_E=  365, var_E= 219,
+                var_type= "SD",
+                journal= "Pre-print",
+                reference= "Vasilev, M. R., Hitching, L., Tyrrell, S., & House, P. (2022). What makes background music distracting? Investigating the role of song lyrics using self-paced reading."
+)
+# Table 1
+
+data<- Add_data(data, ID= 93, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.3", year=2023, 
+                design="within", sound="music",
+                sound_type= "lyrical", db= NA, task= "reading comprehension", IF= NA,
+                measure= "reading_speed", mean_C= 377,
+                var_C= 248,
+                mean_E=  381, var_E= 240,
+                var_type= "SD",
+                journal= "Pre-print",
+                reference= "Vasilev, M. R., Hitching, L., Tyrrell, S., & House, P. (2022). What makes background music distracting? Investigating the role of song lyrics using self-paced reading."
+)
+
+
+
+#----------------
+#--- Study 28 --- #
+#----------------
+
+data<- Add_data(data, ID= 94, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.4", year=2023, 
+                design="within", sound="music",
+                sound_type= "instrumental", db= NA, task= "reading comprehension", IF= NA,
+                measure= "perc_correct", mean_C= 87.7,
+                var_C= 32.9,
+                mean_E=  88.2, var_E= 32.2,
+                var_type= "SD",
+                journal= "Pre-print",
+                reference= "Vasilev, M. R., Hitching, L., Tyrrell, S., & House, P. (2022). What makes background music distracting? Investigating the role of song lyrics using self-paced reading."
+)
+# Table 1
+
+data<- Add_data(data, ID= 94, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.4", year=2023, 
+                design="within", sound="music",
+                sound_type= "lyrical", db= NA, task= "reading comprehension", IF= NA,
+                measure= "perc_correct", mean_C= 87.7,
+                var_C= 32.9,
+                mean_E=  85.9, var_E= 34.8,
+                var_type= "SD",
+                journal= "Pre-print",
+                reference= "Vasilev, M. R., Hitching, L., Tyrrell, S., & House, P. (2022). What makes background music distracting? Investigating the role of song lyrics using self-paced reading."
+)
+
+data<- Add_data(data, ID= 94, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.4", year=2023, 
+                design="within", sound="speech",
+                sound_type= "intelligible", db= NA, task= "reading comprehension", IF= NA,
+                measure= "perc_correct", mean_C= 87.7,
+                var_C= 32.9,
+                mean_E=  84.8, var_E= 35.9,
+                var_type= "SD",
+                journal= "Pre-print",
+                reference= "Vasilev, M. R., Hitching, L., Tyrrell, S., & House, P. (2022). What makes background music distracting? Investigating the role of song lyrics using self-paced reading."
+)
+
+
+
+## reaction time
+
+data<- Add_data(data, ID= 94, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.4", year=2023, 
+                design="within", sound="music",
+                sound_type= "instrumental", db= NA, task= "reading comprehension", IF= NA,
+                measure= "reading_speed", mean_C= 370,
+                var_C= 210,
+                mean_E=  367, var_E= 201,
+                var_type= "SD",
+                journal= "Pre-print",
+                reference= "Vasilev, M. R., Hitching, L., Tyrrell, S., & House, P. (2022). What makes background music distracting? Investigating the role of song lyrics using self-paced reading."
+)
+# Table 1
+
+data<- Add_data(data, ID= 94, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.4", year=2023, 
+                design="within", sound="music",
+                sound_type= "lyrical", db= NA, task= "reading comprehension", IF= NA,
+                measure= "reading_speed", mean_C= 370,
+                var_C= 210,
+                mean_E=  376, var_E= 211,
+                var_type= "SD",
+                journal= "Pre-print",
+                reference= "Vasilev, M. R., Hitching, L., Tyrrell, S., & House, P. (2022). What makes background music distracting? Investigating the role of song lyrics using self-paced reading."
+)
+
+
+data<- Add_data(data, ID= 94, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.4", year=2023, 
+                design="within", sound="speech",
+                sound_type= "intelligible", db= NA, task= "reading comprehension", IF= NA,
+                measure= "reading_speed", mean_C= 370,
+                var_C= 210,
+                mean_E=  377, var_E= 219,
+                var_type= "SD",
+                journal= "Pre-print",
+                reference= "Vasilev, M. R., Hitching, L., Tyrrell, S., & House, P. (2022). What makes background music distracting? Investigating the role of song lyrics using self-paced reading."
+)
