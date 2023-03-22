@@ -1268,3 +1268,142 @@ data<- Add_data(data, ID= 94, N_C=204, N_E = 204, sample="adults", cit= "Vasilev
                 journal= "Pre-print",
                 reference= "Vasilev, M. R., Hitching, L., Tyrrell, S., & House, P. (2022). What makes background music distracting? Investigating the role of song lyrics using self-paced reading."
 )
+
+
+save(data, file= '2023/raw_data_2023.Rda')
+
+
+
+
+#-----------------------
+#### ES CALCULATION ####
+#-----------------------
+
+
+
+
+rm(list=ls())
+
+source("Functions/settings.R")
+source("Functions/effect_sizes.R")
+
+# Load data:
+load("2023/raw_data_2023.Rda");
+load("r.Rda")
+
+reference<- as.character(data$reference)
+data$reference<- NULL
+
+measures<- unique(as.character(data$measure))
+#normal_codingQ<- measures[which(!is.element(measures, c("reading_speed", "perc_incorrect", "proofreading_speed",
+#                                                  "prop_misses")))]
+normal_codingQ<- measures[which(!is.element(measures, c("perc_incorrect", "prop_misses")))]
+
+
+#NCD<- which(is.element(data$measure, normal_codingQ) & !is.na(data$var_C))
+NCD<- which(!is.na(data$var_C))
+
+
+regulars<- c("num_correct", "prop_correct", "perc_correct", "reading_score")
+oposite<- c("reading_speed", "proofreading_speed", "prop_misses", "perc_incorrect")
+
+# Calculate ES for studies with normal coding
+
+data$d<- NA
+data$d_var<- NA
+data$g<- NA
+data$g_var<- NA
+
+for(i in 1:length(NCD)){
+  
+  if(is.element(data$measure[NCD[i]], regulars)){
+    type<- "E-C"
+  } else{
+    type<- "C-E"
+  }
+  
+  
+  if(data$design[NCD[i]]=="between"){
+    
+    if(data$var_type[NCD[i]]== "SD"){
+      data$d[NCD[i]]<- Cohens_d(M_C = data$mean_C[NCD[i]], M_E = data$mean_E[NCD[i]], S_C = data$var_C[NCD[i]],
+                                S_E = data$var_E[NCD[i]], N_C = data$N_C[NCD[i]], N_E = data$N_E[NCD[i]],
+                                design = as.character(data$design[NCD[i]]), type = type)
+    } else{
+      data$d[NCD[i]]<- Cohens_d(M_C = data$mean_C[NCD[i]], M_E = data$mean_E[NCD[i]], 
+                                S_C = data$var_C[NCD[i]]* sqrt(data$N_C[NCD[i]]),
+                                S_E = data$var_E[NCD[i]]*sqrt(data$N_E[NCD[i]]),
+                                N_C = data$N_C[NCD[i]], N_E = data$N_E[NCD[i]],
+                                design = as.character(data$design[NCD[i]]), type = type)
+    }
+    
+    
+    data$d_var[NCD[i]]<- Cohens_d_var(d = data$d[NCD[i]], N_C = data$N_C[NCD[i]], N_E = data$N_E[NCD[i]],
+                                      design = as.character(data$design[NCD[i]]))
+    
+    data$g[NCD[i]]<- Hedges_g(d = data$d[NCD[i]], N_C = data$N_C[NCD[i]], N_E = data$N_E[NCD[i]],
+                              design =  as.character(data$design[NCD[i]]))
+    
+    data$g_var[NCD[i]]<- Hedges_g_var(d_var = data$d_var[NCD[i]], N_C = data$N_C[NCD[i]], N_E = data$N_E[NCD[i]],
+                                      design = as.character(data$design[NCD[i]]))
+    
+  } else{
+    
+    if(data$var_type[NCD[i]]== "SD"){
+      data$d[NCD[i]]<- Cohens_d(M_C = data$mean_C[NCD[i]], M_E = data$mean_E[NCD[i]], S_C = data$var_C[NCD[i]],
+                                S_E = data$var_E[NCD[i]], N = data$N_C[NCD[i]], r = r,
+                                design = as.character(data$design[NCD[i]]), type = type)
+    }else{
+      data$d[NCD[i]]<- Cohens_d(M_C = data$mean_C[NCD[i]], M_E = data$mean_E[NCD[i]],
+                                S_C = data$var_C[NCD[i]]*sqrt(data$N_C[NCD[i]]),
+                                S_E = data$var_E[NCD[i]]*sqrt(data$N_C[NCD[i]]), 
+                                N = data$N_C[NCD[i]], r = r,
+                                design = as.character(data$design[NCD[i]]), type = type)
+    }
+    
+    
+    data$d_var[NCD[i]]<- Cohens_d_var(d = data$d[NCD[i]], N = data$N_C[NCD[i]], r = r,
+                                      design = as.character(data$design[NCD[i]]))
+    
+    data$g[NCD[i]]<- Hedges_g(d = data$d[NCD[i]], N = data$N_C[NCD[i]], 
+                              design =  as.character(data$design[NCD[i]]))
+    
+    data$g_var[NCD[i]]<- Hedges_g_var(d_var = data$d_var[NCD[i]], N = data$N_C[NCD[i]], 
+                                      design = as.character(data$design[NCD[i]]))
+  }
+}
+
+data$CI95_L<- data$g- 1.96*sqrt(data$g_var)
+data$CI95_R<- data$g+ 1.96*sqrt(data$g_var)
+
+data$reference<- reference
+
+
+if(MdS){
+  for (i in 1:nrow(data)){
+    if(data$design[i]=="within"){
+      data$g[i]<- d_IG(d_RM =data$g[i], r = r)
+    }
+    
+  }
+}
+
+
+if(MdS_var){
+  for (i in 1:nrow(data)){
+    if(data$design[i]=="within"){
+      data$g_var[i]<- var_RM(n = data$N_C[i], d_RM = data$g[i])
+    }
+    
+  }
+}
+
+
+# Save data: 
+save(data, file= "2023/data.Rda")
+write.csv(data, file= "2023/data.csv")
+
+
+
+
+
