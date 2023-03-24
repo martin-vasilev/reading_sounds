@@ -1431,10 +1431,152 @@ general$var_C<- NULL
 general$var_E<- NULL
 general$var_type<- NULL
 
+save(general, file ="2023/subset/general.Rda")
+write.csv(general, "2023/subset/general.csv")
+
+
+## music studies (comprehension):
+mrc<- subset(data, !is.element(measure, c("reading_rate", "reading_speed")) & sound== "music") # reading comprehension only
+music<- NULL
+ids<- unique(mrc$ID)
+
+unique(mrc$measure)
+
+
+for(i in 1:length(ids)){
+  studies<- subset(mrc, ID==ids[i])
+  
+  if(nrow(studies)==1){
+    music<- rbind(music, studies)
+  }else{
+    
+    t<- studies[1,]
+    if(length(unique(studies$sound))>1){
+      t$sound<- paste(unique(studies$sound), collapse = '+')
+    }
+    if(length(unique(studies$sound_type))>1){
+      t$sound_type<- paste(unique(studies$sound_type), collapse = '+')
+    }
+    
+    t$d<- mean(studies$d)
+    t$d_var<- mean(studies$d_var)
+    t$g<- mean(studies$g)
+    t$g_var<- mean(studies$g_var)
+    t$CI95_L<- mean(studies$CI95_L)
+    t$CI95_R<- mean(studies$CI95_R)
+    
+    music<- rbind(music, t)
+    
+  } # end of ifelse
+} # end of i loop
+
+music$mean_C<- NULL
+music$mean_E<- NULL
+music$var_C<- NULL
+music$var_E<- NULL
+music$var_type<- NULL
+
+save(music, file ="2023/subset/music.Rda")
+write.csv(music, "2023/subset/music.csv")
+
+
+
+## speech studies (comprehension):
+src<- subset(data, !is.element(measure, c("reading_rate", "reading_speed")) & sound== "speech") # reading comprehension only
+speech<- NULL
+ids<- unique(src$ID)
+
+unique(src$measure)
+
+
+for(i in 1:length(ids)){
+  studies<- subset(src, ID==ids[i])
+  
+  if(nrow(studies)==1){
+    speech<- rbind(speech, studies)
+  }else{
+    
+    t<- studies[1,]
+    if(length(unique(studies$sound))>1){
+      t$sound<- paste(unique(studies$sound), collapse = '+')
+    }
+    if(length(unique(studies$sound_type))>1){
+      t$sound_type<- paste(unique(studies$sound_type), collapse = '+')
+    }
+    
+    t$d<- mean(studies$d)
+    t$d_var<- mean(studies$d_var)
+    t$g<- mean(studies$g)
+    t$g_var<- mean(studies$g_var)
+    t$CI95_L<- mean(studies$CI95_L)
+    t$CI95_R<- mean(studies$CI95_R)
+    
+    speech<- rbind(speech, t)
+    
+  } # end of ifelse
+} # end of i loop
+
+speech$mean_C<- NULL
+speech$mean_E<- NULL
+speech$var_C<- NULL
+speech$var_E<- NULL
+speech$var_type<- NULL
+
+save(speech, file ="2023/subset/speech.Rda")
+write.csv(speech, "2023/subset/speech.csv")
+
+
+
+## noise studies (comprehension):
+nrc<- subset(data, !is.element(measure, c("reading_rate", "reading_speed")) & sound== "noise") # reading comprehension only
+noise<- NULL
+ids<- unique(src$ID)
+
+unique(nrc$measure)
+
+
+for(i in 1:length(ids)){
+  studies<- subset(nrc, ID==ids[i])
+  
+  if(nrow(studies)==1){
+    noise<- rbind(noise, studies)
+  }else{
+    
+    t<- studies[1,]
+    if(length(unique(studies$sound))>1){
+      t$sound<- paste(unique(studies$sound), collapse = '+')
+    }
+    if(length(unique(studies$sound_type))>1){
+      t$sound_type<- paste(unique(studies$sound_type), collapse = '+')
+    }
+    
+    t$d<- mean(studies$d)
+    t$d_var<- mean(studies$d_var)
+    t$g<- mean(studies$g)
+    t$g_var<- mean(studies$g_var)
+    t$CI95_L<- mean(studies$CI95_L)
+    t$CI95_R<- mean(studies$CI95_R)
+    
+    noise<- rbind(noise, t)
+    
+  } # end of ifelse
+} # end of i loop
+
+noise$mean_C<- NULL
+noise$mean_E<- NULL
+noise$var_C<- NULL
+noise$var_E<- NULL
+noise$var_type<- NULL
+
+save(noise, file ="2023/subset/noise.Rda")
+write.csv(noise, "2023/subset/noise.csv")
+
+
+
+
 
 
 # "General" dataset (reading speed)
-
 rs<- subset(data, is.element(measure, c("reading_rate", "reading_speed"))) # reading comprehension only
 speed<- NULL
 ids<- unique(rs$ID)
@@ -1474,4 +1616,7 @@ speed$var_C<- NULL
 speed$var_E<- NULL
 speed$var_type<- NULL
 
+
+save(speed, file ="2023/subset/reading_speed.Rda")
+write.csv(general, "2023/subset/reading_speed.csv")
 
