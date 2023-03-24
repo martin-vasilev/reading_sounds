@@ -311,7 +311,7 @@ data<- Add_data(data, ID= 73, N_C=8, N_E = 10, sample="adults", cit= "Kaul et al
 data<- Add_data(data, ID= 74, N_C=30, N_E = 30, sample="adults", cit= "Meng et al. (2020)", year=2020, 
                 design="within", sound="speech",
                 sound_type= "intelligible", db=64, task= "semantic acceptability", IF= 3.140,
-                measure= "reading_speed", mean_C= 421,
+                measure= "reading_rate", mean_C= 421,
                 var_C= 7, 
                 mean_E=  361, var_E= 6,
                 var_type= "SE",
@@ -322,7 +322,7 @@ data<- Add_data(data, ID= 74, N_C=30, N_E = 30, sample="adults", cit= "Meng et a
 data<- Add_data(data, ID= 74, N_C=30, N_E = 30, sample="adults", cit= "Meng et al. (2020)", year=2020, 
                 design="within", sound="speech",
                 sound_type= "unintelligible", db=64, task= "semantic acceptability", IF= 3.140,
-                measure= "reading_speed", mean_C= 421,
+                measure= "reading_rate", mean_C= 421,
                 var_C= 7, 
                 mean_E=  409, var_E= 6,
                 var_type= "SE",
@@ -1283,7 +1283,7 @@ normal_codingQ<- measures[which(!is.element(measures, c("perc_incorrect", "prop_
 NCD<- which(!is.na(data$var_C))
 
 
-regulars<- c("num_correct", "prop_correct", "perc_correct", "reading_score")
+regulars<- c("num_correct", "prop_correct", "perc_correct", "reading_score", "reading_rate")
 oposite<- c("reading_speed", "proofreading_speed", "prop_misses", "perc_incorrect")
 
 # Calculate ES for studies with normal coding
@@ -1404,18 +1404,24 @@ for(i in 1:length(ids)){
   if(nrow(studies)==1){
     general<- rbind(general, studies)
   }else{
-    t<- studies[1,]
-    if(length(unique(studies$sound))>1){
-      t$sound<- paste(unique(studies$sound), collapse = '+')
-      t$sound_type<- paste(unique(studies$sound_type), collapse = '+')
+    
+      t<- studies[1,]
+      if(length(unique(studies$sound))>1){
+        t$sound<- paste(unique(studies$sound), collapse = '+')
+      }
+      if(length(unique(studies$sound_type))>1){
+        t$sound_type<- paste(unique(studies$sound_type), collapse = '+')
+      }
+      
       t$d<- mean(studies$d)
       t$d_var<- mean(studies$d_var)
       t$g<- mean(studies$g)
       t$g_var<- mean(studies$g_var)
       t$CI95_L<- mean(studies$CI95_L)
       t$CI95_R<- mean(studies$CI95_R)
-    } #end of  if loop
-    general<- rbind(general, t)
+     
+      general<- rbind(general, t)
+      
   } # end of ifelse
 } # end of i loop
 
@@ -1425,5 +1431,47 @@ general$var_C<- NULL
 general$var_E<- NULL
 general$var_type<- NULL
 
+
+
+# "General" dataset (reading speed)
+
+rs<- subset(data, is.element(measure, c("reading_rate", "reading_speed"))) # reading comprehension only
+speed<- NULL
+ids<- unique(rs$ID)
+
+unique(rs$measure)
+
+for(i in 1:length(ids)){
+  studies<- subset(rs, ID==ids[i])
+  
+  if(nrow(studies)==1){
+    speed<- rbind(speed, studies)
+  }else{
+    
+    t<- studies[1,]
+    if(length(unique(studies$sound))>1){
+      t$sound<- paste(unique(studies$sound), collapse = '+')
+    }
+    if(length(unique(studies$sound_type))>1){
+      t$sound_type<- paste(unique(studies$sound_type), collapse = '+')
+    }
+    
+    t$d<- mean(studies$d)
+    t$d_var<- mean(studies$d_var)
+    t$g<- mean(studies$g)
+    t$g_var<- mean(studies$g_var)
+    t$CI95_L<- mean(studies$CI95_L)
+    t$CI95_R<- mean(studies$CI95_R)
+    
+    speed<- rbind(speed, t)
+    
+  } # end of ifelse
+} # end of i loop
+
+speed$mean_C<- NULL
+speed$mean_E<- NULL
+speed$var_C<- NULL
+speed$var_E<- NULL
+speed$var_type<- NULL
 
 
