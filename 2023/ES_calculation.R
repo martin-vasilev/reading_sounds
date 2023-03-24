@@ -1013,28 +1013,12 @@ data<- Add_data(data, ID= 89, N_C=36, N_E = 36, sample="adults", cit= "Goldenber
 )
 
 
-#----------------
-#--- Study 24 --- #
-#----------------
-
-data<- Add_data(data, ID= 90, N_C=36, N_E = 36, sample="adults", cit= "Goldenberg (2021)", year=2021, 
-                design="within", sound="noise",
-                sound_type= "quiet office", db= NA, task= "reading comprehension", IF= NA,
-                measure= "num_correct", mean_C= 6.22,
-                var_C= 4.86,
-                mean_E=  6.42, var_E= 4.80,
-                var_type= "SD",
-                journal= "Dissertation",
-                reference= "Goldenberg, V. (2021). Measured and perceived impact of noise during reading. An eye tracking study. M.Sc. dissertation. Bournemouth University."
-)
-
-
 
 #----------------
 #--- Study 25 --- #
 #----------------
 
-data<- Add_data(data, ID= 91, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.1", year=2023, 
+data<- Add_data(data, ID= 90, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.1", year=2023, 
                 design="within", sound="music",
                 sound_type= "instrumental", db= NA, task= "reading comprehension", IF= NA,
                 measure= "perc_correct", mean_C= 87.0,
@@ -1046,7 +1030,7 @@ data<- Add_data(data, ID= 91, N_C=204, N_E = 204, sample="adults", cit= "Vasilev
 )
 # Table 1
 
-data<- Add_data(data, ID= 91, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.1", year=2023, 
+data<- Add_data(data, ID= 90, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.1", year=2023, 
                 design="within", sound="music",
                 sound_type= "lyrical", db= NA, task= "reading comprehension", IF= NA,
                 measure= "perc_correct", mean_C= 87.0,
@@ -1059,7 +1043,7 @@ data<- Add_data(data, ID= 91, N_C=204, N_E = 204, sample="adults", cit= "Vasilev
 
 ## reaction time
 
-data<- Add_data(data, ID= 91, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.1", year=2023, 
+data<- Add_data(data, ID= 90, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.1", year=2023, 
                 design="within", sound="music",
                 sound_type= "instrumental", db= NA, task= "reading comprehension", IF= NA,
                 measure= "reading_speed", mean_C= 405,
@@ -1071,7 +1055,7 @@ data<- Add_data(data, ID= 91, N_C=204, N_E = 204, sample="adults", cit= "Vasilev
 )
 # Table 1
 
-data<- Add_data(data, ID= 91, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.1", year=2023, 
+data<- Add_data(data, ID= 90, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.1", year=2023, 
                 design="within", sound="music",
                 sound_type= "lyrical", db= NA, task= "reading comprehension", IF= NA,
                 measure= "reading_speed", mean_C= 405,
@@ -1089,7 +1073,7 @@ data<- Add_data(data, ID= 91, N_C=204, N_E = 204, sample="adults", cit= "Vasilev
 #--- Study 26 --- #
 #----------------
 
-data<- Add_data(data, ID= 92, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.2", year=2023, 
+data<- Add_data(data, ID= 91, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.2", year=2023, 
                 design="within", sound="music",
                 sound_type= "instrumental", db= 67, task= "reading comprehension", IF= NA,
                 measure= "perc_correct", mean_C= 85.3,
@@ -1101,7 +1085,7 @@ data<- Add_data(data, ID= 92, N_C=204, N_E = 204, sample="adults", cit= "Vasilev
 )
 # Table 1
 
-data<- Add_data(data, ID= 92, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.2", year=2023, 
+data<- Add_data(data, ID= 91, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.2", year=2023, 
                 design="within", sound="music",
                 sound_type= "lyrical", db= 67, task= "reading comprehension", IF= NA,
                 measure= "perc_correct", mean_C= 85.3,
@@ -1114,7 +1098,7 @@ data<- Add_data(data, ID= 92, N_C=204, N_E = 204, sample="adults", cit= "Vasilev
 
 ## reaction time
 
-data<- Add_data(data, ID= 92, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.2", year=2023, 
+data<- Add_data(data, ID= 91, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.2", year=2023, 
                 design="within", sound="music",
                 sound_type= "instrumental", db= 67, task= "reading comprehension", IF= NA,
                 measure= "reading_speed", mean_C= 452,
@@ -1126,7 +1110,7 @@ data<- Add_data(data, ID= 92, N_C=204, N_E = 204, sample="adults", cit= "Vasilev
 )
 # Table 1
 
-data<- Add_data(data, ID= 92, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.2", year=2023, 
+data<- Add_data(data, ID= 91, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.2", year=2023, 
                 design="within", sound="music",
                 sound_type= "lyrical", db= 67, task= "reading comprehension", IF= NA,
                 measure= "reading_speed", mean_C= 452,
@@ -1142,7 +1126,7 @@ data<- Add_data(data, ID= 92, N_C=204, N_E = 204, sample="adults", cit= "Vasilev
 #--- Study 27 --- #
 #----------------
 
-data<- Add_data(data, ID= 93, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.3", year=2023, 
+data<- Add_data(data, ID= 92, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.3", year=2023, 
                 design="within", sound="music",
                 sound_type= "instrumental", db= NA, task= "reading comprehension", IF= NA,
                 measure= "perc_correct", mean_C= 87.1,
@@ -1154,7 +1138,7 @@ data<- Add_data(data, ID= 93, N_C=204, N_E = 204, sample="adults", cit= "Vasilev
 )
 # Table 1
 
-data<- Add_data(data, ID= 93, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.3", year=2023, 
+data<- Add_data(data, ID= 92, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.3", year=2023, 
                 design="within", sound="music",
                 sound_type= "lyrical", db= NA, task= "reading comprehension", IF= NA,
                 measure= "perc_correct", mean_C= 87.1,
@@ -1167,7 +1151,7 @@ data<- Add_data(data, ID= 93, N_C=204, N_E = 204, sample="adults", cit= "Vasilev
 
 ## reaction time
 
-data<- Add_data(data, ID= 93, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.3", year=2023, 
+data<- Add_data(data, ID= 92, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.3", year=2023, 
                 design="within", sound="music",
                 sound_type= "instrumental", db= NA, task= "reading comprehension", IF= NA,
                 measure= "reading_speed", mean_C= 377,
@@ -1179,7 +1163,7 @@ data<- Add_data(data, ID= 93, N_C=204, N_E = 204, sample="adults", cit= "Vasilev
 )
 # Table 1
 
-data<- Add_data(data, ID= 93, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.3", year=2023, 
+data<- Add_data(data, ID= 92, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.3", year=2023, 
                 design="within", sound="music",
                 sound_type= "lyrical", db= NA, task= "reading comprehension", IF= NA,
                 measure= "reading_speed", mean_C= 377,
@@ -1196,7 +1180,7 @@ data<- Add_data(data, ID= 93, N_C=204, N_E = 204, sample="adults", cit= "Vasilev
 #--- Study 28 --- #
 #----------------
 
-data<- Add_data(data, ID= 94, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.4", year=2023, 
+data<- Add_data(data, ID= 93, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.4", year=2023, 
                 design="within", sound="music",
                 sound_type= "instrumental", db= NA, task= "reading comprehension", IF= NA,
                 measure= "perc_correct", mean_C= 87.7,
@@ -1208,7 +1192,7 @@ data<- Add_data(data, ID= 94, N_C=204, N_E = 204, sample="adults", cit= "Vasilev
 )
 # Table 1
 
-data<- Add_data(data, ID= 94, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.4", year=2023, 
+data<- Add_data(data, ID= 93, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.4", year=2023, 
                 design="within", sound="music",
                 sound_type= "lyrical", db= NA, task= "reading comprehension", IF= NA,
                 measure= "perc_correct", mean_C= 87.7,
@@ -1219,7 +1203,7 @@ data<- Add_data(data, ID= 94, N_C=204, N_E = 204, sample="adults", cit= "Vasilev
                 reference= "Vasilev, M. R., Hitching, L., Tyrrell, S., & House, P. (2022). What makes background music distracting? Investigating the role of song lyrics using self-paced reading."
 )
 
-data<- Add_data(data, ID= 94, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.4", year=2023, 
+data<- Add_data(data, ID= 93, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.4", year=2023, 
                 design="within", sound="speech",
                 sound_type= "intelligible", db= NA, task= "reading comprehension", IF= NA,
                 measure= "perc_correct", mean_C= 87.7,
@@ -1234,7 +1218,7 @@ data<- Add_data(data, ID= 94, N_C=204, N_E = 204, sample="adults", cit= "Vasilev
 
 ## reaction time
 
-data<- Add_data(data, ID= 94, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.4", year=2023, 
+data<- Add_data(data, ID= 93, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.4", year=2023, 
                 design="within", sound="music",
                 sound_type= "instrumental", db= NA, task= "reading comprehension", IF= NA,
                 measure= "reading_speed", mean_C= 370,
@@ -1246,7 +1230,7 @@ data<- Add_data(data, ID= 94, N_C=204, N_E = 204, sample="adults", cit= "Vasilev
 )
 # Table 1
 
-data<- Add_data(data, ID= 94, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.4", year=2023, 
+data<- Add_data(data, ID= 93, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.4", year=2023, 
                 design="within", sound="music",
                 sound_type= "lyrical", db= NA, task= "reading comprehension", IF= NA,
                 measure= "reading_speed", mean_C= 370,
@@ -1258,7 +1242,7 @@ data<- Add_data(data, ID= 94, N_C=204, N_E = 204, sample="adults", cit= "Vasilev
 )
 
 
-data<- Add_data(data, ID= 94, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.4", year=2023, 
+data<- Add_data(data, ID= 93, N_C=204, N_E = 204, sample="adults", cit= "Vasilev et al. (2023), Exp.4", year=2023, 
                 design="within", sound="speech",
                 sound_type= "intelligible", db= NA, task= "reading comprehension", IF= NA,
                 measure= "reading_speed", mean_C= 370,
@@ -1270,7 +1254,7 @@ data<- Add_data(data, ID= 94, N_C=204, N_E = 204, sample="adults", cit= "Vasilev
 )
 
 
-save(data, file= '2023/raw_data_2023.Rda')
+#save(data, file= '2023/raw_data_2023.Rda')
 
 
 
@@ -1279,16 +1263,11 @@ save(data, file= '2023/raw_data_2023.Rda')
 #### ES CALCULATION ####
 #-----------------------
 
-
-
-
-rm(list=ls())
-
 source("Functions/settings.R")
 source("Functions/effect_sizes.R")
 
 # Load data:
-load("2023/raw_data_2023.Rda");
+#load("2023/raw_data_2023.Rda");
 load("r.Rda")
 
 reference<- as.character(data$reference)
@@ -1400,10 +1379,51 @@ if(MdS_var){
 
 
 # Save data: 
-save(data, file= "2023/data.Rda")
-write.csv(data, file= "2023/data.csv")
+save(data, file= "2023/data23.Rda")
+write.csv(data, file= "2023/data23.csv")
 
 
+
+
+
+#### Subset Studies ####
+
+# "General" dataset
+
+rc<- subset(data, !is.element(measure, c("reading_rate", "reading_speed"))) # reading comprehension only
+general<- NULL
+ids<- unique(rc$ID)
+
+unique(rc$measure)
+
+
+
+for(i in 1:length(ids)){
+  studies<- subset(rc, ID==ids[i])
+  
+  if(nrow(studies)==1){
+    general<- rbind(general, studies)
+  }else{
+    t<- studies[1,]
+    if(length(unique(studies$sound))>1){
+      t$sound<- paste(unique(studies$sound), collapse = '+')
+      t$sound_type<- paste(unique(studies$sound_type), collapse = '+')
+      t$d<- mean(studies$d)
+      t$d_var<- mean(studies$d_var)
+      t$g<- mean(studies$g)
+      t$g_var<- mean(studies$g_var)
+      t$CI95_L<- mean(studies$CI95_L)
+      t$CI95_R<- mean(studies$CI95_R)
+    } #end of  if loop
+    general<- rbind(general, t)
+  } # end of ifelse
+} # end of i loop
+
+general$mean_C<- NULL
+general$mean_E<- NULL
+general$var_C<- NULL
+general$var_E<- NULL
+general$var_type<- NULL
 
 
 
